@@ -1,0 +1,16 @@
+strided_slice.cc:120:7:void* tflite::ops::micro::strided_slice::Init(TfLiteContext*, const char*, size_t)	8	static
+types.h:202:3:tflite::RuntimeShape::~RuntimeShape()	8	static
+types.h:213:18:int32_t tflite::RuntimeShape::Dims(int) const	8	static
+types.h:237:15:void tflite::RuntimeShape::Resize(int)	16	static
+types.h:304:3:tflite::RuntimeShape::RuntimeShape(int, const tflite::RuntimeShape&, int)	24	static
+strided_slice_logic.h:36:13:void tflite::strided_slice::StridedSlicePadIndices(tflite::StridedSliceParams*, int)	16	static
+strided_slice_logic.h:75:12:int tflite::strided_slice::StartForAxis(const tflite::StridedSliceParams&, const tflite::RuntimeShape&, int)	16	static
+strided_slice_logic.h:122:12:int tflite::strided_slice::StopForAxis(const tflite::StridedSliceParams&, const tflite::RuntimeShape&, int, int)	16	static
+strided_slice.cc:61:28:tflite::StridedSliceParams tflite::ops::micro::strided_slice::BuildStridedSliceParams(tflite::ops::micro::strided_slice::StridedSliceContext*)	16	static
+strided_slice.cc:85:14:TfLiteStatus tflite::ops::micro::strided_slice::CheckOutputSize(TfLiteContext*, tflite::ops::micro::strided_slice::StridedSliceContext*)	168	static
+strided_slice.cc:125:14:TfLiteStatus tflite::ops::micro::strided_slice::Prepare(TfLiteContext*, TfLiteNode*)	152	static
+strided_slice.cc:179:20:TfLiteRegistration tflite::ops::micro::Register_STRIDED_SLICE()	16	static
+strided_slice.h:30:13:void tflite::reference_ops::StridedSlice(const tflite::StridedSliceParams&, const tflite::RuntimeShape&, const tflite::RuntimeShape&, tflite::SequentialTensorWriter<T>*) [with T = float]	248	static
+strided_slice.h:30:13:void tflite::reference_ops::StridedSlice(const tflite::StridedSliceParams&, const tflite::RuntimeShape&, const tflite::RuntimeShape&, tflite::SequentialTensorWriter<T>*) [with T = unsigned char]	224	static
+strided_slice.h:30:13:void tflite::reference_ops::StridedSlice(const tflite::StridedSliceParams&, const tflite::RuntimeShape&, const tflite::RuntimeShape&, tflite::SequentialTensorWriter<T>*) [with T = signed char]	224	static
+strided_slice.cc:139:14:TfLiteStatus tflite::ops::micro::strided_slice::Eval(TfLiteContext*, TfLiteNode*)	120	static

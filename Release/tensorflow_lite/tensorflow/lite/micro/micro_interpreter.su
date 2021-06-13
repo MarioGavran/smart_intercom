@@ -1,0 +1,24 @@
+micro_interpreter.cc:312:7:static void* tflite::MicroInterpreter::AllocatePersistentBuffer(TfLiteContext*, size_t)	0	static
+micro_interpreter.cc:327:7:static void* tflite::MicroInterpreter::GetScratchBuffer(TfLiteContext*, int)	0	static
+micro_interpreter.cc:347:15:static TfLiteTensor* tflite::MicroInterpreter::GetTensor(const TfLiteContext*, int)	24	static
+micro_interpreter.cc:356:19:static TfLiteEvalTensor* tflite::MicroInterpreter::GetEvalTensor(const TfLiteContext*, int)	0	static
+micro_interpreter.cc:365:14:static TfLiteStatus tflite::MicroInterpreter::GetGraph(TfLiteContext*, TfLiteIntArray**)	0	static
+micro_interpreter.cc:318:14:static TfLiteStatus tflite::MicroInterpreter::RequestScratchBufferInArena(TfLiteContext*, size_t, int*)	0	static
+micro_interpreter.cc:335:6:)	12	static
+flatbuffers.h:2442:13:flatbuffers::voffset_t flatbuffers::Table::GetOptionalFieldOffset(flatbuffers::voffset_t) const	0	static
+micro_interpreter.cc:35:1:tflite::MicroInterpreter::MicroInterpreter(const tflite::Model*, const tflite::MicroOpResolver&, uint8_t*, size_t, tflite::ErrorReporter*, tflite::MicroProfiler*)	24	static
+micro_interpreter.cc:55:1:tflite::MicroInterpreter::MicroInterpreter(const tflite::Model*, const tflite::MicroOpResolver&, tflite::MicroAllocator*, tflite::ErrorReporter*, tflite::MicroProfiler*)	24	static
+micro_interpreter.cc:78:6:void tflite::MicroInterpreter::Init(tflite::MicroProfiler*)	0	static
+flatbuffers.h:261:15:flatbuffers::Vector<T>::return_type flatbuffers::Vector<T>::Get(flatbuffers::uoffset_t) const [with T = long int]	8	static
+flatbuffers.h:261:15:flatbuffers::Vector<T>::return_type flatbuffers::Vector<T>::Get(flatbuffers::uoffset_t) const [with T = flatbuffers::Offset<tflite::SubGraph>]	8	static
+flatbuffers.h:2457:26:P flatbuffers::Table::GetPointer(flatbuffers::voffset_t) [with P = const flatbuffers::Vector<long int>*]	8	static
+flatbuffers.h:2457:26:P flatbuffers::Table::GetPointer(flatbuffers::voffset_t) [with P = const flatbuffers::Vector<flatbuffers::Offset<tflite::SubGraph> >*]	8	static
+micro_interpreter.h:91:10:size_t tflite::MicroInterpreter::outputs_size() const	8	static
+micro_interpreter.cc:297:15:TfLiteTensor* tflite::MicroInterpreter::output(size_t)	16	static
+micro_interpreter.h:73:10:size_t tflite::MicroInterpreter::inputs_size() const	8	static
+micro_interpreter.cc:286:15:TfLiteTensor* tflite::MicroInterpreter::input(size_t)	16	static
+micro_interpreter.cc:72:1:tflite::MicroInterpreter::~MicroInterpreter()	16	static
+micro_interpreter.cc:90:14:TfLiteStatus tflite::MicroInterpreter::PrepareNodeAndRegistrationDataFromFlatbuffer()	80	static
+micro_interpreter.cc:308:14:TfLiteStatus tflite::MicroInterpreter::ResetVariableTensors()	0	static
+micro_interpreter.cc:181:14:TfLiteStatus tflite::MicroInterpreter::AllocateTensors()	48	static
+micro_interpreter.cc:271:14:TfLiteStatus tflite::MicroInterpreter::Invoke()	8	static

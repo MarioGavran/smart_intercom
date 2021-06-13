@@ -1,0 +1,13 @@
+fsmc_driver.c:22:6:FSMC_WR_REG	0	static
+fsmc_driver.c:36:6:FSMC_WR_DAT	0	static
+fsmc_driver.c:41:10:FSMC_RD_DAT	0	static
+fsmc_driver.c:55:6:LCD_SetWindow	12	static
+fsmc_driver.c:81:6:LCD_SetDirection.part.0	0	static
+fsmc_driver.c:81:6:LCD_SetDirection	0	static
+fsmc_driver.c:121:6:LCD_ClearScreen	0	static
+fsmc_driver.c:144:6:LCD_ClearArea	24	static
+fsmc_driver.c:166:6:LCD_DrawPoint	16	static
+fsmc_driver.c:185:6:LCD_DrawLine	64	static
+fsmc_driver.c:235:6:LCD_PrintCh	32	static
+fsmc_driver.c:271:6:LCD_PrintStr	40	static
+fsmc_driver.c:287:6:NT35510_Init	40	static

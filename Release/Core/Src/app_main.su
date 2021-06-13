@@ -1,0 +1,5 @@
+app_main.c:39:6:app_main_init	24	static
+app_main.c:76:6:app_main_loop	48	static
+app_main.c:202:6:EXTI0_HREF_Callback	16	static
+app_main.c:219:6:EXTI1_VSYNC_Callback	8	static
+app_main.c:191:6:HAL_GPIO_EXTI_Callback	0	static

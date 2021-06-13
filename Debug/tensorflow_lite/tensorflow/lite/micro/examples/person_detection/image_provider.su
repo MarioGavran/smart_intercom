@@ -1,0 +1,1 @@
+image_provider.cc:22:14:TfLiteStatus GetImage(tflite::ErrorReporter*, int, int, int, int8_t*)	32	static

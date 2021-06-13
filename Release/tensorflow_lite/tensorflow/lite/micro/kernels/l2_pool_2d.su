@@ -1,0 +1,10 @@
+types.h:202:3:tflite::RuntimeShape::~RuntimeShape()	8	static
+types.h:213:18:int32_t tflite::RuntimeShape::Dims(int) const	8	static
+types.h:403:12:int tflite::Offset(const tflite::RuntimeShape&, int, int, int, int)	16	static
+types.h:470:12:int tflite::MatchingDim(const tflite::RuntimeShape&, int, const tflite::RuntimeShape&, int)	16	static
+pooling.h:136:13:void tflite::reference_ops::L2Pool(const tflite::PoolParams&, const tflite::RuntimeShape&, const float*, const tflite::RuntimeShape&, float*)	136	static
+padding.h:44:12:int tflite::ComputeOutSize(TfLitePadding, int, int, int, int)	0	static
+kernel_util.h:46:26:TfLiteEvalTensor* tflite::micro::GetEvalOutput(const TfLiteContext*, const TfLiteNode*, int)	8	static
+l2_pool_2d.cc:38:14:TfLiteStatus tflite::{anonymous}::L2Prepare(TfLiteContext*, TfLiteNode*)	96	static
+l2_pool_2d.cc:101:14:TfLiteStatus tflite::{anonymous}::L2Eval(TfLiteContext*, TfLiteNode*)	136	static
+l2_pool_2d.cc:132:20:TfLiteRegistration tflite::Register_L2_POOL_2D()	16	static

@@ -1,0 +1,10 @@
+kernel_runner.cc:81:15:static TfLiteTensor* tflite::micro::KernelRunner::GetTensor(const TfLiteContext*, int)	8	static
+kernel_runner.cc:90:19:static TfLiteEvalTensor* tflite::micro::KernelRunner::GetEvalTensor(const TfLiteContext*, int)	16	static
+kernel_runner.cc:109:7:static void* tflite::micro::KernelRunner::AllocatePersistentBuffer(TfLiteContext*, size_t)	8	static
+kernel_runner.cc:145:7:static void* tflite::micro::KernelRunner::GetScratchBuffer(TfLiteContext*, int)	8	static
+kernel_runner.cc:165:14:static TfLiteStatus tflite::micro::KernelRunner::GetGraph(TfLiteContext*, TfLiteIntArray**)	8	static
+kernel_runner.cc:157:6:)	20	static
+kernel_runner.cc:118:14:static TfLiteStatus tflite::micro::KernelRunner::RequestScratchBufferInArena(TfLiteContext*, size_t, int*)	16	static
+kernel_runner.cc:34:1:tflite::micro::KernelRunner::KernelRunner(const TfLiteRegistration&, TfLiteTensor*, int, TfLiteIntArray*, TfLiteIntArray*, void*)	16	static
+kernel_runner.cc:62:14:TfLiteStatus tflite::micro::KernelRunner::InitAndPrepare(const char*, size_t)	8	static
+kernel_runner.cc:73:14:TfLiteStatus tflite::micro::KernelRunner::Invoke()	8	static

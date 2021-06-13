@@ -1,0 +1,5 @@
+softmax_common.cc:130:13:static float tflite::SoftmaxPrepare(TfLiteContext*, TfLiteNode*)::<lambda(float)>::_FUN(float)	0	static
+softmax_common.cc:128:13:static float tflite::SoftmaxPrepare(TfLiteContext*, TfLiteNode*)::<lambda(float)>::_FUN(float)	0	static
+common.h:317:13:void tflite::gen_lut(float (*)(float), float, float, int16_t*, int)	96	static
+softmax_common.cc:87:7:void* tflite::SoftmaxInit(TfLiteContext*, const char*, size_t)	8	static
+softmax_common.cc:92:14:TfLiteStatus tflite::SoftmaxPrepare(TfLiteContext*, TfLiteNode*)	72	static

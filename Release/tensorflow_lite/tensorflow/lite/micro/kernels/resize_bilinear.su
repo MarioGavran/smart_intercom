@@ -1,0 +1,13 @@
+resize_bilinear.cc:32:14:TfLiteStatus tflite::{anonymous}::Prepare(TfLiteContext*, TfLiteNode*)	48	static
+types.h:202:3:tflite::RuntimeShape::~RuntimeShape()	8	static
+types.h:213:18:int32_t tflite::RuntimeShape::Dims(int) const	8	static
+types.h:304:3:tflite::RuntimeShape::RuntimeShape(int, const tflite::RuntimeShape&, int)	24	static
+types.h:403:12:int tflite::Offset(const tflite::RuntimeShape&, int, int, int, int)	16	static
+types.h:470:12:int tflite::MatchingDim(const tflite::RuntimeShape&, int, const tflite::RuntimeShape&, int)	16	static
+resize_bilinear.h:29:13:void tflite::reference_ops::ComputeInterpolationValues(float, float, bool, int32_t, float*, int32_t*, int32_t*)	24	static
+resize_bilinear.h:119:13:void tflite::reference_ops::ComputeInterpolationValuesInteger(int32_t, int32_t, bool, int32_t, int32_t*, int32_t*, int32_t*)	8	static
+kernel_util.h:31:26:TfLiteEvalTensor* tflite::micro::GetMutableEvalInput(const TfLiteContext*, const TfLiteNode*, int)	8	static
+resize_bilinear.cc:105:20:TfLiteRegistration tflite::Register_RESIZE_BILINEAR()	16	static
+resize_bilinear.h:47:13:void tflite::reference_ops::ResizeBilinear(const tflite::ResizeBilinearParams&, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, const int32_t*, const tflite::RuntimeShape&, T*) [with T = float]	224	static
+resize_bilinear.h:136:13:void tflite::reference_ops::ResizeBilinearInteger(const tflite::ResizeBilinearParams&, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, const int32_t*, const tflite::RuntimeShape&, T*) [with T = signed char]	256	static
+resize_bilinear.cc:61:14:TfLiteStatus tflite::{anonymous}::Eval(TfLiteContext*, TfLiteNode*)	168	static

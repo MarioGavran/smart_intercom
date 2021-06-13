@@ -1,0 +1,15 @@
+transpose.cc:26:3:tflite::{anonymous}::TransposeContext::TransposeContext(TfLiteContext*, TfLiteNode*)	24	static
+transpose.cc:36:14:TfLiteStatus tflite::{anonymous}::Prepare(TfLiteContext*, TfLiteNode*)	56	static
+types.h:202:3:tflite::RuntimeShape::~RuntimeShape()	8	static
+types.h:213:18:int32_t tflite::RuntimeShape::Dims(int) const	8	static
+types.h:237:15:void tflite::RuntimeShape::Resize(int)	16	static
+types.h:304:3:tflite::RuntimeShape::RuntimeShape(int, const tflite::RuntimeShape&, int)	24	static
+common.h:737:12:int tflite::SubscriptToIndex(const tflite::NdArrayDesc<5>&, int*)	12	static
+tensor_ctypes.h:34:21:tflite::RuntimeShape tflite::GetTensorShape(const TfLiteTensor*)	16	static
+transpose.cc:102:20:TfLiteRegistration tflite::Register_TRANSPOSE()	16	static
+common.h:809:13:void tflite::CopyDimsToDesc(const tflite::RuntimeShape&, tflite::NdArrayDesc<N>*) [with int N = 5]	24	static
+common.h:934:13:void tflite::NDOpsHelper(const tflite::NdArrayDesc<N>&, const Calc&) [with int N = 5; Calc = tflite::reference_ops::TransposeImpl(const tflite::TransposeParams&, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, T*) [with T = long int; int N = 5]::<lambda(int*)>]	96	static
+transpose.h:26:6:void tflite::reference_ops::TransposeImpl(const tflite::TransposeParams&, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, T*) [with T = long int; int N = 5]	192	static
+common.h:916:51:typename std::enable_if<(DIM != (N - 1)), void>::type tflite::NDOpsHelperImpl(const tflite::NdArrayDesc<N>&, const Calc&, int*) [with int N = 5; int DIM = 0; Calc = tflite::reference_ops::TransposeImpl(const tflite::TransposeParams&, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, T*) [with T = signed char; int N = 5]::<lambda(int*)>]	32	static
+transpose.h:26:6:void tflite::reference_ops::TransposeImpl(const tflite::TransposeParams&, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, T*) [with T = signed char; int N = 5]	208	static
+transpose.cc:62:14:TfLiteStatus tflite::{anonymous}::Eval(TfLiteContext*, TfLiteNode*)	112	static

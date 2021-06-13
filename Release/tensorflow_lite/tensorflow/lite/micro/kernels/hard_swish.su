@@ -1,0 +1,13 @@
+hard_swish.cc:37:7:void* tflite::ops::micro::hard_swish::HardSwishInit(TfLiteContext*, const char*, size_t)	8	static
+fixedpoint.h:342:21:IntegerType gemmlowp::SaturatingRoundingDoublingHighMul(IntegerType, IntegerType) [with IntegerType = short int]	0	static
+types.h:202:3:tflite::RuntimeShape::~RuntimeShape()	8	static
+types.h:213:18:int32_t tflite::RuntimeShape::Dims(int) const	8	static
+types.h:519:12:int tflite::MatchingFlatSize(const tflite::RuntimeShape&, const tflite::RuntimeShape&)	24	static
+common.h:492:13:void tflite::DownScaleInt32ToInt16Multiplier(int32_t, int16_t*)	8	static
+hard_swish.cc:42:14:TfLiteStatus tflite::ops::micro::hard_swish::HardSwishPrepare(TfLiteContext*, TfLiteNode*)	56	static
+hard_swish.h:25:16:int16_t tflite::reference_ops::SaturatingLeftShift(int16_t, int)	0	static
+hard_swish.cc:129:20:TfLiteRegistration tflite::ops::micro::Register_HARD_SWISH()	16	static
+fixedpoint.h:357:20:IntegerType gemmlowp::RoundingDivideByPOT(IntegerType, int) [with IntegerType = short int]	8	static
+hard_swish.h:59:13:void tflite::reference_ops::HardSwish(const tflite::HardSwishParams&, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, T*) [with T = unsigned char]	40	static
+hard_swish.h:59:13:void tflite::reference_ops::HardSwish(const tflite::HardSwishParams&, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, T*) [with T = signed char]	48	static
+hard_swish.cc:87:14:TfLiteStatus tflite::ops::micro::hard_swish::HardSwishEval(TfLiteContext*, TfLiteNode*)	88	static

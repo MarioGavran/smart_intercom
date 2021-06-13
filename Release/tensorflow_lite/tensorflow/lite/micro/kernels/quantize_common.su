@@ -1,0 +1,6 @@
+types.h:202:3:tflite::RuntimeShape::~RuntimeShape()	8	static
+types.h:213:18:int32_t tflite::RuntimeShape::Dims(int) const	8	static
+types.h:519:12:int tflite::MatchingFlatSize(const tflite::RuntimeShape&, const tflite::RuntimeShape&)	24	static
+common.h:156:16:int32_t tflite::MultiplyByQuantizedMultiplier(int32_t, int32_t, int)	16	static
+quantize_common.cc:28:14:TfLiteStatus tflite::PrepareQuantizeReference(TfLiteContext*, TfLiteNode*)	48	static
+quantize_common.cc:77:14:TfLiteStatus tflite::EvalQuantizeReference(TfLiteContext*, TfLiteNode*)	104	static

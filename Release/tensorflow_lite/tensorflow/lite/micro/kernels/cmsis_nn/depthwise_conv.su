@@ -1,0 +1,13 @@
+depthwise_conv.cc:42:7:void* tflite::{anonymous}::Init(TfLiteContext*, const char*, size_t)	8	static
+types.h:202:3:tflite::RuntimeShape::~RuntimeShape()	8	static
+types.h:213:18:int32_t tflite::RuntimeShape::Dims(int) const	8	static
+types.h:289:14:int tflite::RuntimeShape::FlatSize() const	8	static
+types.h:403:12:int tflite::Offset(const tflite::RuntimeShape&, int, int, int, int)	16	static
+types.h:470:12:int tflite::MatchingDim(const tflite::RuntimeShape&, int, const tflite::RuntimeShape&, int)	16	static
+depthwiseconv_float.h:25:13:void tflite::reference_ops::DepthwiseConv(const tflite::DepthwiseParams&, const tflite::RuntimeShape&, const float*, const tflite::RuntimeShape&, const float*, const tflite::RuntimeShape&, const float*, const tflite::RuntimeShape&, float*)	160	static
+depthwise_conv.h:22:13:void tflite::reference_integer_ops::DepthwiseConvPerChannel(const tflite::DepthwiseParams&, const int32_t*, const int32_t*, const tflite::RuntimeShape&, const int8_t*, const tflite::RuntimeShape&, const int8_t*, const tflite::RuntimeShape&, const int32_t*, const tflite::RuntimeShape&, int8_t*)	176	static
+tensor_ctypes.h:34:21:tflite::RuntimeShape tflite::GetTensorShape(const TfLiteTensor*)	16	static
+depthwise_conv.cc:47:14:TfLiteStatus tflite::{anonymous}::Prepare(TfLiteContext*, TfLiteNode*)	272	static
+kernel_util.h:31:26:TfLiteEvalTensor* tflite::micro::GetMutableEvalInput(const TfLiteContext*, const TfLiteNode*, int)	8	static
+depthwise_conv.cc:253:14:TfLiteStatus tflite::{anonymous}::Eval(TfLiteContext*, TfLiteNode*)	576	static
+depthwise_conv.cc:300:20:TfLiteRegistration tflite::Register_DEPTHWISE_CONV_2D()	16	static

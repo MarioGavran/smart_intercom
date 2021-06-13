@@ -1,0 +1,5 @@
+common.h:156:16:int32_t tflite::MultiplyByQuantizedMultiplier(int32_t, int32_t, int)	16	static
+activation_utils.h:32:14:float tflite::ops::micro::ActivationValFloat(TfLiteFusedActivation, float)	8	static
+svdf_common.cc:51:6:void tflite::EvalIntegerSvdfReference(TfLiteContext*, TfLiteNode*, const TfLiteEvalTensor*, const TfLiteEvalTensor*, const TfLiteEvalTensor*, const TfLiteEvalTensor*, const TfLiteSVDFParams*, TfLiteEvalTensor*, TfLiteEvalTensor*, const tflite::OpData&)	88	static
+svdf_common.cc:257:6:void tflite::EvalFloatSvdfReference(TfLiteContext*, TfLiteNode*, const TfLiteEvalTensor*, const TfLiteEvalTensor*, const TfLiteEvalTensor*, const TfLiteEvalTensor*, const TfLiteSVDFParams*, int, TfLiteEvalTensor*, TfLiteEvalTensor*)	88	static
+svdf_common.cc:330:14:TfLiteStatus tflite::PrepareSvdf(TfLiteContext*, TfLiteNode*)	96	static

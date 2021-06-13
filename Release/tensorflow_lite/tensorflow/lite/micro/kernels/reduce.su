@@ -1,0 +1,30 @@
+reduce.cc:48:7:void* tflite::ops::micro::reduce::InitReduce(TfLiteContext*, const char*, size_t)	0	static
+reduce.cc:278:7:static float tflite::ops::micro::reduce::EvalMax(TfLiteContext*, TfLiteNode*)::<lambda(float, float)>::_FUN(float, float)	0	static
+reduce.h:98:18:static float tflite::reference_ops::ReduceSumImpl(const In*, const int*, const int*, int, int, const int*, int, int*, Out*) [with In = float; Out = float]::<lambda(float, float)>::_FUN(float, float)	0	static
+reduce.h:98:18:static long int tflite::reference_ops::ReduceSumImpl(const In*, const int*, const int*, int, int, const int*, int, int*, Out*) [with In = signed char; Out = long int]::<lambda(long int, signed char)>::_FUN(long int, signed char)	0	static
+reduce.h:98:18:static long unsigned int tflite::reference_ops::ReduceSumImpl(const In*, const int*, const int*, int, int, const int*, int, int*, Out*) [with In = unsigned char; Out = long unsigned int]::<lambda(long unsigned int, unsigned char)>::_FUN(long unsigned int, unsigned char)	0	static
+types.h:348:13:bool tflite::NextIndex(int, const int*, int*)	16	static
+types.h:202:3:tflite::RuntimeShape::~RuntimeShape()	8	static
+types.h:213:18:int32_t tflite::RuntimeShape::Dims(int) const	8	static
+types.h:304:3:tflite::RuntimeShape::RuntimeShape(int, const tflite::RuntimeShape&, int)	24	static
+types.h:375:15:size_t tflite::ReducedOutputOffset(int, const int*, const int*, int, const int*)	24	static
+types.h:403:12:int tflite::Offset(const tflite::RuntimeShape&, int, int, int, int)	16	static
+common.h:156:16:int32_t tflite::MultiplyByQuantizedMultiplier(int32_t, int32_t, int)	16	static
+reduce.h:58:13:bool tflite::reference_ops::ResolveAxis(int, const int*, int64_t, int*, int*)	32	static
+reduce.h:260:13:void tflite::reference_ops::Mean(const tflite::MeanParams&, const tflite::RuntimeShape&, const uint8_t*, int32_t, float, const tflite::RuntimeShape&, uint8_t*, int32_t, float)	144	static
+kernel_util.h:31:26:TfLiteEvalTensor* tflite::micro::GetMutableEvalInput(const TfLiteContext*, const TfLiteNode*, int)	8	static
+kernel_util.h:46:26:TfLiteEvalTensor* tflite::micro::GetEvalOutput(const TfLiteContext*, const TfLiteNode*, int)	8	static
+reduce.cc:52:14:TfLiteStatus tflite::ops::micro::reduce::PrepareSimple(TfLiteContext*, TfLiteNode*)	48	static
+reduce.cc:81:14:TfLiteStatus tflite::ops::micro::reduce::PrepareMax(TfLiteContext*, TfLiteNode*)	40	static
+reduce.cc:102:14:TfLiteStatus tflite::ops::micro::reduce::PrepareMeanOrSum(TfLiteContext*, TfLiteNode*)	40	static
+reduce.cc:127:6:void tflite::ops::micro::reduce::ResolveAxis(const int*, int, tflite::MeanParams*)	16	static
+reduce.cc:318:20:TfLiteRegistration tflite::ops::micro::Register_MEAN()	16	static
+reduce.cc:329:20:TfLiteRegistration tflite::ops::micro::Register_REDUCE_MAX()	16	static
+kernel_util.h:61:10:const T* tflite::micro::GetTensorData(const TfLiteEvalTensor*) [with T = int]	8	static
+reduce.h:217:13:void tflite::reference_ops::Mean(const tflite::MeanParams&, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, T*) [with T = float]	112	static
+mean.h:24:13:void tflite::reference_integer_ops::Mean(const tflite::MeanParams&, int32_t, int32_t, const tflite::RuntimeShape&, const integer_type*, int32_t, const tflite::RuntimeShape&, integer_type*, int32_t) [with integer_type = signed char]	128	static
+reduce.h:34:13:bool tflite::reference_ops::Reduce(const In*, const int*, const int*, int, int, const int*, int, int*, Out (*)(Out, In), Out*) [with In = float; Out = float]	40	static
+reduce.cc:261:14:TfLiteStatus tflite::ops::micro::reduce::EvalMax(TfLiteContext*, TfLiteNode*)	96	static
+reduce.h:34:13:bool tflite::reference_ops::Reduce(const In*, const int*, const int*, int, int, const int*, int, int*, Out (*)(Out, In), Out*) [with In = signed char; Out = long int]	48	static
+reduce.h:34:13:bool tflite::reference_ops::Reduce(const In*, const int*, const int*, int, int, const int*, int, int*, Out (*)(Out, In), Out*) [with In = unsigned char; Out = long unsigned int]	48	static
+reduce.cc:139:14:TfLiteStatus tflite::ops::micro::reduce::EvalMean(TfLiteContext*, TfLiteNode*)	168	static

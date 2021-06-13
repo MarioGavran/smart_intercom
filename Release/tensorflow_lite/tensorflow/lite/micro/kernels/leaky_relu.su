@@ -1,0 +1,8 @@
+leaky_relu.cc:97:7:void* tflite::{anonymous}::LeakyReluInit(TfLiteContext*, const char*, size_t)	8	static
+leaky_relu.cc:102:14:TfLiteStatus tflite::{anonymous}::LeakyReluPrepare(TfLiteContext*, TfLiteNode*)	56	static
+types.h:202:3:tflite::RuntimeShape::~RuntimeShape()	8	static
+types.h:213:18:int32_t tflite::RuntimeShape::Dims(int) const	8	static
+types.h:519:12:int tflite::MatchingFlatSize(const tflite::RuntimeShape&, const tflite::RuntimeShape&)	24	static
+common.h:156:16:int32_t tflite::MultiplyByQuantizedMultiplier(int32_t, int32_t, int)	16	static
+leaky_relu.cc:106:14:TfLiteStatus tflite::{anonymous}::LeakyReluEval(TfLiteContext*, TfLiteNode*)	104	static
+leaky_relu.cc:142:20:TfLiteRegistration tflite::Register_LEAKY_RELU()	16	static

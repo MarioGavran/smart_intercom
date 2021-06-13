@@ -1,0 +1,21 @@
+pooling.cc:266:7:void* tflite::ops::micro::pooling::Init(TfLiteContext*, const char*, size_t)	8	static
+types.h:202:3:tflite::RuntimeShape::~RuntimeShape()	8	static
+types.h:213:18:int32_t tflite::RuntimeShape::Dims(int) const	8	static
+types.h:403:12:int tflite::Offset(const tflite::RuntimeShape&, int, int, int, int)	16	static
+types.h:470:12:int tflite::MatchingDim(const tflite::RuntimeShape&, int, const tflite::RuntimeShape&, int)	16	static
+pooling.h:26:13:void tflite::reference_ops::AveragePool(const tflite::PoolParams&, const tflite::RuntimeShape&, const float*, const tflite::RuntimeShape&, float*)	136	static
+pooling.h:79:13:void tflite::reference_ops::AveragePool(const tflite::PoolParams&, const tflite::RuntimeShape&, const uint8_t*, const tflite::RuntimeShape&, uint8_t*)	128	static
+pooling.h:190:13:void tflite::reference_ops::MaxPool(const tflite::PoolParams&, const tflite::RuntimeShape&, const float*, const tflite::RuntimeShape&, float*)	144	static
+pooling.h:240:13:void tflite::reference_ops::MaxPool(const tflite::PoolParams&, const tflite::RuntimeShape&, const uint8_t*, const tflite::RuntimeShape&, uint8_t*)	128	static
+tensor_ctypes.h:34:21:tflite::RuntimeShape tflite::GetTensorShape(const TfLiteTensor*)	16	static
+padding.h:44:12:int tflite::ComputeOutSize(TfLitePadding, int, int, int, int)	0	static
+kernel_util.h:31:26:TfLiteEvalTensor* tflite::micro::GetMutableEvalInput(const TfLiteContext*, const TfLiteNode*, int)	8	static
+kernel_util.h:46:26:TfLiteEvalTensor* tflite::micro::GetEvalOutput(const TfLiteContext*, const TfLiteNode*, int)	8	static
+pooling.cc:384:20:TfLiteRegistration tflite::ops::micro::Register_AVERAGE_POOL_2D()	16	static
+pooling.cc:395:20:TfLiteRegistration tflite::ops::micro::Register_MAX_POOL_2D()	16	static
+kernel_util.h:253:6:void tflite::CalculateActivationRange(TfLiteFusedActivation, T*, T*) [with T = float]	0	static
+pooling.cc:47:14:TfLiteStatus tflite::ops::micro::pooling::{anonymous}::CalculateOpData(TfLiteContext*, const TfLitePoolParams*, const TfLiteTensor*, TfLiteTensor*, tflite::ops::micro::pooling::{anonymous}::OpData*)	72	static
+pooling.cc:271:14:TfLiteStatus tflite::ops::micro::pooling::MaxPrepare(TfLiteContext*, TfLiteNode*)	32	static
+pooling.cc:288:14:TfLiteStatus tflite::ops::micro::pooling::AveragePrepare(TfLiteContext*, TfLiteNode*)	88	static
+pooling.cc:323:14:TfLiteStatus tflite::ops::micro::pooling::AverageEval(TfLiteContext*, TfLiteNode*)	208	static
+pooling.cc:352:14:TfLiteStatus tflite::ops::micro::pooling::MaxEval(TfLiteContext*, TfLiteNode*)	208	static

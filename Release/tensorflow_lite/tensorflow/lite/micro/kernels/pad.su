@@ -1,0 +1,16 @@
+pad.cc:40:7:void* tflite::ops::micro::pad::Init(TfLiteContext*, const char*, size_t)	8	static
+types.h:202:3:tflite::RuntimeShape::~RuntimeShape()	8	static
+types.h:213:18:int32_t tflite::RuntimeShape::Dims(int) const	8	static
+types.h:237:15:void tflite::RuntimeShape::Resize(int)	16	static
+types.h:289:14:int tflite::RuntimeShape::FlatSize() const	8	static
+types.h:304:3:tflite::RuntimeShape::RuntimeShape(int, const tflite::RuntimeShape&, int)	24	static
+tensor_ctypes.h:34:21:tflite::RuntimeShape tflite::GetTensorShape(const TfLiteTensor*)	16	static
+pad.cc:45:14:TfLiteStatus tflite::ops::micro::pad::Prepare(TfLiteContext*, TfLiteNode*)	104	static
+kernel_util.h:31:26:TfLiteEvalTensor* tflite::micro::GetMutableEvalInput(const TfLiteContext*, const TfLiteNode*, int)	8	static
+pad.cc:229:20:TfLiteRegistration tflite::ops::micro::Register_PAD()	16	static
+pad.cc:241:20:TfLiteRegistration tflite::ops::micro::Register_PADV2()	8	static
+pad.h:38:13:void tflite::reference_ops::PadImpl(const tflite::PadParams&, const tflite::RuntimeShape&, const T*, const P*, const tflite::RuntimeShape&, T*) [with T = long int; P = long int]	192	static
+pad.h:38:13:void tflite::reference_ops::PadImpl(const tflite::PadParams&, const tflite::RuntimeShape&, const T*, const P*, const tflite::RuntimeShape&, T*) [with T = float; P = float]	184	static
+pad.h:38:13:void tflite::reference_ops::PadImpl(const tflite::PadParams&, const tflite::RuntimeShape&, const T*, const P*, const tflite::RuntimeShape&, T*) [with T = unsigned char; P = unsigned char]	192	static
+pad.h:38:13:void tflite::reference_ops::PadImpl(const tflite::PadParams&, const tflite::RuntimeShape&, const T*, const P*, const tflite::RuntimeShape&, T*) [with T = signed char; P = signed char]	192	static
+pad.cc:135:14:TfLiteStatus tflite::ops::micro::pad::Eval(TfLiteContext*, TfLiteNode*)	96	static

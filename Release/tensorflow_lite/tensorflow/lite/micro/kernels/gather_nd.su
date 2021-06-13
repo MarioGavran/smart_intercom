@@ -1,0 +1,4 @@
+gather_nd.cc:30:14:TfLiteStatus tflite::{anonymous}::Prepare(TfLiteContext*, TfLiteNode*)	56	static
+kernel_util.h:31:26:TfLiteEvalTensor* tflite::micro::GetMutableEvalInput(const TfLiteContext*, const TfLiteNode*, int)	8	static
+gather_nd.cc:169:14:TfLiteStatus tflite::{anonymous}::Eval(TfLiteContext*, TfLiteNode*)	64	static
+gather_nd.cc:190:20:TfLiteRegistration tflite::Register_GATHER_ND()	16	static

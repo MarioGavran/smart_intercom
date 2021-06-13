@@ -1,0 +1,13 @@
+fully_connected.cc:44:7:void* tflite::{anonymous}::Init(TfLiteContext*, const char*, size_t)	8	static
+types.h:202:3:tflite::RuntimeShape::~RuntimeShape()	8	static
+types.h:213:18:int32_t tflite::RuntimeShape::Dims(int) const	8	static
+fully_connected.cc:103:14:TfLiteStatus tflite::{anonymous}::EvalQuantizedInt8(TfLiteContext*, TfLiteNode*, const tflite::{anonymous}::OpData&, const TfLiteEvalTensor*, const TfLiteEvalTensor*, const TfLiteEvalTensor*, TfLiteEvalTensor*)	256	static
+fully_connected.h:26:13:void tflite::reference_ops::FullyConnected(const tflite::FullyConnectedParams&, const tflite::RuntimeShape&, const float*, const tflite::RuntimeShape&, const float*, const tflite::RuntimeShape&, const float*, const tflite::RuntimeShape&, float*)	56	static
+tensor_ctypes.h:34:21:tflite::RuntimeShape tflite::GetTensorShape(const TfLiteTensor*)	16	static
+fully_connected.cc:49:14:TfLiteStatus tflite::{anonymous}::Prepare(TfLiteContext*, TfLiteNode*)	120	static
+kernel_util.h:31:26:TfLiteEvalTensor* tflite::micro::GetMutableEvalInput(const TfLiteContext*, const TfLiteNode*, int)	8	static
+kernel_util.h:46:26:TfLiteEvalTensor* tflite::micro::GetEvalOutput(const TfLiteContext*, const TfLiteNode*, int)	8	static
+fully_connected.cc:225:14:TfLiteStatus tflite::{anonymous}::EvalInt8(TfLiteContext*, TfLiteNode*)	40	static
+fully_connected.cc:174:14:TfLiteStatus tflite::{anonymous}::Eval(TfLiteContext*, TfLiteNode*)	192	static
+fully_connected.cc:250:20:TfLiteRegistration tflite::Register_FULLY_CONNECTED()	16	static
+fully_connected.cc:262:20:TfLiteRegistration tflite::Register_FULLY_CONNECTED_INT8()	16	static

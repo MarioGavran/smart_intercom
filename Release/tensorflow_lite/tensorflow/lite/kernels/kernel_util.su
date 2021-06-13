@@ -1,0 +1,27 @@
+kernel_util.cc:42:22:TfLiteTensor* tflite::{anonymous}::GetTensorAtIndex(const TfLiteContext*, int)	4	static
+kernel_util.cc:52:21:TfLiteStatus tflite::{anonymous}::ValidateTensorIndexingSafe(const TfLiteContext*, int, int, const int*, int*)	16	static
+kernel_util.cc:75:12:int tflite::{anonymous}::ValidateTensorIndexing(const TfLiteContext*, int, int, const int*)	0	static
+kernel_util.cc:337:21:TfLiteStatus tflite::{anonymous}::Quantize(TfLiteContext*, float, int32_t, float, int32_t&)	24	static
+kernel_util.cc:109:21:const TfLiteTensor* tflite::GetInput(const TfLiteContext*, const TfLiteNode*, int)	8	static
+kernel_util.cc:114:14:TfLiteStatus tflite::GetInputSafe(const TfLiteContext*, const TfLiteNode*, int, const TfLiteTensor**)	32	static
+kernel_util.cc:119:15:TfLiteTensor* tflite::GetVariableInput(TfLiteContext*, const TfLiteNode*, int)	8	static
+kernel_util.cc:125:15:TfLiteTensor* tflite::GetOutput(TfLiteContext*, const TfLiteNode*, int)	8	static
+kernel_util.cc:135:14:TfLiteStatus tflite::GetOutputSafe(const TfLiteContext*, const TfLiteNode*, int, TfLiteTensor**)	32	static
+kernel_util.cc:145:21:const TfLiteTensor* tflite::GetOptionalInputTensor(const TfLiteContext*, const TfLiteNode*, int)	0	static
+kernel_util.cc:151:15:TfLiteTensor* tflite::GetTemporary(TfLiteContext*, const TfLiteNode*, int)	8	static
+kernel_util.cc:161:14:TfLiteStatus tflite::GetTemporarySafe(const TfLiteContext*, const TfLiteNode*, int, TfLiteTensor**)	32	static
+kernel_util.cc:172:21:const TfLiteTensor* tflite::GetIntermediates(TfLiteContext*, const TfLiteNode*, int)	8	static
+kernel_util.cc:182:14:TfLiteStatus tflite::GetIntermediatesSafe(const TfLiteContext*, const TfLiteNode*, int, TfLiteTensor**)	32	static
+kernel_util.cc:322:14:TfLiteStatus tflite::GetQuantizedConvolutionMultipler(TfLiteContext*, const TfLiteTensor*, const TfLiteTensor*, TfLiteTensor*, double*)	24	static
+kernel_util.cc:285:14:TfLiteStatus tflite::GetQuantizedConvolutionMultipler(TfLiteContext*, const TfLiteTensor*, const TfLiteTensor*, const TfLiteTensor*, TfLiteTensor*, double*)	48	static
+kernel_util.cc:382:14:TfLiteStatus tflite::CalculateActivationRangeQuantized(TfLiteContext*, TfLiteFusedActivation, TfLiteTensor*, int32_t*, int32_t*)	48	static
+kernel_util.cc:210:14:TfLiteStatus tflite::PopulateConvolutionQuantizationParams(TfLiteContext*, const TfLiteTensor*, const TfLiteTensor*, const TfLiteTensor*, TfLiteTensor*, const TfLiteFusedActivation&, int32_t*, int*, int32_t*, int32_t*, int32_t*, int*, int)	96	static
+kernel_util.cc:195:14:TfLiteStatus tflite::PopulateConvolutionQuantizationParams(TfLiteContext*, const TfLiteTensor*, const TfLiteTensor*, const TfLiteTensor*, TfLiteTensor*, const TfLiteFusedActivation&, int32_t*, int*, int32_t*, int32_t*, int32_t*, int*)	48	static
+kernel_util.cc:406:6:bool tflite::HaveSameShapes(const TfLiteTensor*, const TfLiteTensor*)	8	static
+kernel_util.cc:491:5:int tflite::TfLiteTypeGetSize(TfLiteType)	0	static
+kernel_util.cc:536:6:bool tflite::IsMobilePlatform()	0	static
+string_conversions.h:99:5:) [with _String = std::__cxx11::basic_string<char>; _CharT = char]	28	dynamic
+kernel_util.cc:417:13:std::string tflite::GetShapeDebugString(const TfLiteIntArray*)	88	static
+unique_ptr.h:286:7:std::unique_ptr<_Tp, _Dp>::~unique_ptr() [with _Tp = TfLiteIntArray; _Dp = void (*)(TfLiteIntArray*)]	8	static
+kernel_util.cc:429:14:TfLiteStatus tflite::CalculateShapeForBroadcast(TfLiteContext*, const TfLiteTensor*, const TfLiteTensor*, TfLiteIntArray**)	104	static
+kernel_util.cc:458:14:TfLiteStatus tflite::CalculateShapeForBroadcast(TfLiteContext*, const TfLiteTensor*, const TfLiteTensor*, const TfLiteTensor*, TfLiteIntArray**)	144	static

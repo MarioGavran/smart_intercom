@@ -1,0 +1,2 @@
+i2c_driver.c:16:9:i2c_read_reg	24	static
+i2c_driver.c:28:6:i2c_write_reg	24	static

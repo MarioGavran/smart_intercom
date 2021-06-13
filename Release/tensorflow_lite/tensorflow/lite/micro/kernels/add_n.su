@@ -1,0 +1,7 @@
+add_n.cc:129:14:TfLiteStatus tflite::{anonymous}::Prepare(TfLiteContext*, TfLiteNode*)	88	static
+types.h:202:3:tflite::RuntimeShape::~RuntimeShape()	8	static
+types.h:289:14:int tflite::RuntimeShape::FlatSize() const	8	static
+common.h:141:16:int32_t tflite::MultiplyByQuantizedMultiplierSmallerThanOneExp(int32_t, int32_t, int)	16	static
+kernel_util.h:31:26:TfLiteEvalTensor* tflite::micro::GetMutableEvalInput(const TfLiteContext*, const TfLiteNode*, int)	8	static
+add_n.cc:187:14:TfLiteStatus tflite::{anonymous}::Eval(TfLiteContext*, TfLiteNode*)	112	static
+add_n.cc:204:20:TfLiteRegistration tflite::Register_ADD_N()	16	static

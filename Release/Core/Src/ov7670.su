@@ -1,0 +1,7 @@
+ov7670.c:62:6:writeRegister	0	static
+ov7670.c:9:6:saturation	16	static
+ov7670.c:23:6:frameControl	16	static
+ov7670.c:39:6:subsamplingControl	16	static
+ov7670.c:74:9:readRegister	0	static
+ov7670.c:54:6:testPattern	8	static
+ov7670.c:81:6:setMode	8	static

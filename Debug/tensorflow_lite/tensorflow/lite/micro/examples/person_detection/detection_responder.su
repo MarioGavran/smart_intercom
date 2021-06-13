@@ -1,0 +1,1 @@
+detection_responder.cc:21:6:void RespondToDetection(tflite::ErrorReporter*, int8_t, int8_t)	16	static
