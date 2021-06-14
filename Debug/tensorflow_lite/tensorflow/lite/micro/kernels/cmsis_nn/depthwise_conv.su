@@ -26,8 +26,8 @@ kernel_util.h:152:12:int tflite::NumInputs(const TfLiteNode*)	16	static
 kernel_util.h:31:26:TfLiteEvalTensor* tflite::micro::GetMutableEvalInput(const TfLiteContext*, const TfLiteNode*, int)	24	static
 kernel_util.h:40:32:const TfLiteEvalTensor* tflite::micro::GetEvalInput(const TfLiteContext*, const TfLiteNode*, int)	24	static
 kernel_util.h:46:26:TfLiteEvalTensor* tflite::micro::GetEvalOutput(const TfLiteContext*, const TfLiteNode*, int)	24	static
-depthwise_conv.cc:42:7:void* tflite::{anonymous}::Init(TfLiteContext*, const char*, size_t)	24	static
-depthwise_conv.cc:47:14:TfLiteStatus tflite::{anonymous}::Prepare(TfLiteContext*, TfLiteNode*)	296	static
+depthwise_conv.cc:41:7:void* tflite::{anonymous}::Init(TfLiteContext*, const char*, size_t)	24	static
+depthwise_conv.cc:46:14:TfLiteStatus tflite::{anonymous}::Prepare(TfLiteContext*, TfLiteNode*)	296	static
 depthwise_conv.cc:153:6:void tflite::{anonymous}::EvalQuantizedPerChannel(TfLiteContext*, TfLiteNode*, const TfLiteDepthwiseConvParams&, const tflite::{anonymous}::OpData&, const TfLiteEvalTensor*, const TfLiteEvalTensor*, const TfLiteEvalTensor*, TfLiteEvalTensor*)	472	static
 depthwise_conv.cc:253:14:TfLiteStatus tflite::{anonymous}::Eval(TfLiteContext*, TfLiteNode*)	240	static
 depthwise_conv.cc:300:20:TfLiteRegistration tflite::Register_DEPTHWISE_CONV_2D()	24	static

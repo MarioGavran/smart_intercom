@@ -1,17 +1,17 @@
 gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
 flatbuffers.h:2436:18:const uint8_t* flatbuffers::Table::GetVTable() const	24	static
 flatbuffers.h:2442:13:flatbuffers::voffset_t flatbuffers::Table::GetOptionalFieldOffset(flatbuffers::voffset_t) const	24	static
-schema_generated.h:994:28:const char* const* tflite::EnumNamesBuiltinOperator()	4	static
-schema_generated.h:1142:20:const char* tflite::EnumNameBuiltinOperator(tflite::BuiltinOperator)	24	static
-schema_generated.h:10253:12:uint32_t tflite::Operator::opcode_index() const	16	static
-schema_generated.h:10256:39:const flatbuffers::Vector<long int>* tflite::Operator::inputs() const	16	static
-schema_generated.h:10259:39:const flatbuffers::Vector<long int>* tflite::Operator::outputs() const	16	static
-schema_generated.h:10599:39:const flatbuffers::Vector<unsigned char>* tflite::Operator::custom_options() const	16	static
-schema_generated.h:11195:39:const flatbuffers::Vector<long int>* tflite::SubGraph::inputs() const	16	static
-schema_generated.h:11198:39:const flatbuffers::Vector<long int>* tflite::SubGraph::outputs() const	16	static
-schema_generated.h:11201:69:const flatbuffers::Vector<flatbuffers::Offset<tflite::Operator> >* tflite::SubGraph::operators() const	16	static
-schema_generated.h:11655:73:const flatbuffers::Vector<flatbuffers::Offset<tflite::OperatorCode> >* tflite::Model::operator_codes() const	16	static
-schema_generated.h:11658:69:const flatbuffers::Vector<flatbuffers::Offset<tflite::SubGraph> >* tflite::Model::subgraphs() const	16	static
+schema_generated.h:996:28:const char* const* tflite::EnumNamesBuiltinOperator()	4	static
+schema_generated.h:1145:20:const char* tflite::EnumNameBuiltinOperator(tflite::BuiltinOperator)	24	static
+schema_generated.h:10256:12:uint32_t tflite::Operator::opcode_index() const	16	static
+schema_generated.h:10259:39:const flatbuffers::Vector<long int>* tflite::Operator::inputs() const	16	static
+schema_generated.h:10262:39:const flatbuffers::Vector<long int>* tflite::Operator::outputs() const	16	static
+schema_generated.h:10602:39:const flatbuffers::Vector<unsigned char>* tflite::Operator::custom_options() const	16	static
+schema_generated.h:11198:39:const flatbuffers::Vector<long int>* tflite::SubGraph::inputs() const	16	static
+schema_generated.h:11201:39:const flatbuffers::Vector<long int>* tflite::SubGraph::outputs() const	16	static
+schema_generated.h:11204:69:const flatbuffers::Vector<flatbuffers::Offset<tflite::Operator> >* tflite::SubGraph::operators() const	16	static
+schema_generated.h:11658:73:const flatbuffers::Vector<flatbuffers::Offset<tflite::OperatorCode> >* tflite::Model::operator_codes() const	16	static
+schema_generated.h:11661:69:const flatbuffers::Vector<flatbuffers::Offset<tflite::SubGraph> >* tflite::Model::subgraphs() const	16	static
 micro_graph.h:78:7:int tflite::MicroGraph::GetCurrentSubgraphIndex()	16	static
 micro_graph.h:82:24:tflite::SubgraphAllocations* tflite::MicroGraph::GetAllocations()	16	static
 micro_interpreter.h:73:10:size_t tflite::MicroInterpreter::inputs_size() const	16	static

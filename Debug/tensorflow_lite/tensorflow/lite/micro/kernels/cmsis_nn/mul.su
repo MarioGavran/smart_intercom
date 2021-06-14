@@ -32,13 +32,13 @@ kernel_util.h:153:12:int tflite::NumOutputs(const TfLiteNode*)	16	static
 kernel_util.h:31:26:TfLiteEvalTensor* tflite::micro::GetMutableEvalInput(const TfLiteContext*, const TfLiteNode*, int)	24	static
 kernel_util.h:40:32:const TfLiteEvalTensor* tflite::micro::GetEvalInput(const TfLiteContext*, const TfLiteNode*, int)	24	static
 kernel_util.h:46:26:TfLiteEvalTensor* tflite::micro::GetEvalOutput(const TfLiteContext*, const TfLiteNode*, int)	24	static
-mul.cc:52:14:TfLiteStatus tflite::ops::micro::mul::CalculateOpData(TfLiteContext*, TfLiteNode*, TfLiteMulParams*, tflite::ops::micro::mul::OpData*)	72	static
-mul.cc:89:7:void* tflite::ops::micro::mul::Init(TfLiteContext*, const char*, size_t)	24	static
-mul.cc:94:14:TfLiteStatus tflite::ops::micro::mul::Prepare(TfLiteContext*, TfLiteNode*)	24	static
-mul.cc:104:6:void tflite::ops::micro::mul::EvalQuantized(TfLiteContext*, TfLiteNode*, const tflite::ops::micro::mul::OpData&, const TfLiteEvalTensor*, const TfLiteEvalTensor*, TfLiteEvalTensor*)	552	static
-mul.cc:153:6:void tflite::ops::micro::mul::EvalFloat(TfLiteContext*, TfLiteNode*, TfLiteMulParams*, const tflite::ops::micro::mul::OpData&, const TfLiteEvalTensor*, const TfLiteEvalTensor*, TfLiteEvalTensor*)	352	static
-mul.cc:180:14:TfLiteStatus tflite::ops::micro::mul::Eval(TfLiteContext*, TfLiteNode*)	64	static
-mul.cc:212:20:TfLiteRegistration tflite::ops::micro::Register_MUL()	24	static
+mul.cc:53:14:TfLiteStatus tflite::ops::micro::mul::{anonymous}::CalculateOpData(TfLiteContext*, TfLiteNode*, TfLiteMulParams*, tflite::ops::micro::mul::{anonymous}::OpData*)	72	static
+mul.cc:92:6:void tflite::ops::micro::mul::EvalQuantized(TfLiteContext*, TfLiteNode*, const tflite::ops::micro::mul::{anonymous}::OpData*, const TfLiteEvalTensor*, const TfLiteEvalTensor*, TfLiteEvalTensor*)	408	static
+mul.cc:131:6:void tflite::ops::micro::mul::EvalFloat(TfLiteContext*, TfLiteNode*, TfLiteMulParams*, const tflite::ops::micro::mul::{anonymous}::OpData*, const TfLiteEvalTensor*, const TfLiteEvalTensor*, TfLiteEvalTensor*)	352	static
+mul.cc:161:7:void* tflite::ops::micro::mul::Init(TfLiteContext*, const char*, size_t)	24	static
+mul.cc:166:14:TfLiteStatus tflite::ops::micro::mul::Prepare(TfLiteContext*, TfLiteNode*)	24	static
+mul.cc:176:14:TfLiteStatus tflite::ops::micro::mul::Eval(TfLiteContext*, TfLiteNode*)	64	static
+mul.cc:207:20:TfLiteRegistration tflite::ops::micro::Register_MUL()	24	static
 common.h:59:10:T tflite::ActivationFunctionWithMinMax(T, T, T) [with T = float]	24	static
 fixedpoint.h:357:20:IntegerType gemmlowp::RoundingDivideByPOT(IntegerType, int) [with IntegerType = long int]	56	static
 stl_algobase.h:222:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = float]	16	static
@@ -49,10 +49,6 @@ kernel_util.h:253:6:void tflite::CalculateActivationRange(TfLiteFusedActivation,
 kernel_util.h:61:10:const T* tflite::micro::GetTensorData(const TfLiteEvalTensor*) [with T = signed char]	16	static
 kernel_util.h:55:4:T* tflite::micro::GetTensorData(TfLiteEvalTensor*) [with T = signed char]	16	static
 mul.h:89:13:void tflite::reference_integer_ops::BroadcastMul4DSlow(const tflite::ArithmeticParams&, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, T*) [with T = signed char]	168	static
-kernel_util.h:61:10:const T* tflite::micro::GetTensorData(const TfLiteEvalTensor*) [with T = unsigned char]	16	static
-kernel_util.h:55:4:T* tflite::micro::GetTensorData(TfLiteEvalTensor*) [with T = unsigned char]	16	static
-mul.h:89:13:void tflite::reference_integer_ops::BroadcastMul4DSlow(const tflite::ArithmeticParams&, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, T*) [with T = unsigned char]	168	static
-mul.h:45:13:void tflite::reference_integer_ops::Mul(const tflite::ArithmeticParams&, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, T*) [with T = unsigned char]	40	static
 kernel_util.h:61:10:const T* tflite::micro::GetTensorData(const TfLiteEvalTensor*) [with T = float]	16	static
 kernel_util.h:55:4:T* tflite::micro::GetTensorData(TfLiteEvalTensor*) [with T = float]	16	static
 mul.h:115:6:void tflite::reference_ops::BroadcastMul4DSlow(const tflite::ArithmeticParams&, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, const T*, const tflite::RuntimeShape&, T*) [with T = float]	168	static
@@ -64,7 +60,6 @@ fixedpoint.h:199:14:tIntegerType gemmlowp::MaskIfLessThan(tIntegerType, tInteger
 fixedpoint.h:94:14:tIntegerType gemmlowp::Add(tIntegerType, tIntegerType) [with tIntegerType = long int]	16	static
 fixedpoint.h:185:14:tIntegerType gemmlowp::MaskIfGreaterThan(tIntegerType, tIntegerType) [with tIntegerType = long int]	16	static
 common.h:809:13:void tflite::CopyDimsToDesc(const tflite::RuntimeShape&, tflite::NdArrayDesc<N>*) [with int N = 4]	24	static
-mul.h:26:13:void tflite::reference_integer_ops::MulElementwise(int, const tflite::ArithmeticParams&, const T*, const T*, T*) [with T = unsigned char]	56	static
-types.h:1189:13:void tflite::GetActivationParams(const P&, float*, float*) [with P = tflite::ArithmeticParams]	24	static
+types.h:1191:13:void tflite::GetActivationParams(const P&, float*, float*) [with P = tflite::ArithmeticParams]	24	static
 fixedpoint.h:156:14:tIntegerType gemmlowp::MaskIfNonZero(tIntegerType) [with tIntegerType = long int]	16	static
 fixedpoint.h:88:14:tIntegerType gemmlowp::BitNot(tIntegerType) [with tIntegerType = long int]	16	static

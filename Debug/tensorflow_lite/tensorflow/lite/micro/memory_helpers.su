@@ -1,8 +1,8 @@
 gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
 flatbuffers.h:2436:18:const uint8_t* flatbuffers::Table::GetVTable() const	24	static
 flatbuffers.h:2442:13:flatbuffers::voffset_t flatbuffers::Table::GetOptionalFieldOffset(flatbuffers::voffset_t) const	24	static
-schema_generated.h:3809:39:const flatbuffers::Vector<long int>* tflite::Tensor::shape() const	16	static
-schema_generated.h:3812:22:tflite::TensorType tflite::Tensor::type() const	16	static
+schema_generated.h:3812:39:const flatbuffers::Vector<long int>* tflite::Tensor::shape() const	16	static
+schema_generated.h:3815:22:tflite::TensorType tflite::Tensor::type() const	16	static
 types.h:156:3:tflite::RuntimeShape::RuntimeShape()	16	static
 types.h:175:3:tflite::RuntimeShape::RuntimeShape(int, const int32_t*)	24	static
 types.h:202:3:tflite::RuntimeShape::~RuntimeShape()	16	static

@@ -25,8 +25,8 @@ typedef enum{
 }uart_rx_state_t;
 
 
-#define UART_TX_BUFFER_MAX	1023
-#define UART_RX_BUFFER_MAX	1023
+#define UART_TX_BUFFER_MAX	255
+#define UART_RX_BUFFER_MAX	255
 
 void uart_init();
 void uart_tx_process();

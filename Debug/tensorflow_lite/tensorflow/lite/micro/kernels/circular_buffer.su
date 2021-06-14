@@ -41,9 +41,9 @@ kernel_util.h:40:32:const TfLiteEvalTensor* tflite::micro::GetEvalInput(const Tf
 kernel_util.h:46:26:TfLiteEvalTensor* tflite::micro::GetEvalOutput(const TfLiteContext*, const TfLiteNode*, int)	24	static
 circular_buffer.cc:72:7:void* tflite::ops::micro::circular_buffer::Init(TfLiteContext*, const char*, size_t)	64	static
 circular_buffer.cc:88:14:TfLiteStatus tflite::ops::micro::circular_buffer::Prepare(TfLiteContext*, TfLiteNode*)	56	static
-circular_buffer.cc:138:6:void tflite::ops::micro::circular_buffer::EvalInt8(const int8_t*, int, int, int8_t*)	24	static
-circular_buffer.cc:143:14:TfLiteStatus tflite::ops::micro::circular_buffer::Eval(TfLiteContext*, TfLiteNode*)	48	static
-circular_buffer.cc:178:21:TfLiteRegistration* tflite::ops::micro::Register_CIRCULAR_BUFFER()	4	static
+circular_buffer.cc:139:6:void tflite::ops::micro::circular_buffer::EvalInt8(const int8_t*, int, int, int8_t*)	24	static
+circular_buffer.cc:144:14:TfLiteStatus tflite::ops::micro::circular_buffer::Eval(TfLiteContext*, TfLiteNode*)	48	static
+circular_buffer.cc:179:21:TfLiteRegistration* tflite::ops::micro::Register_CIRCULAR_BUFFER()	4	static
 util.h:291:13:bool flatbuffers::StringToIntegerImpl(T*, const char*, int, bool) [with T = long long int]	32	static
 flexbuffers.h:136:3:R flexbuffers::ReadSizedScalar(const uint8_t*, uint8_t) [with R = long long int; T1 = signed char; T2 = short int; T4 = long int; T8 = long long int]	16	static
 flexbuffers.h:136:3:R flexbuffers::ReadSizedScalar(const uint8_t*, uint8_t) [with R = long long unsigned int; T1 = unsigned char; T2 = short unsigned int; T4 = long unsigned int; T8 = long long unsigned int]	16	static

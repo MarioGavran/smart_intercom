@@ -30,6 +30,9 @@ void app_main_loop();
 void EXTI0_HREF_Callback();
 void EXTI1_VSYNC_Callback();
 
+extern char g_cam_gray_frame[];
+extern int8_t g_person_score;
+
 #ifdef __cplusplus
 }
 #endif

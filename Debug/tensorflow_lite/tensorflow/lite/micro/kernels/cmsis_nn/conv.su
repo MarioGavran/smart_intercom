@@ -25,9 +25,9 @@ kernel_util.h:40:32:const TfLiteEvalTensor* tflite::micro::GetEvalInput(const Tf
 kernel_util.h:46:26:TfLiteEvalTensor* tflite::micro::GetEvalOutput(const TfLiteContext*, const TfLiteNode*, int)	24	static
 conv.cc:41:7:void* tflite::{anonymous}::Init(TfLiteContext*, const char*, size_t)	24	static
 conv.cc:46:14:TfLiteStatus tflite::{anonymous}::Prepare(TfLiteContext*, TfLiteNode*)	240	static
-conv.cc:131:14:TfLiteStatus tflite::{anonymous}::EvalQuantizedPerChannel(TfLiteContext*, TfLiteNode*, const TfLiteConvParams&, const tflite::{anonymous}::OpData&, const TfLiteEvalTensor*, const TfLiteEvalTensor*, const TfLiteEvalTensor*, TfLiteEvalTensor*, TfLiteEvalTensor*)	464	static
-conv.cc:245:14:TfLiteStatus tflite::{anonymous}::Eval(TfLiteContext*, TfLiteNode*)	264	static
-conv.cc:296:20:TfLiteRegistration tflite::Register_CONV_2D()	24	static
+conv.cc:128:14:TfLiteStatus tflite::{anonymous}::EvalQuantizedPerChannel(TfLiteContext*, TfLiteNode*, const TfLiteConvParams&, const tflite::{anonymous}::OpData&, const TfLiteEvalTensor*, const TfLiteEvalTensor*, const TfLiteEvalTensor*, TfLiteEvalTensor*, TfLiteEvalTensor*)	464	static
+conv.cc:242:14:TfLiteStatus tflite::{anonymous}::Eval(TfLiteContext*, TfLiteNode*)	264	static
+conv.cc:293:20:TfLiteRegistration tflite::Register_CONV_2D()	24	static
 stl_algobase.h:198:5:constexpr const _Tp& std::min(const _Tp&, const _Tp&) [with _Tp = long int]	16	static
 stl_algobase.h:222:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = long int]	16	static
 common.h:59:10:T tflite::ActivationFunctionWithMinMax(T, T, T) [with T = float]	24	static

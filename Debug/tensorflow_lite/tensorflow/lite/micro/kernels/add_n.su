@@ -33,7 +33,7 @@ add_n.cc:134:18:const T** tflite::{anonymous}::CopyInputsToScratchBuffer(TfLiteC
 kernel_util.h:55:4:T* tflite::micro::GetTensorData(TfLiteEvalTensor*) [with T = float]	16	static
 add_n.h:28:13:void tflite::reference_ops::AddN(const tflite::RuntimeShape&, size_t, const T* const*, T*) [with T = float]	40	static
 add_n.cc:134:18:const T** tflite::{anonymous}::CopyInputsToScratchBuffer(TfLiteContext*, TfLiteNode*, int) [with T = signed char]	56	static
-types.h:1171:13:void tflite::SetActivationParams(int32_t, int32_t, P*) [with P = tflite::ArithmeticParams]	24	static
+types.h:1173:13:void tflite::SetActivationParams(int32_t, int32_t, P*) [with P = tflite::ArithmeticParams]	24	static
 kernel_util.h:55:4:T* tflite::micro::GetTensorData(TfLiteEvalTensor*) [with T = signed char]	16	static
 fixedpoint.h:156:14:tIntegerType gemmlowp::MaskIfNonZero(tIntegerType) [with tIntegerType = long int]	16	static
 kernel_util.h:61:10:const T* tflite::micro::GetTensorData(const TfLiteEvalTensor*) [with T = float]	16	static

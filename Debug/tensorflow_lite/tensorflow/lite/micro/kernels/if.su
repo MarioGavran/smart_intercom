@@ -1,0 +1,10 @@
+kernel_util.h:161:16:int64_t tflite::NumElements(const TfLiteIntArray*)	32	static
+kernel_util.h:169:16:int64_t tflite::NumElements(const TfLiteTensor*)	16	static
+kernel_util.h:31:26:TfLiteEvalTensor* tflite::micro::GetMutableEvalInput(const TfLiteContext*, const TfLiteNode*, int)	24	static
+kernel_util.h:40:32:const TfLiteEvalTensor* tflite::micro::GetEvalInput(const TfLiteContext*, const TfLiteNode*, int)	24	static
+kernel_util.h:46:26:TfLiteEvalTensor* tflite::micro::GetEvalOutput(const TfLiteContext*, const TfLiteNode*, int)	24	static
+gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+if.cc:38:7:void* tflite::{anonymous}::Init(TfLiteContext*, const char*, size_t)	24	static
+if.cc:43:14:TfLiteStatus tflite::{anonymous}::Prepare(TfLiteContext*, TfLiteNode*)	80	static
+if.cc:87:14:TfLiteStatus tflite::{anonymous}::Eval(TfLiteContext*, TfLiteNode*)	112	static
+if.cc:155:20:TfLiteRegistration tflite::Register_IF()	24	static

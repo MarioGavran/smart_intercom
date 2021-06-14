@@ -17,7 +17,7 @@ limitations under the License.
 
 #include "tensorflow/lite/micro/examples/person_detection/model_settings.h"
 
-extern char g_cam_gray_frame[];
+#include "app_main.h"
 
 TfLiteStatus GetImage(tflite::ErrorReporter* error_reporter, int image_width,
                       int image_height, int channels, int8_t* image_data) {

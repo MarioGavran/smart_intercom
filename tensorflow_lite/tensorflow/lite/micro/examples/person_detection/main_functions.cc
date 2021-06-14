@@ -97,6 +97,8 @@ void setup() {
   input = interpreter->input(0);
 }
 
+
+extern int8_t g_person_score;
 // The name of this function is important for Arduino compatibility.
 void loop() {
   // Get image from provider.
@@ -116,4 +118,5 @@ void loop() {
   int8_t person_score = output->data.uint8[kPersonIndex];
   int8_t no_person_score = output->data.uint8[kNotAPersonIndex];
   RespondToDetection(error_reporter, person_score, no_person_score);
+  g_person_score = person_score;
 }

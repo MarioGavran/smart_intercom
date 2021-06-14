@@ -2,10 +2,10 @@ gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
 flatbuffers.h:561:15:const char* flatbuffers::String::c_str() const	16	static
 flatbuffers.h:2436:18:const uint8_t* flatbuffers::Table::GetVTable() const	24	static
 flatbuffers.h:2442:13:flatbuffers::voffset_t flatbuffers::Table::GetOptionalFieldOffset(flatbuffers::voffset_t) const	24	static
-schema_generated.h:994:28:const char* const* tflite::EnumNamesBuiltinOperator()	4	static
-schema_generated.h:1142:20:const char* tflite::EnumNameBuiltinOperator(tflite::BuiltinOperator)	24	static
-schema_generated.h:10143:30:const flatbuffers::String* tflite::OperatorCode::custom_code() const	16	static
-schema_generated.h:10146:11:int32_t tflite::OperatorCode::version() const	16	static
+schema_generated.h:996:28:const char* const* tflite::EnumNamesBuiltinOperator()	4	static
+schema_generated.h:1145:20:const char* tflite::EnumNameBuiltinOperator(tflite::BuiltinOperator)	24	static
+schema_generated.h:10146:30:const flatbuffers::String* tflite::OperatorCode::custom_code() const	16	static
+schema_generated.h:10149:11:int32_t tflite::OperatorCode::version() const	16	static
 op_resolver.cc:25:14:TfLiteStatus tflite::GetRegistrationFromOpCode(const tflite::OperatorCode*, const tflite::OpResolver&, tflite::ErrorReporter*, const TfLiteRegistration**)	40	static
 base.h:380:24:T flatbuffers::EndianScalar(T) [with T = long unsigned int]	16	static
 flatbuffers.h:339:18:const uint8_t* flatbuffers::Vector<T>::Data() const [with T = char]	16	static

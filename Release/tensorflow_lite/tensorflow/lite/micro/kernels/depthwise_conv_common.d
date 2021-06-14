@@ -13,7 +13,6 @@ tensorflow_lite/tensorflow/lite/micro/kernels/depthwise_conv_common.o: \
  /home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/kernels/op_macros.h \
  /home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/kernels/internal/quantization_util.h \
  /home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/kernels/internal/reference/depthwiseconv_float.h \
- /home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/kernels/internal/reference/depthwiseconv_uint8.h \
  /home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/kernels/internal/reference/integer_ops/depthwise_conv.h \
  /home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/kernels/internal/tensor_ctypes.h \
  /home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/kernels/kernel_util.h \
@@ -47,8 +46,6 @@ tensorflow_lite/tensorflow/lite/micro/kernels/depthwise_conv_common.o: \
 /home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/kernels/internal/quantization_util.h:
 
 /home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/kernels/internal/reference/depthwiseconv_float.h:
-
-/home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/kernels/internal/reference/depthwiseconv_uint8.h:
 
 /home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/kernels/internal/reference/integer_ops/depthwise_conv.h:
 

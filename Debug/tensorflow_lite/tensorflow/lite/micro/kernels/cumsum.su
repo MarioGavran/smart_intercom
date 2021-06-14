@@ -28,7 +28,7 @@ kernel_util.h:61:10:const T* tflite::micro::GetTensorData(const TfLiteEvalTensor
 kernel_util.h:61:10:const T* tflite::micro::GetTensorData(const TfLiteEvalTensor*) [with T = float]	16	static
 kernel_util.h:55:4:T* tflite::micro::GetTensorData(TfLiteEvalTensor*) [with T = float]	16	static
 cumsum.h:29:13:void tflite::reference_ops::CumSum(const T*, const tflite::RuntimeShape&, int32_t, bool, bool, T*) [with T = float]	80	static
-types.h:1171:13:void tflite::SetActivationParams(int32_t, int32_t, P*) [with P = tflite::ArithmeticParams]	24	static
+types.h:1173:13:void tflite::SetActivationParams(int32_t, int32_t, P*) [with P = tflite::ArithmeticParams]	24	static
 kernel_util.h:61:10:const T* tflite::micro::GetTensorData(const TfLiteEvalTensor*) [with T = signed char]	16	static
 kernel_util.h:55:4:T* tflite::micro::GetTensorData(TfLiteEvalTensor*) [with T = signed char]	16	static
 fixedpoint.h:64:10:tRawType gemmlowp::Dup(typename gemmlowp::FixedPointRawTypeTraits<tRawType>::ScalarRawType) [with tRawType = long int]	16	static

@@ -9,5 +9,5 @@ conv.h:24:13:void tflite::reference_integer_ops::ConvPerChannel(const tflite::Co
 tensor_ctypes.h:34:21:tflite::RuntimeShape tflite::GetTensorShape(const TfLiteTensor*)	16	static
 conv.cc:46:14:TfLiteStatus tflite::{anonymous}::Prepare(TfLiteContext*, TfLiteNode*)	216	static
 kernel_util.h:31:26:TfLiteEvalTensor* tflite::micro::GetMutableEvalInput(const TfLiteContext*, const TfLiteNode*, int)	8	static
-conv.cc:245:14:TfLiteStatus tflite::{anonymous}::Eval(TfLiteContext*, TfLiteNode*)	552	static
-conv.cc:296:20:TfLiteRegistration tflite::Register_CONV_2D()	16	static
+conv.cc:242:14:TfLiteStatus tflite::{anonymous}::Eval(TfLiteContext*, TfLiteNode*)	552	static
+conv.cc:293:20:TfLiteRegistration tflite::Register_CONV_2D()	16	static
