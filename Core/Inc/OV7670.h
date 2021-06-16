@@ -14,6 +14,22 @@
 
 
 
+extern char g_cam_buff[];
+extern char g_cam_gray_frame[];
+
+
+
+#define OV7670_RST_HIGH				HAL_GPIO_WritePin(OV7670_RST_GPIO_Port, OV7670_RST_Pin, GPIO_PIN_SET)
+#define OV7670_RST_LOW				HAL_GPIO_WritePin(OV7670_RST_GPIO_Port, OV7670_RST_Pin, GPIO_PIN_RESET)
+
+#define OV7670_FRAME_SIZE_VGA		640*480*2	// not enough RAM
+#define OV7670_FRAME_SIZE_QVGA		320*240*2	// 153600
+#define OV7670_FRAME_SIZE_QQVGA		160*120*2
+
+#define OV7670_GRAY_SIZE			96*96
+
+
+
 //~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
 typedef enum {
 	QQQVGA_RGB565,
@@ -23,18 +39,17 @@ typedef enum {
 
 
 
-void saturation(int8_t s);
-void frameControl(int16_t hStart,  int16_t vStart);
-void subsamplingControl(int8_t com14, int8_t downSample, int8_t pclk_div);
-void testPattern(uint8_t kind);
-void writeRegister(unsigned char reg, unsigned char val);
-uint8_t readRegister(unsigned char reg);
-void setMode(ov7670_res_fmt_t mode);
+void ov7670_saturation(int8_t s);
+void ov7670_frame_control(int16_t hStart,  int16_t vStart);
+void ov7670_subsampling_control(int8_t com14, int8_t downSample, int8_t pclk_div);
+void ov7670_test_pattern(uint8_t kind);
+void ov7670_write_register(unsigned char reg, unsigned char val);
+uint8_t ov7670_read_register(unsigned char reg);
+void ov7670_set_mode(ov7670_res_fmt_t resolution, uint16_t exposure);
+void ov7670_init();
 
-
-
-
-
+void EXTI0_HREF_Callback();
+void EXTI1_VSYNC_Callback();
 
 //..........NAME:...................ADDRESS....DEFAULT..R/W/RW......COMMENT.....................................................................................
 #define		OV7670_GAIN 			0x00	// 00 		RW			AGC – Gain control gain setting
@@ -47,7 +62,7 @@ void setMode(ov7670_res_fmt_t mode);
 #define		OV7670_AECHH	 		0x07	// 00 		RW			Exposure Value - AEC[15:10]
 #define		OV7670_RAVE 			0x08	// 00 		RW			V/R Average Level
 #define		OV7670_COM2	 			0x09	// 01 		RW			Common Control 2: Soft sleep mode, Output drive capability
-///#define		OV7670_PID 				0x0A	// 76 		R			Product ID Number MSB
+#define		OV7670_PID 				0x0A	// 76 		R			Product ID Number MSB
 #define		OV7670_VER 				0x0B	// 73 		R			Product ID Number LSB
 #define		OV7670_COM3	 			0x0C	// 00 		RW			Common Control 3: Output data MSB/LSB swap, Tri-state output clock & data, Scale & DCW enable
 #define		OV7670_COM4	 			0x0D	// 00 		RW			Common Control 4: Average option (must be same value as COM17[7:6])
@@ -200,9 +215,9 @@ void setMode(ov7670_res_fmt_t mode);
 
 
 
-#define TSLB_NEG 0x20               //< TSLB Negative image enable
-#define TSLB_YLAST 0x04             //< TSLB UYVY or VYUY, see COM13
-#define TSLB_AOW 0x01               //< TSLB Auto output window
+#define		TSLB_NEG				0x20    //< TSLB Negative image enable
+#define		TSLB_YLAST				0x04    //< TSLB UYVY or VYUY, see COM13
+#define		TSLB_AOW				0x01    //< TSLB Auto output window
 
 #define  	COM3_SWAP				0x40	// Byte swap
 #define  	COM3_SCALEEN			0x08	// Enable scaling
@@ -226,31 +241,31 @@ void setMode(ov7670_res_fmt_t mode);
 #define		COM8_AWB	  			0x02	// White balance enable
 #define		COM8_AEC	  			0x01	// Auto exposure enable
 
-#define		COM8_FASTAEC			0x80           //< COM8 Enable fast AGC/AEC algo,
-#define		COM8_AECSTEP			0x40           //< COM8 AEC step size unlimited
-#define		COM8_BANDING			0x20           //< COM8 Banding filter enable
-#define		COM8_AGC				0x04               //< COM8 AGC (auto gain) enable
-#define		COM8_AWB				0x02               //< COM8 AWB (auto white balance)
-#define		COM8_AEC				0x01               //< COM8 AEC (auto exposure) enable
+#define		COM8_FASTAEC			0x80    // COM8 Enable fast AGC/AEC algo,
+#define		COM8_AECSTEP			0x40    // COM8 AEC step size unlimited
+#define		COM8_BANDING			0x20    // COM8 Banding filter enable
+#define		COM8_AGC				0x04    // COM8 AGC (auto gain) enable
+#define		COM8_AWB				0x02    // COM8 AWB (auto white balance)
+#define		COM8_AEC				0x01    // COM8 AEC (auto exposure) enable
 
-#define COM10_HSYNC 0x40            //< COM10 HREF changes to HSYNC
-#define COM10_PCLK_HB 0x20          //< COM10 Suppress PCLK on hblank
-#define COM10_HREF_REV 0x08         //< COM10 HREF reverse
-#define COM10_VS_EDGE 0x04          //< COM10 VSYNC chg on PCLK rising
-#define COM10_VS_NEG 0x02           //< COM10 VSYNC negative
-#define COM10_HS_NEG 0x01           //< COM10 HSYNC negative
+#define COM10_HSYNC 				0x40    // COM10 HREF changes to HSYNC
+#define COM10_PCLK_HB 				0x20    // COM10 Suppress PCLK on hblank
+#define COM10_HREF_REV 				0x08   	// COM10 HREF reverse
+#define COM10_VS_EDGE				0x04   	// COM10 VSYNC chg on PCLK rising
+#define COM10_VS_NEG				0x02   	// COM10 VSYNC negative
+#define COM10_HS_NEG				0x01   	// COM10 HSYNC negative
 
 // Night mode, flicker, banding /
-#define REG_COM11                   0x3b    /* Control 11 */
-#define COM11_NIGHT                 0x80    /* NIght mode enable */
-#define COM11_NIGHT_MIN_RATE_1_1    0x00    /* Normal mode same */
-#define COM11_NIGHT_MIN_RATE_1_2    0x20    /* Normal mode 1/2 */
-#define COM11_NIGHT_MIN_RATE_1_4    0x40    /* Normal mode 1/4 */
-#define COM11_NIGHT_MIN_RATE_1_8    0x60    /* Normal mode 1/5 */
-#define COM11_HZAUTO_ON             0x10    /* Auto detect 50/60 Hz on */
-#define COM11_HZAUTO_OFF            0x00    /* Auto detect 50/60 Hz off */
-#define COM11_60HZ                  0x00    /* Manual 60Hz select */
-#define COM11_50HZ                  0x08    /* Manual 50Hz select */
+#define REG_COM11                   0x3b    // Control 11
+#define COM11_NIGHT                 0x80    // NIght mode enable
+#define COM11_NIGHT_MIN_RATE_1_1    0x00    // Normal mode same
+#define COM11_NIGHT_MIN_RATE_1_2    0x20    // Normal mode 1/2
+#define COM11_NIGHT_MIN_RATE_1_4    0x40    // Normal mode 1/4
+#define COM11_NIGHT_MIN_RATE_1_8    0x60    // Normal mode 1/5
+#define COM11_HZAUTO_ON             0x10    // Auto detect 50/60 Hz on
+#define COM11_HZAUTO_OFF            0x00    // Auto detect 50/60 Hz off
+#define COM11_60HZ                  0x00    // Manual 60Hz select
+#define COM11_50HZ                  0x08    // Manual 50Hz select
 #define COM11_EXP                   0x02
 
 #define		COM13_GAMMA				0x80	// Gamma enable

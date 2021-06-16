@@ -44,7 +44,8 @@ tensorflow_lite/tensorflow/lite/micro/examples/person_detection/image_provider.o
  ../Core/Inc/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
  ../Core/Inc/i2c.h ../Core/Inc/main.h ../Core/Inc/tim.h \
  ../Core/Inc/usart.h ../Core/Inc/uart_driver.h ../Core/Inc/i2c_driver.h \
- ../Core/Inc/OV7670.h
+ ../Core/Inc/OV7670.h \
+ /home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/main_functions.h
 
 /home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/image_provider.h:
 
@@ -147,3 +148,5 @@ tensorflow_lite/tensorflow/lite/micro/examples/person_detection/image_provider.o
 ../Core/Inc/i2c_driver.h:
 
 ../Core/Inc/OV7670.h:
+
+/home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/main_functions.h:

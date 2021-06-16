@@ -98,7 +98,6 @@ void setup() {
 }
 
 
-extern int8_t g_person_score;
 // The name of this function is important for Arduino compatibility.
 void loop() {
   // Get image from provider.

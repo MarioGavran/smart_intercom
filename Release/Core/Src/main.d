@@ -40,7 +40,8 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
  ../Core/Src/../Inc/i2c.h ../Core/Src/../Inc/tim.h \
  ../Core/Src/../Inc/usart.h ../Core/Src/../Inc/uart_driver.h \
  ../Core/Src/../Inc/i2c_driver.h ../Core/Src/../Inc/OV7670.h \
- /home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/main_functions.h
+ /home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/main_functions.h \
+ ../Core/Inc/app_main.h
 
 ../Core/Inc/main.h:
 
@@ -149,3 +150,5 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
 ../Core/Src/../Inc/OV7670.h:
 
 /home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/main_functions.h:
+
+../Core/Inc/app_main.h:

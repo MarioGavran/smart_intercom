@@ -7,6 +7,7 @@
 
 #ifndef INC_APP_MAIN_H_
 #define INC_APP_MAIN_H_
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -14,6 +15,7 @@ extern "C" {
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include "../Inc/main.h"
 #include "../Inc/fsmc_driver.h"
 #include "../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
@@ -23,14 +25,13 @@ extern "C" {
 #include "uart_driver.h"
 #include "i2c_driver.h"
 #include "OV7670.h"
+#include "tensorflow/lite/micro/examples/person_detection/main_functions.h"
 
 
 void app_main_init();
 void app_main_loop();
-void EXTI0_HREF_Callback();
-void EXTI1_VSYNC_Callback();
 
-extern char g_cam_gray_frame[];
+
 extern int8_t g_person_score;
 
 #ifdef __cplusplus
