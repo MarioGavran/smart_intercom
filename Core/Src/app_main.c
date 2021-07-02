@@ -4,19 +4,7 @@
  *  Created on: Jun 12, 2021
  *      Author: enio
  */
-
-
-
-
-/*x42
- * app_main.c
- *
- *  Created on: Mar 8, 2021
- *      Author: Mario
- */
 #include "../Inc/app_main.h"
-
-
 
 
 
@@ -43,7 +31,7 @@ void app_main_init()
 	ov7670_init();
 }
 
-//=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~_Min_Stack_Size
+//=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 void app_main_loop()
 {
 	uint8_t buff[10] = {0};
@@ -63,10 +51,10 @@ void app_main_loop()
 	{
 		tflite_micro_loop();
 		sprintf(buff,"%03d",abs(g_person_score));
-		LCD_PrintStr(20, 20, 0xffff, 0x0000, buff, 5);
+		LCD_PrintStr(20, 400, 0xffff, 0x0000, buff, 5);
 
-		//uart_tx_process();
-		//uart_rx_process();
+		uart_tx_process();
+		uart_rx_process();
 
 		LCD_SetWindow(20 , 280, 20+96-1, 280+96-1); // 320 x 240
 		for(j = 72; j <= 72 + 96; j++)
@@ -93,7 +81,7 @@ void app_main_loop()
 			}
 		}
 
-/*
+
 		LCD_SetWindow(20, 20, 340-1, 260-1); // 320 x 240
 		for(j = 0; j <= OV7670_FRAME_SIZE_QVGA - 2; j+=2)
 		{
@@ -125,20 +113,8 @@ void app_main_loop()
 			}
 			else
 			{// every second
-				//writeRegister(0x55, p++);
-				//if ( p == 0xFF)
-				//	p = 0;
-
-
-
-
-				//sprintf(buff, "0x");
-				//uint8_t dejta = i2c_read_reg(0x42, 0x0AU);
-				//sprintf(buff + strlen(buff), "%02x", dejta);
-				//dejta = i2c_read_reg(0x42, 0x0BU);
-				//sprintf(buff + strlen(buff), "%02x", dejta);
-				//uart_write(buff);
-				//LCD_PrintStr(20, 20, 0, 0x841FU, buff, 5);
+				sprintf(buff, "0x\r\n");
+				uart_write(buff);
 			}
 		}
 		if(HAL_GetTick() > milis2 + 5000)
@@ -158,7 +134,7 @@ void app_main_loop()
 				//uart_write("bok\r\n");
 			}
 		}
-*/
+/**/
 	}
 }
 

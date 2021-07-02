@@ -46,6 +46,6 @@ extern "C" void DebugLog(const char* s) {
   // maximum reduction in binary size. This is because we have DebugLog calls
   // via TF_LITE_CHECK that are not stubbed out by TF_LITE_REPORT_ERROR.
   //fprintf(stderr, "%s", s);
-  uart_write((uint8_t*)s);
+  //uart_write((uint8_t*)s);
 #endif
 }

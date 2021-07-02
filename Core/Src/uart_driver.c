@@ -22,7 +22,7 @@ uint16_t g_uart_rx_cnt = 0;
 
 
 
-//~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
+//~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
 void uart_init()
 {
 	__HAL_UART_ENABLE_IT(&huart6, UART_IT_RXNE);
@@ -30,7 +30,7 @@ void uart_init()
 
 
 
-//~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
+//~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
 void uart_tx_process()
 {
 	static uint8_t last_nose = 0;
@@ -65,14 +65,13 @@ void uart_tx_process()
 			g_uart_tx_state = UART_TX_TRANSMIT;
 		else if((last_nose != g_uart_tx_nose) && (g_uart_tx_tail == g_uart_tx_nose))
 			g_uart_tx_state = UART_TX_IDLE;
-
 		break;
 	}
 }
 
 
 
-//~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
+//~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
 void uart_write(uint8_t* buff)
 {
 	uint8_t string_size = strlen(buff) + 1;
@@ -102,7 +101,7 @@ void uart_write(uint8_t* buff)
 
 
 
-//~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
+//~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
 {
 	g_uart_tx_nose += strlen(g_uart_tx_buffer + g_uart_tx_nose) + 1;
@@ -114,7 +113,7 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
 
 
 
-//~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
+//~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
 void uart_rx_process()
 {
 	uint8_t string_size = strlen(g_uart_rx_buffer + g_uart_rx_nose + 1) + 1;
@@ -159,19 +158,14 @@ void uart_rx_process()
 
 
 
-//~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
+//~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
 void uart_rx_callback()
 {
 	g_uart_rx_tail++;
 
-	// 1 & 2 - |....N!!!!!!T...|
-	// 1 & 3 - |!!!T..N!!!!!!!!|
-	//______________________________________________________________________________________________________________
-	//				1				|					2				  | 					3					|
-	//--------------------------------------------------------------------------------------------------------------
 	if((g_uart_rx_tail < (UART_RX_BUFFER_MAX - 1)) && ((g_uart_rx_nose < g_uart_rx_tail) || (g_uart_rx_nose - g_uart_rx_tail > 2/*1*/)))
 	{
-		g_uart_rx_buffer[g_uart_rx_tail] = (0x000000FFU & USART6->DR);//253
+		g_uart_rx_buffer[g_uart_rx_tail] = (0x00FFU & USART6->DR);//253
 		if((g_uart_rx_buffer[g_uart_rx_tail] == '\r') /*&& ((g_uart_rx_nose < g_uart_rx_tail) || (g_uart_rx_nose - g_uart_rx_tail > 2))*/)
 		{
 			g_uart_rx_buffer[++g_uart_rx_tail] = '\n';//254
@@ -185,7 +179,7 @@ void uart_rx_callback()
 	}
 	else if((g_uart_rx_tail == (UART_RX_BUFFER_MAX - 1)) && (g_uart_rx_nose > 1)/*(g_uart_rx_nose < g_uart_rx_tail)*/)
 	{
-		g_uart_rx_buffer[g_uart_rx_tail] = (0x000000FFU & USART6->DR);//254
+		g_uart_rx_buffer[g_uart_rx_tail] = (0x00FFU & USART6->DR);//254
 		g_uart_rx_buffer[++g_uart_rx_tail] = '\0';//255
 		if(g_uart_rx_buffer[g_uart_rx_tail - 1] == '\r')
 		{
@@ -206,13 +200,15 @@ void uart_rx_callback()
 	{
 		g_uart_rx_buffer[g_uart_rx_tail] = '\0';
 		g_uart_rx_tail = 1;
-		g_uart_rx_buffer[g_uart_rx_tail] = (0x000000FFU & USART6->DR);
+		g_uart_rx_buffer[g_uart_rx_tail] = (0x00FFU & USART6->DR);
 
 	}
 
 }
 
 
+
+//~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
 void serial_protocol(uint8_t* buff)
 {
 	LCD_PrintStr(20, 100, 0, 0x841FU, buff, 5);

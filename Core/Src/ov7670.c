@@ -1,4 +1,4 @@
-#include "../Inc/OV7670.h"
+#include "ov7670.h"
 #include "uart_driver.h"
 #include "tim.h"
 #include <stdio.h>

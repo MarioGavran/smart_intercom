@@ -21,7 +21,6 @@ typedef enum{
 typedef enum{
 	UART_RX_IDLE,
 	UART_RX_RECEIVE,
-	UART_RX_RECEIVING
 }uart_rx_state_t;
 
 

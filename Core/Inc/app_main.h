@@ -18,13 +18,13 @@ extern "C" {
 #include <stdlib.h>
 #include "../Inc/main.h"
 #include "../Inc/fsmc_driver.h"
-#include "../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+#include "stm32f4xx_hal_gpio.h"
 #include "i2c.h"
 #include "tim.h"
 #include "usart.h"
 #include "uart_driver.h"
 #include "i2c_driver.h"
-#include "OV7670.h"
+#include "ov7670.h"
 #include "tensorflow/lite/micro/examples/person_detection/main_functions.h"
 
 

@@ -1,5 +1,5 @@
 /*
- * OV7670.h
+ * ov7670.h
  *
  *  Created on: Apr 6, 2021
  *      Author: Mario

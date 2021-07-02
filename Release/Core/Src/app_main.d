@@ -36,11 +36,10 @@ Core/Src/app_main.o: ../Core/Src/app_main.c ../Core/Src/../Inc/app_main.h \
  ../Core/Src/../Inc/../Inc/fsmc_driver.h \
  ../Core/Src/../Inc/../Inc/../Inc/main.h \
  /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/arm-none-eabi/include/c++/9.3.1/math.h \
- ../Core/Src/../Inc/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
  ../Core/Src/../Inc/i2c.h ../Core/Src/../Inc/main.h \
  ../Core/Src/../Inc/tim.h ../Core/Src/../Inc/usart.h \
  ../Core/Src/../Inc/uart_driver.h ../Core/Src/../Inc/i2c_driver.h \
- ../Core/Src/../Inc/OV7670.h \
+ ../Core/Src/../Inc/ov7670.h \
  /home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/main_functions.h \
  ../Core/Inc/app_main.h
 
@@ -120,8 +119,6 @@ Core/Src/app_main.o: ../Core/Src/app_main.c ../Core/Src/../Inc/app_main.h \
 
 /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/arm-none-eabi/include/c++/9.3.1/math.h:
 
-../Core/Src/../Inc/../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:
-
 ../Core/Src/../Inc/i2c.h:
 
 ../Core/Src/../Inc/main.h:
@@ -134,7 +131,7 @@ Core/Src/app_main.o: ../Core/Src/app_main.c ../Core/Src/../Inc/app_main.h \
 
 ../Core/Src/../Inc/i2c_driver.h:
 
-../Core/Src/../Inc/OV7670.h:
+../Core/Src/../Inc/ov7670.h:
 
 /home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/main_functions.h:
 

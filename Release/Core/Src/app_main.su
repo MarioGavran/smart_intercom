@@ -1,2 +1,2 @@
-app_main.c:28:6:app_main_init	24	static
-app_main.c:47:6:app_main_loop	64	static
+app_main.c:16:6:app_main_init	24	static
+app_main.c:35:6:app_main_loop	72	static
