@@ -1,5 +1,5 @@
 cumsum.cc:97:14:TfLiteStatus tflite::{anonymous}::Prepare(TfLiteContext*, TfLiteNode*)	80	static
-types.h:213:18:int32_t tflite::RuntimeShape::Dims(int) const	8	static
+runtime_shape.h:54:11:int32_t tflite::RuntimeShape::Dims(int) const	8	static
 common.h:141:16:int32_t tflite::MultiplyByQuantizedMultiplierSmallerThanOneExp(int32_t, int32_t, int)	16	static
 cumsum.h:87:13:void tflite::reference_ops::CumSum(const tflite::ArithmeticParams&, const int8_t*, const tflite::RuntimeShape&, int32_t, bool, bool, int8_t*)	72	static
 kernel_util.h:31:26:TfLiteEvalTensor* tflite::micro::GetMutableEvalInput(const TfLiteContext*, const TfLiteNode*, int)	8	static

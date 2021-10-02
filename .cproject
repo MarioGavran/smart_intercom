@@ -380,6 +380,8 @@
                                     <listOptionValue builtIn="false" value="STM32F413xx"/>
                                     									
                                     <listOptionValue builtIn="false" value="__ARM_FEATURE_DSP=1"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="CMSIS_NN"/>
                                     								
                                 </option>
                                 								

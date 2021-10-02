@@ -1,0 +1,2 @@
+debug_log.cc:29:6:void RegisterDebugLogCallback(void (*)(const char*))	0	static
+debug_log.cc:33:6:void DebugLog(const char*)	0	static

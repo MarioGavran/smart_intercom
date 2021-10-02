@@ -18,10 +18,10 @@ limitations under the License.
 #include "tensorflow/lite/micro/examples/person_detection/detection_responder.h"
 #include "tensorflow/lite/micro/examples/person_detection/image_provider.h"
 #include "tensorflow/lite/micro/examples/person_detection/model_settings.h"
-#include "tensorflow/lite/micro/examples/person_detection/person_detect_model_data.h"
 #include "tensorflow/lite/micro/micro_error_reporter.h"
 #include "tensorflow/lite/micro/micro_interpreter.h"
 #include "tensorflow/lite/micro/micro_mutable_op_resolver.h"
+#include "tensorflow/lite/micro/models/person_detect_model_data.h"
 #include "tensorflow/lite/micro/system_setup.h"
 #include "tensorflow/lite/schema/schema_generated.h"
 
@@ -97,7 +97,6 @@ void setup() {
   input = interpreter->input(0);
 }
 
-
 // The name of this function is important for Arduino compatibility.
 void loop() {
   // Get image from provider.
@@ -105,17 +104,19 @@ void loop() {
                             input->data.int8)) {
     TF_LITE_REPORT_ERROR(error_reporter, "Image capture failed.");
   }
-
+  //HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
   // Run the model on this input and make sure it succeeds.
   if (kTfLiteOk != interpreter->Invoke()) {
     TF_LITE_REPORT_ERROR(error_reporter, "Invoke failed.");
   }
-
+  //HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);
   TfLiteTensor* output = interpreter->output(0);
 
   // Process the inference results.
   int8_t person_score = output->data.uint8[kPersonIndex];
   int8_t no_person_score = output->data.uint8[kNotAPersonIndex];
   RespondToDetection(error_reporter, person_score, no_person_score);
+
   g_person_score = person_score;
+  g_no_person_score = no_person_score;
 }

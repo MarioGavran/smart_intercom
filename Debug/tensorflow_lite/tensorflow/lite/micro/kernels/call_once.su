@@ -1,0 +1,5 @@
+gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+call_once.cc:38:7:void* tflite::{anonymous}::Init(TfLiteContext*, const char*, size_t)	24	static
+call_once.cc:43:14:TfLiteStatus tflite::{anonymous}::Prepare(TfLiteContext*, TfLiteNode*)	48	static
+call_once.cc:67:14:TfLiteStatus tflite::{anonymous}::Eval(TfLiteContext*, TfLiteNode*)	32	static
+call_once.cc:93:20:TfLiteRegistration tflite::Register_CALL_ONCE()	24	static

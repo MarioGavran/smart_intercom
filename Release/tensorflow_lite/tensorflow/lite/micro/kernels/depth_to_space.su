@@ -1,7 +1,5 @@
-types.h:202:3:tflite::RuntimeShape::~RuntimeShape()	8	static
-types.h:213:18:int32_t tflite::RuntimeShape::Dims(int) const	8	static
-types.h:304:3:tflite::RuntimeShape::RuntimeShape(int, const tflite::RuntimeShape&, int)	24	static
-types.h:403:12:int tflite::Offset(const tflite::RuntimeShape&, int, int, int, int)	16	static
+runtime_shape.h:93:3:tflite::RuntimeShape::RuntimeShape(int, const tflite::RuntimeShape&, int)	24	static
+runtime_shape.h:119:12:int tflite::Offset(const tflite::RuntimeShape&, int, int, int, int)	16	static
 kernel_util.h:46:26:TfLiteEvalTensor* tflite::micro::GetEvalOutput(const TfLiteContext*, const TfLiteNode*, int)	8	static
 depth_to_space.cc:89:14:TfLiteStatus tflite::{anonymous}::Prepare(TfLiteContext*, TfLiteNode*)	56	static
 depth_to_space.cc:132:20:TfLiteRegistration tflite::Register_DEPTH_TO_SPACE()	16	static

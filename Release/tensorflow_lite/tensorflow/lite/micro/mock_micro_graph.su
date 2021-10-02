@@ -5,4 +5,4 @@ mock_micro_graph.cc:52:19:virtual TfLiteEvalTensor* tflite::MockMicroGraph::GetS
 mock_micro_graph.cc:64:5:virtual int tflite::MockMicroGraph::NumSubgraphs()	0	static
 mock_micro_graph.h:29:7:tflite::MockMicroGraph::~MockMicroGraph()	8	static
 mock_micro_graph.h:29:7:virtual tflite::MockMicroGraph::~MockMicroGraph()	8	static
-mock_micro_graph.cc:22:1:tflite::MockMicroGraph::MockMicroGraph(tflite::SimpleMemoryAllocator*)	40	static
+mock_micro_graph.cc:22:1:tflite::MockMicroGraph::MockMicroGraph(tflite::SimpleMemoryAllocator*)	48	static

@@ -2,21 +2,21 @@ limits:925:7:static constexpr short int std::numeric_limits<short int>::min()	4	
 limits:928:7:static constexpr short int std::numeric_limits<short int>::max()	4	static
 limits:1204:7:static constexpr long int std::numeric_limits<long int>::min()	4	static
 limits:1207:7:static constexpr long int std::numeric_limits<long int>::max()	4	static
-types.h:202:3:tflite::RuntimeShape::~RuntimeShape()	16	static
-types.h:212:18:int32_t tflite::RuntimeShape::DimensionsCount() const	16	static
-types.h:213:18:int32_t tflite::RuntimeShape::Dims(int) const	16	static
-types.h:231:25:const int32_t* tflite::RuntimeShape::DimsData() const	16	static
-types.h:470:12:int tflite::MatchingDim(const tflite::RuntimeShape&, int, const tflite::RuntimeShape&, int)	40	static
-types.h:673:12:int tflite::FlatSizeSkipDim(const tflite::RuntimeShape&, int)	32	static
-types.h:685:12:int tflite::MatchingFlatSizeSkipDim(const tflite::RuntimeShape&, int, const tflite::RuntimeShape&)	40	static
+runtime_shape.h:51:3:tflite::RuntimeShape::~RuntimeShape()	16	static
+runtime_shape.h:53:11:int32_t tflite::RuntimeShape::DimensionsCount() const	16	static
+runtime_shape.h:54:11:int32_t tflite::RuntimeShape::Dims(int) const	16	static
+runtime_shape.h:70:18:const int32_t* tflite::RuntimeShape::DimsData() const	16	static
+types.h:263:12:int tflite::MatchingDim(const tflite::RuntimeShape&, int, const tflite::RuntimeShape&, int)	40	static
+types.h:518:12:int tflite::FlatSizeSkipDim(const tflite::RuntimeShape&, int)	32	static
+types.h:530:12:int tflite::MatchingFlatSizeSkipDim(const tflite::RuntimeShape&, int, const tflite::RuntimeShape&)	40	static
 cmath:222:3:constexpr float std::exp(float)	16	static
 gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
 fixedpoint.h:236:21:IntegerType gemmlowp::RoundingHalfSum(IntegerType, IntegerType) [with IntegerType = long int]	72	static
 fixedpoint.h:329:21:IntegerType gemmlowp::SaturatingRoundingDoublingHighMul(IntegerType, IntegerType) [with IntegerType = long int]	64	static
 common.h:149:16:int32_t tflite::MultiplyByQuantizedMultiplierGreaterThanOne(int32_t, int32_t, int)	24	static
 common.h:156:16:int32_t tflite::MultiplyByQuantizedMultiplier(int32_t, int32_t, int)	32	static
-common.h:341:16:int16_t tflite::generic_int16_table_lookup(int16_t, const int16_t*)	32	static
-common.h:625:16:int32_t tflite::GetReciprocal(int32_t, int, int*)	40	static
+common.h:381:16:int16_t tflite::lut_lookup(int16_t, const int16_t*)	16	static
+common.h:669:16:int32_t tflite::GetReciprocal(int32_t, int, int*)	40	static
 softmax.h:30:13:void tflite::reference_ops::Softmax(const tflite::SoftmaxParams&, const tflite::RuntimeShape&, const float*, const tflite::RuntimeShape&, float*)	72	static
 stl_algobase.h:198:5:constexpr const _Tp& std::min(const _Tp&, const _Tp&) [with _Tp = long int]	16	static
 stl_algobase.h:222:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = long int]	16	static
@@ -29,13 +29,14 @@ softmax.cc:31:6:void tflite::{anonymous}::SoftmaxQuantized(const TfLiteEvalTenso
 softmax.cc:63:14:TfLiteStatus tflite::{anonymous}::SoftmaxEval(TfLiteContext*, TfLiteNode*)	144	static
 softmax.cc:94:20:TfLiteRegistration tflite::Register_SOFTMAX()	24	static
 fixedpoint.h:357:20:IntegerType gemmlowp::RoundingDivideByPOT(IntegerType, int) [with IntegerType = long int]	56	static
-stl_algobase.h:222:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = float]	16	static
+common.h:357:16:LutOutT tflite::lut_lookup_with_interpolation(int16_t, const LutOutT*) [with LutOutT = short int]	32	static
 common.h:230:5:int tflite::CountLeadingZeros(T) [with T = long unsigned int]	16	static
 fixedpoint.h:481:21:static gemmlowp::FixedPoint<tRawType, tIntegerBits> gemmlowp::FixedPoint<tRawType, tIntegerBits>::FromRaw(gemmlowp::FixedPoint<tRawType, tIntegerBits>::RawType) [with tRawType = long int; int tIntegerBits = 0]	24	static
 fixedpoint.h:842:25:gemmlowp::FixedPoint<tRawType, 0> gemmlowp::one_over_one_plus_x_for_x_in_0_1(gemmlowp::FixedPoint<tRawType, 0>) [with tRawType = long int]	48	static
 fixedpoint.h:525:12:gemmlowp::FixedPoint<tRawType, tIntegerBits>::RawType& gemmlowp::FixedPoint<tRawType, tIntegerBits>::raw() [with tRawType = long int; int tIntegerBits = 0]	16	static
 fixedpoint.h:487:21:static gemmlowp::FixedPoint<tRawType, tIntegerBits> gemmlowp::FixedPoint<tRawType, tIntegerBits>::FromScalarRaw(gemmlowp::FixedPoint<tRawType, tIntegerBits>::ScalarRawType) [with tRawType = long int; int tIntegerBits = 0]	32	static
 fixedpoint.h:687:47:typename FixedPointType::ScalarRawType gemmlowp::RescaleConstantInitializer(int32_t) [with FixedPointType = gemmlowp::FixedPoint<long int, 0>]	16	static
+stl_algobase.h:222:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = float]	16	static
 stl_algobase.h:222:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = short int]	16	static
 kernel_util.h:61:10:const T* tflite::micro::GetTensorData(const TfLiteEvalTensor*) [with T = signed char]	16	static
 kernel_util.h:55:4:T* tflite::micro::GetTensorData(TfLiteEvalTensor*) [with T = short int]	16	static

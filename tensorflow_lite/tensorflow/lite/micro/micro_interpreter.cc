@@ -22,6 +22,7 @@ limitations under the License.
 #include "tensorflow/lite/c/common.h"
 #include "tensorflow/lite/core/api/error_reporter.h"
 #include "tensorflow/lite/core/api/tensor_utils.h"
+#include "tensorflow/lite/micro/flatbuffer_utils.h"
 #include "tensorflow/lite/micro/memory_helpers.h"
 #include "tensorflow/lite/micro/micro_allocator.h"
 #include "tensorflow/lite/micro/micro_error_reporter.h"
@@ -37,6 +38,7 @@ MicroInterpreter::MicroInterpreter(const Model* model,
                                    uint8_t* tensor_arena,
                                    size_t tensor_arena_size,
                                    ErrorReporter* error_reporter,
+                                   MicroResourceVariables* resource_variables,
                                    MicroProfiler* profiler)
     : model_(model),
       op_resolver_(op_resolver),
@@ -44,7 +46,7 @@ MicroInterpreter::MicroInterpreter(const Model* model,
       allocator_(*MicroAllocator::Create(tensor_arena, tensor_arena_size,
                                          error_reporter)),
 
-      graph_(&context_, model, &allocator_),
+      graph_(&context_, model, &allocator_, resource_variables),
       tensors_allocated_(false),
       initialization_status_(kTfLiteError),
       input_tensors_(nullptr),
@@ -56,12 +58,13 @@ MicroInterpreter::MicroInterpreter(const Model* model,
                                    const MicroOpResolver& op_resolver,
                                    MicroAllocator* allocator,
                                    ErrorReporter* error_reporter,
+                                   MicroResourceVariables* resource_variables,
                                    MicroProfiler* profiler)
     : model_(model),
       op_resolver_(op_resolver),
       error_reporter_(error_reporter),
       allocator_(*allocator),
-      graph_(&context_, model, allocator),
+      graph_(&context_, model, allocator, resource_variables),
       tensors_allocated_(false),
       initialization_status_(kTfLiteError),
       input_tensors_(nullptr),
@@ -96,7 +99,8 @@ TfLiteStatus MicroInterpreter::PrepareNodeAndRegistrationDataFromFlatbuffer() {
     auto* opcodes = model_->operator_codes();
     BuiltinDataAllocator* builtin_data_allocator =
         allocator_.GetBuiltinDataAllocator();
-    for (size_t i = 0; i < subgraph->operators()->size(); ++i) {
+    uint32_t operators_size = NumSubgraphOperators(subgraph);
+    for (size_t i = 0; i < operators_size; ++i) {
       const auto* op = subgraph->operators()->Get(i);
       const size_t index = op->opcode_index();
       if (index >= opcodes->size()) {
@@ -173,6 +177,13 @@ TfLiteStatus MicroInterpreter::PrepareNodeAndRegistrationDataFromFlatbuffer() {
       node->builtin_data = reinterpret_cast<void*>(builtin_data);
       node->custom_initial_data = custom_data;
       node->custom_initial_data_size = custom_data_size;
+
+      if (op->intermediates() && (op->intermediates()->size() > 0)) {
+        TfLiteIntArray* intermediates_array;
+        TF_LITE_ENSURE_STATUS(allocator_.FlatBufferVectorToTfLiteTypeArray(
+            op->intermediates(), &intermediates_array));
+        node->intermediates = intermediates_array;
+      }
     }
   }
   return kTfLiteOk;

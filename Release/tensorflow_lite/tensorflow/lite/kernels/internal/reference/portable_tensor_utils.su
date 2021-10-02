@@ -1,0 +1,58 @@
+fixedpoint.h:329:21:IntegerType gemmlowp::SaturatingRoundingDoublingHighMul(IntegerType, IntegerType) [with IntegerType = long int]	8	static
+fixedpoint.h:342:21:IntegerType gemmlowp::SaturatingRoundingDoublingHighMul(IntegerType, IntegerType) [with IntegerType = short int]	0	static
+portable_tensor_utils.cc:51:6:void tflite::tensor_utils::PortableSymmetricQuantizeFloats(const float*, int, int8_t*, float, float, float*)	32	static
+portable_tensor_utils.cc:119:6:void tflite::tensor_utils::PortableMatrixBatchVectorMultiplyAccumulate(const float*, int, int, const float*, int, float*)	48	static
+portable_tensor_utils.cc:138:6:void tflite::tensor_utils::PortableMatrixBatchVectorMultiplyAccumulate(const int8_t*, int, int, const int8_t*, const float*, int, float*)	48	static
+portable_tensor_utils.cc:163:6:void tflite::tensor_utils::PortableMatrixBatchVectorMultiplyAccumulate(const int8_t*, int, int, const int8_t*, const float*, int, float*, const float*, const int32_t*, int32_t*, int32_t*, bool*, tflite::CpuBackendContext*)	72	static
+portable_tensor_utils.cc:206:6:void tflite::tensor_utils::PortableSparseMatrixBatchVectorMultiplyAccumulate1x4(const float*, const int32_t*, const int32_t*, int, int, const float*, int, float*)	56	static
+portable_tensor_utils.cc:230:6:void tflite::tensor_utils::PortableSparseMatrixBatchVectorMultiplyAccumulate(const float*, const uint8_t*, int, int, const float*, int, float*)	64	static
+portable_tensor_utils.cc:259:6:void tflite::tensor_utils::PortableSparseMatrixBatchVectorMultiplyAccumulate(const int8_t*, const uint8_t*, int, int, const int8_t*, const float*, int, float*)	72	static
+portable_tensor_utils.cc:374:6:void tflite::tensor_utils::PortableMatrixBatchVectorMultiply(const int16_t*, const int8_t*, int32_t, int32_t, const int32_t*, int32_t, int32_t, int32_t, int32_t, int8_t*)	96	static
+portable_tensor_utils.cc:460:6:void tflite::tensor_utils::PortableApplyLayerNormFloat(const int16_t*, const int16_t*, int32_t, int32_t, const int32_t*, int, int, int16_t*)	72	static
+portable_tensor_utils.cc:505:6:void tflite::tensor_utils::PortableMatrixScalarMultiplyAccumulate(const int8_t*, int32_t, int32_t, int32_t, int32_t*)	20	static
+portable_tensor_utils.cc:531:6:void tflite::tensor_utils::PortableApplySigmoidFloat(const int16_t*, int32_t, int32_t, int16_t*)	56	static
+portable_tensor_utils.cc:586:6:void tflite::tensor_utils::PortableApplyTanhFloat(const int16_t*, int32_t, int32_t, int32_t, int16_t*)	72	static
+portable_tensor_utils.cc:640:6:void tflite::tensor_utils::PortableCwiseAdd(const int16_t*, const int16_t*, int, int, int16_t*)	36	static
+portable_tensor_utils.cc:652:7:float tflite::tensor_utils::PortableVectorVectorDotProduct(const float*, const float*, int)	0	static
+portable_tensor_utils.cc:672:6:void tflite::tensor_utils::PortableBatchVectorBatchVectorDotProduct(const int16_t*, const int16_t*, int, int, int32_t*)	24	static
+portable_tensor_utils.cc:698:6:void tflite::tensor_utils::PortableSub1Vector(const float*, int, float*)	0	static
+portable_tensor_utils.cc:704:6:void tflite::tensor_utils::PortableSub1Vector(const int16_t*, int, int16_t*)	12	static
+portable_tensor_utils.cc:711:6:void tflite::tensor_utils::PortableVectorScalarMultiply(const int8_t*, int, float, float*)	0	static
+portable_tensor_utils.cc:718:6:void tflite::tensor_utils::PortableMeanStddevNormalization(const float*, float*, int, int)	48	static
+fixedpoint.h:357:20:IntegerType gemmlowp::RoundingDivideByPOT(IntegerType, int) [with IntegerType = long int]	8	static
+common.h:156:16:int32_t tflite::MultiplyByQuantizedMultiplier(int32_t, int32_t, int)	8	static
+portable_tensor_utils.cc:322:6:void tflite::tensor_utils::PortableMatrixBatchVectorMultiplyAccumulate(const int8_t*, const int32_t*, const int8_t*, int32_t, int32_t, int32_t, int32_t, int32_t, int32_t, int32_t*, int16_t*, tflite::CpuBackendContext*)	56	static
+portable_tensor_utils.cc:332:6:void tflite::tensor_utils::PortableMatrixBatchVectorMultiplyAccumulate(const int8_t*, const int32_t*, const int8_t*, int32_t, int32_t, int32_t, int32_t, int32_t, int32_t, int32_t*, int8_t*, tflite::CpuBackendContext*)	56	static
+portable_tensor_utils.cc:342:6:void tflite::tensor_utils::PortableMatrixBatchVectorMultiply(const int8_t*, int32_t, const int8_t*, int32_t, int32_t, int32_t, int32_t, int32_t, int8_t*, int8_t)	48	static
+portable_tensor_utils.cc:621:6:void tflite::tensor_utils::PortableCwiseMul(const int16_t*, const int16_t*, int32_t, int32_t, int32_t, int32_t, int32_t, int8_t*)	64	static
+portable_tensor_utils.cc:683:6:void tflite::tensor_utils::PortableVectorBatchVectorCwiseProductAccumulate(const int16_t*, int, const int16_t*, int, int32_t, int, int16_t*)	56	static
+portable_tensor_utils.cc:744:6:void tflite::tensor_utils::PortableTwoGateSaturatingAdd(const int8_t*, int8_t, const int8_t*, int8_t, int32_t, int32_t, int32_t, int32_t, int32_t, int32_t, int16_t*)	48	static
+common.h:686:13:void tflite::GetInvSqrtQuantizedMultiplierExp(int32_t, int, int32_t*, int*)	40	static
+portable_tensor_utils.cc:410:6:void tflite::tensor_utils::PortableApplyLayerNorm(const int16_t*, const int16_t*, const int32_t*, int32_t, int32_t, int32_t, int, int, int16_t*)	96	static
+portable_tensor_utils.cc:607:6:void tflite::tensor_utils::PortableCwiseMul(const int16_t*, const int16_t*, int, int, int, int16_t*)	56	static
+stl_algo.h:3326:5:std::pair<_FIter, _FIter> std::__minmax_element(_ForwardIterator, _ForwardIterator, _Compare) [with _ForwardIterator = const float*; _Compare = __gnu_cxx::__ops::_Iter_less_iter]	12	static
+portable_tensor_utils.cc:72:6:void tflite::tensor_utils::PortableAsymmetricQuantizeFloats(const float*, int, int8_t*, float*, int32_t*)	88	static
+portable_tensor_utils.cc:40:6:void tflite::tensor_utils::PortableSymmetricQuantizeFloats(const float*, int, int8_t*, float*, float*, float*)	40	static
+fixedpoint.h:687:47:typename FixedPointType::ScalarRawType gemmlowp::RescaleConstantInitializer(int32_t) [with FixedPointType = gemmlowp::FixedPoint<short int, 0>]	8	static
+fixedpoint.h:539:55:gemmlowp::FixedPoint<tRawType, (tIntegerBits_a + tIntegerBits_b)> gemmlowp::operator*(gemmlowp::FixedPoint<tRawType, tIntegerBits_a>, gemmlowp::FixedPoint<tRawType, tIntegerBits_b>) [with tRawType = short int; int tIntegerBits_a = 0; int tIntegerBits_b = 0]	8	static
+fixedpoint.h:721:25:gemmlowp::FixedPoint<tRawType, 0> gemmlowp::exp_on_interval_between_negative_one_quarter_and_0_excl(gemmlowp::FixedPoint<tRawType, 0>) [with tRawType = short int]	24	static
+fixedpoint.h:746:25:gemmlowp::FixedPoint<tRawType, 0> gemmlowp::exp_on_negative_values(gemmlowp::FixedPoint<tRawType, tIntegerBits_a>) [with tRawType = short int; int tIntegerBits = 3]	32	static
+fixedpoint.h:668:39:gemmlowp::FixedPoint<tRawType, tIntegerBitsDst> gemmlowp::Rescale(gemmlowp::FixedPoint<tRawType, tIntegerBits>) [with int tIntegerBitsDst = 0; tRawType = short int; int tIntegerBitsSrc = 1]	16	static
+fixedpoint.h:746:25:gemmlowp::FixedPoint<tRawType, 0> gemmlowp::exp_on_negative_values(gemmlowp::FixedPoint<tRawType, tIntegerBits_a>) [with tRawType = short int; int tIntegerBits = 1]	32	static
+fixedpoint.h:746:25:gemmlowp::FixedPoint<tRawType, 0> gemmlowp::exp_on_negative_values(gemmlowp::FixedPoint<tRawType, tIntegerBits_a>) [with tRawType = short int; int tIntegerBits = 4]	24	static
+fixedpoint.h:746:25:gemmlowp::FixedPoint<tRawType, 0> gemmlowp::exp_on_negative_values(gemmlowp::FixedPoint<tRawType, tIntegerBits_a>) [with tRawType = short int; int tIntegerBits = 5]	24	static
+fixedpoint.h:746:25:gemmlowp::FixedPoint<tRawType, 0> gemmlowp::exp_on_negative_values(gemmlowp::FixedPoint<tRawType, tIntegerBits_a>) [with tRawType = short int; int tIntegerBits = 6]	24	static
+fixedpoint.h:746:25:gemmlowp::FixedPoint<tRawType, 0> gemmlowp::exp_on_negative_values(gemmlowp::FixedPoint<tRawType, tIntegerBits_a>) [with tRawType = short int; int tIntegerBits = 7]	24	static
+fixedpoint.h:385:22:static IntegerType gemmlowp::ImplSaturatingRoundingMultiplyByPOT<Exponent, IntegerType, 1>::eval(IntegerType) [with int Exponent = 2; IntegerType = short int]	16	static
+fixedpoint.h:746:25:gemmlowp::FixedPoint<tRawType, 0> gemmlowp::exp_on_negative_values(gemmlowp::FixedPoint<tRawType, tIntegerBits_a>) [with tRawType = short int; int tIntegerBits = 2]	32	static
+fixedpoint.h:842:25:gemmlowp::FixedPoint<tRawType, 0> gemmlowp::one_over_one_plus_x_for_x_in_0_1(gemmlowp::FixedPoint<tRawType, 0>) [with tRawType = short int]	16	static
+portable_tensor_utils.cc:517:6:void tflite::tensor_utils::PortableApplySigmoid(const int16_t*, int32_t, int32_t, int16_t*)	64	static
+fixedpoint.h:795:25:gemmlowp::FixedPoint<tRawType, 0> gemmlowp::one_minus_x_over_one_plus_x_for_x_in_0_1(gemmlowp::FixedPoint<tRawType, 0>) [with tRawType = short int]	16	static
+portable_tensor_utils.cc:551:6:void tflite::tensor_utils::PortableApplyTanhImpl(const int16_t*, int32_t, int32_t, int16_t*) [with int IntegerBits = 2]	56	static
+portable_tensor_utils.cc:551:6:void tflite::tensor_utils::PortableApplyTanhImpl(const int16_t*, int32_t, int32_t, int16_t*) [with int IntegerBits = 0]	56	static
+portable_tensor_utils.cc:551:6:void tflite::tensor_utils::PortableApplyTanhImpl(const int16_t*, int32_t, int32_t, int16_t*) [with int IntegerBits = 1]	56	static
+portable_tensor_utils.cc:551:6:void tflite::tensor_utils::PortableApplyTanhImpl(const int16_t*, int32_t, int32_t, int16_t*) [with int IntegerBits = 3]	56	static
+portable_tensor_utils.cc:551:6:void tflite::tensor_utils::PortableApplyTanhImpl(const int16_t*, int32_t, int32_t, int16_t*) [with int IntegerBits = 4]	56	static
+portable_tensor_utils.cc:551:6:void tflite::tensor_utils::PortableApplyTanhImpl(const int16_t*, int32_t, int32_t, int16_t*) [with int IntegerBits = 5]	56	static
+portable_tensor_utils.cc:551:6:void tflite::tensor_utils::PortableApplyTanhImpl(const int16_t*, int32_t, int32_t, int16_t*) [with int IntegerBits = 6]	56	static
+portable_tensor_utils.cc:565:6:void tflite::tensor_utils::PortableApplyTanh(int32_t, const int16_t*, int32_t, int32_t, int16_t*)	8	static

@@ -1,0 +1,2 @@
+common.h:536:13:void tflite::DownScaleInt32ToInt16Multiplier(int32_t, int16_t*)	8	static
+hard_swish_common.cc:34:14:TfLiteStatus tflite::HardSwishPrepare(TfLiteContext*, TfLiteNode*)	56	static

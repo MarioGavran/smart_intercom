@@ -23,9 +23,6 @@ extern "C" {
 
 #include "app_main.h"
 
-#define tflite_micro_loop()		loop()
-#define tflite_micro_setup()	setup()
-
 // Initializes all data needed for the example. The name is important, and needs
 // to be setup() for Arduino compatibility.
 void setup();

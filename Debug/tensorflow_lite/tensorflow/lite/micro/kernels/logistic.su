@@ -1,16 +1,15 @@
-limits:525:7:static constexpr signed char std::numeric_limits<signed char>::min()	4	static
 limits:1204:7:static constexpr long int std::numeric_limits<long int>::min()	4	static
 limits:1207:7:static constexpr long int std::numeric_limits<long int>::max()	4	static
 gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
 cmath:222:3:constexpr float std::exp(float)	16	static
 fixedpoint.h:236:21:IntegerType gemmlowp::RoundingHalfSum(IntegerType, IntegerType) [with IntegerType = long int]	72	static
 fixedpoint.h:329:21:IntegerType gemmlowp::SaturatingRoundingDoublingHighMul(IntegerType, IntegerType) [with IntegerType = long int]	64	static
-types.h:202:3:tflite::RuntimeShape::~RuntimeShape()	16	static
-types.h:212:18:int32_t tflite::RuntimeShape::DimensionsCount() const	16	static
-types.h:213:18:int32_t tflite::RuntimeShape::Dims(int) const	16	static
-types.h:231:25:const int32_t* tflite::RuntimeShape::DimsData() const	16	static
-types.h:289:14:int tflite::RuntimeShape::FlatSize() const	32	static
-types.h:519:12:int tflite::MatchingFlatSize(const tflite::RuntimeShape&, const tflite::RuntimeShape&)	32	static
+runtime_shape.h:51:3:tflite::RuntimeShape::~RuntimeShape()	16	static
+runtime_shape.h:53:11:int32_t tflite::RuntimeShape::DimensionsCount() const	16	static
+runtime_shape.h:54:11:int32_t tflite::RuntimeShape::Dims(int) const	16	static
+runtime_shape.h:70:18:const int32_t* tflite::RuntimeShape::DimsData() const	16	static
+runtime_shape.h:80:7:int tflite::RuntimeShape::FlatSize() const	32	static
+types.h:312:12:int tflite::MatchingFlatSize(const tflite::RuntimeShape&, const tflite::RuntimeShape&)	32	static
 common.h:156:16:int32_t tflite::MultiplyByQuantizedMultiplier(int32_t, int32_t, int)	32	static
 logistic.h:24:13:void tflite::reference_integer_ops::Logistic(int32_t, int32_t, int32_t, int32_t, int32_t, const int8_t*, int8_t*)	64	static
 logistic.h:30:13:void tflite::reference_ops::Logistic(const tflite::RuntimeShape&, const float*, const tflite::RuntimeShape&, float*)	48	static
@@ -18,15 +17,12 @@ kernel_util.h:161:16:int64_t tflite::NumElements(const TfLiteIntArray*)	32	stati
 kernel_util.h:31:26:TfLiteEvalTensor* tflite::micro::GetMutableEvalInput(const TfLiteContext*, const TfLiteNode*, int)	24	static
 kernel_util.h:40:32:const TfLiteEvalTensor* tflite::micro::GetEvalInput(const TfLiteContext*, const TfLiteNode*, int)	24	static
 kernel_util.h:46:26:TfLiteEvalTensor* tflite::micro::GetEvalOutput(const TfLiteContext*, const TfLiteNode*, int)	24	static
-logistic.cc:43:14:TfLiteStatus tflite::ops::micro::activations::{anonymous}::CalculateArithmeticOpData(TfLiteContext*, TfLiteNode*, tflite::ops::micro::activations::{anonymous}::OpData*)	72	static
-logistic.cc:72:7:void* tflite::ops::micro::activations::LogisticInit(TfLiteContext*, const char*, size_t)	24	static
-logistic.cc:77:14:TfLiteStatus tflite::ops::micro::activations::LogisticPrepare(TfLiteContext*, TfLiteNode*)	24	static
-logistic.cc:84:14:TfLiteStatus tflite::ops::micro::activations::LogisticEval(TfLiteContext*, TfLiteNode*)	128	static
-logistic.cc:138:20:TfLiteRegistration tflite::ops::micro::Register_LOGISTIC()	24	static
+logistic.cc:32:7:void* tflite::{anonymous}::LogisticInit(TfLiteContext*, const char*, size_t)	24	static
+logistic.cc:37:14:TfLiteStatus tflite::{anonymous}::LogisticEval(TfLiteContext*, TfLiteNode*)	128	static
+logistic.cc:91:20:TfLiteRegistration tflite::Register_LOGISTIC()	24	static
 stl_algobase.h:222:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = long int]	16	static
 stl_algobase.h:198:5:constexpr const _Tp& std::min(const _Tp&, const _Tp&) [with _Tp = long int]	16	static
 fixedpoint.h:357:20:IntegerType gemmlowp::RoundingDivideByPOT(IntegerType, int) [with IntegerType = long int]	56	static
-cppmath.h:36:1:T tflite::TfLiteRound(T) [with T = double]	16	static
 fixedpoint.h:481:21:static gemmlowp::FixedPoint<tRawType, tIntegerBits> gemmlowp::FixedPoint<tRawType, tIntegerBits>::FromRaw(gemmlowp::FixedPoint<tRawType, tIntegerBits>::RawType) [with tRawType = long int; int tIntegerBits = 0]	24	static
 fixedpoint.h:842:25:gemmlowp::FixedPoint<tRawType, 0> gemmlowp::one_over_one_plus_x_for_x_in_0_1(gemmlowp::FixedPoint<tRawType, 0>) [with tRawType = long int]	48	static
 fixedpoint.h:525:12:gemmlowp::FixedPoint<tRawType, tIntegerBits>::RawType& gemmlowp::FixedPoint<tRawType, tIntegerBits>::raw() [with tRawType = long int; int tIntegerBits = 0]	16	static

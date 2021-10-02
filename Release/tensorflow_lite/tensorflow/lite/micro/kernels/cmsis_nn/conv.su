@@ -1,13 +1,11 @@
 conv.cc:41:7:void* tflite::{anonymous}::Init(TfLiteContext*, const char*, size_t)	8	static
-types.h:202:3:tflite::RuntimeShape::~RuntimeShape()	8	static
-types.h:213:18:int32_t tflite::RuntimeShape::Dims(int) const	8	static
-types.h:289:14:int tflite::RuntimeShape::FlatSize() const	8	static
-types.h:403:12:int tflite::Offset(const tflite::RuntimeShape&, int, int, int, int)	16	static
-types.h:470:12:int tflite::MatchingDim(const tflite::RuntimeShape&, int, const tflite::RuntimeShape&, int)	16	static
+runtime_shape.h:80:7:int tflite::RuntimeShape::FlatSize() const	8	static
+runtime_shape.h:119:12:int tflite::Offset(const tflite::RuntimeShape&, int, int, int, int)	16	static
+types.h:263:12:int tflite::MatchingDim(const tflite::RuntimeShape&, int, const tflite::RuntimeShape&, int)	8	static
+conv.cc:46:14:TfLiteStatus tflite::{anonymous}::Prepare(TfLiteContext*, TfLiteNode*)	216	static
 conv.h:25:13:void tflite::reference_ops::Conv(const tflite::ConvParams&, const tflite::RuntimeShape&, const float*, const tflite::RuntimeShape&, const float*, const tflite::RuntimeShape&, const float*, const tflite::RuntimeShape&, float*, const tflite::RuntimeShape&, float*)	160	static
 conv.h:24:13:void tflite::reference_integer_ops::ConvPerChannel(const tflite::ConvParams&, const int32_t*, const int32_t*, const tflite::RuntimeShape&, const int8_t*, const tflite::RuntimeShape&, const int8_t*, const tflite::RuntimeShape&, const int32_t*, const tflite::RuntimeShape&, int8_t*)	168	static
-tensor_ctypes.h:34:21:tflite::RuntimeShape tflite::GetTensorShape(const TfLiteTensor*)	16	static
-conv.cc:46:14:TfLiteStatus tflite::{anonymous}::Prepare(TfLiteContext*, TfLiteNode*)	216	static
+conv.h:129:13:void tflite::reference_integer_ops::ConvPerChannel(const tflite::ConvParams&, const int32_t*, const int32_t*, const tflite::RuntimeShape&, const int16_t*, const tflite::RuntimeShape&, const int8_t*, const tflite::RuntimeShape&, const int64_t*, const tflite::RuntimeShape&, int16_t*)	176	static
 kernel_util.h:31:26:TfLiteEvalTensor* tflite::micro::GetMutableEvalInput(const TfLiteContext*, const TfLiteNode*, int)	8	static
-conv.cc:242:14:TfLiteStatus tflite::{anonymous}::Eval(TfLiteContext*, TfLiteNode*)	552	static
-conv.cc:293:20:TfLiteRegistration tflite::Register_CONV_2D()	16	static
+conv.cc:242:14:TfLiteStatus tflite::{anonymous}::Eval(TfLiteContext*, TfLiteNode*)	680	static
+conv.cc:311:20:TfLiteRegistration tflite::Register_CONV_2D()	16	static

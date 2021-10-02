@@ -4,9 +4,9 @@ limits:1204:7:static constexpr long int std::numeric_limits<long int>::min()	4	s
 limits:1207:7:static constexpr long int std::numeric_limits<long int>::max()	4	static
 gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
 fixedpoint.h:329:21:IntegerType gemmlowp::SaturatingRoundingDoublingHighMul(IntegerType, IntegerType) [with IntegerType = long int]	64	static
-types.h:202:3:tflite::RuntimeShape::~RuntimeShape()	16	static
-types.h:212:18:int32_t tflite::RuntimeShape::DimensionsCount() const	16	static
-types.h:213:18:int32_t tflite::RuntimeShape::Dims(int) const	16	static
+runtime_shape.h:51:3:tflite::RuntimeShape::~RuntimeShape()	16	static
+runtime_shape.h:53:11:int32_t tflite::RuntimeShape::DimensionsCount() const	16	static
+runtime_shape.h:54:11:int32_t tflite::RuntimeShape::Dims(int) const	16	static
 common.h:141:16:int32_t tflite::MultiplyByQuantizedMultiplierSmallerThanOneExp(int32_t, int32_t, int)	24	static
 stl_algobase.h:198:5:constexpr const _Tp& std::min(const _Tp&, const _Tp&) [with _Tp = long int]	16	static
 stl_algobase.h:222:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = long int]	16	static
@@ -28,7 +28,7 @@ kernel_util.h:61:10:const T* tflite::micro::GetTensorData(const TfLiteEvalTensor
 kernel_util.h:61:10:const T* tflite::micro::GetTensorData(const TfLiteEvalTensor*) [with T = float]	16	static
 kernel_util.h:55:4:T* tflite::micro::GetTensorData(TfLiteEvalTensor*) [with T = float]	16	static
 cumsum.h:29:13:void tflite::reference_ops::CumSum(const T*, const tflite::RuntimeShape&, int32_t, bool, bool, T*) [with T = float]	80	static
-types.h:1173:13:void tflite::SetActivationParams(int32_t, int32_t, P*) [with P = tflite::ArithmeticParams]	24	static
+types.h:1018:13:void tflite::SetActivationParams(int32_t, int32_t, P*) [with P = tflite::ArithmeticParams]	24	static
 kernel_util.h:61:10:const T* tflite::micro::GetTensorData(const TfLiteEvalTensor*) [with T = signed char]	16	static
 kernel_util.h:55:4:T* tflite::micro::GetTensorData(TfLiteEvalTensor*) [with T = signed char]	16	static
 fixedpoint.h:64:10:tRawType gemmlowp::Dup(typename gemmlowp::FixedPointRawTypeTraits<tRawType>::ScalarRawType) [with tRawType = long int]	16	static

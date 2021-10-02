@@ -258,7 +258,7 @@ TfLiteRegistration Register_FULLY_CONNECTED() {
   fully_connected_registration.version = 0;
   return fully_connected_registration;
 }
-/**/
+
 TfLiteRegistration Register_FULLY_CONNECTED_INT8() {
   fully_connected_registration.init = Init;
   fully_connected_registration.free = nullptr;

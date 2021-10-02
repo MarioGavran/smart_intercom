@@ -1,1 +1,1 @@
-arm_elementwise_add_s8.c:70:12:arm_elementwise_add_s8	232	static,ignoring_inline_asm
+arm_elementwise_add_s8.c:67:12:arm_elementwise_add_s8	232	static,ignoring_inline_asm

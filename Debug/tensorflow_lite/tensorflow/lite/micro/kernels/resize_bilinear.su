@@ -1,17 +1,15 @@
 cmath:165:3:constexpr float std::ceil(float)	16	static
 cmath:260:3:constexpr float std::floor(float)	16	static
-types.h:202:3:tflite::RuntimeShape::~RuntimeShape()	16	static
-types.h:212:18:int32_t tflite::RuntimeShape::DimensionsCount() const	16	static
-types.h:213:18:int32_t tflite::RuntimeShape::Dims(int) const	16	static
-types.h:218:15:void tflite::RuntimeShape::SetDim(int, int32_t)	24	static
-types.h:228:19:int32_t* tflite::RuntimeShape::DimsData()	16	static
-types.h:231:25:const int32_t* tflite::RuntimeShape::DimsData() const	16	static
-types.h:235:25:const int32_t* tflite::RuntimeShape::DimsDataUpTo5D() const	16	static
-types.h:237:15:void tflite::RuntimeShape::Resize(int)	16	static
-types.h:278:30:static tflite::RuntimeShape tflite::RuntimeShape::ExtendedShape(int, const tflite::RuntimeShape&)	24	static
-types.h:304:3:tflite::RuntimeShape::RuntimeShape(int, const tflite::RuntimeShape&, int)	40	static
-types.h:403:12:int tflite::Offset(const tflite::RuntimeShape&, int, int, int, int)	32	static
-types.h:470:12:int tflite::MatchingDim(const tflite::RuntimeShape&, int, const tflite::RuntimeShape&, int)	40	static
+runtime_shape.h:51:3:tflite::RuntimeShape::~RuntimeShape()	16	static
+runtime_shape.h:53:11:int32_t tflite::RuntimeShape::DimensionsCount() const	16	static
+runtime_shape.h:54:11:int32_t tflite::RuntimeShape::Dims(int) const	16	static
+runtime_shape.h:59:8:void tflite::RuntimeShape::SetDim(int, int32_t)	24	static
+runtime_shape.h:65:23:static tflite::RuntimeShape tflite::RuntimeShape::ExtendedShape(int, const tflite::RuntimeShape&)	24	static
+runtime_shape.h:69:12:int32_t* tflite::RuntimeShape::DimsData()	16	static
+runtime_shape.h:70:18:const int32_t* tflite::RuntimeShape::DimsData() const	16	static
+runtime_shape.h:93:3:tflite::RuntimeShape::RuntimeShape(int, const tflite::RuntimeShape&, int)	40	static
+runtime_shape.h:119:12:int tflite::Offset(const tflite::RuntimeShape&, int, int, int, int)	32	static
+types.h:263:12:int tflite::MatchingDim(const tflite::RuntimeShape&, int, const tflite::RuntimeShape&, int)	40	static
 resize_bilinear.h:29:13:void tflite::reference_ops::ComputeInterpolationValues(float, float, bool, int32_t, float*, int32_t*, int32_t*)	56	static
 resize_bilinear.h:119:13:void tflite::reference_ops::ComputeInterpolationValuesInteger(int32_t, int32_t, bool, int32_t, int32_t*, int32_t*, int32_t*)	40	static
 kernel_util.h:147:12:int tflite::NumDimensions(const TfLiteTensor*)	16	static

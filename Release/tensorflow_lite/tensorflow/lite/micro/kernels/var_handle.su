@@ -1,0 +1,5 @@
+var_handle.cc:39:7:void* tflite::{anonymous}::Init(TfLiteContext*, const char*, size_t)	8	static
+kernel_util.h:46:26:TfLiteEvalTensor* tflite::micro::GetEvalOutput(const TfLiteContext*, const TfLiteNode*, int)	8	static
+var_handle.cc:79:14:TfLiteStatus tflite::{anonymous}::Eval(TfLiteContext*, TfLiteNode*)	8	static
+var_handle.cc:44:14:TfLiteStatus tflite::{anonymous}::Prepare(TfLiteContext*, TfLiteNode*)	32	static
+var_handle.cc:93:20:TfLiteRegistration tflite::Register_VAR_HANDLE()	16	static

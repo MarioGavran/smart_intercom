@@ -1,6 +1,8 @@
-memory_planner.h:48:3:tflite::MemoryPlanner::MemoryPlanner()	16	static
-memory_planner.h:49:11:tflite::MemoryPlanner::~MemoryPlanner()	16	static
-memory_planner.h:49:11:virtual tflite::MemoryPlanner::~MemoryPlanner()	16	static
+micro_memory_planner.h:48:3:tflite::MicroMemoryPlanner::MicroMemoryPlanner()	16	static
+micro_memory_planner.h:49:11:tflite::MicroMemoryPlanner::~MicroMemoryPlanner()	16	static
+micro_memory_planner.h:49:11:virtual tflite::MicroMemoryPlanner::~MicroMemoryPlanner()	16	static
+micro_memory_planner.h:64:24:virtual TfLiteStatus tflite::MicroMemoryPlanner::AddBuffer(tflite::ErrorReporter*, int, int, int, int)	24	static
+micro_memory_planner.h:83:24:virtual TfLiteStatus tflite::MicroMemoryPlanner::Init(unsigned char*, int)	24	static
 linear_memory_planner.cc:20:1:tflite::LinearMemoryPlanner::LinearMemoryPlanner()	16	static
 linear_memory_planner.cc:22:1:tflite::LinearMemoryPlanner::~LinearMemoryPlanner()	16	static
 linear_memory_planner.cc:22:1:virtual tflite::LinearMemoryPlanner::~LinearMemoryPlanner()	16	static

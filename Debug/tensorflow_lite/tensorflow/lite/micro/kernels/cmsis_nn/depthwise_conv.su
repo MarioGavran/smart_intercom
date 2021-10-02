@@ -2,19 +2,17 @@ limits:525:7:static constexpr signed char std::numeric_limits<signed char>::min(
 limits:528:7:static constexpr signed char std::numeric_limits<signed char>::max()	4	static
 limits:1204:7:static constexpr long int std::numeric_limits<long int>::min()	4	static
 limits:1207:7:static constexpr long int std::numeric_limits<long int>::max()	4	static
-types.h:156:3:tflite::RuntimeShape::RuntimeShape()	16	static
-types.h:175:3:tflite::RuntimeShape::RuntimeShape(int, const int32_t*)	24	static
-types.h:202:3:tflite::RuntimeShape::~RuntimeShape()	16	static
-types.h:212:18:int32_t tflite::RuntimeShape::DimensionsCount() const	16	static
-types.h:213:18:int32_t tflite::RuntimeShape::Dims(int) const	16	static
-types.h:228:19:int32_t* tflite::RuntimeShape::DimsData()	16	static
-types.h:231:25:const int32_t* tflite::RuntimeShape::DimsData() const	16	static
-types.h:235:25:const int32_t* tflite::RuntimeShape::DimsDataUpTo5D() const	16	static
-types.h:237:15:void tflite::RuntimeShape::Resize(int)	16	static
-types.h:255:15:void tflite::RuntimeShape::ReplaceWith(int, const int32_t*)	32	static
-types.h:289:14:int tflite::RuntimeShape::FlatSize() const	32	static
-types.h:403:12:int tflite::Offset(const tflite::RuntimeShape&, int, int, int, int)	32	static
-types.h:470:12:int tflite::MatchingDim(const tflite::RuntimeShape&, int, const tflite::RuntimeShape&, int)	40	static
+runtime_shape.h:30:3:tflite::RuntimeShape::RuntimeShape()	16	static
+runtime_shape.h:40:3:tflite::RuntimeShape::RuntimeShape(int, const int32_t*)	24	static
+runtime_shape.h:51:3:tflite::RuntimeShape::~RuntimeShape()	16	static
+runtime_shape.h:53:11:int32_t tflite::RuntimeShape::DimensionsCount() const	16	static
+runtime_shape.h:54:11:int32_t tflite::RuntimeShape::Dims(int) const	16	static
+runtime_shape.h:69:12:int32_t* tflite::RuntimeShape::DimsData()	16	static
+runtime_shape.h:70:18:const int32_t* tflite::RuntimeShape::DimsData() const	16	static
+runtime_shape.h:72:8:void tflite::RuntimeShape::ReplaceWith(int, const int32_t*)	32	static
+runtime_shape.h:80:7:int tflite::RuntimeShape::FlatSize() const	32	static
+runtime_shape.h:119:12:int tflite::Offset(const tflite::RuntimeShape&, int, int, int, int)	32	static
+types.h:263:12:int tflite::MatchingDim(const tflite::RuntimeShape&, int, const tflite::RuntimeShape&, int)	40	static
 gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
 fixedpoint.h:329:21:IntegerType gemmlowp::SaturatingRoundingDoublingHighMul(IntegerType, IntegerType) [with IntegerType = long int]	64	static
 common.h:156:16:int32_t tflite::MultiplyByQuantizedMultiplier(int32_t, int32_t, int)	32	static
@@ -35,13 +33,13 @@ stl_algobase.h:198:5:constexpr const _Tp& std::min(const _Tp&, const _Tp&) [with
 stl_algobase.h:222:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = long int]	16	static
 common.h:59:10:T tflite::ActivationFunctionWithMinMax(T, T, T) [with T = float]	24	static
 fixedpoint.h:357:20:IntegerType gemmlowp::RoundingDivideByPOT(IntegerType, int) [with IntegerType = long int]	56	static
-stl_algobase.h:222:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = float]	16	static
-stl_algobase.h:198:5:constexpr const _Tp& std::min(const _Tp&, const _Tp&) [with _Tp = float]	16	static
 kernel_util.h:61:10:const T* tflite::micro::GetTensorData(const TfLiteEvalTensor*) [with T = signed char]	16	static
 kernel_util.h:61:10:const T* tflite::micro::GetTensorData(const TfLiteEvalTensor*) [with T = long int]	16	static
 kernel_util.h:55:4:T* tflite::micro::GetTensorData(TfLiteEvalTensor*) [with T = signed char]	16	static
 kernel_util.h:61:10:const T* tflite::micro::GetTensorData(const TfLiteEvalTensor*) [with T = float]	16	static
 kernel_util.h:55:4:T* tflite::micro::GetTensorData(TfLiteEvalTensor*) [with T = float]	16	static
+stl_algobase.h:222:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = float]	16	static
+stl_algobase.h:198:5:constexpr const _Tp& std::min(const _Tp&, const _Tp&) [with _Tp = float]	16	static
 fixedpoint.h:64:10:tRawType gemmlowp::Dup(typename gemmlowp::FixedPointRawTypeTraits<tRawType>::ScalarRawType) [with tRawType = long int]	16	static
 fixedpoint.h:70:14:tIntegerType gemmlowp::BitAnd(tIntegerType, tIntegerType) [with tIntegerType = long int]	16	static
 fixedpoint.h:140:14:tIntegerType gemmlowp::ShiftRight(tIntegerType, int) [with tIntegerType = long int]	16	static

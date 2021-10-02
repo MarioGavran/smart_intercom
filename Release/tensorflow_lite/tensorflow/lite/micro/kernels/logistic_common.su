@@ -1,0 +1,2 @@
+logistic_common.cc:32:14:TfLiteStatus tflite::CalculateArithmeticOpDataLogistic(TfLiteContext*, TfLiteNode*, tflite::OpDataLogistic*)	40	static
+logistic_common.cc:61:14:TfLiteStatus tflite::LogisticPrepare(TfLiteContext*, TfLiteNode*)	8	static

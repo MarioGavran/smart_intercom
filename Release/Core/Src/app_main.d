@@ -7,11 +7,11 @@ Core/Src/app_main.o: ../Core/Src/app_main.c ../Core/Src/../Inc/app_main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f413xx.h \
- /home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/Core/Include/core_cm4.h \
- /home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/Core/Include/cmsis_version.h \
- /home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/Core/Include/cmsis_compiler.h \
- /home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/Core/Include/cmsis_gcc.h \
- /home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/Core/Include/mpu_armv7.h \
+ /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/Core/Include/core_cm4.h \
+ /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/Core/Include/cmsis_version.h \
+ /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/Core/Include/cmsis_compiler.h \
+ /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/Core/Include/cmsis_gcc.h \
+ /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/Core/Include/mpu_armv7.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
@@ -40,8 +40,12 @@ Core/Src/app_main.o: ../Core/Src/app_main.c ../Core/Src/../Inc/app_main.h \
  ../Core/Src/../Inc/tim.h ../Core/Src/../Inc/usart.h \
  ../Core/Src/../Inc/uart_driver.h ../Core/Src/../Inc/i2c_driver.h \
  ../Core/Src/../Inc/ov7670.h \
- /home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/main_functions.h \
- ../Core/Inc/app_main.h
+ /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/main_functions.h \
+ ../Core/Inc/app_main.h \
+ /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata/person_image_data.h \
+ /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata/no_person_image_data.h \
+ /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata/person_image_data1.h \
+ ../Core/Src/../Inc/../Inc/logo_image.h
 
 ../Core/Src/../Inc/app_main.h:
 
@@ -61,15 +65,15 @@ Core/Src/app_main.o: ../Core/Src/app_main.c ../Core/Src/../Inc/app_main.h \
 
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f413xx.h:
 
-/home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/Core/Include/core_cm4.h:
+/home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/Core/Include/core_cm4.h:
 
-/home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/Core/Include/cmsis_version.h:
+/home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/Core/Include/cmsis_version.h:
 
-/home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/Core/Include/cmsis_compiler.h:
+/home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/Core/Include/cmsis_compiler.h:
 
-/home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/Core/Include/cmsis_gcc.h:
+/home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/Core/Include/cmsis_gcc.h:
 
-/home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/Core/Include/mpu_armv7.h:
+/home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/Core/Include/mpu_armv7.h:
 
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h:
 
@@ -133,6 +137,14 @@ Core/Src/app_main.o: ../Core/Src/app_main.c ../Core/Src/../Inc/app_main.h \
 
 ../Core/Src/../Inc/ov7670.h:
 
-/home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/main_functions.h:
+/home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/main_functions.h:
 
 ../Core/Inc/app_main.h:
+
+/home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata/person_image_data.h:
+
+/home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata/no_person_image_data.h:
+
+/home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata/person_image_data1.h:
+
+../Core/Src/../Inc/../Inc/logo_image.h:

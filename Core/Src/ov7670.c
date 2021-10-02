@@ -197,7 +197,7 @@ void EXTI0_HREF_Callback()
 void EXTI1_VSYNC_Callback()
 {
 	// Rising edge
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
+	//HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
 	if(OV7670_VSYNC_GPIO_Port->IDR & OV7670_VSYNC_Pin)
 	{
 
@@ -213,6 +213,6 @@ void EXTI1_VSYNC_Callback()
 		HAL_DMA_Start(&hdma_tim1_trig, (uint32_t) &(GPIOB->IDR), (uint32_t)g_cam_buff, 640); // first line
 		g_offset += 640;
 	}
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);
+	//HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);
 }
 

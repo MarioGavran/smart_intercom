@@ -2,94 +2,100 @@ flatbuffer_conversions.cc:124:15:TfLitePadding tflite::{anonymous}::ConvertPaddi
 flatbuffer_conversions.cc:67:6:void tflite::{anonymous}::CheckParsePointerParams(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	8	static
 flatbuffer_conversions.cc:43:10:void tflite::{anonymous}::SafeBuiltinDataAllocator::BuiltinDataDeleter::operator()(void*)	0	static
 flatbuffer_conversions.cc:79:14:TfLiteStatus tflite::{anonymous}::FlatBufferIntVectorToArray(int, const flatbuffers::Vector<long int>*, int*, tflite::ErrorReporter*, const char*)	16	static
-flatbuffers.h:2442:13:flatbuffers::voffset_t flatbuffers::Table::GetOptionalFieldOffset(flatbuffers::voffset_t) const	0	static
-schema_generated.h:10268:15:const void* tflite::Operator::builtin_options() const	8	static
-flatbuffer_conversions.cc:841:14:TfLiteStatus tflite::ConvertTensorType(tflite::TensorType, TfLiteType*, tflite::ErrorReporter*)	8	static
-flatbuffer_conversions.cc:903:14:TfLiteStatus tflite::ParseAbs(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:933:14:TfLiteStatus tflite::ParseAddN(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1012:14:TfLiteStatus tflite::ParseBatchToSpaceNd(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1041:14:TfLiteStatus tflite::ParseCeil(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1127:14:TfLiteStatus tflite::ParseCos(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1196:14:TfLiteStatus tflite::ParseDequantize(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1219:14:TfLiteStatus tflite::ParseElu(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1227:14:TfLiteStatus tflite::ParseEqual(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1235:14:TfLiteStatus tflite::ParseExp(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1243:14:TfLiteStatus tflite::ParseExpandDims(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1251:14:TfLiteStatus tflite::ParseFill(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1259:14:TfLiteStatus tflite::ParseFloor(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1267:14:TfLiteStatus tflite::ParseFloorDiv(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1275:14:TfLiteStatus tflite::ParseFloorMod(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1350:14:TfLiteStatus tflite::ParseGatherNd(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1358:14:TfLiteStatus tflite::ParseGreater(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1366:14:TfLiteStatus tflite::ParseGreaterEqual(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1374:14:TfLiteStatus tflite::ParseHardSwish(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1449:14:TfLiteStatus tflite::ParseLess(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1457:14:TfLiteStatus tflite::ParseLessEqual(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1465:14:TfLiteStatus tflite::ParseLog(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1473:14:TfLiteStatus tflite::ParseLogicalAnd(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1481:14:TfLiteStatus tflite::ParseLogicalNot(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1489:14:TfLiteStatus tflite::ParseLogicalOr(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1497:14:TfLiteStatus tflite::ParseLogistic(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1505:14:TfLiteStatus tflite::ParseLogSoftmax(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1513:14:TfLiteStatus tflite::ParseMaximum(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1521:14:TfLiteStatus tflite::ParseMinimum(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1553:14:TfLiteStatus tflite::ParseNeg(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1561:14:TfLiteStatus tflite::ParseNotEqual(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1594:14:TfLiteStatus tflite::ParsePad(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1602:14:TfLiteStatus tflite::ParsePadV2(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1640:14:TfLiteStatus tflite::ParsePow(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1648:14:TfLiteStatus tflite::ParsePrelu(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1656:14:TfLiteStatus tflite::ParseQuantize(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1690:14:TfLiteStatus tflite::ParseRelu(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1698:14:TfLiteStatus tflite::ParseRelu6(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1797:14:TfLiteStatus tflite::ParseRound(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1805:14:TfLiteStatus tflite::ParseRsqrt(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1836:14:TfLiteStatus tflite::ParseSin(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1869:14:TfLiteStatus tflite::ParseSpaceToBatchNd(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1983:14:TfLiteStatus tflite::ParseSqrt(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:1991:14:TfLiteStatus tflite::ParseSquare(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:2082:14:TfLiteStatus tflite::ParseTanh(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:2090:14:TfLiteStatus tflite::ParseTranspose(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffer_conversions.cc:2149:14:TfLiteStatus tflite::ParseZerosLike(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
-flatbuffers.h:2452:26:T flatbuffers::Table::GetField(flatbuffers::voffset_t, T) const [with T = unsigned char]	16	static
-schema_generated.h:10265:26:tflite::BuiltinOptions tflite::Operator::builtin_options_type() const	8	static
-schema_generated.h:10545:28:const tflite::IfOptions* tflite::Operator::builtin_options_as_IfOptions() const	8	static
-flatbuffer_conversions.cc:1703:14:TfLiteStatus tflite::ParseReshape(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	32	static
-flatbuffer_conversions.cc:1947:14:TfLiteStatus tflite::ParseSqueeze(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	32	static
-flatbuffer_conversions.cc:991:14:TfLiteStatus tflite::ParseBatchMatMul(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
-flatbuffer_conversions.cc:1109:14:TfLiteStatus tflite::ParseCumsum(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
-flatbuffer_conversions.cc:1661:14:TfLiteStatus tflite::ParseReducer(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
-flatbuffer_conversions.cc:1740:14:TfLiteStatus tflite::ParseResizeBilinear(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
-flatbuffer_conversions.cc:1767:14:TfLiteStatus tflite::ParseResizeNearestNeighbor(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
-flatbuffers.h:2452:26:T flatbuffers::Table::GetField(flatbuffers::voffset_t, T) const [with T = long int]	16	static
-flatbuffer_conversions.cc:1132:14:TfLiteStatus tflite::ParseDepthToSpace(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
-flatbuffer_conversions.cc:1329:14:TfLiteStatus tflite::ParseGather(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
-flatbuffer_conversions.cc:1566:14:TfLiteStatus tflite::ParsePack(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
-flatbuffer_conversions.cc:1874:14:TfLiteStatus tflite::ParseSpaceToDepth(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
-flatbuffer_conversions.cc:1899:14:TfLiteStatus tflite::ParseSplit(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
-flatbuffer_conversions.cc:1923:14:TfLiteStatus tflite::ParseSplitV(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
-flatbuffer_conversions.cc:1996:14:TfLiteStatus tflite::ParseStridedSlice(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	16	static
-flatbuffer_conversions.cc:2121:14:TfLiteStatus tflite::ParseUnpack(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
-flatbuffers.h:2452:26:T flatbuffers::Table::GetField(flatbuffers::voffset_t, T) const [with T = signed char]	16	static
-flatbuffer_conversions.cc:908:14:TfLiteStatus tflite::ParseAdd(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
-flatbuffer_conversions.cc:938:14:TfLiteStatus tflite::ParseArgMax(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	32	static
-flatbuffer_conversions.cc:963:14:TfLiteStatus tflite::ParseArgMin(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	32	static
-flatbuffer_conversions.cc:1020:14:TfLiteStatus tflite::ParseCast(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	32	static
-flatbuffer_conversions.cc:1046:14:TfLiteStatus tflite::ParseConcatenation(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
-flatbuffer_conversions.cc:1075:14:TfLiteStatus tflite::ParseConv2D(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
-flatbuffer_conversions.cc:1157:14:TfLiteStatus tflite::ParseDepthwiseConv2D(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	16	static
-flatbuffer_conversions.cc:1201:14:TfLiteStatus tflite::ParseDiv(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
-flatbuffer_conversions.cc:1280:14:TfLiteStatus tflite::ParseFullyConnected(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	40	static
-flatbuffer_conversions.cc:1403:14:TfLiteStatus tflite::ParseL2Normalization(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
-flatbuffer_conversions.cc:1526:14:TfLiteStatus tflite::ParseMul(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
-flatbuffer_conversions.cc:1607:14:TfLiteStatus tflite::ParsePool(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	16	static
-flatbuffer_conversions.cc:1810:14:TfLiteStatus tflite::ParseShape(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	32	static
-flatbuffer_conversions.cc:2027:14:TfLiteStatus tflite::ParseSub(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
-flatbuffer_conversions.cc:2052:14:TfLiteStatus tflite::ParseSvdf(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
-flatbuffer_conversions.cc:2095:14:TfLiteStatus tflite::ParseTransposeConv(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
-flatbuffers.h:2452:26:T flatbuffers::Table::GetField(flatbuffers::voffset_t, T) const [with T = float]	16	static
-flatbuffer_conversions.cc:1430:14:TfLiteStatus tflite::ParseLeakyRelu(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
-flatbuffer_conversions.cc:1841:14:TfLiteStatus tflite::ParseSoftmax(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
+flatbuffers.h:2436:13:flatbuffers::voffset_t flatbuffers::Table::GetOptionalFieldOffset(flatbuffers::voffset_t) const	0	static
+schema_generated.h:10579:15:const void* tflite::Operator::builtin_options() const	8	static
+flatbuffer_conversions.cc:846:14:TfLiteStatus tflite::ConvertTensorType(tflite::TensorType, TfLiteType*, tflite::ErrorReporter*)	8	static
+flatbuffer_conversions.cc:908:14:TfLiteStatus tflite::ParseAbs(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:938:14:TfLiteStatus tflite::ParseAddN(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:996:14:TfLiteStatus tflite::ParseAssignVariable(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1025:14:TfLiteStatus tflite::ParseBatchToSpaceNd(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1081:14:TfLiteStatus tflite::ParseCeil(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1167:14:TfLiteStatus tflite::ParseCos(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1236:14:TfLiteStatus tflite::ParseDequantize(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1259:14:TfLiteStatus tflite::ParseElu(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1267:14:TfLiteStatus tflite::ParseEqual(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1275:14:TfLiteStatus tflite::ParseExp(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1283:14:TfLiteStatus tflite::ParseExpandDims(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1291:14:TfLiteStatus tflite::ParseFill(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1299:14:TfLiteStatus tflite::ParseFloor(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1307:14:TfLiteStatus tflite::ParseFloorDiv(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1315:14:TfLiteStatus tflite::ParseFloorMod(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1390:14:TfLiteStatus tflite::ParseGatherNd(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1398:14:TfLiteStatus tflite::ParseGreater(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1406:14:TfLiteStatus tflite::ParseGreaterEqual(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1414:14:TfLiteStatus tflite::ParseHardSwish(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1489:14:TfLiteStatus tflite::ParseLess(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1497:14:TfLiteStatus tflite::ParseLessEqual(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1505:14:TfLiteStatus tflite::ParseLog(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1513:14:TfLiteStatus tflite::ParseLogicalAnd(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1521:14:TfLiteStatus tflite::ParseLogicalNot(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1529:14:TfLiteStatus tflite::ParseLogicalOr(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1537:14:TfLiteStatus tflite::ParseLogistic(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1545:14:TfLiteStatus tflite::ParseLogSoftmax(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1553:14:TfLiteStatus tflite::ParseMaximum(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1561:14:TfLiteStatus tflite::ParseMinimum(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1593:14:TfLiteStatus tflite::ParseNeg(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1601:14:TfLiteStatus tflite::ParseNotEqual(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1634:14:TfLiteStatus tflite::ParsePad(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1642:14:TfLiteStatus tflite::ParsePadV2(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1680:14:TfLiteStatus tflite::ParsePow(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1688:14:TfLiteStatus tflite::ParsePrelu(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1696:14:TfLiteStatus tflite::ParseQuantize(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1704:14:TfLiteStatus tflite::ParseReadVariable(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1738:14:TfLiteStatus tflite::ParseRelu(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1746:14:TfLiteStatus tflite::ParseRelu6(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1845:14:TfLiteStatus tflite::ParseRound(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1853:14:TfLiteStatus tflite::ParseRsqrt(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1884:14:TfLiteStatus tflite::ParseSin(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1892:14:TfLiteStatus tflite::ParseSlice(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:1925:14:TfLiteStatus tflite::ParseSpaceToBatchNd(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:2062:14:TfLiteStatus tflite::ParseSqrt(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:2070:14:TfLiteStatus tflite::ParseSquare(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:2161:14:TfLiteStatus tflite::ParseTanh(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:2169:14:TfLiteStatus tflite::ParseTranspose(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffer_conversions.cc:2259:14:TfLiteStatus tflite::ParseZerosLike(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	0	static
+flatbuffers.h:2446:26:T flatbuffers::Table::GetField(flatbuffers::voffset_t, T) const [with T = unsigned char]	16	static
+schema_generated.h:10576:26:tflite::BuiltinOptions tflite::Operator::builtin_options_type() const	8	static
+schema_generated.h:10856:28:const tflite::IfOptions* tflite::Operator::builtin_options_as_IfOptions() const	8	static
+flatbuffer_conversions.cc:1751:14:TfLiteStatus tflite::ParseReshape(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	32	static
+flatbuffer_conversions.cc:2026:14:TfLiteStatus tflite::ParseSqueeze(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	32	static
+flatbuffer_conversions.cc:2225:14:TfLiteStatus tflite::ParseVarHandle(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	16	static
+flatbuffer_conversions.cc:1004:14:TfLiteStatus tflite::ParseBatchMatMul(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
+flatbuffer_conversions.cc:1149:14:TfLiteStatus tflite::ParseCumsum(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
+flatbuffer_conversions.cc:1709:14:TfLiteStatus tflite::ParseReducer(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
+flatbuffer_conversions.cc:1788:14:TfLiteStatus tflite::ParseResizeBilinear(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
+flatbuffer_conversions.cc:1815:14:TfLiteStatus tflite::ParseResizeNearestNeighbor(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
+flatbuffers.h:2446:26:T flatbuffers::Table::GetField(flatbuffers::voffset_t, T) const [with T = long int]	16	static
+flatbuffer_conversions.cc:1030:14:TfLiteStatus tflite::ParseCallOnce(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
+flatbuffer_conversions.cc:1172:14:TfLiteStatus tflite::ParseDepthToSpace(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
+flatbuffer_conversions.cc:1369:14:TfLiteStatus tflite::ParseGather(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
+flatbuffer_conversions.cc:1606:14:TfLiteStatus tflite::ParsePack(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
+flatbuffer_conversions.cc:1930:14:TfLiteStatus tflite::ParseSpaceToDepth(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
+flatbuffer_conversions.cc:1955:14:TfLiteStatus tflite::ParseSplit(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
+flatbuffer_conversions.cc:1979:14:TfLiteStatus tflite::ParseSplitV(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
+flatbuffer_conversions.cc:2075:14:TfLiteStatus tflite::ParseStridedSlice(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	16	static
+flatbuffer_conversions.cc:2200:14:TfLiteStatus tflite::ParseUnpack(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
+flatbuffers.h:2446:26:T flatbuffers::Table::GetField(flatbuffers::voffset_t, T) const [with T = signed char]	16	static
+flatbuffer_conversions.cc:913:14:TfLiteStatus tflite::ParseAdd(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
+flatbuffer_conversions.cc:943:14:TfLiteStatus tflite::ParseArgMax(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	32	static
+flatbuffer_conversions.cc:968:14:TfLiteStatus tflite::ParseArgMin(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	32	static
+flatbuffer_conversions.cc:1060:14:TfLiteStatus tflite::ParseCast(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	32	static
+flatbuffer_conversions.cc:1086:14:TfLiteStatus tflite::ParseConcatenation(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
+flatbuffer_conversions.cc:1115:14:TfLiteStatus tflite::ParseConv2D(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
+flatbuffer_conversions.cc:1197:14:TfLiteStatus tflite::ParseDepthwiseConv2D(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	16	static
+flatbuffer_conversions.cc:1241:14:TfLiteStatus tflite::ParseDiv(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
+flatbuffer_conversions.cc:1320:14:TfLiteStatus tflite::ParseFullyConnected(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	40	static
+flatbuffer_conversions.cc:1443:14:TfLiteStatus tflite::ParseL2Normalization(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
+flatbuffer_conversions.cc:1566:14:TfLiteStatus tflite::ParseMul(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
+flatbuffer_conversions.cc:1647:14:TfLiteStatus tflite::ParsePool(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	16	static
+flatbuffer_conversions.cc:1858:14:TfLiteStatus tflite::ParseShape(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	32	static
+flatbuffer_conversions.cc:2106:14:TfLiteStatus tflite::ParseSub(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
+flatbuffer_conversions.cc:2131:14:TfLiteStatus tflite::ParseSvdf(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
+flatbuffer_conversions.cc:2174:14:TfLiteStatus tflite::ParseTransposeConv(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
+flatbuffers.h:2446:26:T flatbuffers::Table::GetField(flatbuffers::voffset_t, T) const [with T = float]	16	static
+flatbuffer_conversions.cc:1470:14:TfLiteStatus tflite::ParseLeakyRelu(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
+flatbuffer_conversions.cc:1897:14:TfLiteStatus tflite::ParseSoftmax(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	24	static
+flatbuffer_conversions.cc:2003:14:TfLiteStatus tflite::ParseUnidirectionalSequenceLSTM(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	16	static
 flatbuffer_conversions.h:43:6:T* tflite::BuiltinDataAllocator::AllocatePOD() [with T = TfLiteIfParams]	8	static
-flatbuffer_conversions.cc:2154:14:TfLiteStatus tflite::ParseOpData(const tflite::Operator*, tflite::BuiltinOperator, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	40	static
-flatbuffer_conversions.cc:1379:14:TfLiteStatus tflite::ParseIf(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	32	static
+flatbuffer_conversions.cc:2264:14:TfLiteStatus tflite::ParseOpData(const tflite::Operator*, tflite::BuiltinOperator, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	40	static
+flatbuffer_conversions.cc:1419:14:TfLiteStatus tflite::ParseIf(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**)	32	static

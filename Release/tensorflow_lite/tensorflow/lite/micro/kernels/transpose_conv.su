@@ -1,13 +1,13 @@
-transpose_conv.cc:113:7:void* tflite::{anonymous}::Init(TfLiteContext*, const char*, size_t)	8	static
-types.h:202:3:tflite::RuntimeShape::~RuntimeShape()	8	static
-types.h:213:18:int32_t tflite::RuntimeShape::Dims(int) const	8	static
-types.h:289:14:int tflite::RuntimeShape::FlatSize() const	8	static
-types.h:403:12:int tflite::Offset(const tflite::RuntimeShape&, int, int, int, int)	16	static
-types.h:470:12:int tflite::MatchingDim(const tflite::RuntimeShape&, int, const tflite::RuntimeShape&, int)	16	static
+transpose_conv.cc:129:7:void* tflite::{anonymous}::Init(TfLiteContext*, const char*, size_t)	8	static
+runtime_shape.h:80:7:int tflite::RuntimeShape::FlatSize() const	8	static
+runtime_shape.h:119:12:int tflite::Offset(const tflite::RuntimeShape&, int, int, int, int)	16	static
+types.h:263:12:int tflite::MatchingDim(const tflite::RuntimeShape&, int, const tflite::RuntimeShape&, int)	8	static
 transpose_conv.h:25:13:void tflite::reference_ops::TransposeConv(const tflite::ConvParams&, const tflite::RuntimeShape&, const float*, const tflite::RuntimeShape&, const float*, const tflite::RuntimeShape&, const float*, const tflite::RuntimeShape&, float*, const tflite::RuntimeShape&, float*)	136	static
 transpose_conv.h:24:13:void tflite::reference_integer_ops::TransposeConv(const tflite::ConvParams&, const int32_t*, const int32_t*, const tflite::RuntimeShape&, const int8_t*, const tflite::RuntimeShape&, const int8_t*, const tflite::RuntimeShape&, const int32_t*, const tflite::RuntimeShape&, int8_t*, const tflite::RuntimeShape&, int8_t*, int32_t*)	152	static
+transpose_conv.h:123:13:void tflite::reference_integer_ops::TransposeConv(const tflite::ConvParams&, const int32_t*, const int32_t*, const tflite::RuntimeShape&, const int16_t*, const tflite::RuntimeShape&, const int8_t*, const tflite::RuntimeShape&, const int64_t*, const tflite::RuntimeShape&, int16_t*, const tflite::RuntimeShape&, int8_t*, int64_t*)	152	static
+tensor_ctypes.h:34:21:tflite::RuntimeShape tflite::GetTensorShape(const TfLiteTensor*)	8	static
 padding.h:44:12:int tflite::ComputeOutSize(TfLitePadding, int, int, int, int)	0	static
-transpose_conv.cc:118:14:TfLiteStatus tflite::{anonymous}::Prepare(TfLiteContext*, TfLiteNode*)	144	static
+transpose_conv.cc:134:14:TfLiteStatus tflite::{anonymous}::Prepare(TfLiteContext*, TfLiteNode*)	192	static
 kernel_util.h:31:26:TfLiteEvalTensor* tflite::micro::GetMutableEvalInput(const TfLiteContext*, const TfLiteNode*, int)	8	static
-transpose_conv.cc:199:14:TfLiteStatus tflite::{anonymous}::Eval(TfLiteContext*, TfLiteNode*)	296	static
-transpose_conv.cc:258:20:TfLiteRegistration tflite::Register_TRANSPOSE_CONV()	16	static
+transpose_conv.cc:224:14:TfLiteStatus tflite::{anonymous}::Eval(TfLiteContext*, TfLiteNode*)	288	static
+transpose_conv.cc:324:20:TfLiteRegistration tflite::Register_TRANSPOSE_CONV()	16	static

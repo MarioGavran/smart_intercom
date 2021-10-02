@@ -1,20 +1,18 @@
 cmath:279:3:constexpr float std::fmod(float, float)	16	static
 gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
-types.h:202:3:tflite::RuntimeShape::~RuntimeShape()	16	static
-types.h:212:18:int32_t tflite::RuntimeShape::DimensionsCount() const	16	static
-types.h:213:18:int32_t tflite::RuntimeShape::Dims(int) const	16	static
-types.h:218:15:void tflite::RuntimeShape::SetDim(int, int32_t)	24	static
-types.h:228:19:int32_t* tflite::RuntimeShape::DimsData()	16	static
-types.h:231:25:const int32_t* tflite::RuntimeShape::DimsData() const	16	static
-types.h:235:25:const int32_t* tflite::RuntimeShape::DimsDataUpTo5D() const	16	static
-types.h:237:15:void tflite::RuntimeShape::Resize(int)	16	static
-types.h:278:30:static tflite::RuntimeShape tflite::RuntimeShape::ExtendedShape(int, const tflite::RuntimeShape&)	24	static
-types.h:289:14:int tflite::RuntimeShape::FlatSize() const	32	static
-types.h:304:3:tflite::RuntimeShape::RuntimeShape(int, const tflite::RuntimeShape&, int)	40	static
-types.h:403:12:int tflite::Offset(const tflite::RuntimeShape&, int, int, int, int)	32	static
-types.h:519:12:int tflite::MatchingFlatSize(const tflite::RuntimeShape&, const tflite::RuntimeShape&)	32	static
-types.h:529:12:int tflite::MatchingFlatSize(const tflite::RuntimeShape&, const tflite::RuntimeShape&, const tflite::RuntimeShape&)	40	static
-common.h:727:12:int tflite::SubscriptToIndex(const tflite::NdArrayDesc<4>&, int, int, int, int)	24	static
+runtime_shape.h:51:3:tflite::RuntimeShape::~RuntimeShape()	16	static
+runtime_shape.h:53:11:int32_t tflite::RuntimeShape::DimensionsCount() const	16	static
+runtime_shape.h:54:11:int32_t tflite::RuntimeShape::Dims(int) const	16	static
+runtime_shape.h:59:8:void tflite::RuntimeShape::SetDim(int, int32_t)	24	static
+runtime_shape.h:65:23:static tflite::RuntimeShape tflite::RuntimeShape::ExtendedShape(int, const tflite::RuntimeShape&)	24	static
+runtime_shape.h:69:12:int32_t* tflite::RuntimeShape::DimsData()	16	static
+runtime_shape.h:70:18:const int32_t* tflite::RuntimeShape::DimsData() const	16	static
+runtime_shape.h:80:7:int tflite::RuntimeShape::FlatSize() const	32	static
+runtime_shape.h:93:3:tflite::RuntimeShape::RuntimeShape(int, const tflite::RuntimeShape&, int)	40	static
+runtime_shape.h:119:12:int tflite::Offset(const tflite::RuntimeShape&, int, int, int, int)	32	static
+types.h:312:12:int tflite::MatchingFlatSize(const tflite::RuntimeShape&, const tflite::RuntimeShape&)	32	static
+types.h:322:12:int tflite::MatchingFlatSize(const tflite::RuntimeShape&, const tflite::RuntimeShape&, const tflite::RuntimeShape&)	40	static
+common.h:771:12:int tflite::SubscriptToIndex(const tflite::NdArrayDesc<4>&, int, int, int, int)	24	static
 kernel_util.h:152:12:int tflite::NumInputs(const TfLiteNode*)	16	static
 kernel_util.h:153:12:int tflite::NumOutputs(const TfLiteNode*)	16	static
 kernel_util.h:31:26:TfLiteEvalTensor* tflite::micro::GetMutableEvalInput(const TfLiteContext*, const TfLiteNode*, int)	24	static
@@ -32,5 +30,5 @@ floor_mod.h:28:11:float tflite::reference_ops::FloorMod(T, T)::FloatMod::operato
 floor_mod.h:26:3:T tflite::reference_ops::FloorMod(T, T) [with T = float]	24	static
 binary_function.h:30:13:void tflite::reference_ops::BroadcastBinaryFunction4DSlow(const tflite::RuntimeShape&, const T1*, const tflite::RuntimeShape&, const T2*, const tflite::RuntimeShape&, R*, R (*)(T1, T2)) [with R = float; T1 = float; T2 = float]	168	static
 binary_function.h:64:13:void tflite::reference_ops::BinaryFunction(const tflite::RuntimeShape&, const T1*, const tflite::RuntimeShape&, const T2*, const tflite::RuntimeShape&, R*, R (*)(T1, T2)) [with R = float; T1 = float; T2 = float]	40	static
-common.h:820:13:void tflite::NdArrayDescsForElementwiseBroadcast(const tflite::RuntimeShape&, const tflite::RuntimeShape&, tflite::NdArrayDesc<N>*, tflite::NdArrayDesc<N>*) [with int N = 4]	88	static
-common.h:809:13:void tflite::CopyDimsToDesc(const tflite::RuntimeShape&, tflite::NdArrayDesc<N>*) [with int N = 4]	24	static
+common.h:864:13:void tflite::NdArrayDescsForElementwiseBroadcast(const tflite::RuntimeShape&, const tflite::RuntimeShape&, tflite::NdArrayDesc<N>*, tflite::NdArrayDesc<N>*) [with int N = 4]	88	static
+common.h:853:13:void tflite::CopyDimsToDesc(const tflite::RuntimeShape&, tflite::NdArrayDesc<N>*) [with int N = 4]	24	static

@@ -1,5 +1,3 @@
 cast.cc:27:14:TfLiteStatus tflite::{anonymous}::Prepare(TfLiteContext*, TfLiteNode*)	40	static
-types.h:202:3:tflite::RuntimeShape::~RuntimeShape()	8	static
-types.h:213:18:int32_t tflite::RuntimeShape::Dims(int) const	8	static
-cast.cc:62:14:TfLiteStatus tflite::{anonymous}::Eval(TfLiteContext*, TfLiteNode*)	80	static
+cast.cc:62:14:TfLiteStatus tflite::{anonymous}::Eval(TfLiteContext*, TfLiteNode*)	72	static
 cast.cc:85:20:TfLiteRegistration tflite::Register_CAST()	16	static

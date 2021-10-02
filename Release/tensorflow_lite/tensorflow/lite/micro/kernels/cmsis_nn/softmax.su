@@ -1,12 +1,11 @@
-types.h:202:3:tflite::RuntimeShape::~RuntimeShape()	8	static
-types.h:213:18:int32_t tflite::RuntimeShape::Dims(int) const	8	static
-types.h:470:12:int tflite::MatchingDim(const tflite::RuntimeShape&, int, const tflite::RuntimeShape&, int)	16	static
-types.h:685:12:int tflite::MatchingFlatSizeSkipDim(const tflite::RuntimeShape&, int, const tflite::RuntimeShape&)	32	static
+runtime_shape.h:54:11:int32_t tflite::RuntimeShape::Dims(int) const	8	static
+types.h:263:12:int tflite::MatchingDim(const tflite::RuntimeShape&, int, const tflite::RuntimeShape&, int)	16	static
+types.h:530:12:int tflite::MatchingFlatSizeSkipDim(const tflite::RuntimeShape&, int, const tflite::RuntimeShape&)	32	static
 fixedpoint.h:329:21:IntegerType gemmlowp::SaturatingRoundingDoublingHighMul(IntegerType, IntegerType) [with IntegerType = long int]	8	static
-common.h:341:16:int16_t tflite::generic_int16_table_lookup(int16_t, const int16_t*)	0	static
 softmax.h:30:13:void tflite::reference_ops::Softmax(const tflite::SoftmaxParams&, const tflite::RuntimeShape&, const float*, const tflite::RuntimeShape&, float*)	80	static
 softmax.cc:94:20:TfLiteRegistration tflite::Register_SOFTMAX()	16	static
 fixedpoint.h:357:20:IntegerType gemmlowp::RoundingDivideByPOT(IntegerType, int) [with IntegerType = long int]	8	static
+common.h:357:16:LutOutT tflite::lut_lookup_with_interpolation(int16_t, const LutOutT*) [with LutOutT = short int]	0	static
 softmax.h:165:13:void tflite::reference_ops::SoftmaxInt16(const tflite::SoftmaxParams&, const tflite::RuntimeShape&, const int16_t*, const tflite::RuntimeShape&, int16_t*)	96	static
 fixedpoint.h:842:25:gemmlowp::FixedPoint<tRawType, 0> gemmlowp::one_over_one_plus_x_for_x_in_0_1(gemmlowp::FixedPoint<tRawType, 0>) [with tRawType = long int]	32	static
 fixedpoint.h:687:47:typename FixedPointType::ScalarRawType gemmlowp::RescaleConstantInitializer(int32_t) [with FixedPointType = gemmlowp::FixedPoint<long int, 0>]	8	static

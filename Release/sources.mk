@@ -36,12 +36,16 @@ Drivers/STM32F4xx_HAL_Driver/Src \
 tensorflow_lite/tensorflow/lite/c \
 tensorflow_lite/tensorflow/lite/core/api \
 tensorflow_lite/tensorflow/lite/kernels/internal \
+tensorflow_lite/tensorflow/lite/kernels/internal/reference \
 tensorflow_lite/tensorflow/lite/kernels \
 tensorflow_lite/tensorflow/lite/micro \
+tensorflow_lite/tensorflow/lite/micro/cortex_m_generic \
 tensorflow_lite/tensorflow/lite/micro/examples/person_detection \
+tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata \
 tensorflow_lite/tensorflow/lite/micro/kernels \
 tensorflow_lite/tensorflow/lite/micro/kernels/cmsis_nn \
 tensorflow_lite/tensorflow/lite/micro/memory_planner \
+tensorflow_lite/tensorflow/lite/micro/models \
 tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/NN/Source/ActivationFunctions \
 tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/NN/Source/BasicMathFunctions \
 tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/NN/Source/ConcatenationFunctions \
@@ -52,6 +56,5 @@ tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/NN/Source
 tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/NN/Source/ReshapeFunctions \
 tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/NN/Source/SVDFunctions \
 tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/NN/Source/SoftmaxFunctions \
-tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/person_model_int8 \
 tensorflow_lite/tensorflow/lite/schema \
 

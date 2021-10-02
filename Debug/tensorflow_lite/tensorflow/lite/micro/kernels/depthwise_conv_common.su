@@ -7,5 +7,5 @@ padding.h:62:28:TfLitePaddingValues tflite::ComputePaddingHeightWidth(int, int, 
 depthwise_conv_common.cc:41:17:tflite::DepthwiseParams tflite::DepthwiseConvParamsFloat(const TfLiteDepthwiseConvParams&, const tflite::OpDataConv&)	24	static
 depthwise_conv_common.cc:59:17:tflite::DepthwiseParams tflite::DepthwiseConvParamsQuantized(const TfLiteDepthwiseConvParams&, const tflite::OpDataConv&)	24	static
 depthwise_conv_common.cc:80:14:TfLiteStatus tflite::CalculateOpDataDepthwiseConv(TfLiteContext*, TfLiteNode*, const TfLiteDepthwiseConvParams&, int, int, int, int, int, int, TfLiteType, tflite::OpDataConv*)	136	static
-depthwise_conv_common.cc:127:14:TfLiteStatus tflite::DepthwiseConvPrepare(TfLiteContext*, TfLiteNode*)	112	static
-kernel_util.h:253:6:void tflite::CalculateActivationRange(TfLiteFusedActivation, T*, T*) [with T = float]	24	static
+depthwise_conv_common.cc:126:14:TfLiteStatus tflite::DepthwiseConvPrepare(TfLiteContext*, TfLiteNode*)	112	static
+kernel_util.h:259:6:void tflite::CalculateActivationRange(TfLiteFusedActivation, T*, T*) [with T = float]	24	static

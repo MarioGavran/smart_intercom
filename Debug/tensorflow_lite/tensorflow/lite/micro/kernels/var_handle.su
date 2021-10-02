@@ -1,0 +1,7 @@
+kernel_util.h:46:26:TfLiteEvalTensor* tflite::micro::GetEvalOutput(const TfLiteContext*, const TfLiteNode*, int)	24	static
+gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+micro_graph.h:88:27:tflite::MicroResourceVariables* tflite::MicroGraph::GetResourceVariables()	16	static
+var_handle.cc:39:7:void* tflite::{anonymous}::Init(TfLiteContext*, const char*, size_t)	24	static
+var_handle.cc:44:14:TfLiteStatus tflite::{anonymous}::Prepare(TfLiteContext*, TfLiteNode*)	40	static
+var_handle.cc:79:14:TfLiteStatus tflite::{anonymous}::Eval(TfLiteContext*, TfLiteNode*)	24	static
+var_handle.cc:93:20:TfLiteRegistration tflite::Register_VAR_HANDLE()	24	static

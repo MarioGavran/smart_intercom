@@ -1,22 +1,21 @@
-micro_graph.cc:30:13:const char* tflite::{anonymous}::OpNameFromRegistration(const TfLiteRegistration*)	0	static
-micro_graph.cc:52:1:tflite::MicroGraph::~MicroGraph()	0	static
-micro_graph.cc:52:1:virtual tflite::MicroGraph::~MicroGraph()	8	static
-flatbuffers.h:2442:13:flatbuffers::voffset_t flatbuffers::Table::GetOptionalFieldOffset(flatbuffers::voffset_t) const	0	static
-micro_profiler.h:104:3:tflite::ScopedMicroProfiler::~ScopedMicroProfiler()	8	static
+micro_graph.cc:31:13:const char* tflite::{anonymous}::OpNameFromRegistration(const TfLiteRegistration*)	0	static
+micro_graph.cc:55:1:tflite::MicroGraph::~MicroGraph()	0	static
+micro_graph.cc:55:1:virtual tflite::MicroGraph::~MicroGraph()	8	static
+micro_graph.cc:57:14:virtual TfLiteStatus tflite::MicroGraph::InitSubgraphs()	40	static
+micro_graph.cc:121:14:virtual TfLiteStatus tflite::MicroGraph::FreeSubgraphs()	32	static
+micro_graph.cc:91:14:virtual TfLiteStatus tflite::MicroGraph::PrepareSubgraphs()	48	static
+flatbuffers.h:2436:13:flatbuffers::voffset_t flatbuffers::Table::GetOptionalFieldOffset(flatbuffers::voffset_t) const	0	static
+micro_profiler.h:109:3:tflite::ScopedMicroProfiler::~ScopedMicroProfiler()	8	static
+micro_graph.cc:147:14:virtual TfLiteStatus tflite::MicroGraph::InvokeSubgraph(int)	56	static
 micro_graph.cc:220:6:void tflite::MicroGraph::SetSubgraphAllocations(tflite::SubgraphAllocations*)	0	static
 flatbuffers.h:261:15:flatbuffers::Vector<T>::return_type flatbuffers::Vector<T>::Get(flatbuffers::uoffset_t) const [with T = long int]	8	static
 flatbuffers.h:261:15:flatbuffers::Vector<T>::return_type flatbuffers::Vector<T>::Get(flatbuffers::uoffset_t) const [with T = flatbuffers::Offset<tflite::SubGraph>]	8	static
 micro_graph.cc:194:14:virtual TfLiteStatus tflite::MicroGraph::ResetVariableTensors()	56	static
-flatbuffers.h:2457:26:P flatbuffers::Table::GetPointer(flatbuffers::voffset_t) [with P = const flatbuffers::Vector<long int>*]	8	static
-flatbuffers.h:2457:26:P flatbuffers::Table::GetPointer(flatbuffers::voffset_t) [with P = const flatbuffers::Vector<flatbuffers::Offset<tflite::Operator> >*]	8	static
-micro_graph.cc:146:14:virtual TfLiteStatus tflite::MicroGraph::InvokeSubgraph(int)	56	static
-micro_graph.cc:120:14:virtual TfLiteStatus tflite::MicroGraph::FreeSubgraphs()	32	static
-micro_graph.cc:54:14:virtual TfLiteStatus tflite::MicroGraph::InitSubgraphs()	40	static
-micro_graph.cc:89:14:virtual TfLiteStatus tflite::MicroGraph::PrepareSubgraphs()	48	static
-flatbuffers.h:2457:26:P flatbuffers::Table::GetPointer(flatbuffers::voffset_t) [with P = const flatbuffers::Vector<flatbuffers::Offset<tflite::SubGraph> >*]	8	static
+flatbuffers.h:2451:26:P flatbuffers::Table::GetPointer(flatbuffers::voffset_t) [with P = const flatbuffers::Vector<long int>*]	8	static
+flatbuffers.h:2451:26:P flatbuffers::Table::GetPointer(flatbuffers::voffset_t) [with P = const flatbuffers::Vector<flatbuffers::Offset<tflite::SubGraph> >*]	8	static
 micro_graph.cc:229:19:virtual TfLiteEvalTensor* tflite::MicroGraph::GetSubgraphInput(int, int)	16	static
 micro_graph.cc:218:5:virtual int tflite::MicroGraph::NumSubgraphs()	8	static
 micro_graph.cc:236:8:virtual size_t tflite::MicroGraph::NumSubgraphOutputs(int)	8	static
 micro_graph.cc:225:8:virtual size_t tflite::MicroGraph::NumSubgraphInputs(int)	8	static
-micro_graph.cc:41:1:tflite::MicroGraph::MicroGraph(TfLiteContext*, const tflite::Model*, tflite::MicroAllocator*)	8	static
+micro_graph.cc:42:1:tflite::MicroGraph::MicroGraph(TfLiteContext*, const tflite::Model*, tflite::MicroAllocator*, tflite::MicroResourceVariables*)	8	static
 micro_graph.cc:240:19:virtual TfLiteEvalTensor* tflite::MicroGraph::GetSubgraphOutput(int, int)	16	static

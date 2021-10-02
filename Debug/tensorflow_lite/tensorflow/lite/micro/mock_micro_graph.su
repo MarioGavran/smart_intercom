@@ -1,5 +1,5 @@
 gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
-mock_micro_graph.cc:22:1:tflite::MockMicroGraph::MockMicroGraph(tflite::SimpleMemoryAllocator*)	48	static
+mock_micro_graph.cc:22:1:tflite::MockMicroGraph::MockMicroGraph(tflite::SimpleMemoryAllocator*)	56	static
 mock_micro_graph.cc:43:14:virtual TfLiteStatus tflite::MockMicroGraph::InvokeSubgraph(int)	16	static
 mock_micro_graph.cc:48:14:virtual TfLiteStatus tflite::MockMicroGraph::ResetVariableTensors()	16	static
 mock_micro_graph.cc:50:8:virtual size_t tflite::MockMicroGraph::NumSubgraphInputs(int)	16	static

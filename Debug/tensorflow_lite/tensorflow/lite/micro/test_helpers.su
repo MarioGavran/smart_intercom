@@ -1,259 +1,264 @@
+limits:925:7:static constexpr short int std::numeric_limits<short int>::min()	4	static
+limits:928:7:static constexpr short int std::numeric_limits<short int>::max()	4	static
 limits:1204:7:static constexpr long int std::numeric_limits<long int>::min()	4	static
 limits:1207:7:static constexpr long int std::numeric_limits<long int>::max()	4	static
+limits:1344:7:static constexpr long long int std::numeric_limits<long long int>::min()	4	static
+limits:1347:7:static constexpr long long int std::numeric_limits<long long int>::max()	4	static
 new:173:33:void* operator new(std::size_t, void*)	16	static
 gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
-base.h:422:15:size_t flatbuffers::PaddingBytes(size_t, size_t)	16	static
+base.h:432:15:size_t flatbuffers::PaddingBytes(size_t, size_t)	16	static
 flatbuffers.h:75:13:void flatbuffers::EndianCheck()	16	static
 flatbuffers.h:601:11:flatbuffers::Allocator::~Allocator()	16	static
 flatbuffers.h:601:11:virtual flatbuffers::Allocator::~Allocator()	16	static
 flatbuffers.h:614:20:virtual uint8_t* flatbuffers::Allocator::reallocate_downward(uint8_t*, size_t, size_t, size_t, size_t)	48	static
 flatbuffers.h:630:8:void flatbuffers::Allocator::memcpy_downward(uint8_t*, size_t, uint8_t*, size_t, size_t, size_t)	24	static
-flatbuffers.h:642:12:virtual uint8_t* flatbuffers::DefaultAllocator::allocate(size_t)	16	static
-flatbuffers.h:646:8:virtual void flatbuffers::DefaultAllocator::deallocate(uint8_t*, size_t)	24	static
-flatbuffers.h:599:7:constexpr flatbuffers::Allocator::Allocator()	16	static
-flatbuffers.h:640:7:constexpr flatbuffers::DefaultAllocator::DefaultAllocator()	16	static
-flatbuffers.h:655:17:uint8_t* flatbuffers::Allocate(flatbuffers::Allocator*, size_t)	32	static
-flatbuffers.h:667:17:uint8_t* flatbuffers::ReallocateDownward(flatbuffers::Allocator*, uint8_t*, size_t, size_t, size_t, size_t)	48	static
-flatbuffers.h:808:12:flatbuffers::vector_downward::vector_downward(size_t, flatbuffers::Allocator*, bool, size_t)	24	static
-flatbuffers.h:877:8:void flatbuffers::vector_downward::clear_scratch()	16	static
-flatbuffers.h:917:10:size_t flatbuffers::vector_downward::ensure_space(size_t)	16	static
-flatbuffers.h:926:19:uint8_t* flatbuffers::vector_downward::make_space(size_t)	24	static
-flatbuffers.h:935:13:flatbuffers::uoffset_t flatbuffers::vector_downward::size() const	16	static
-flatbuffers.h:939:13:flatbuffers::uoffset_t flatbuffers::vector_downward::scratch_size() const	16	static
-flatbuffers.h:945:12:uint8_t* flatbuffers::vector_downward::data() const	16	static
-flatbuffers.h:950:12:uint8_t* flatbuffers::vector_downward::scratch_data() const	16	static
-flatbuffers.h:955:12:uint8_t* flatbuffers::vector_downward::scratch_end() const	16	static
-flatbuffers.h:960:12:uint8_t* flatbuffers::vector_downward::data_at(size_t) const	16	static
-flatbuffers.h:962:8:void flatbuffers::vector_downward::push(const uint8_t*, size_t)	24	static
-flatbuffers.h:980:8:void flatbuffers::vector_downward::fill(size_t)	24	static
-flatbuffers.h:987:8:void flatbuffers::vector_downward::fill_big(size_t)	16	static
-flatbuffers.h:991:8:void flatbuffers::vector_downward::pop(size_t)	16	static
-flatbuffers.h:992:8:void flatbuffers::vector_downward::scratch_pop(size_t)	16	static
-flatbuffers.h:1026:8:void flatbuffers::vector_downward::reallocate(size_t)	40	static
-flatbuffers.h:1045:18:flatbuffers::voffset_t flatbuffers::FieldIndexToOffset(flatbuffers::voffset_t)	24	static
-flatbuffers.h:1089:12:flatbuffers::FlatBufferBuilder::FlatBufferBuilder(size_t, flatbuffers::Allocator*, bool, size_t)	32	static
-flatbuffers.h:1177:13:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::GetSize() const	16	static
-flatbuffers.h:1182:12:uint8_t* flatbuffers::FlatBufferBuilder::GetBufferPointer() const	16	static
-flatbuffers.h:1233:8:void flatbuffers::FlatBufferBuilder::Finished() const	16	static
-flatbuffers.h:1257:8:void flatbuffers::FlatBufferBuilder::TrackMinAlign(size_t)	16	static
-flatbuffers.h:1261:8:void flatbuffers::FlatBufferBuilder::Align(size_t)	24	static
-flatbuffers.h:1271:8:void flatbuffers::FlatBufferBuilder::PushBytes(const uint8_t*, size_t)	24	static
-flatbuffers.h:1296:8:void flatbuffers::FlatBufferBuilder::TrackField(flatbuffers::voffset_t, flatbuffers::uoffset_t)	32	static
-flatbuffers.h:1335:13:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::ReferTo(flatbuffers::uoffset_t)	16	static
-flatbuffers.h:1343:8:void flatbuffers::FlatBufferBuilder::NotNested()	16	static
-flatbuffers.h:1359:13:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::StartTable()	16	static
-flatbuffers.h:1368:13:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::EndTable(flatbuffers::uoffset_t)	80	static
-flatbuffers.h:1448:8:void flatbuffers::FlatBufferBuilder::ClearOffsets()	16	static
-flatbuffers.h:1456:8:void flatbuffers::FlatBufferBuilder::PreAlign(size_t, size_t)	32	static
-flatbuffers.h:1470:18:flatbuffers::Offset<flatbuffers::String> flatbuffers::FlatBufferBuilder::CreateString(const char*, size_t)	32	static
-flatbuffers.h:1482:18:flatbuffers::Offset<flatbuffers::String> flatbuffers::FlatBufferBuilder::CreateString(const char*)	16	static
-flatbuffers.h:1579:13:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::EndVector(size_t)	16	static
-flatbuffers.h:1585:8:void flatbuffers::FlatBufferBuilder::StartVector(size_t, size_t)	24	static
-flatbuffers.h:2020:8:void flatbuffers::FlatBufferBuilder::Finish(flatbuffers::uoffset_t, const char*, bool)	24	static
-flatbuffers.h:2436:18:const uint8_t* flatbuffers::Table::GetVTable() const	24	static
-flatbuffers.h:2442:13:flatbuffers::voffset_t flatbuffers::Table::GetOptionalFieldOffset(flatbuffers::voffset_t) const	24	static
+flatbuffers.h:655:17:uint8_t* flatbuffers::Allocate(flatbuffers::Allocator*, size_t)	16	static
+flatbuffers.h:663:17:uint8_t* flatbuffers::ReallocateDownward(flatbuffers::Allocator*, uint8_t*, size_t, size_t, size_t, size_t)	40	static
+flatbuffers.h:802:12:flatbuffers::vector_downward::vector_downward(size_t, flatbuffers::Allocator*, bool, size_t)	24	static
+flatbuffers.h:871:8:void flatbuffers::vector_downward::clear_scratch()	16	static
+flatbuffers.h:911:10:size_t flatbuffers::vector_downward::ensure_space(size_t)	16	static
+flatbuffers.h:920:19:uint8_t* flatbuffers::vector_downward::make_space(size_t)	24	static
+flatbuffers.h:929:13:flatbuffers::uoffset_t flatbuffers::vector_downward::size() const	16	static
+flatbuffers.h:933:13:flatbuffers::uoffset_t flatbuffers::vector_downward::scratch_size() const	16	static
+flatbuffers.h:939:12:uint8_t* flatbuffers::vector_downward::data() const	16	static
+flatbuffers.h:944:12:uint8_t* flatbuffers::vector_downward::scratch_data() const	16	static
+flatbuffers.h:949:12:uint8_t* flatbuffers::vector_downward::scratch_end() const	16	static
+flatbuffers.h:954:12:uint8_t* flatbuffers::vector_downward::data_at(size_t) const	16	static
+flatbuffers.h:956:8:void flatbuffers::vector_downward::push(const uint8_t*, size_t)	24	static
+flatbuffers.h:974:8:void flatbuffers::vector_downward::fill(size_t)	24	static
+flatbuffers.h:981:8:void flatbuffers::vector_downward::fill_big(size_t)	16	static
+flatbuffers.h:985:8:void flatbuffers::vector_downward::pop(size_t)	16	static
+flatbuffers.h:986:8:void flatbuffers::vector_downward::scratch_pop(size_t)	16	static
+flatbuffers.h:1020:8:void flatbuffers::vector_downward::reallocate(size_t)	40	static
+flatbuffers.h:1039:18:flatbuffers::voffset_t flatbuffers::FieldIndexToOffset(flatbuffers::voffset_t)	24	static
+flatbuffers.h:1083:12:flatbuffers::FlatBufferBuilder::FlatBufferBuilder(size_t, flatbuffers::Allocator*, bool, size_t)	32	static
+flatbuffers.h:1171:13:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::GetSize() const	16	static
+flatbuffers.h:1176:12:uint8_t* flatbuffers::FlatBufferBuilder::GetBufferPointer() const	16	static
+flatbuffers.h:1227:8:void flatbuffers::FlatBufferBuilder::Finished() const	16	static
+flatbuffers.h:1251:8:void flatbuffers::FlatBufferBuilder::TrackMinAlign(size_t)	16	static
+flatbuffers.h:1255:8:void flatbuffers::FlatBufferBuilder::Align(size_t)	24	static
+flatbuffers.h:1265:8:void flatbuffers::FlatBufferBuilder::PushBytes(const uint8_t*, size_t)	24	static
+flatbuffers.h:1290:8:void flatbuffers::FlatBufferBuilder::TrackField(flatbuffers::voffset_t, flatbuffers::uoffset_t)	32	static
+flatbuffers.h:1329:13:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::ReferTo(flatbuffers::uoffset_t)	16	static
+flatbuffers.h:1337:8:void flatbuffers::FlatBufferBuilder::NotNested()	16	static
+flatbuffers.h:1353:13:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::StartTable()	16	static
+flatbuffers.h:1362:13:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::EndTable(flatbuffers::uoffset_t)	80	static
+flatbuffers.h:1442:8:void flatbuffers::FlatBufferBuilder::ClearOffsets()	16	static
+flatbuffers.h:1450:8:void flatbuffers::FlatBufferBuilder::PreAlign(size_t, size_t)	32	static
+flatbuffers.h:1464:18:flatbuffers::Offset<flatbuffers::String> flatbuffers::FlatBufferBuilder::CreateString(const char*, size_t)	32	static
+flatbuffers.h:1476:18:flatbuffers::Offset<flatbuffers::String> flatbuffers::FlatBufferBuilder::CreateString(const char*)	16	static
+flatbuffers.h:1573:13:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::EndVector(size_t)	16	static
+flatbuffers.h:1579:8:void flatbuffers::FlatBufferBuilder::StartVector(size_t, size_t)	24	static
+flatbuffers.h:2014:8:void flatbuffers::FlatBufferBuilder::Finish(flatbuffers::uoffset_t, const char*, bool)	24	static
+flatbuffers.h:2430:18:const uint8_t* flatbuffers::Table::GetVTable() const	24	static
+flatbuffers.h:2436:13:flatbuffers::voffset_t flatbuffers::Table::GetOptionalFieldOffset(flatbuffers::voffset_t) const	24	static
 stl_vector.h:125:14:std::_Vector_base<float, std::allocator<float> >::_Vector_impl::~_Vector_impl()	16	static
 stl_vector.h:125:14:std::_Vector_base<long long int, std::allocator<long long int> >::_Vector_impl::~_Vector_impl()	16	static
-schema_generated.h:3265:8:void tflite::QuantizationParametersBuilder::add_min(flatbuffers::Offset<flatbuffers::Vector<float> >)	16	static
-schema_generated.h:3268:8:void tflite::QuantizationParametersBuilder::add_max(flatbuffers::Offset<flatbuffers::Vector<float> >)	16	static
-schema_generated.h:3271:8:void tflite::QuantizationParametersBuilder::add_scale(flatbuffers::Offset<flatbuffers::Vector<float> >)	16	static
-schema_generated.h:3274:8:void tflite::QuantizationParametersBuilder::add_zero_point(flatbuffers::Offset<flatbuffers::Vector<long long int> >)	16	static
-schema_generated.h:3277:8:void tflite::QuantizationParametersBuilder::add_details_type(tflite::QuantizationDetails)	16	static
-schema_generated.h:3280:8:void tflite::QuantizationParametersBuilder::add_details(flatbuffers::Offset<void>)	16	static
-schema_generated.h:3283:8:void tflite::QuantizationParametersBuilder::add_quantized_dimension(int32_t)	16	static
-schema_generated.h:3286:12:tflite::QuantizationParametersBuilder::QuantizationParametersBuilder(flatbuffers::FlatBufferBuilder&)	16	static
-schema_generated.h:3291:47:flatbuffers::Offset<tflite::QuantizationParameters> tflite::QuantizationParametersBuilder::Finish()	24	static
-schema_generated.h:3298:52:flatbuffers::Offset<tflite::QuantizationParameters> tflite::CreateQuantizationParameters(flatbuffers::FlatBufferBuilder&, flatbuffers::Offset<flatbuffers::Vector<float> >, flatbuffers::Offset<flatbuffers::Vector<float> >, flatbuffers::Offset<flatbuffers::Vector<float> >, flatbuffers::Offset<flatbuffers::Vector<long long int> >, tflite::QuantizationDetails, flatbuffers::Offset<void>, int32_t)	32	static
-schema_generated.h:3861:8:void tflite::TensorBuilder::add_shape(flatbuffers::Offset<flatbuffers::Vector<long int> >)	16	static
-schema_generated.h:3864:8:void tflite::TensorBuilder::add_type(tflite::TensorType)	16	static
-schema_generated.h:3867:8:void tflite::TensorBuilder::add_buffer(uint32_t)	16	static
-schema_generated.h:3870:8:void tflite::TensorBuilder::add_name(flatbuffers::Offset<flatbuffers::String>)	16	static
-schema_generated.h:3873:8:void tflite::TensorBuilder::add_quantization(flatbuffers::Offset<tflite::QuantizationParameters>)	16	static
-schema_generated.h:3876:8:void tflite::TensorBuilder::add_is_variable(bool)	16	static
-schema_generated.h:3879:8:void tflite::TensorBuilder::add_sparsity(flatbuffers::Offset<tflite::SparsityParameters>)	16	static
-schema_generated.h:3882:8:void tflite::TensorBuilder::add_shape_signature(flatbuffers::Offset<flatbuffers::Vector<long int> >)	16	static
-schema_generated.h:3885:12:tflite::TensorBuilder::TensorBuilder(flatbuffers::FlatBufferBuilder&)	16	static
-schema_generated.h:3890:31:flatbuffers::Offset<tflite::Tensor> tflite::TensorBuilder::Finish()	24	static
-schema_generated.h:3897:36:flatbuffers::Offset<tflite::Tensor> tflite::CreateTensor(flatbuffers::FlatBufferBuilder&, flatbuffers::Offset<flatbuffers::Vector<long int> >, tflite::TensorType, uint32_t, flatbuffers::Offset<flatbuffers::String>, flatbuffers::Offset<tflite::QuantizationParameters>, bool, flatbuffers::Offset<tflite::SparsityParameters>, flatbuffers::Offset<flatbuffers::Vector<long int> >)	32	static
-schema_generated.h:9310:8:void tflite::IfOptionsBuilder::add_then_subgraph_index(int32_t)	16	static
-schema_generated.h:9313:8:void tflite::IfOptionsBuilder::add_else_subgraph_index(int32_t)	16	static
-schema_generated.h:9316:12:tflite::IfOptionsBuilder::IfOptionsBuilder(flatbuffers::FlatBufferBuilder&)	16	static
-schema_generated.h:9321:34:flatbuffers::Offset<tflite::IfOptions> tflite::IfOptionsBuilder::Finish()	24	static
-schema_generated.h:9328:39:flatbuffers::Offset<tflite::IfOptions> tflite::CreateIfOptions(flatbuffers::FlatBufferBuilder&, int32_t, int32_t)	32	static
-schema_generated.h:10172:8:void tflite::OperatorCodeBuilder::add_deprecated_builtin_code(int8_t)	16	static
-schema_generated.h:10175:8:void tflite::OperatorCodeBuilder::add_custom_code(flatbuffers::Offset<flatbuffers::String>)	16	static
-schema_generated.h:10178:8:void tflite::OperatorCodeBuilder::add_version(int32_t)	16	static
-schema_generated.h:10181:8:void tflite::OperatorCodeBuilder::add_builtin_code(tflite::BuiltinOperator)	16	static
-schema_generated.h:10184:12:tflite::OperatorCodeBuilder::OperatorCodeBuilder(flatbuffers::FlatBufferBuilder&)	16	static
-schema_generated.h:10189:37:flatbuffers::Offset<tflite::OperatorCode> tflite::OperatorCodeBuilder::Finish()	24	static
-schema_generated.h:10196:42:flatbuffers::Offset<tflite::OperatorCode> tflite::CreateOperatorCode(flatbuffers::FlatBufferBuilder&, int8_t, flatbuffers::Offset<flatbuffers::String>, int32_t, tflite::BuiltinOperator)	32	static
-schema_generated.h:10210:42:flatbuffers::Offset<tflite::OperatorCode> tflite::CreateOperatorCodeDirect(flatbuffers::FlatBufferBuilder&, int8_t, const char*, int32_t, tflite::BuiltinOperator)	40	static
-schema_generated.h:11081:8:void tflite::OperatorBuilder::add_opcode_index(uint32_t)	16	static
-schema_generated.h:11084:8:void tflite::OperatorBuilder::add_inputs(flatbuffers::Offset<flatbuffers::Vector<long int> >)	16	static
-schema_generated.h:11087:8:void tflite::OperatorBuilder::add_outputs(flatbuffers::Offset<flatbuffers::Vector<long int> >)	16	static
-schema_generated.h:11090:8:void tflite::OperatorBuilder::add_builtin_options_type(tflite::BuiltinOptions)	16	static
-schema_generated.h:11093:8:void tflite::OperatorBuilder::add_builtin_options(flatbuffers::Offset<void>)	16	static
-schema_generated.h:11096:8:void tflite::OperatorBuilder::add_custom_options(flatbuffers::Offset<flatbuffers::Vector<unsigned char> >)	16	static
-schema_generated.h:11099:8:void tflite::OperatorBuilder::add_custom_options_format(tflite::CustomOptionsFormat)	16	static
-schema_generated.h:11102:8:void tflite::OperatorBuilder::add_mutating_variable_inputs(flatbuffers::Offset<flatbuffers::Vector<unsigned char> >)	16	static
-schema_generated.h:11105:8:void tflite::OperatorBuilder::add_intermediates(flatbuffers::Offset<flatbuffers::Vector<long int> >)	16	static
-schema_generated.h:11108:12:tflite::OperatorBuilder::OperatorBuilder(flatbuffers::FlatBufferBuilder&)	16	static
-schema_generated.h:11113:33:flatbuffers::Offset<tflite::Operator> tflite::OperatorBuilder::Finish()	24	static
-schema_generated.h:11120:38:flatbuffers::Offset<tflite::Operator> tflite::CreateOperator(flatbuffers::FlatBufferBuilder&, uint32_t, flatbuffers::Offset<flatbuffers::Vector<long int> >, flatbuffers::Offset<flatbuffers::Vector<long int> >, tflite::BuiltinOptions, flatbuffers::Offset<void>, flatbuffers::Offset<flatbuffers::Vector<unsigned char> >, tflite::CustomOptionsFormat, flatbuffers::Offset<flatbuffers::Vector<unsigned char> >, flatbuffers::Offset<flatbuffers::Vector<long int> >)	32	static
-schema_generated.h:11195:67:const flatbuffers::Vector<flatbuffers::Offset<tflite::Tensor> >* tflite::SubGraph::tensors() const	16	static
-schema_generated.h:11234:8:void tflite::SubGraphBuilder::add_tensors(flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::Tensor> > >)	16	static
-schema_generated.h:11237:8:void tflite::SubGraphBuilder::add_inputs(flatbuffers::Offset<flatbuffers::Vector<long int> >)	16	static
-schema_generated.h:11240:8:void tflite::SubGraphBuilder::add_outputs(flatbuffers::Offset<flatbuffers::Vector<long int> >)	16	static
-schema_generated.h:11243:8:void tflite::SubGraphBuilder::add_operators(flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::Operator> > >)	16	static
-schema_generated.h:11246:8:void tflite::SubGraphBuilder::add_name(flatbuffers::Offset<flatbuffers::String>)	16	static
-schema_generated.h:11249:12:tflite::SubGraphBuilder::SubGraphBuilder(flatbuffers::FlatBufferBuilder&)	16	static
-schema_generated.h:11254:33:flatbuffers::Offset<tflite::SubGraph> tflite::SubGraphBuilder::Finish()	24	static
-schema_generated.h:11261:38:flatbuffers::Offset<tflite::SubGraph> tflite::CreateSubGraph(flatbuffers::FlatBufferBuilder&, flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::Tensor> > >, flatbuffers::Offset<flatbuffers::Vector<long int> >, flatbuffers::Offset<flatbuffers::Vector<long int> >, flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::Operator> > >, flatbuffers::Offset<flatbuffers::String>)	32	static
-schema_generated.h:11329:8:void tflite::BufferBuilder::add_data(flatbuffers::Offset<flatbuffers::Vector<unsigned char> >)	16	static
-schema_generated.h:11332:12:tflite::BufferBuilder::BufferBuilder(flatbuffers::FlatBufferBuilder&)	16	static
-schema_generated.h:11337:31:flatbuffers::Offset<tflite::Buffer> tflite::BufferBuilder::Finish()	24	static
-schema_generated.h:11344:36:flatbuffers::Offset<tflite::Buffer> tflite::CreateBuffer(flatbuffers::FlatBufferBuilder&, flatbuffers::Offset<flatbuffers::Vector<unsigned char> >)	24	static
-schema_generated.h:11400:8:void tflite::MetadataBuilder::add_name(flatbuffers::Offset<flatbuffers::String>)	16	static
-schema_generated.h:11403:8:void tflite::MetadataBuilder::add_buffer(uint32_t)	16	static
-schema_generated.h:11406:12:tflite::MetadataBuilder::MetadataBuilder(flatbuffers::FlatBufferBuilder&)	16	static
-schema_generated.h:11411:33:flatbuffers::Offset<tflite::Metadata> tflite::MetadataBuilder::Finish()	24	static
-schema_generated.h:11418:38:flatbuffers::Offset<tflite::Metadata> tflite::CreateMetadata(flatbuffers::FlatBufferBuilder&, flatbuffers::Offset<flatbuffers::String>, uint32_t)	32	static
-schema_generated.h:11661:69:const flatbuffers::Vector<flatbuffers::Offset<tflite::SubGraph> >* tflite::Model::subgraphs() const	16	static
-schema_generated.h:11711:8:void tflite::ModelBuilder::add_version(uint32_t)	16	static
-schema_generated.h:11714:8:void tflite::ModelBuilder::add_operator_codes(flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::OperatorCode> > >)	16	static
-schema_generated.h:11717:8:void tflite::ModelBuilder::add_subgraphs(flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::SubGraph> > >)	16	static
-schema_generated.h:11720:8:void tflite::ModelBuilder::add_description(flatbuffers::Offset<flatbuffers::String>)	16	static
-schema_generated.h:11723:8:void tflite::ModelBuilder::add_buffers(flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::Buffer> > >)	16	static
-schema_generated.h:11726:8:void tflite::ModelBuilder::add_metadata_buffer(flatbuffers::Offset<flatbuffers::Vector<long int> >)	16	static
-schema_generated.h:11729:8:void tflite::ModelBuilder::add_metadata(flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::Metadata> > >)	16	static
-schema_generated.h:11732:8:void tflite::ModelBuilder::add_signature_defs(flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::SignatureDef> > >)	16	static
-schema_generated.h:11735:12:tflite::ModelBuilder::ModelBuilder(flatbuffers::FlatBufferBuilder&)	16	static
-schema_generated.h:11740:30:flatbuffers::Offset<tflite::Model> tflite::ModelBuilder::Finish()	24	static
-schema_generated.h:11747:35:flatbuffers::Offset<tflite::Model> tflite::CreateModel(flatbuffers::FlatBufferBuilder&, uint32_t, flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::OperatorCode> > >, flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::SubGraph> > >, flatbuffers::Offset<flatbuffers::String>, flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::Buffer> > >, flatbuffers::Offset<flatbuffers::Vector<long int> >, flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::Metadata> > >, flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::SignatureDef> > >)	32	static
-schema_generated.h:17845:20:const char* tflite::ModelIdentifier()	4	static
-schema_generated.h:17868:13:void tflite::FinishModelBuffer(flatbuffers::FlatBufferBuilder&, flatbuffers::Offset<tflite::Model>)	16	static
+schema_generated.h:3352:8:void tflite::QuantizationParametersBuilder::add_min(flatbuffers::Offset<flatbuffers::Vector<float> >)	16	static
+schema_generated.h:3355:8:void tflite::QuantizationParametersBuilder::add_max(flatbuffers::Offset<flatbuffers::Vector<float> >)	16	static
+schema_generated.h:3358:8:void tflite::QuantizationParametersBuilder::add_scale(flatbuffers::Offset<flatbuffers::Vector<float> >)	16	static
+schema_generated.h:3361:8:void tflite::QuantizationParametersBuilder::add_zero_point(flatbuffers::Offset<flatbuffers::Vector<long long int> >)	16	static
+schema_generated.h:3364:8:void tflite::QuantizationParametersBuilder::add_details_type(tflite::QuantizationDetails)	16	static
+schema_generated.h:3367:8:void tflite::QuantizationParametersBuilder::add_details(flatbuffers::Offset<void>)	16	static
+schema_generated.h:3370:8:void tflite::QuantizationParametersBuilder::add_quantized_dimension(int32_t)	16	static
+schema_generated.h:3373:12:tflite::QuantizationParametersBuilder::QuantizationParametersBuilder(flatbuffers::FlatBufferBuilder&)	16	static
+schema_generated.h:3378:47:flatbuffers::Offset<tflite::QuantizationParameters> tflite::QuantizationParametersBuilder::Finish()	24	static
+schema_generated.h:3385:52:flatbuffers::Offset<tflite::QuantizationParameters> tflite::CreateQuantizationParameters(flatbuffers::FlatBufferBuilder&, flatbuffers::Offset<flatbuffers::Vector<float> >, flatbuffers::Offset<flatbuffers::Vector<float> >, flatbuffers::Offset<flatbuffers::Vector<float> >, flatbuffers::Offset<flatbuffers::Vector<long long int> >, tflite::QuantizationDetails, flatbuffers::Offset<void>, int32_t)	32	static
+schema_generated.h:3948:8:void tflite::TensorBuilder::add_shape(flatbuffers::Offset<flatbuffers::Vector<long int> >)	16	static
+schema_generated.h:3951:8:void tflite::TensorBuilder::add_type(tflite::TensorType)	16	static
+schema_generated.h:3954:8:void tflite::TensorBuilder::add_buffer(uint32_t)	16	static
+schema_generated.h:3957:8:void tflite::TensorBuilder::add_name(flatbuffers::Offset<flatbuffers::String>)	16	static
+schema_generated.h:3960:8:void tflite::TensorBuilder::add_quantization(flatbuffers::Offset<tflite::QuantizationParameters>)	16	static
+schema_generated.h:3963:8:void tflite::TensorBuilder::add_is_variable(bool)	16	static
+schema_generated.h:3966:8:void tflite::TensorBuilder::add_sparsity(flatbuffers::Offset<tflite::SparsityParameters>)	16	static
+schema_generated.h:3969:8:void tflite::TensorBuilder::add_shape_signature(flatbuffers::Offset<flatbuffers::Vector<long int> >)	16	static
+schema_generated.h:3972:12:tflite::TensorBuilder::TensorBuilder(flatbuffers::FlatBufferBuilder&)	16	static
+schema_generated.h:3977:31:flatbuffers::Offset<tflite::Tensor> tflite::TensorBuilder::Finish()	24	static
+schema_generated.h:3984:36:flatbuffers::Offset<tflite::Tensor> tflite::CreateTensor(flatbuffers::FlatBufferBuilder&, flatbuffers::Offset<flatbuffers::Vector<long int> >, tflite::TensorType, uint32_t, flatbuffers::Offset<flatbuffers::String>, flatbuffers::Offset<tflite::QuantizationParameters>, bool, flatbuffers::Offset<tflite::SparsityParameters>, flatbuffers::Offset<flatbuffers::Vector<long int> >)	32	static
+schema_generated.h:9397:8:void tflite::IfOptionsBuilder::add_then_subgraph_index(int32_t)	16	static
+schema_generated.h:9400:8:void tflite::IfOptionsBuilder::add_else_subgraph_index(int32_t)	16	static
+schema_generated.h:9403:12:tflite::IfOptionsBuilder::IfOptionsBuilder(flatbuffers::FlatBufferBuilder&)	16	static
+schema_generated.h:9408:34:flatbuffers::Offset<tflite::IfOptions> tflite::IfOptionsBuilder::Finish()	24	static
+schema_generated.h:9415:39:flatbuffers::Offset<tflite::IfOptions> tflite::CreateIfOptions(flatbuffers::FlatBufferBuilder&, int32_t, int32_t)	32	static
+schema_generated.h:10483:8:void tflite::OperatorCodeBuilder::add_deprecated_builtin_code(int8_t)	16	static
+schema_generated.h:10486:8:void tflite::OperatorCodeBuilder::add_custom_code(flatbuffers::Offset<flatbuffers::String>)	16	static
+schema_generated.h:10489:8:void tflite::OperatorCodeBuilder::add_version(int32_t)	16	static
+schema_generated.h:10492:8:void tflite::OperatorCodeBuilder::add_builtin_code(tflite::BuiltinOperator)	16	static
+schema_generated.h:10495:12:tflite::OperatorCodeBuilder::OperatorCodeBuilder(flatbuffers::FlatBufferBuilder&)	16	static
+schema_generated.h:10500:37:flatbuffers::Offset<tflite::OperatorCode> tflite::OperatorCodeBuilder::Finish()	24	static
+schema_generated.h:10507:42:flatbuffers::Offset<tflite::OperatorCode> tflite::CreateOperatorCode(flatbuffers::FlatBufferBuilder&, int8_t, flatbuffers::Offset<flatbuffers::String>, int32_t, tflite::BuiltinOperator)	32	static
+schema_generated.h:10521:42:flatbuffers::Offset<tflite::OperatorCode> tflite::CreateOperatorCodeDirect(flatbuffers::FlatBufferBuilder&, int8_t, const char*, int32_t, tflite::BuiltinOperator)	40	static
+schema_generated.h:11420:8:void tflite::OperatorBuilder::add_opcode_index(uint32_t)	16	static
+schema_generated.h:11423:8:void tflite::OperatorBuilder::add_inputs(flatbuffers::Offset<flatbuffers::Vector<long int> >)	16	static
+schema_generated.h:11426:8:void tflite::OperatorBuilder::add_outputs(flatbuffers::Offset<flatbuffers::Vector<long int> >)	16	static
+schema_generated.h:11429:8:void tflite::OperatorBuilder::add_builtin_options_type(tflite::BuiltinOptions)	16	static
+schema_generated.h:11432:8:void tflite::OperatorBuilder::add_builtin_options(flatbuffers::Offset<void>)	16	static
+schema_generated.h:11435:8:void tflite::OperatorBuilder::add_custom_options(flatbuffers::Offset<flatbuffers::Vector<unsigned char> >)	16	static
+schema_generated.h:11438:8:void tflite::OperatorBuilder::add_custom_options_format(tflite::CustomOptionsFormat)	16	static
+schema_generated.h:11441:8:void tflite::OperatorBuilder::add_mutating_variable_inputs(flatbuffers::Offset<flatbuffers::Vector<unsigned char> >)	16	static
+schema_generated.h:11444:8:void tflite::OperatorBuilder::add_intermediates(flatbuffers::Offset<flatbuffers::Vector<long int> >)	16	static
+schema_generated.h:11447:12:tflite::OperatorBuilder::OperatorBuilder(flatbuffers::FlatBufferBuilder&)	16	static
+schema_generated.h:11452:33:flatbuffers::Offset<tflite::Operator> tflite::OperatorBuilder::Finish()	24	static
+schema_generated.h:11459:38:flatbuffers::Offset<tflite::Operator> tflite::CreateOperator(flatbuffers::FlatBufferBuilder&, uint32_t, flatbuffers::Offset<flatbuffers::Vector<long int> >, flatbuffers::Offset<flatbuffers::Vector<long int> >, tflite::BuiltinOptions, flatbuffers::Offset<void>, flatbuffers::Offset<flatbuffers::Vector<unsigned char> >, tflite::CustomOptionsFormat, flatbuffers::Offset<flatbuffers::Vector<unsigned char> >, flatbuffers::Offset<flatbuffers::Vector<long int> >)	32	static
+schema_generated.h:11534:67:const flatbuffers::Vector<flatbuffers::Offset<tflite::Tensor> >* tflite::SubGraph::tensors() const	16	static
+schema_generated.h:11573:8:void tflite::SubGraphBuilder::add_tensors(flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::Tensor> > >)	16	static
+schema_generated.h:11576:8:void tflite::SubGraphBuilder::add_inputs(flatbuffers::Offset<flatbuffers::Vector<long int> >)	16	static
+schema_generated.h:11579:8:void tflite::SubGraphBuilder::add_outputs(flatbuffers::Offset<flatbuffers::Vector<long int> >)	16	static
+schema_generated.h:11582:8:void tflite::SubGraphBuilder::add_operators(flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::Operator> > >)	16	static
+schema_generated.h:11585:8:void tflite::SubGraphBuilder::add_name(flatbuffers::Offset<flatbuffers::String>)	16	static
+schema_generated.h:11588:12:tflite::SubGraphBuilder::SubGraphBuilder(flatbuffers::FlatBufferBuilder&)	16	static
+schema_generated.h:11593:33:flatbuffers::Offset<tflite::SubGraph> tflite::SubGraphBuilder::Finish()	24	static
+schema_generated.h:11600:38:flatbuffers::Offset<tflite::SubGraph> tflite::CreateSubGraph(flatbuffers::FlatBufferBuilder&, flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::Tensor> > >, flatbuffers::Offset<flatbuffers::Vector<long int> >, flatbuffers::Offset<flatbuffers::Vector<long int> >, flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::Operator> > >, flatbuffers::Offset<flatbuffers::String>)	32	static
+schema_generated.h:11668:8:void tflite::BufferBuilder::add_data(flatbuffers::Offset<flatbuffers::Vector<unsigned char> >)	16	static
+schema_generated.h:11671:12:tflite::BufferBuilder::BufferBuilder(flatbuffers::FlatBufferBuilder&)	16	static
+schema_generated.h:11676:31:flatbuffers::Offset<tflite::Buffer> tflite::BufferBuilder::Finish()	24	static
+schema_generated.h:11683:36:flatbuffers::Offset<tflite::Buffer> tflite::CreateBuffer(flatbuffers::FlatBufferBuilder&, flatbuffers::Offset<flatbuffers::Vector<unsigned char> >)	24	static
+schema_generated.h:11739:8:void tflite::MetadataBuilder::add_name(flatbuffers::Offset<flatbuffers::String>)	16	static
+schema_generated.h:11742:8:void tflite::MetadataBuilder::add_buffer(uint32_t)	16	static
+schema_generated.h:11745:12:tflite::MetadataBuilder::MetadataBuilder(flatbuffers::FlatBufferBuilder&)	16	static
+schema_generated.h:11750:33:flatbuffers::Offset<tflite::Metadata> tflite::MetadataBuilder::Finish()	24	static
+schema_generated.h:11757:38:flatbuffers::Offset<tflite::Metadata> tflite::CreateMetadata(flatbuffers::FlatBufferBuilder&, flatbuffers::Offset<flatbuffers::String>, uint32_t)	32	static
+schema_generated.h:11999:69:const flatbuffers::Vector<flatbuffers::Offset<tflite::SubGraph> >* tflite::Model::subgraphs() const	16	static
+schema_generated.h:12049:8:void tflite::ModelBuilder::add_version(uint32_t)	16	static
+schema_generated.h:12052:8:void tflite::ModelBuilder::add_operator_codes(flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::OperatorCode> > >)	16	static
+schema_generated.h:12055:8:void tflite::ModelBuilder::add_subgraphs(flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::SubGraph> > >)	16	static
+schema_generated.h:12058:8:void tflite::ModelBuilder::add_description(flatbuffers::Offset<flatbuffers::String>)	16	static
+schema_generated.h:12061:8:void tflite::ModelBuilder::add_buffers(flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::Buffer> > >)	16	static
+schema_generated.h:12064:8:void tflite::ModelBuilder::add_metadata_buffer(flatbuffers::Offset<flatbuffers::Vector<long int> >)	16	static
+schema_generated.h:12067:8:void tflite::ModelBuilder::add_metadata(flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::Metadata> > >)	16	static
+schema_generated.h:12070:8:void tflite::ModelBuilder::add_signature_defs(flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::SignatureDef> > >)	16	static
+schema_generated.h:12073:12:tflite::ModelBuilder::ModelBuilder(flatbuffers::FlatBufferBuilder&)	16	static
+schema_generated.h:12078:30:flatbuffers::Offset<tflite::Model> tflite::ModelBuilder::Finish()	24	static
+schema_generated.h:12085:35:flatbuffers::Offset<tflite::Model> tflite::CreateModel(flatbuffers::FlatBufferBuilder&, uint32_t, flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::OperatorCode> > >, flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::SubGraph> > >, flatbuffers::Offset<flatbuffers::String>, flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::Buffer> > >, flatbuffers::Offset<flatbuffers::Vector<long int> >, flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::Metadata> > >, flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<tflite::SignatureDef> > >)	32	static
+schema_generated.h:18371:20:const char* tflite::ModelIdentifier()	4	static
+schema_generated.h:18394:13:void tflite::FinishModelBuffer(flatbuffers::FlatBufferBuilder&, flatbuffers::Offset<tflite::Model>)	16	static
 portable_type_to_tflitetype.h:61:1:constexpr TfLiteType tflite::typeToTfLiteType() [with T = long int]	4	static
+portable_type_to_tflitetype.h:63:1:constexpr TfLiteType tflite::typeToTfLiteType() [with T = short int]	4	static
+portable_type_to_tflitetype.h:64:1:constexpr TfLiteType tflite::typeToTfLiteType() [with T = long long int]	4	static
 portable_type_to_tflitetype.h:67:1:constexpr TfLiteType tflite::typeToTfLiteType() [with T = signed char]	4	static
 kernel_util.h:161:16:int64_t tflite::NumElements(const TfLiteIntArray*)	32	static
+flatbuffers.h:599:7:constexpr flatbuffers::Allocator::Allocator()	16	static
 test_helpers.cc:42:3:tflite::testing::{anonymous}::StackAllocator::StackAllocator()	16	static
 test_helpers.cc:44:12:virtual uint8_t* tflite::testing::{anonymous}::StackAllocator::allocate(size_t)	24	static
 test_helpers.cc:52:8:virtual void tflite::testing::{anonymous}::StackAllocator::deallocate(uint8_t*, size_t)	24	static
 test_helpers.cc:54:26:static tflite::testing::{anonymous}::StackAllocator& tflite::testing::{anonymous}::StackAllocator::instance()	16	static
-test_helpers.cc:69:33:flatbuffers::FlatBufferBuilder* tflite::testing::{anonymous}::BuilderInstance()	32	static
-test_helpers.cc:85:12:tflite::testing::{anonymous}::ModelBuilder::ModelBuilder(flatbuffers::FlatBufferBuilder*)	24	static
-test_helpers.cc:92:10:tflite::testing::{anonymous}::ModelBuilder::Tensor tflite::testing::{anonymous}::ModelBuilder::AddTensor(tflite::TensorType, std::initializer_list<long int>)	32	static
-test_helpers.cc:147:24:tflite::testing::{anonymous}::ModelBuilder::Operator tflite::testing::{anonymous}::ModelBuilder::RegisterOp(tflite::BuiltinOperator, const char*)	40	static
-test_helpers.cc:156:20:tflite::testing::{anonymous}::ModelBuilder::Node tflite::testing::{anonymous}::ModelBuilder::AddNode(tflite::testing::{anonymous}::ModelBuilder::Operator, std::initializer_list<long int>, std::initializer_list<long int>)	96	static
-test_helpers.cc:169:6:void tflite::testing::{anonymous}::ModelBuilder::AddMetadata(const char*, const int32_t*, size_t)	32	static
-test_helpers.cc:183:14:const tflite::Model* tflite::testing::{anonymous}::ModelBuilder::BuildModel(std::initializer_list<long int>, std::initializer_list<long int>, size_t)	168	static
-test_helpers.cc:244:22:tflite::testing::{anonymous}::ModelBuilder::Tensor tflite::testing::{anonymous}::ModelBuilder::AddTensorImpl(tflite::TensorType, bool, std::initializer_list<long int>)	72	static
-test_helpers.cc:256:14:const tflite::Model* tflite::testing::{anonymous}::BuildSimpleStatefulModel()	680	static
-test_helpers.cc:275:14:const tflite::Model* tflite::testing::{anonymous}::BuildSimpleModelWithBranch()	768	static
-test_helpers.cc:315:14:const tflite::Model* tflite::testing::{anonymous}::BuildModelWithOfflinePlanning(int, const int32_t*, tflite::testing::NodeConnection*, int, int)	616	static
-test_helpers.cc:344:14:const tflite::Model* tflite::testing::{anonymous}::BuildModelWithUnusedInputs()	256	static
-test_helpers.cc:410:14:const tflite::Model* tflite::testing::{anonymous}::BuildSimpleMockModel()	288	static
-test_helpers.cc:487:14:const tflite::Model* tflite::testing::{anonymous}::BuildComplexMockModel()	488	static
-test_helpers.cc:639:14:const tflite::Model* tflite::testing::{anonymous}::BuildSimpleMultipleInputsModel()	264	static
-test_helpers.cc:707:14:const tflite::Model* tflite::testing::{anonymous}::BuildSimpleModelWithSubgraphsAndIf()	416	static
-test_helpers.cc:828:27:static const TfLiteRegistration* tflite::testing::SimpleStatefulOp::getRegistration()	8	static
-test_helpers.cc:832:21:static TfLiteRegistration* tflite::testing::SimpleStatefulOp::GetMutableRegistration()	4	static
-test_helpers.cc:840:7:static void* tflite::testing::SimpleStatefulOp::Init(TfLiteContext*, const char*, size_t)	32	static
-test_helpers.cc:852:14:static TfLiteStatus tflite::testing::SimpleStatefulOp::Prepare(TfLiteContext*, TfLiteNode*)	40	static
-test_helpers.cc:874:14:static TfLiteStatus tflite::testing::SimpleStatefulOp::Invoke(TfLiteContext*, TfLiteNode*)	80	static
-test_helpers.cc:913:27:static const TfLiteRegistration* tflite::testing::MockCustom::getRegistration()	8	static
-test_helpers.cc:917:21:static TfLiteRegistration* tflite::testing::MockCustom::GetMutableRegistration()	4	static
-test_helpers.cc:926:7:static void* tflite::testing::MockCustom::Init(TfLiteContext*, const char*, size_t)	24	static
-test_helpers.cc:936:6:static void tflite::testing::MockCustom::Free(TfLiteContext*, void*)	16	static
-test_helpers.cc:938:14:static TfLiteStatus tflite::testing::MockCustom::Prepare(TfLiteContext*, TfLiteNode*)	16	static
-test_helpers.cc:942:14:static TfLiteStatus tflite::testing::MockCustom::Invoke(TfLiteContext*, TfLiteNode*)	56	static
-test_helpers.cc:960:27:static const TfLiteRegistration* tflite::testing::MultipleInputs::getRegistration()	8	static
-test_helpers.cc:964:21:static TfLiteRegistration* tflite::testing::MultipleInputs::GetMutableRegistration()	4	static
-test_helpers.cc:973:7:static void* tflite::testing::MultipleInputs::Init(TfLiteContext*, const char*, size_t)	24	static
-test_helpers.cc:983:6:static void tflite::testing::MultipleInputs::Free(TfLiteContext*, void*)	16	static
-test_helpers.cc:987:14:static TfLiteStatus tflite::testing::MultipleInputs::Prepare(TfLiteContext*, TfLiteNode*)	16	static
-test_helpers.cc:991:14:static TfLiteStatus tflite::testing::MultipleInputs::Invoke(TfLiteContext*, TfLiteNode*)	64	static
-test_helpers.cc:1013:16:tflite::AllOpsResolver tflite::testing::GetOpResolver()	24	static
-test_helpers.cc:1022:14:const tflite::Model* tflite::testing::GetModelWithUnusedInputs()	8	static
-test_helpers.cc:1030:14:const tflite::Model* tflite::testing::GetSimpleMockModel()	8	static
-test_helpers.cc:1038:14:const tflite::Model* tflite::testing::GetSimpleMultipleInputsModel()	8	static
-test_helpers.cc:1046:14:const tflite::Model* tflite::testing::GetSimpleModelWithSubgraphsAndIf()	8	static
-test_helpers.cc:1054:14:const tflite::Model* tflite::testing::GetComplexMockModel()	8	static
-test_helpers.cc:1062:14:const tflite::Model* tflite::testing::GetSimpleModelWithBranch()	8	static
-test_helpers.cc:1070:14:const tflite::Model* tflite::testing::GetModelWithOfflinePlanning(int, const int32_t*, tflite::testing::NodeConnection*, int, int)	40	static
-test_helpers.cc:1080:14:const tflite::Model* tflite::testing::GetSimpleStatefulModel()	8	static
-test_helpers.cc:1088:15:const tflite::Tensor* tflite::testing::Create1dFlatbufferTensor(int, bool)	88	static
-test_helpers.cc:1103:15:const tflite::Tensor* tflite::testing::CreateQuantizedFlatbufferTensor(int)	216	static
-test_helpers.cc:1126:15:const tflite::Tensor* tflite::testing::CreateMissingQuantizationFlatbufferTensor(int)	104	static
-test_helpers.cc:1145:1:const flatbuffers::Vector<flatbuffers::Offset<tflite::Buffer> >* tflite::testing::CreateFlatbufferBuffers()	48	static
-test_helpers.cc:1162:5:int tflite::testing::TestStrcmp(const char*, const char*)	16	static
-test_helpers.cc:1175:6:)	28	static
-test_helpers.cc:1187:17:TfLiteIntArray* tflite::testing::IntArrayFromInts(int*)	16	static
-test_helpers.cc:1193:19:TfLiteFloatArray* tflite::testing::FloatArrayFromFloats(const float*)	24	static
-test_helpers.cc:1201:14:TfLiteTensor tflite::testing::CreateQuantizedBiasTensor(const float*, int32_t*, TfLiteIntArray*, float, float, bool)	48	static
-test_helpers.cc:1217:14:TfLiteTensor tflite::testing::CreatePerChannelQuantizedBiasTensor(const float*, int32_t*, TfLiteIntArray*, float, float*, float*, int*, TfLiteAffineQuantization*, int, bool)	56	static
-test_helpers.cc:1245:14:TfLiteTensor tflite::testing::CreateSymmetricPerChannelQuantizedTensor(const float*, int8_t*, TfLiteIntArray*, float*, int*, TfLiteAffineQuantization*, int, bool)	40	static
-test_helpers.cc:1269:8:size_t tflite::testing::GetModelTensorCount(const tflite::Model*)	24	static
-base.h:380:24:T flatbuffers::EndianScalar(T) [with T = long unsigned int]	16	static
+test_helpers.cc:71:33:flatbuffers::FlatBufferBuilder* tflite::testing::{anonymous}::BuilderInstance()	32	static
+test_helpers.cc:87:12:tflite::testing::{anonymous}::ModelBuilder::ModelBuilder(flatbuffers::FlatBufferBuilder*)	24	static
+test_helpers.cc:94:10:tflite::testing::{anonymous}::ModelBuilder::Tensor tflite::testing::{anonymous}::ModelBuilder::AddTensor(tflite::TensorType, std::initializer_list<long int>)	32	static
+test_helpers.cc:149:24:tflite::testing::{anonymous}::ModelBuilder::Operator tflite::testing::{anonymous}::ModelBuilder::RegisterOp(tflite::BuiltinOperator, const char*)	40	static
+test_helpers.cc:158:20:tflite::testing::{anonymous}::ModelBuilder::Node tflite::testing::{anonymous}::ModelBuilder::AddNode(tflite::testing::{anonymous}::ModelBuilder::Operator, std::initializer_list<long int>, std::initializer_list<long int>)	96	static
+test_helpers.cc:171:6:void tflite::testing::{anonymous}::ModelBuilder::AddMetadata(const char*, const int32_t*, size_t)	32	static
+test_helpers.cc:185:14:const tflite::Model* tflite::testing::{anonymous}::ModelBuilder::BuildModel(std::initializer_list<long int>, std::initializer_list<long int>, size_t)	168	static
+test_helpers.cc:246:22:tflite::testing::{anonymous}::ModelBuilder::Tensor tflite::testing::{anonymous}::ModelBuilder::AddTensorImpl(tflite::TensorType, bool, std::initializer_list<long int>)	72	static
+test_helpers.cc:258:14:const tflite::Model* tflite::testing::{anonymous}::BuildSimpleStatefulModel()	680	static
+test_helpers.cc:277:14:const tflite::Model* tflite::testing::{anonymous}::BuildSimpleModelWithBranch()	768	static
+test_helpers.cc:317:14:const tflite::Model* tflite::testing::{anonymous}::BuildModelWithOfflinePlanning(int, const int32_t*, tflite::testing::NodeConnection*, int, int)	616	static
+test_helpers.cc:346:14:const tflite::Model* tflite::testing::{anonymous}::BuildModelWithUnusedInputs()	256	static
+test_helpers.cc:412:14:const tflite::Model* tflite::testing::{anonymous}::BuildSimpleMockModel()	288	static
+test_helpers.cc:489:14:const tflite::Model* tflite::testing::{anonymous}::BuildComplexMockModel()	488	static
+test_helpers.cc:641:14:const tflite::Model* tflite::testing::{anonymous}::BuildSimpleMultipleInputsModel()	264	static
+test_helpers.cc:709:14:const tflite::Model* tflite::testing::{anonymous}::BuildSimpleModelWithSubgraphsAndIf()	416	static
+test_helpers.cc:830:27:static const TfLiteRegistration* tflite::testing::SimpleStatefulOp::getRegistration()	8	static
+test_helpers.cc:834:21:static TfLiteRegistration* tflite::testing::SimpleStatefulOp::GetMutableRegistration()	4	static
+test_helpers.cc:842:7:static void* tflite::testing::SimpleStatefulOp::Init(TfLiteContext*, const char*, size_t)	32	static
+test_helpers.cc:854:14:static TfLiteStatus tflite::testing::SimpleStatefulOp::Prepare(TfLiteContext*, TfLiteNode*)	40	static
+test_helpers.cc:876:14:static TfLiteStatus tflite::testing::SimpleStatefulOp::Invoke(TfLiteContext*, TfLiteNode*)	80	static
+test_helpers.cc:915:27:static const TfLiteRegistration* tflite::testing::MockCustom::getRegistration()	8	static
+test_helpers.cc:919:21:static TfLiteRegistration* tflite::testing::MockCustom::GetMutableRegistration()	4	static
+test_helpers.cc:928:7:static void* tflite::testing::MockCustom::Init(TfLiteContext*, const char*, size_t)	24	static
+test_helpers.cc:938:6:static void tflite::testing::MockCustom::Free(TfLiteContext*, void*)	16	static
+test_helpers.cc:940:14:static TfLiteStatus tflite::testing::MockCustom::Prepare(TfLiteContext*, TfLiteNode*)	16	static
+test_helpers.cc:944:14:static TfLiteStatus tflite::testing::MockCustom::Invoke(TfLiteContext*, TfLiteNode*)	56	static
+test_helpers.cc:962:27:static const TfLiteRegistration* tflite::testing::MultipleInputs::getRegistration()	8	static
+test_helpers.cc:966:21:static TfLiteRegistration* tflite::testing::MultipleInputs::GetMutableRegistration()	4	static
+test_helpers.cc:975:7:static void* tflite::testing::MultipleInputs::Init(TfLiteContext*, const char*, size_t)	24	static
+test_helpers.cc:985:6:static void tflite::testing::MultipleInputs::Free(TfLiteContext*, void*)	16	static
+test_helpers.cc:989:14:static TfLiteStatus tflite::testing::MultipleInputs::Prepare(TfLiteContext*, TfLiteNode*)	16	static
+test_helpers.cc:993:14:static TfLiteStatus tflite::testing::MultipleInputs::Invoke(TfLiteContext*, TfLiteNode*)	64	static
+test_helpers.cc:1015:16:tflite::AllOpsResolver tflite::testing::GetOpResolver()	24	static
+test_helpers.cc:1024:14:const tflite::Model* tflite::testing::GetModelWithUnusedInputs()	8	static
+test_helpers.cc:1032:14:const tflite::Model* tflite::testing::GetSimpleMockModel()	8	static
+test_helpers.cc:1040:14:const tflite::Model* tflite::testing::GetSimpleMultipleInputsModel()	8	static
+test_helpers.cc:1048:14:const tflite::Model* tflite::testing::GetSimpleModelWithSubgraphsAndIf()	8	static
+test_helpers.cc:1056:14:const tflite::Model* tflite::testing::GetComplexMockModel()	8	static
+test_helpers.cc:1064:14:const tflite::Model* tflite::testing::GetSimpleModelWithBranch()	8	static
+test_helpers.cc:1072:14:const tflite::Model* tflite::testing::GetModelWithOfflinePlanning(int, const int32_t*, tflite::testing::NodeConnection*, int, int)	40	static
+test_helpers.cc:1082:14:const tflite::Model* tflite::testing::GetSimpleStatefulModel()	8	static
+test_helpers.cc:1090:15:const tflite::Tensor* tflite::testing::Create1dFlatbufferTensor(int, bool)	88	static
+test_helpers.cc:1105:15:const tflite::Tensor* tflite::testing::CreateQuantizedFlatbufferTensor(int)	216	static
+test_helpers.cc:1128:15:const tflite::Tensor* tflite::testing::CreateMissingQuantizationFlatbufferTensor(int)	104	static
+test_helpers.cc:1147:1:const flatbuffers::Vector<flatbuffers::Offset<tflite::Buffer> >* tflite::testing::CreateFlatbufferBuffers()	48	static
+test_helpers.cc:1164:5:int tflite::testing::TestStrcmp(const char*, const char*)	16	static
+test_helpers.cc:1177:6:)	28	static
+test_helpers.cc:1189:17:TfLiteIntArray* tflite::testing::IntArrayFromInts(int*)	16	static
+test_helpers.cc:1195:19:TfLiteFloatArray* tflite::testing::FloatArrayFromFloats(const float*)	24	static
+test_helpers.cc:1203:14:TfLiteTensor tflite::testing::CreateQuantizedBiasTensor(const float*, int16_t*, TfLiteIntArray*, float, float, bool)	48	static
+test_helpers.cc:1217:14:TfLiteTensor tflite::testing::CreateQuantizedBiasTensor(const float*, int32_t*, TfLiteIntArray*, float, float, bool)	48	static
+test_helpers.cc:1231:14:TfLiteTensor tflite::testing::CreateQuantizedBiasTensor(const float*, int64_t*, TfLiteIntArray*, float, float, bool)	48	static
+test_helpers.cc:1277:14:TfLiteTensor tflite::testing::CreatePerChannelQuantizedBiasTensor(const float*, int32_t*, TfLiteIntArray*, float, float*, float*, int*, TfLiteAffineQuantization*, int, bool)	56	static
+test_helpers.cc:1287:14:TfLiteTensor tflite::testing::CreatePerChannelQuantizedBiasTensor(const float*, int64_t*, TfLiteIntArray*, float, float*, float*, int*, TfLiteAffineQuantization*, int, bool)	56	static
+test_helpers.cc:1297:14:TfLiteTensor tflite::testing::CreateSymmetricPerChannelQuantizedTensor(const float*, int8_t*, TfLiteIntArray*, float*, int*, TfLiteAffineQuantization*, int, bool)	40	static
+test_helpers.cc:1321:8:size_t tflite::testing::GetModelTensorCount(const tflite::Model*)	24	static
+base.h:390:24:T flatbuffers::EndianScalar(T) [with T = long unsigned int]	16	static
 stl_algobase.h:222:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = unsigned int]	16	static
 flatbuffers.h:83:51:constexpr size_t flatbuffers::AlignOf() [with T = long long unsigned int]	4	static
-flatbuffers.h:972:29:void flatbuffers::vector_downward::scratch_push_small(const T&) [with T = flatbuffers::FlatBufferBuilder::FieldLoc]	16	static
+flatbuffers.h:966:29:void flatbuffers::vector_downward::scratch_push_small(const T&) [with T = flatbuffers::FlatBufferBuilder::FieldLoc]	16	static
 stl_algobase.h:222:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = short unsigned int]	16	static
-flatbuffers.h:1281:34:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::PushElement(T) [with T = long int]	24	static
-base.h:405:6:void flatbuffers::WriteScalar(void*, T) [with T = short unsigned int]	16	static
-base.h:391:3:T flatbuffers::ReadScalar(const void*) [with T = short unsigned int]	16	static
-flatbuffers.h:972:29:void flatbuffers::vector_downward::scratch_push_small(const T&) [with T = long unsigned int]	16	static
-base.h:405:6:void flatbuffers::WriteScalar(void*, T) [with T = long int]	16	static
-flatbuffers.h:1460:29:void flatbuffers::FlatBufferBuilder::PreAlign(size_t) [with T = long unsigned int]	16	static
-flatbuffers.h:1281:34:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::PushElement(T) [with T = long unsigned int]	24	static
+flatbuffers.h:1275:34:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::PushElement(T) [with T = long int]	24	static
+base.h:415:6:void flatbuffers::WriteScalar(void*, T) [with T = short unsigned int]	16	static
+base.h:401:3:T flatbuffers::ReadScalar(const void*) [with T = short unsigned int]	16	static
+flatbuffers.h:966:29:void flatbuffers::vector_downward::scratch_push_small(const T&) [with T = long unsigned int]	16	static
+base.h:415:6:void flatbuffers::WriteScalar(void*, T) [with T = long int]	16	static
+flatbuffers.h:1454:29:void flatbuffers::FlatBufferBuilder::PreAlign(size_t) [with T = long unsigned int]	16	static
+flatbuffers.h:1275:34:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::PushElement(T) [with T = long unsigned int]	24	static
 flatbuffers.h:70:3:flatbuffers::Offset<T>::Offset(flatbuffers::uoffset_t) [with T = flatbuffers::String]	16	static
-flatbuffers.h:1281:34:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::PushElement(T) [with T = unsigned char]	24	static
+flatbuffers.h:1275:34:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::PushElement(T) [with T = unsigned char]	24	static
 flatbuffers.h:70:3:flatbuffers::Offset<T>::Offset(flatbuffers::uoffset_t) [with T = flatbuffers::Vector<unsigned char>]	16	static
-base.h:391:3:T flatbuffers::ReadScalar(const void*) [with T = long unsigned int]	16	static
-base.h:391:3:T flatbuffers::ReadScalar(const void*) [with T = long int]	16	static
-stl_algobase.h:198:5:constexpr const _Tp& std::min(const _Tp&, const _Tp&) [with _Tp = long int]	16	static
-flatbuffers.h:1316:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = flatbuffers::Vector<unsigned char>]	24	static
+base.h:401:3:T flatbuffers::ReadScalar(const void*) [with T = long unsigned int]	16	static
+base.h:401:3:T flatbuffers::ReadScalar(const void*) [with T = long int]	16	static
+flatbuffers.h:1310:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = flatbuffers::Vector<unsigned char>]	24	static
 allocator.h:153:7:std::allocator< <template-parameter-1-1> >::~allocator() [with _Tp = float]	16	static
 stl_vector.h:330:7:std::_Vector_base<_Tp, _Alloc>::~_Vector_base() [with _Tp = float; _Alloc = std::allocator<float>]	16	static
 stl_vector.h:675:7:std::vector<_Tp, _Alloc>::~vector() [with _Tp = float; _Alloc = std::allocator<float>]	24	static
 allocator.h:153:7:std::allocator< <template-parameter-1-1> >::~allocator() [with _Tp = long long int]	16	static
 stl_vector.h:330:7:std::_Vector_base<_Tp, _Alloc>::~_Vector_base() [with _Tp = long long int; _Alloc = std::allocator<long long int>]	16	static
 stl_vector.h:675:7:std::vector<_Tp, _Alloc>::~vector() [with _Tp = long long int; _Alloc = std::allocator<long long int>]	24	static
-flatbuffers.h:1316:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = flatbuffers::Vector<float>]	24	static
-flatbuffers.h:1316:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = flatbuffers::Vector<long long int>]	24	static
-flatbuffers.h:1304:29:void flatbuffers::FlatBufferBuilder::AddElement(flatbuffers::voffset_t, T, T) [with T = unsigned char]	24	static
-flatbuffers.h:1316:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = void]	24	static
-flatbuffers.h:1304:29:void flatbuffers::FlatBufferBuilder::AddElement(flatbuffers::voffset_t, T, T) [with T = long int]	32	static
+flatbuffers.h:1310:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = flatbuffers::Vector<float>]	24	static
+flatbuffers.h:1310:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = flatbuffers::Vector<long long int>]	24	static
+flatbuffers.h:1298:29:void flatbuffers::FlatBufferBuilder::AddElement(flatbuffers::voffset_t, T, T) [with T = unsigned char]	24	static
+flatbuffers.h:1310:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = void]	24	static
+flatbuffers.h:1298:29:void flatbuffers::FlatBufferBuilder::AddElement(flatbuffers::voffset_t, T, T) [with T = long int]	32	static
 flatbuffers.h:70:3:flatbuffers::Offset<T>::Offset(flatbuffers::uoffset_t) [with T = tflite::QuantizationParameters]	16	static
-flatbuffers.h:1652:42:flatbuffers::Offset<flatbuffers::Vector<T> > flatbuffers::FlatBufferBuilder::CreateVector(const std::vector<T>&) [with T = float]	24	static
+flatbuffers.h:1646:42:flatbuffers::Offset<flatbuffers::Vector<T> > flatbuffers::FlatBufferBuilder::CreateVector(const std::vector<T>&) [with T = float]	24	static
 flatbuffers.h:70:3:flatbuffers::Offset<T>::Offset(flatbuffers::uoffset_t) [with T = flatbuffers::Vector<float>]	16	static
-flatbuffers.h:1652:42:flatbuffers::Offset<flatbuffers::Vector<T> > flatbuffers::FlatBufferBuilder::CreateVector(const std::vector<T>&) [with T = long long int]	24	static
+flatbuffers.h:1646:42:flatbuffers::Offset<flatbuffers::Vector<T> > flatbuffers::FlatBufferBuilder::CreateVector(const std::vector<T>&) [with T = long long int]	24	static
 flatbuffers.h:70:3:flatbuffers::Offset<T>::Offset(flatbuffers::uoffset_t) [with T = flatbuffers::Vector<long long int>]	16	static
-flatbuffers.h:1316:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = flatbuffers::Vector<long int>]	24	static
+flatbuffers.h:1310:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = flatbuffers::Vector<long int>]	24	static
 flatbuffers.h:70:3:flatbuffers::Offset<T>::Offset(flatbuffers::uoffset_t) [with T = flatbuffers::Vector<long int>]	16	static
-flatbuffers.h:1304:29:void flatbuffers::FlatBufferBuilder::AddElement(flatbuffers::voffset_t, T, T) [with T = signed char]	24	static
+flatbuffers.h:1298:29:void flatbuffers::FlatBufferBuilder::AddElement(flatbuffers::voffset_t, T, T) [with T = signed char]	24	static
 flatbuffers.h:70:3:flatbuffers::Offset<T>::Offset(flatbuffers::uoffset_t) [with T = tflite::SparsityParameters]	16	static
-flatbuffers.h:1304:29:void flatbuffers::FlatBufferBuilder::AddElement(flatbuffers::voffset_t, T, T) [with T = long unsigned int]	32	static
-flatbuffers.h:1316:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = flatbuffers::String]	24	static
-flatbuffers.h:1316:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = tflite::QuantizationParameters]	24	static
-flatbuffers.h:1316:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = tflite::SparsityParameters]	24	static
+flatbuffers.h:1298:29:void flatbuffers::FlatBufferBuilder::AddElement(flatbuffers::voffset_t, T, T) [with T = long unsigned int]	32	static
+flatbuffers.h:1310:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = flatbuffers::String]	24	static
+flatbuffers.h:1310:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = tflite::QuantizationParameters]	24	static
+flatbuffers.h:1310:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = tflite::SparsityParameters]	24	static
 flatbuffers.h:70:3:flatbuffers::Offset<T>::Offset(flatbuffers::uoffset_t) [with T = tflite::Tensor]	16	static
 flatbuffers.h:70:3:flatbuffers::Offset<T>::Offset(flatbuffers::uoffset_t) [with T = tflite::IfOptions]	16	static
 flatbuffers.h:70:3:flatbuffers::Offset<T>::Offset(flatbuffers::uoffset_t) [with T = tflite::OperatorCode]	16	static
 flatbuffers.h:70:3:flatbuffers::Offset<T>::Offset(flatbuffers::uoffset_t) [with T = tflite::Operator]	16	static
-flatbuffers.h:2463:26:P flatbuffers::Table::GetPointer(flatbuffers::voffset_t) const [with P = const flatbuffers::Vector<flatbuffers::Offset<tflite::Tensor> >*]	16	static
-flatbuffers.h:1316:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::Tensor> >]	24	static
-flatbuffers.h:1316:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::Operator> >]	24	static
+flatbuffers.h:2457:26:P flatbuffers::Table::GetPointer(flatbuffers::voffset_t) const [with P = const flatbuffers::Vector<flatbuffers::Offset<tflite::Tensor> >*]	16	static
+flatbuffers.h:1310:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::Tensor> >]	24	static
+flatbuffers.h:1310:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::Operator> >]	24	static
 flatbuffers.h:70:3:flatbuffers::Offset<T>::Offset(flatbuffers::uoffset_t) [with T = tflite::SubGraph]	16	static
 flatbuffers.h:70:3:flatbuffers::Offset<T>::Offset(flatbuffers::uoffset_t) [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::Tensor> >]	16	static
 flatbuffers.h:70:3:flatbuffers::Offset<T>::Offset(flatbuffers::uoffset_t) [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::Operator> >]	16	static
 flatbuffers.h:70:3:flatbuffers::Offset<T>::Offset(flatbuffers::uoffset_t) [with T = tflite::Buffer]	16	static
 flatbuffers.h:70:3:flatbuffers::Offset<T>::Offset(flatbuffers::uoffset_t) [with T = tflite::Metadata]	16	static
-flatbuffers.h:2463:26:P flatbuffers::Table::GetPointer(flatbuffers::voffset_t) const [with P = const flatbuffers::Vector<flatbuffers::Offset<tflite::SubGraph> >*]	16	static
-flatbuffers.h:1316:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::OperatorCode> >]	24	static
-flatbuffers.h:1316:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::SubGraph> >]	24	static
-flatbuffers.h:1316:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::Buffer> >]	24	static
-flatbuffers.h:1316:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::Metadata> >]	24	static
-flatbuffers.h:1316:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::SignatureDef> >]	24	static
+flatbuffers.h:2457:26:P flatbuffers::Table::GetPointer(flatbuffers::voffset_t) const [with P = const flatbuffers::Vector<flatbuffers::Offset<tflite::SubGraph> >*]	16	static
+flatbuffers.h:1310:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::OperatorCode> >]	24	static
+flatbuffers.h:1310:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::SubGraph> >]	24	static
+flatbuffers.h:1310:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::Buffer> >]	24	static
+flatbuffers.h:1310:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::Metadata> >]	24	static
+flatbuffers.h:1310:29:void flatbuffers::FlatBufferBuilder::AddOffset(flatbuffers::voffset_t, flatbuffers::Offset<T>) [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::SignatureDef> >]	24	static
 flatbuffers.h:70:3:flatbuffers::Offset<T>::Offset(flatbuffers::uoffset_t) [with T = tflite::Model]	16	static
 flatbuffers.h:70:3:flatbuffers::Offset<T>::Offset(flatbuffers::uoffset_t) [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::OperatorCode> >]	16	static
 flatbuffers.h:70:3:flatbuffers::Offset<T>::Offset(flatbuffers::uoffset_t) [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::SubGraph> >]	16	static
@@ -267,8 +272,8 @@ flatbuffers.h:252:13:flatbuffers::uoffset_t flatbuffers::Vector<T>::size() const
 flatbuffers.h:261:15:flatbuffers::Vector<T>::return_type flatbuffers::Vector<T>::Get(flatbuffers::uoffset_t) const [with T = flatbuffers::Offset<tflite::SubGraph>]	16	static
 flatbuffers.h:70:3:flatbuffers::Offset<T>::Offset(flatbuffers::uoffset_t) [with T = void]	16	static
 flatbuffers.h:71:16:flatbuffers::Offset<void> flatbuffers::Offset<T>::Union() const [with T = tflite::IfOptions]	24	static
-flatbuffers.h:2104:31:const T* flatbuffers::GetRoot(const void*) [with T = tflite::Model]	16	static
-flatbuffers.h:1994:8:void flatbuffers::FlatBufferBuilder::Finish(flatbuffers::Offset<T>, const char*) [with T = tflite::Model]	24	static
+flatbuffers.h:2098:31:const T* flatbuffers::GetRoot(const void*) [with T = tflite::Model]	16	static
+flatbuffers.h:1988:8:void flatbuffers::FlatBufferBuilder::Finish(flatbuffers::Offset<T>, const char*) [with T = tflite::Model]	24	static
 flatbuffers.h:69:3:flatbuffers::Offset<T>::Offset() [with T = tflite::OperatorCode]	16	static
 flatbuffers.h:69:3:flatbuffers::Offset<T>::Offset() [with T = tflite::Operator]	16	static
 flatbuffers.h:69:3:flatbuffers::Offset<T>::Offset() [with T = tflite::Tensor]	16	static
@@ -276,44 +281,48 @@ flatbuffers.h:69:3:flatbuffers::Offset<T>::Offset() [with T = tflite::Metadata]	
 flatbuffers.h:69:3:flatbuffers::Offset<T>::Offset() [with T = tflite::Buffer]	16	static
 initializer_list:75:7:constexpr const _E* std::initializer_list<_E>::begin() const [with _E = long int]	16	static
 initializer_list:71:7:constexpr std::initializer_list<_E>::size_type std::initializer_list<_E>::size() const [with _E = long int]	16	static
-flatbuffers.h:1615:42:flatbuffers::Offset<flatbuffers::Vector<T> > flatbuffers::FlatBufferBuilder::CreateVector(const T*, size_t) [with T = long int]	32	static
-flatbuffers.h:1615:42:flatbuffers::Offset<flatbuffers::Vector<T> > flatbuffers::FlatBufferBuilder::CreateVector(const T*, size_t) [with T = unsigned char]	32	static
-flatbuffers.h:1640:29:flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<T> > > flatbuffers::FlatBufferBuilder::CreateVector(const flatbuffers::Offset<T>*, size_t) [with T = tflite::Tensor]	32	static
-flatbuffers.h:1640:29:flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<T> > > flatbuffers::FlatBufferBuilder::CreateVector(const flatbuffers::Offset<T>*, size_t) [with T = tflite::Operator]	32	static
+flatbuffers.h:1609:42:flatbuffers::Offset<flatbuffers::Vector<T> > flatbuffers::FlatBufferBuilder::CreateVector(const T*, size_t) [with T = long int]	32	static
+flatbuffers.h:1609:42:flatbuffers::Offset<flatbuffers::Vector<T> > flatbuffers::FlatBufferBuilder::CreateVector(const T*, size_t) [with T = unsigned char]	32	static
+flatbuffers.h:1634:29:flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<T> > > flatbuffers::FlatBufferBuilder::CreateVector(const flatbuffers::Offset<T>*, size_t) [with T = tflite::Tensor]	32	static
+flatbuffers.h:1634:29:flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<T> > > flatbuffers::FlatBufferBuilder::CreateVector(const flatbuffers::Offset<T>*, size_t) [with T = tflite::Operator]	32	static
 flatbuffers.h:69:3:flatbuffers::Offset<T>::Offset() [with T = tflite::Model]	16	static
-flatbuffers.h:1640:29:flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<T> > > flatbuffers::FlatBufferBuilder::CreateVector(const flatbuffers::Offset<T>*, size_t) [with T = tflite::OperatorCode]	32	static
-flatbuffers.h:1640:29:flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<T> > > flatbuffers::FlatBufferBuilder::CreateVector(const flatbuffers::Offset<T>*, size_t) [with T = tflite::SubGraph]	32	static
-flatbuffers.h:1640:29:flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<T> > > flatbuffers::FlatBufferBuilder::CreateVector(const flatbuffers::Offset<T>*, size_t) [with T = tflite::Buffer]	32	static
-flatbuffers.h:1640:29:flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<T> > > flatbuffers::FlatBufferBuilder::CreateVector(const flatbuffers::Offset<T>*, size_t) [with T = tflite::Metadata]	32	static
+flatbuffers.h:1634:29:flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<T> > > flatbuffers::FlatBufferBuilder::CreateVector(const flatbuffers::Offset<T>*, size_t) [with T = tflite::OperatorCode]	32	static
+flatbuffers.h:1634:29:flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<T> > > flatbuffers::FlatBufferBuilder::CreateVector(const flatbuffers::Offset<T>*, size_t) [with T = tflite::SubGraph]	32	static
+flatbuffers.h:1634:29:flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<T> > > flatbuffers::FlatBufferBuilder::CreateVector(const flatbuffers::Offset<T>*, size_t) [with T = tflite::Buffer]	32	static
+flatbuffers.h:1634:29:flatbuffers::Offset<flatbuffers::Vector<flatbuffers::Offset<T> > > flatbuffers::FlatBufferBuilder::CreateVector(const flatbuffers::Offset<T>*, size_t) [with T = tflite::Metadata]	32	static
 tensor_ctypes.h:29:17:const T* tflite::GetTensorData(const TfLiteTensor*) [with T = unsigned char]	16	static
 move.h:99:5:constexpr typename std::remove_reference<_Tp>::type&& std::move(_Tp&&) [with _Tp = unsigned char&]	16	static
 move.h:182:5:typename std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<_Tp> >, std::is_move_constructible<_Tp>, std::is_move_assignable<_Tp> >::value>::type std::swap(_Tp&, _Tp&) [with _Tp = unsigned char]	24	static
 tensor_ctypes.h:24:11:T* tflite::GetTensorData(TfLiteTensor*) [with T = unsigned char]	16	static
 tensor_ctypes.h:24:11:T* tflite::GetTensorData(TfLiteTensor*) [with T = long int]	16	static
-micro_mutable_op_resolver.h:83:16:TfLiteStatus tflite::MicroMutableOpResolver<tOpCount>::AddCustom(const char*, TfLiteRegistration*) [with unsigned int tOpCount = 128]	40	static
-flatbuffers.h:1994:8:void flatbuffers::FlatBufferBuilder::Finish(flatbuffers::Offset<T>, const char*) [with T = tflite::Tensor]	24	static
-flatbuffers.h:2104:31:const T* flatbuffers::GetRoot(const void*) [with T = tflite::Tensor]	16	static
+micro_mutable_op_resolver.h:84:16:TfLiteStatus tflite::MicroMutableOpResolver<tOpCount>::AddCustom(const char*, TfLiteRegistration*) [with unsigned int tOpCount = 128]	40	static
+flatbuffers.h:1988:8:void flatbuffers::FlatBufferBuilder::Finish(flatbuffers::Offset<T>, const char*) [with T = tflite::Tensor]	24	static
+flatbuffers.h:2098:31:const T* flatbuffers::GetRoot(const void*) [with T = tflite::Tensor]	16	static
 allocator.h:138:7:std::allocator< <template-parameter-1-1> >::allocator() [with _Tp = float]	16	static
 stl_vector.h:622:7:std::vector<_Tp, _Alloc>::vector(std::initializer_list<_Tp>, const allocator_type&) [with _Tp = float; _Alloc = std::allocator<float>]	40	static
 allocator.h:138:7:std::allocator< <template-parameter-1-1> >::allocator() [with _Tp = long long int]	16	static
 stl_vector.h:622:7:std::vector<_Tp, _Alloc>::vector(std::initializer_list<_Tp>, const allocator_type&) [with _Tp = long long int; _Alloc = std::allocator<long long int>]	40	static
-flatbuffers.h:1994:8:void flatbuffers::FlatBufferBuilder::Finish(flatbuffers::Offset<T>, const char*) [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::Buffer> >]	24	static
-flatbuffers.h:2104:31:const T* flatbuffers::GetRoot(const void*) [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::Buffer> >]	16	static
-micro_utils.h:75:6:void tflite::SymmetricQuantize(const float*, T*, int, float) [with T = long int]	40	static
-test_helpers.h:191:14:TfLiteTensor tflite::testing::CreateQuantizedTensor(const T*, TfLiteIntArray*, float, int, bool) [with T = long int]	32	static
-micro_utils.h:83:6:void tflite::SymmetricPerChannelQuantize(const float*, T*, int, int, float*) [with T = long int]	48	static
-test_helpers.h:171:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = long int]	24	static
-test_helpers.h:171:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = signed char]	24	static
+flatbuffers.h:1988:8:void flatbuffers::FlatBufferBuilder::Finish(flatbuffers::Offset<T>, const char*) [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::Buffer> >]	24	static
+flatbuffers.h:2098:31:const T* flatbuffers::GetRoot(const void*) [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::Buffer> >]	16	static
+micro_utils.h:79:6:void tflite::SymmetricQuantize(const float*, T*, int, float) [with T = short int]	40	static
+test_helpers.h:189:14:TfLiteTensor tflite::testing::CreateQuantizedTensor(const T*, TfLiteIntArray*, float, int, bool) [with T = short int]	32	static
+micro_utils.h:79:6:void tflite::SymmetricQuantize(const float*, T*, int, float) [with T = long int]	40	static
+test_helpers.h:189:14:TfLiteTensor tflite::testing::CreateQuantizedTensor(const T*, TfLiteIntArray*, float, int, bool) [with T = long int]	32	static
+micro_utils.h:79:6:void tflite::SymmetricQuantize(const float*, T*, int, float) [with T = long long int]	40	static
+test_helpers.h:189:14:TfLiteTensor tflite::testing::CreateQuantizedTensor(const T*, TfLiteIntArray*, float, int, bool) [with T = long long int]	32	static
+test_helpers.cc:1249:14:TfLiteTensor tflite::testing::CreatePerChannelQuantizedBiasTensor(const float*, T*, TfLiteIntArray*, float, float*, float*, int*, TfLiteAffineQuantization*, int, bool) [with T = long int]	56	static
+test_helpers.cc:1249:14:TfLiteTensor tflite::testing::CreatePerChannelQuantizedBiasTensor(const float*, T*, TfLiteIntArray*, float, float*, float*, int*, TfLiteAffineQuantization*, int, bool) [with T = long long int]	56	static
+test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = signed char]	24	static
 flatbuffers.h:266:15:flatbuffers::Vector<T>::return_type flatbuffers::Vector<T>::operator[](flatbuffers::uoffset_t) const [with T = flatbuffers::Offset<tflite::SubGraph>]	16	static
-flatbuffers.h:1275:29:void flatbuffers::FlatBufferBuilder::AssertScalarT() [with T = long int]	16	static
-base.h:380:24:T flatbuffers::EndianScalar(T) [with T = long int]	16	static
-flatbuffers.h:967:29:void flatbuffers::vector_downward::push_small(const T&) [with T = long int]	16	static
-base.h:380:24:T flatbuffers::EndianScalar(T) [with T = short unsigned int]	16	static
-flatbuffers.h:1275:29:void flatbuffers::FlatBufferBuilder::AssertScalarT() [with T = long unsigned int]	16	static
-flatbuffers.h:967:29:void flatbuffers::vector_downward::push_small(const T&) [with T = long unsigned int]	16	static
-flatbuffers.h:1275:29:void flatbuffers::FlatBufferBuilder::AssertScalarT() [with T = unsigned char]	16	static
-base.h:380:24:T flatbuffers::EndianScalar(T) [with T = unsigned char]	16	static
-flatbuffers.h:967:29:void flatbuffers::vector_downward::push_small(const T&) [with T = unsigned char]	16	static
+flatbuffers.h:1269:29:void flatbuffers::FlatBufferBuilder::AssertScalarT() [with T = long int]	16	static
+base.h:390:24:T flatbuffers::EndianScalar(T) [with T = long int]	16	static
+flatbuffers.h:961:29:void flatbuffers::vector_downward::push_small(const T&) [with T = long int]	16	static
+base.h:390:24:T flatbuffers::EndianScalar(T) [with T = short unsigned int]	16	static
+flatbuffers.h:1269:29:void flatbuffers::FlatBufferBuilder::AssertScalarT() [with T = long unsigned int]	16	static
+flatbuffers.h:961:29:void flatbuffers::vector_downward::push_small(const T&) [with T = long unsigned int]	16	static
+flatbuffers.h:1269:29:void flatbuffers::FlatBufferBuilder::AssertScalarT() [with T = unsigned char]	16	static
+base.h:390:24:T flatbuffers::EndianScalar(T) [with T = unsigned char]	16	static
+flatbuffers.h:961:29:void flatbuffers::vector_downward::push_small(const T&) [with T = unsigned char]	16	static
 flatbuffers.h:72:8:bool flatbuffers::Offset<T>::IsNull() const [with T = flatbuffers::Vector<unsigned char>]	16	static
 stl_vector.h:94:2:std::_Vector_base<_Tp, _Alloc>::_Vector_impl_data::_Vector_impl_data() [with _Tp = float; _Alloc = std::allocator<float>]	16	static
 new_allocator.h:89:7:__gnu_cxx::new_allocator<_Tp>::~new_allocator() [with _Tp = float]	16	static
@@ -330,21 +339,21 @@ flatbuffers.h:72:8:bool flatbuffers::Offset<T>::IsNull() const [with T = flatbuf
 flatbuffers.h:35:34:bool flatbuffers::IsTheSameAs(T, T) [with T = unsigned char]	16	static
 flatbuffers.h:72:8:bool flatbuffers::Offset<T>::IsNull() const [with T = void]	16	static
 flatbuffers.h:35:34:bool flatbuffers::IsTheSameAs(T, T) [with T = long int]	16	static
-flatbuffers.h:1052:10:const T* flatbuffers::data(const std::vector<_Tp, _Alloc>&) [with T = float; Alloc = std::allocator<float>]	16	static
-flatbuffers.h:1615:42:flatbuffers::Offset<flatbuffers::Vector<T> > flatbuffers::FlatBufferBuilder::CreateVector(const T*, size_t) [with T = float]	32	static
-flatbuffers.h:1052:10:const T* flatbuffers::data(const std::vector<_Tp, _Alloc>&) [with T = long long int; Alloc = std::allocator<long long int>]	16	static
-flatbuffers.h:1615:42:flatbuffers::Offset<flatbuffers::Vector<T> > flatbuffers::FlatBufferBuilder::CreateVector(const T*, size_t) [with T = long long int]	32	static
+flatbuffers.h:1046:10:const T* flatbuffers::data(const std::vector<_Tp, _Alloc>&) [with T = float; Alloc = std::allocator<float>]	16	static
+flatbuffers.h:1609:42:flatbuffers::Offset<flatbuffers::Vector<T> > flatbuffers::FlatBufferBuilder::CreateVector(const T*, size_t) [with T = float]	32	static
+flatbuffers.h:1046:10:const T* flatbuffers::data(const std::vector<_Tp, _Alloc>&) [with T = long long int; Alloc = std::allocator<long long int>]	16	static
+flatbuffers.h:1609:42:flatbuffers::Offset<flatbuffers::Vector<T> > flatbuffers::FlatBufferBuilder::CreateVector(const T*, size_t) [with T = long long int]	32	static
 flatbuffers.h:72:8:bool flatbuffers::Offset<T>::IsNull() const [with T = flatbuffers::Vector<long int>]	16	static
 flatbuffers.h:35:34:bool flatbuffers::IsTheSameAs(T, T) [with T = signed char]	16	static
-flatbuffers.h:1281:34:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::PushElement(T) [with T = signed char]	24	static
+flatbuffers.h:1275:34:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::PushElement(T) [with T = signed char]	24	static
 flatbuffers.h:35:34:bool flatbuffers::IsTheSameAs(T, T) [with T = long unsigned int]	16	static
 flatbuffers.h:72:8:bool flatbuffers::Offset<T>::IsNull() const [with T = flatbuffers::String]	16	static
 flatbuffers.h:72:8:bool flatbuffers::Offset<T>::IsNull() const [with T = tflite::QuantizationParameters]	16	static
 flatbuffers.h:72:8:bool flatbuffers::Offset<T>::IsNull() const [with T = tflite::SparsityParameters]	16	static
-flatbuffers.h:2457:26:P flatbuffers::Table::GetPointer(flatbuffers::voffset_t) [with P = const flatbuffers::Vector<flatbuffers::Offset<tflite::Tensor> >*]	24	static
+flatbuffers.h:2451:26:P flatbuffers::Table::GetPointer(flatbuffers::voffset_t) [with P = const flatbuffers::Vector<flatbuffers::Offset<tflite::Tensor> >*]	24	static
 flatbuffers.h:72:8:bool flatbuffers::Offset<T>::IsNull() const [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::Tensor> >]	16	static
 flatbuffers.h:72:8:bool flatbuffers::Offset<T>::IsNull() const [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::Operator> >]	16	static
-flatbuffers.h:2457:26:P flatbuffers::Table::GetPointer(flatbuffers::voffset_t) [with P = const flatbuffers::Vector<flatbuffers::Offset<tflite::SubGraph> >*]	24	static
+flatbuffers.h:2451:26:P flatbuffers::Table::GetPointer(flatbuffers::voffset_t) [with P = const flatbuffers::Vector<flatbuffers::Offset<tflite::SubGraph> >*]	24	static
 flatbuffers.h:72:8:bool flatbuffers::Offset<T>::IsNull() const [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::OperatorCode> >]	16	static
 flatbuffers.h:72:8:bool flatbuffers::Offset<T>::IsNull() const [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::SubGraph> >]	16	static
 flatbuffers.h:72:8:bool flatbuffers::Offset<T>::IsNull() const [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::Buffer> >]	16	static
@@ -352,14 +361,14 @@ flatbuffers.h:72:8:bool flatbuffers::Offset<T>::IsNull() const [with T = flatbuf
 flatbuffers.h:72:8:bool flatbuffers::Offset<T>::IsNull() const [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::SignatureDef> >]	16	static
 flatbuffers.h:117:22:static const T* flatbuffers::IndirectHelper<flatbuffers::Offset<T> >::Read(const uint8_t*, flatbuffers::uoffset_t) [with T = tflite::SubGraph]	16	static
 flatbuffers.h:339:18:const uint8_t* flatbuffers::Vector<T>::Data() const [with T = flatbuffers::Offset<tflite::SubGraph>]	16	static
-flatbuffers.h:2097:25:T* flatbuffers::GetMutableRoot(void*) [with T = tflite::Model]	16	static
-flatbuffers.h:1289:34:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::PushElement(flatbuffers::Offset<T>) [with T = tflite::Tensor]	16	static
-flatbuffers.h:1289:34:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::PushElement(flatbuffers::Offset<T>) [with T = tflite::Operator]	16	static
-flatbuffers.h:1289:34:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::PushElement(flatbuffers::Offset<T>) [with T = tflite::OperatorCode]	16	static
-flatbuffers.h:1289:34:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::PushElement(flatbuffers::Offset<T>) [with T = tflite::SubGraph]	16	static
-flatbuffers.h:1289:34:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::PushElement(flatbuffers::Offset<T>) [with T = tflite::Buffer]	16	static
-flatbuffers.h:1289:34:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::PushElement(flatbuffers::Offset<T>) [with T = tflite::Metadata]	16	static
-flatbuffers.h:2097:25:T* flatbuffers::GetMutableRoot(void*) [with T = tflite::Tensor]	16	static
+flatbuffers.h:2091:25:T* flatbuffers::GetMutableRoot(void*) [with T = tflite::Model]	16	static
+flatbuffers.h:1283:34:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::PushElement(flatbuffers::Offset<T>) [with T = tflite::Tensor]	16	static
+flatbuffers.h:1283:34:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::PushElement(flatbuffers::Offset<T>) [with T = tflite::Operator]	16	static
+flatbuffers.h:1283:34:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::PushElement(flatbuffers::Offset<T>) [with T = tflite::OperatorCode]	16	static
+flatbuffers.h:1283:34:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::PushElement(flatbuffers::Offset<T>) [with T = tflite::SubGraph]	16	static
+flatbuffers.h:1283:34:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::PushElement(flatbuffers::Offset<T>) [with T = tflite::Buffer]	16	static
+flatbuffers.h:1283:34:flatbuffers::uoffset_t flatbuffers::FlatBufferBuilder::PushElement(flatbuffers::Offset<T>) [with T = tflite::Metadata]	16	static
+flatbuffers.h:2091:25:T* flatbuffers::GetMutableRoot(void*) [with T = tflite::Tensor]	16	static
 new_allocator.h:80:7:__gnu_cxx::new_allocator<_Tp>::new_allocator() [with _Tp = float]	16	static
 stl_vector.h:290:7:std::_Vector_base<_Tp, _Alloc>::_Vector_base(const allocator_type&) [with _Tp = float; _Alloc = std::allocator<float>]	16	static
 initializer_list:75:7:constexpr const _E* std::initializer_list<_E>::begin() const [with _E = float]	16	static
@@ -370,21 +379,28 @@ stl_vector.h:290:7:std::_Vector_base<_Tp, _Alloc>::_Vector_base(const allocator_
 initializer_list:75:7:constexpr const _E* std::initializer_list<_E>::begin() const [with _E = long long int]	16	static
 initializer_list:79:7:constexpr const _E* std::initializer_list<_E>::end() const [with _E = long long int]	24	static
 stl_vector.h:1574:2:void std::vector<_Tp, _Alloc>::_M_range_initialize(_ForwardIterator, _ForwardIterator, std::forward_iterator_tag) [with _ForwardIterator = const long long int*; _Tp = long long int; _Alloc = std::allocator<long long int>]	40	static
-flatbuffers.h:2097:25:T* flatbuffers::GetMutableRoot(void*) [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::Buffer> >]	16	static
-micro_utils.h:46:3:T tflite::FloatToSymmetricQuantizedType(float, float) [with T = long int]	32	static
+flatbuffers.h:2091:25:T* flatbuffers::GetMutableRoot(void*) [with T = flatbuffers::Vector<flatbuffers::Offset<tflite::Buffer> >]	16	static
+micro_utils.h:48:3:T tflite::FloatToSymmetricQuantizedType(float, float) [with T = short int]	40	static
+test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = short int]	24	static
+micro_utils.h:48:3:T tflite::FloatToSymmetricQuantizedType(float, float) [with T = long int]	40	static
+test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = long int]	24	static
+micro_utils.h:48:3:T tflite::FloatToSymmetricQuantizedType(float, float) [with T = long long int]	48	static
+test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = long long int]	24	static
+micro_utils.h:87:6:void tflite::SymmetricPerChannelQuantize(const float*, T*, int, int, float*) [with T = long int]	48	static
+micro_utils.h:87:6:void tflite::SymmetricPerChannelQuantize(const float*, T*, int, int, float*) [with T = long long int]	48	static
 alloc_traits.h:469:7:static void std::allocator_traits<std::allocator<_CharT> >::deallocate(std::allocator_traits<std::allocator<_CharT> >::allocator_type&, std::allocator_traits<std::allocator<_CharT> >::pointer, std::allocator_traits<std::allocator<_CharT> >::size_type) [with _Tp = float]	24	static
 stl_construct.h:127:5:void std::_Destroy(_ForwardIterator, _ForwardIterator) [with _ForwardIterator = float*]	16	static
 alloc_traits.h:469:7:static void std::allocator_traits<std::allocator<_CharT> >::deallocate(std::allocator_traits<std::allocator<_CharT> >::allocator_type&, std::allocator_traits<std::allocator<_CharT> >::pointer, std::allocator_traits<std::allocator<_CharT> >::size_type) [with _Tp = long long int]	24	static
 stl_construct.h:127:5:void std::_Destroy(_ForwardIterator, _ForwardIterator) [with _ForwardIterator = long long int*]	16	static
 stl_vector.h:1004:7:bool std::vector<_Tp, _Alloc>::empty() const [with _Tp = float; _Alloc = std::allocator<float>]	24	static
 stl_vector.h:1129:7:std::vector<_Tp, _Alloc>::const_reference std::vector<_Tp, _Alloc>::front() const [with _Tp = float; _Alloc = std::allocator<float>]	24	static
-flatbuffers.h:1275:29:void flatbuffers::FlatBufferBuilder::AssertScalarT() [with T = float]	16	static
+flatbuffers.h:1269:29:void flatbuffers::FlatBufferBuilder::AssertScalarT() [with T = float]	16	static
 stl_vector.h:1004:7:bool std::vector<_Tp, _Alloc>::empty() const [with _Tp = long long int; _Alloc = std::allocator<long long int>]	24	static
 stl_vector.h:1129:7:std::vector<_Tp, _Alloc>::const_reference std::vector<_Tp, _Alloc>::front() const [with _Tp = long long int; _Alloc = std::allocator<long long int>]	24	static
-flatbuffers.h:1275:29:void flatbuffers::FlatBufferBuilder::AssertScalarT() [with T = long long int]	16	static
-base.h:380:24:T flatbuffers::EndianScalar(T) [with T = signed char]	16	static
-flatbuffers.h:1275:29:void flatbuffers::FlatBufferBuilder::AssertScalarT() [with T = signed char]	16	static
-flatbuffers.h:967:29:void flatbuffers::vector_downward::push_small(const T&) [with T = signed char]	16	static
+flatbuffers.h:1269:29:void flatbuffers::FlatBufferBuilder::AssertScalarT() [with T = long long int]	16	static
+base.h:390:24:T flatbuffers::EndianScalar(T) [with T = signed char]	16	static
+flatbuffers.h:1269:29:void flatbuffers::FlatBufferBuilder::AssertScalarT() [with T = signed char]	16	static
+flatbuffers.h:961:29:void flatbuffers::vector_downward::push_small(const T&) [with T = signed char]	16	static
 stl_vector.h:340:7:std::_Vector_base<_Tp, _Alloc>::pointer std::_Vector_base<_Tp, _Alloc>::_M_allocate(std::size_t) [with _Tp = float; _Alloc = std::allocator<float>]	16	static
 stl_vector.h:340:7:std::_Vector_base<_Tp, _Alloc>::pointer std::_Vector_base<_Tp, _Alloc>::_M_allocate(std::size_t) [with _Tp = long long int; _Alloc = std::allocator<long long int>]	16	static
 stl_vector.h:133:2:std::_Vector_base<_Tp, _Alloc>::_Vector_impl::_Vector_impl(const _Tp_alloc_type&) [with _Tp = float; _Alloc = std::allocator<float>]	16	static
@@ -397,7 +413,8 @@ initializer_list:71:7:constexpr std::initializer_list<_E>::size_type std::initia
 stl_iterator_base_funcs.h:138:5:typename std::iterator_traits<_Iterator>::difference_type std::distance(_InputIterator, _InputIterator) [with _InputIterator = const long long int*]	32	static
 stl_vector.h:1764:7:static std::vector<_Tp, _Alloc>::size_type std::vector<_Tp, _Alloc>::_S_check_init_len(std::vector<_Tp, _Alloc>::size_type, const allocator_type&) [with _Tp = long long int; _Alloc = std::allocator<long long int>]	32	static
 stl_uninitialized.h:305:5:_ForwardIterator std::__uninitialized_copy_a(_InputIterator, _InputIterator, _ForwardIterator, std::allocator<_Tp>&) [with _InputIterator = const long long int*; _ForwardIterator = long long int*; _Tp = long long int]	24	static
-stl_algobase.h:222:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = long int]	16	static
+stl_algobase.h:222:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = long long int]	16	static
+stl_algobase.h:198:5:constexpr const _Tp& std::min(const _Tp&, const _Tp&) [with _Tp = long long int]	16	static
 stl_algobase.h:198:5:constexpr const _Tp& std::min(const _Tp&, const _Tp&) [with _Tp = unsigned int]	16	static
 new_allocator.h:119:7:void __gnu_cxx::new_allocator<_Tp>::deallocate(__gnu_cxx::new_allocator<_Tp>::pointer, __gnu_cxx::new_allocator<_Tp>::size_type) [with _Tp = float]	24	static
 stl_construct.h:117:9:static void std::_Destroy_aux<true>::__destroy(_ForwardIterator, _ForwardIterator) [with _ForwardIterator = float*]	16	static
@@ -455,5 +472,3 @@ stl_algobase.h:375:2:static _Tp* std::__copy_move<_IsMove, true, std::random_acc
 stl_algobase.h:375:2:static _Tp* std::__copy_move<_IsMove, true, std::random_access_iterator_tag>::__copy_m(const _Tp*, const _Tp*, _Tp*) [with _Tp = long long int; bool _IsMove = false]	32	static
 test_helpers.cc:40:7:tflite::testing::{anonymous}::StackAllocator::~StackAllocator()	16	static
 test_helpers.cc:40:7:virtual tflite::testing::{anonymous}::StackAllocator::~StackAllocator()	16	static
-flatbuffers.h:640:7:flatbuffers::DefaultAllocator::~DefaultAllocator()	16	static
-flatbuffers.h:640:7:virtual flatbuffers::DefaultAllocator::~DefaultAllocator()	16	static

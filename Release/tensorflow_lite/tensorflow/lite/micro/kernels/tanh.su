@@ -2,10 +2,8 @@ tanh.cc:44:7:void* tflite::ops::micro::activations::{anonymous}::TanhInit(TfLite
 tanh.cc:75:14:TfLiteStatus tflite::ops::micro::activations::{anonymous}::TanhPrepare(TfLiteContext*, TfLiteNode*)	40	static
 fixedpoint.h:329:21:IntegerType gemmlowp::SaturatingRoundingDoublingHighMul(IntegerType, IntegerType) [with IntegerType = long int]	8	static
 fixedpoint.h:342:21:IntegerType gemmlowp::SaturatingRoundingDoublingHighMul(IntegerType, IntegerType) [with IntegerType = short int]	0	static
-types.h:202:3:tflite::RuntimeShape::~RuntimeShape()	8	static
-types.h:213:18:int32_t tflite::RuntimeShape::Dims(int) const	8	static
-types.h:519:12:int tflite::MatchingFlatSize(const tflite::RuntimeShape&, const tflite::RuntimeShape&)	24	static
-tanh.cc:146:20:TfLiteRegistration tflite::ops::micro::Register_TANH()	16	static
+types.h:312:12:int tflite::MatchingFlatSize(const tflite::RuntimeShape&, const tflite::RuntimeShape&)	16	static
+tanh.cc:133:20:TfLiteRegistration tflite::ops::micro::Register_TANH()	16	static
 fixedpoint.h:357:20:IntegerType gemmlowp::RoundingDivideByPOT(IntegerType, int) [with IntegerType = long int]	8	static
 fixedpoint.h:687:47:typename FixedPointType::ScalarRawType gemmlowp::RescaleConstantInitializer(int32_t) [with FixedPointType = gemmlowp::FixedPoint<long int, 0>]	8	static
 fixedpoint.h:385:22:static IntegerType gemmlowp::ImplSaturatingRoundingMultiplyByPOT<Exponent, IntegerType, 1>::eval(IntegerType) [with int Exponent = 2; IntegerType = long int]	16	static
@@ -13,7 +11,7 @@ fixedpoint.h:795:25:gemmlowp::FixedPoint<tRawType, 0> gemmlowp::one_minus_x_over
 fixedpoint.h:539:55:gemmlowp::FixedPoint<tRawType, (tIntegerBits_a + tIntegerBits_b)> gemmlowp::operator*(gemmlowp::FixedPoint<tRawType, tIntegerBits_a>, gemmlowp::FixedPoint<tRawType, tIntegerBits_b>) [with tRawType = long int; int tIntegerBits_a = 0; int tIntegerBits_b = 0]	8	static
 fixedpoint.h:721:25:gemmlowp::FixedPoint<tRawType, 0> gemmlowp::exp_on_interval_between_negative_one_quarter_and_0_excl(gemmlowp::FixedPoint<tRawType, 0>) [with tRawType = long int]	24	static
 fixedpoint.h:746:25:gemmlowp::FixedPoint<tRawType, 0> gemmlowp::exp_on_negative_values(gemmlowp::FixedPoint<tRawType, tIntegerBits_a>) [with tRawType = long int; int tIntegerBits = 5]	40	static
-fixedpoint.h:827:25:gemmlowp::FixedPoint<tRawType, 0> gemmlowp::tanh(gemmlowp::FixedPoint<tRawType, tIntegerBits_a>) [with tRawType = long int; int tIntegerBits = 4]	16	static
+tanh.h:26:13:void tflite::reference_integer_ops::Tanh(int32_t, int32_t, int32_t, int32_t, const tflite::RuntimeShape&, const int8_t*, const tflite::RuntimeShape&, int8_t*)	56	static
 fixedpoint.h:687:47:typename FixedPointType::ScalarRawType gemmlowp::RescaleConstantInitializer(int32_t) [with FixedPointType = gemmlowp::FixedPoint<short int, 0>]	8	static
 fixedpoint.h:539:55:gemmlowp::FixedPoint<tRawType, (tIntegerBits_a + tIntegerBits_b)> gemmlowp::operator*(gemmlowp::FixedPoint<tRawType, tIntegerBits_a>, gemmlowp::FixedPoint<tRawType, tIntegerBits_b>) [with tRawType = short int; int tIntegerBits_a = 0; int tIntegerBits_b = 0]	8	static
 fixedpoint.h:721:25:gemmlowp::FixedPoint<tRawType, 0> gemmlowp::exp_on_interval_between_negative_one_quarter_and_0_excl(gemmlowp::FixedPoint<tRawType, 0>) [with tRawType = short int]	24	static

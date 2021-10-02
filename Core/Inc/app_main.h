@@ -27,12 +27,20 @@ extern "C" {
 #include "ov7670.h"
 #include "tensorflow/lite/micro/examples/person_detection/main_functions.h"
 
+#include "tensorflow/lite/micro/examples/person_detection/testdata/person_image_data.h"
+#include "tensorflow/lite/micro/examples/person_detection/testdata/no_person_image_data.h"
+#include <tensorflow/lite/micro/examples/person_detection/testdata/person_image_data1.h>
+
+#include "../Inc/logo_image.h"
+
 
 void app_main_init();
 void app_main_loop();
-
+void tflite_micro_loop();
+void tflite_micro_setup();
 
 extern int8_t g_person_score;
+extern int8_t g_no_person_score;
 
 #ifdef __cplusplus
 }

@@ -1,9 +1,5 @@
 batch_to_space_nd.cc:40:14:TfLiteStatus tflite::{anonymous}::Prepare(TfLiteContext*, TfLiteNode*)	40	static
-types.h:185:3:tflite::RuntimeShape::RuntimeShape(const tflite::RuntimeShape&)	16	static
-types.h:202:3:tflite::RuntimeShape::~RuntimeShape()	8	static
-types.h:213:18:int32_t tflite::RuntimeShape::Dims(int) const	8	static
-types.h:218:15:void tflite::RuntimeShape::SetDim(int, int32_t)	8	static
-types.h:403:12:int tflite::Offset(const tflite::RuntimeShape&, int, int, int, int)	16	static
+runtime_shape.h:119:12:int tflite::Offset(const tflite::RuntimeShape&, int, int, int, int)	16	static
 batch_to_space_nd.h:27:21:tflite::RuntimeShape tflite::reference_ops::ExtendShapeBatchToSpace(const tflite::RuntimeShape&)	40	static
 kernel_util.h:31:26:TfLiteEvalTensor* tflite::micro::GetMutableEvalInput(const TfLiteContext*, const TfLiteNode*, int)	8	static
 batch_to_space_nd.cc:100:20:TfLiteRegistration tflite::Register_BATCH_TO_SPACE_ND()	16	static

@@ -4,4 +4,4 @@ limits:1672:7:static constexpr float std::numeric_limits<float>::lowest()	4	stat
 fully_connected_common.cc:34:22:tflite::FullyConnectedParams tflite::FullyConnectedParamsQuantized(const tflite::OpDataFullyConnected&)	16	static
 fully_connected_common.cc:47:22:tflite::FullyConnectedParams tflite::FullyConnectedParamsFloat(TfLiteFusedActivation)	16	static
 fully_connected_common.cc:55:14:TfLiteStatus tflite::CalculateOpDataFullyConnected(TfLiteContext*, TfLiteFusedActivation, TfLiteType, const TfLiteTensor*, const TfLiteTensor*, const TfLiteTensor*, TfLiteTensor*, tflite::OpDataFullyConnected*)	48	static
-kernel_util.h:253:6:void tflite::CalculateActivationRange(TfLiteFusedActivation, T*, T*) [with T = float]	24	static
+kernel_util.h:259:6:void tflite::CalculateActivationRange(TfLiteFusedActivation, T*, T*) [with T = float]	24	static

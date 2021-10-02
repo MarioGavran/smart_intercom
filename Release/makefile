@@ -10,7 +10,6 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include tensorflow_lite/tensorflow/lite/schema/subdir.mk
--include tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/person_model_int8/subdir.mk
 -include tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/NN/Source/SoftmaxFunctions/subdir.mk
 -include tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/NN/Source/SVDFunctions/subdir.mk
 -include tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/NN/Source/ReshapeFunctions/subdir.mk
@@ -21,11 +20,15 @@ RM := rm -rf
 -include tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/NN/Source/ConcatenationFunctions/subdir.mk
 -include tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/NN/Source/BasicMathFunctions/subdir.mk
 -include tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/NN/Source/ActivationFunctions/subdir.mk
+-include tensorflow_lite/tensorflow/lite/micro/models/subdir.mk
 -include tensorflow_lite/tensorflow/lite/micro/memory_planner/subdir.mk
 -include tensorflow_lite/tensorflow/lite/micro/kernels/cmsis_nn/subdir.mk
 -include tensorflow_lite/tensorflow/lite/micro/kernels/subdir.mk
+-include tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata/subdir.mk
 -include tensorflow_lite/tensorflow/lite/micro/examples/person_detection/subdir.mk
+-include tensorflow_lite/tensorflow/lite/micro/cortex_m_generic/subdir.mk
 -include tensorflow_lite/tensorflow/lite/micro/subdir.mk
+-include tensorflow_lite/tensorflow/lite/kernels/internal/reference/subdir.mk
 -include tensorflow_lite/tensorflow/lite/kernels/internal/subdir.mk
 -include tensorflow_lite/tensorflow/lite/kernels/subdir.mk
 -include tensorflow_lite/tensorflow/lite/core/api/subdir.mk
@@ -97,8 +100,8 @@ all: main-build
 main-build: smart_intercom.elf secondary-outputs
 
 # Tool invocations
-smart_intercom.elf: $(OBJS) $(USER_OBJS) /home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/STM32F413ZHTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "smart_intercom.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/STM32F413ZHTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="smart_intercom.map" -Wl,--gc-sections -static -L"/home/enio/STM32CubeIDE/workspace_1.6.2/smart_intercom/tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+smart_intercom.elf: $(OBJS) $(USER_OBJS) /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/STM32F413ZHTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "smart_intercom.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/STM32F413ZHTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="smart_intercom.map" -Wl,--gc-sections -static -L"/home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
