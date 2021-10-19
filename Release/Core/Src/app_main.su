@@ -1,4 +1,4 @@
 app_main.c:16:6:tflite_micro_loop	0	static
 app_main.c:22:6:tflite_micro_setup	0	static
-app_main.c:27:6:app_main_init	16	static
-app_main.c:55:6:app_main_loop	64	static
+app_main.c:27:6:app_main_init	32	static
+app_main.c:99:6:app_main_loop	64	static

@@ -48,7 +48,7 @@ tensorflow_lite/tensorflow/lite/micro/examples/person_detection/image_provider.o
  /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata/person_image_data.h \
  /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata/no_person_image_data.h \
  /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata/person_image_data1.h \
- ../Core/Inc/../Inc/logo_image.h
+ ../Core/Inc/feri_logo_image.h ../Core/Inc/ietk_logo_image.h
 
 /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/image_provider.h:
 
@@ -158,4 +158,6 @@ tensorflow_lite/tensorflow/lite/micro/examples/person_detection/image_provider.o
 
 /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata/person_image_data1.h:
 
-../Core/Inc/../Inc/logo_image.h:
+../Core/Inc/feri_logo_image.h:
+
+../Core/Inc/ietk_logo_image.h:

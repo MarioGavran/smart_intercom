@@ -26,19 +26,63 @@ void tflite_micro_setup()
 //=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 void app_main_init()
 {
+	unsigned int l,ll = 0;
+
 	NT35510_Init();
 
 	LCD_ClearScreen(0xFFFFU);
 	LCD_SetDirection(HORIZONTAL_RIGHT);
-	LCD_ClearScreen(0xFFFFU);
-	LCD_SetWindow(240,184,560-1,295-1);
 
-	for(int l = 0; l < 320*111*2; l+=2)
+	//==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~
+	// FERI logo
+	LCD_ClearScreen(0xFFFFU);
+	LCD_SetWindow(240, 184, 240 + FERI_LOGO_IMG_W -1, 184 + FERI_LOGO_IMG_H -1);
+	for(l = 0; l < FERI_LOGO_IMG_SIZE; l+=2)
 	{
-		FSMC_WR_DAT(((g_logo_image[l] << 8) & 0xFF00U) | (g_logo_image[l+1] & 0x00FFU));
+		FSMC_WR_DAT(((g_feri_logo_image[l] << 8) & 0xFF00U) | (g_feri_logo_image[l+1] & 0x00FFU));
 	}
 	HAL_Delay(1000);
-/*
+
+	// IETK logo
+	LCD_ClearScreen(0xFFFFU);
+	LCD_SetWindow(310, 195, 310 + IETK_LOGO_IMG_W -1, 195 + IETK_LOGO_IMG_H -1);
+
+	for(l = 0; l < IETK_LOGO_IMG_SIZE; l+=2)
+	{
+		FSMC_WR_DAT(((g_ietk_logo_image[l] << 8) & 0xFF00U) | (g_ietk_logo_image[l+1] & 0x00FFU));
+	}
+	HAL_Delay(1000);
+
+	// ~=~=~ IETK logo slide ~=~=~
+	for(ll = 0; ll <= 56; ll++)
+	{
+		// Print IETK logo
+		LCD_SetWindow(310, 195 +ll, 310 + IETK_LOGO_IMG_W -1, 195 + IETK_LOGO_IMG_H + ll - 1);
+		for(l = 0; l < IETK_LOGO_IMG_SIZE; l+=2)
+		{
+			FSMC_WR_DAT(((g_ietk_logo_image[l] << 8) & 0xFF00U) | (g_ietk_logo_image[l+1] & 0x00FFU));
+		}
+		HAL_Delay(20);
+		// Slide 1 step
+		LCD_SetWindow(310, 195 + ll, 310 + IETK_LOGO_IMG_W -1, 195 + 1 -1 + ll);
+		// Clear
+		for(l = 0; l < IETK_LOGO_IMG_W * 2; l+=2)
+		{
+			FSMC_WR_DAT(0xFFFFU);
+		}
+	}
+	// Add FERI logo at the end
+	LCD_SetWindow(240, 140, 240 + FERI_LOGO_IMG_W -1, 140 + FERI_LOGO_IMG_H -1);
+	for(l = 0; l < FERI_LOGO_IMG_SIZE; l+=2)
+	{
+		FSMC_WR_DAT(((g_feri_logo_image[l] << 8) & 0xFF00U) | (g_feri_logo_image[l+1] & 0x00FFU));
+	}
+	HAL_Delay(1000);
+	LCD_SetWindow(0, 0, 799, 479);
+	LCD_ClearScreen(0x1CFCU);
+	//==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~==~~
+
+	/*
 	// Draw frame:
 	LCD_DrawLine(10, 10, 790, 10, 0xF800U,4);		// up
 	LCD_DrawLine(10, 10, 10, 470, 0x07E0U,4);		// left
@@ -123,26 +167,26 @@ void app_main_loop()
 
 		for(z = 0; z < 96*96*2; z+=2)
 		{
-			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
+			// Calculate gray-scale from RGB data
 			char gray = (
 					(((g_person_image_data1[z] & 0xF8U) >> 3) +	//red
 					(((g_person_image_data1[z] & 0x07U) << 2) | ((g_person_image_data1[z+1] & 0xC0U) >> 6)) +	//green
 					(((g_person_image_data1[z+1] & 0x1FU)))	//blue
 					) / 3);
 
+			// Assemble gray-scale into RGB565 format
 			uint16_t graysc = (
 					((gray << 11) & 0xF800U) |
 					((gray << 6)  & 0x07C0U) |
 					((gray << 0)  & 0x001FU));
 
-			g_cam_gray_frame[kk] = gray << 3;
+			g_cam_gray_frame[kk] = gray << 3;	// scale up
 
 			kk++;
 			if(kk >= OV7670_GRAY_SIZE)
 				kk = 0;
 
 			FSMC_WR_DAT(graysc);
-			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);
 		}
 
 			//*********************************************************************************************************************
@@ -171,14 +215,6 @@ void app_main_loop()
 		//*********************************************************************************************************************
 		//*********************************************************************************************************************
 */
-
-
-
-
-
-
-
-
 
 
 
@@ -217,24 +253,6 @@ void app_main_loop()
 				uart_write(buff);
 			}
 		}
-		if(HAL_GetTick() > milis2 + 5000)
-		{
-			milis2 = HAL_GetTick();
-			if(milis2 >= (0xFFFFFFFFU - 5000U))
-			{
-				milis2 = 0;
-			}
-			else
-			{
-				//testPattern(p++);
-				//if (p == 3)
-				//	p=0;
-
-				//uart_write("\r\n");
-				//uart_write("bok\r\n");
-			}
-		}
-/**/
 	}
 }
 

@@ -31,7 +31,8 @@ extern "C" {
 #include "tensorflow/lite/micro/examples/person_detection/testdata/no_person_image_data.h"
 #include <tensorflow/lite/micro/examples/person_detection/testdata/person_image_data1.h>
 
-#include "../Inc/logo_image.h"
+#include <feri_logo_image.h>
+#include <ietk_logo_image.h>
 
 
 void app_main_init();

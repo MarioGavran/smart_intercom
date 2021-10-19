@@ -248,25 +248,25 @@ void EXTI1_VSYNC_Callback();
 #define		COM8_AWB				0x02    // COM8 AWB (auto white balance)
 #define		COM8_AEC				0x01    // COM8 AEC (auto exposure) enable
 
-#define COM10_HSYNC 				0x40    // COM10 HREF changes to HSYNC
-#define COM10_PCLK_HB 				0x20    // COM10 Suppress PCLK on hblank
-#define COM10_HREF_REV 				0x08   	// COM10 HREF reverse
-#define COM10_VS_EDGE				0x04   	// COM10 VSYNC chg on PCLK rising
-#define COM10_VS_NEG				0x02   	// COM10 VSYNC negative
-#define COM10_HS_NEG				0x01   	// COM10 HSYNC negative
+#define		COM10_HSYNC 			0x40    // COM10 HREF changes to HSYNC
+#define		COM10_PCLK_HB 			0x20    // COM10 Suppress PCLK on hblank
+#define		COM10_HREF_REV 			0x08   	// COM10 HREF reverse
+#define		COM10_VS_EDGE			0x04   	// COM10 VSYNC chg on PCLK rising
+#define		COM10_VS_NEG			0x02   	// COM10 VSYNC negative
+#define		COM10_HS_NEG			0x01   	// COM10 HSYNC negative
 
 // Night mode, flicker, banding /
-#define REG_COM11                   0x3b    // Control 11
-#define COM11_NIGHT                 0x80    // NIght mode enable
-#define COM11_NIGHT_MIN_RATE_1_1    0x00    // Normal mode same
-#define COM11_NIGHT_MIN_RATE_1_2    0x20    // Normal mode 1/2
-#define COM11_NIGHT_MIN_RATE_1_4    0x40    // Normal mode 1/4
-#define COM11_NIGHT_MIN_RATE_1_8    0x60    // Normal mode 1/5
-#define COM11_HZAUTO_ON             0x10    // Auto detect 50/60 Hz on
-#define COM11_HZAUTO_OFF            0x00    // Auto detect 50/60 Hz off
-#define COM11_60HZ                  0x00    // Manual 60Hz select
-#define COM11_50HZ                  0x08    // Manual 50Hz select
-#define COM11_EXP                   0x02
+#define 	REG_COM11                   0x3b    // Control 11
+#define 	COM11_NIGHT                 0x80    // NIght mode enable
+#define 	COM11_NIGHT_MIN_RATE_1_1    0x00    // Normal mode same
+#define 	COM11_NIGHT_MIN_RATE_1_2    0x20    // Normal mode 1/2
+#define 	COM11_NIGHT_MIN_RATE_1_4    0x40    // Normal mode 1/4
+#define 	COM11_NIGHT_MIN_RATE_1_8    0x60    // Normal mode 1/5
+#define 	COM11_HZAUTO_ON             0x10    // Auto detect 50/60 Hz on
+#define 	COM11_HZAUTO_OFF            0x00    // Auto detect 50/60 Hz off
+#define 	COM11_60HZ                  0x00    // Manual 60Hz select
+#define 	COM11_50HZ                  0x08    // Manual 50Hz select
+#define 	COM11_EXP                   0x02
 
 #define		COM13_GAMMA				0x80	// Gamma enable
 #define		COM13_UVSAT				0x40	// UV saturation auto adjustment
