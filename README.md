@@ -13,11 +13,11 @@ Also, available are various peripheral drivers:
 * Serial COM driver with auto-circular buffer:
  [uart_driver.c](Core/Src/uart_driver.c) and [uart_driver.h](Core/Inc/uart_driver.h)
 
-<img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/img_0.png">
-<img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/img_1.png">
-<img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/img_2.png">
-<img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/img_3.png">
-<img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/img_4.png">
-<img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/img_5.png">
-<img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/img_6.png">
-<img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/img_7.png">
+<img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/img_0.jpg">
+<img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/img_1.jpg">
+<img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/img_2.jpg">
+<img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/img_3.jpg">
+<img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/img_4.jpg">
+<img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/img_5.jpg">
+<img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/img_6.jpg">
+<img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/img_7.jpg">
