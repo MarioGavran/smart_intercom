@@ -12,3 +12,12 @@ Also, available are various peripheral drivers:
  [i2c_driver.c](Core/Src/i2c_driver.c) and [i2c_driver.h](Core/Inc/i2c_driver.h)
 * Serial COM driver with auto-circular buffer:
  [uart_driver.c](Core/Src/uart_driver.c) and [uart_driver.h](Core/Inc/uart_driver.h)
+
+<img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/image_0.png">
+<img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/image_1.png">
+<img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/image_2.png">
+<img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/image_3.png">
+<img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/image_4.png">
+<img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/image_5.png">
+<img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/image_6.png">
+<img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/image_7.png">
