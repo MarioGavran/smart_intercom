@@ -5,7 +5,7 @@ ov7670.c:47:6:ov7670_subsampling_control	16	static
 ov7670.c:80:9:ov7670_read_register	0	static
 ov7670.c:63:6:ov7670_test_pattern	8	static
 ov7670.c:88:6:ov7670_set_mode	16	static
-ov7670.c:137:6:ov7670_init	8	static
-ov7670.c:168:6:EXTI0_HREF_Callback	16	static
-ov7670.c:185:6:EXTI1_VSYNC_Callback	8	static
-ov7670.c:157:6:HAL_GPIO_EXTI_Callback	0	static
+ov7670.c:136:6:ov7670_init	8	static
+ov7670.c:167:6:EXTI0_HREF_Callback	16	static
+ov7670.c:181:6:EXTI1_VSYNC_Callback	8	static
+ov7670.c:156:6:HAL_GPIO_EXTI_Callback	0	static
