@@ -25,6 +25,7 @@
 #include "usart.h"
 #include "gpio.h"
 #include "fsmc.h"
+#include "adc.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -97,6 +98,7 @@ int main(void)
   MX_FSMC_Init();
   MX_I2C2_Init();
   MX_USART6_UART_Init();
+  MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
   app_main_init();
   /* USER CODE END 2 */

@@ -22,9 +22,12 @@ extern "C" {
 #include "i2c.h"
 #include "tim.h"
 #include "usart.h"
+#include "adc.h"
 #include "uart_driver.h"
 #include "i2c_driver.h"
 #include "ov7670.h"
+#include "../ov7670_driver/Inc/OV7670.h"
+#include "misc.h"
 #include "tensorflow/lite/micro/examples/person_detection/main_functions.h"
 
 #include "tensorflow/lite/micro/examples/person_detection/testdata/person_image_data.h"
@@ -42,6 +45,8 @@ void tflite_micro_setup();
 
 extern int8_t g_person_score;
 extern int8_t g_no_person_score;
+
+
 
 #ifdef __cplusplus
 }

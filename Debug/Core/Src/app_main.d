@@ -40,11 +40,15 @@ Core/Src/app_main.o: ../Core/Src/app_main.c ../Core/Src/../Inc/app_main.h \
  ../Core/Src/../Inc/tim.h ../Core/Src/../Inc/usart.h \
  ../Core/Src/../Inc/uart_driver.h ../Core/Src/../Inc/i2c_driver.h \
  ../Core/Src/../Inc/ov7670.h \
+ /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/../ov7670_driver/Inc/OV7670.h \
+ /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/../ov7670_driver/Inc/../../Core/Inc/ov7670.h \
+ ../Core/Src/../Inc/misc.h \
  /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/main_functions.h \
  ../Core/Inc/app_main.h \
  /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata/person_image_data.h \
  /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata/no_person_image_data.h \
- /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata/person_image_data1.h
+ /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata/person_image_data1.h \
+ ../Core/Inc/feri_logo_image.h ../Core/Inc/ietk_logo_image.h
 
 ../Core/Src/../Inc/app_main.h:
 
@@ -136,6 +140,12 @@ Core/Src/app_main.o: ../Core/Src/app_main.c ../Core/Src/../Inc/app_main.h \
 
 ../Core/Src/../Inc/ov7670.h:
 
+/home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/../ov7670_driver/Inc/OV7670.h:
+
+/home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/../ov7670_driver/Inc/../../Core/Inc/ov7670.h:
+
+../Core/Src/../Inc/misc.h:
+
 /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/main_functions.h:
 
 ../Core/Inc/app_main.h:
@@ -145,3 +155,7 @@ Core/Src/app_main.o: ../Core/Src/app_main.c ../Core/Src/../Inc/app_main.h \
 /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata/no_person_image_data.h:
 
 /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata/person_image_data1.h:
+
+../Core/Inc/feri_logo_image.h:
+
+../Core/Inc/ietk_logo_image.h:

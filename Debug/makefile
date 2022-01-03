@@ -33,6 +33,7 @@ RM := rm -rf
 -include tensorflow_lite/tensorflow/lite/kernels/subdir.mk
 -include tensorflow_lite/tensorflow/lite/core/api/subdir.mk
 -include tensorflow_lite/tensorflow/lite/c/subdir.mk
+-include ov7670_driver/Src/subdir.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk

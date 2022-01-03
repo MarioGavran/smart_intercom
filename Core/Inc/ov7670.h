@@ -46,7 +46,7 @@ void ov7670_test_pattern(uint8_t kind);
 void ov7670_write_register(unsigned char reg, unsigned char val);
 uint8_t ov7670_read_register(unsigned char reg);
 void ov7670_set_mode(ov7670_res_fmt_t resolution, uint16_t exposure);
-void ov7670_init();
+void ov7670_init1();
 
 void EXTI0_HREF_Callback();
 void EXTI1_VSYNC_Callback();
@@ -267,18 +267,39 @@ void EXTI1_VSYNC_Callback();
 #define 	COM11_60HZ                  0x00    // Manual 60Hz select
 #define 	COM11_50HZ                  0x08    // Manual 50Hz select
 #define 	COM11_EXP                   0x02
+#define		COM11_NMFR					0x60	  /* Two bit NM frame rate */
+#define		COM11_HZAUTO				0x10	  /* Auto detect 50/60 Hz */
+#define		COM11_50HZ					0x08	  /* Manual 50Hz select */
+#define		COM11_EXP					0x02
 
-#define		COM13_GAMMA				0x80	// Gamma enable
-#define		COM13_UVSAT				0x40	// UV saturation auto adjustment
-#define 	COM13_UVSWAP			0x01	// V before U - w/TSLB
+#define		COM13_GAMMA					0x80	// Gamma enable
+#define		COM13_UVSAT					0x40	// UV saturation auto adjustment
+#define 	COM13_UVSWAP				0x01	// V before U - w/TSLB
 
-#define		COM16_AWBGAIN			0x08	// AWB gain enable
+#define		COM14_DCWEN					0x10	// DCW/PCLK-scale enable
 
-#define 	COM15_R10F0 	 	 	0x00	// Data range 10 to F0
-#define 	COM15_R01FE 	 	 	0x80	//            01 to FE
-#define 	COM15_R00FF 	 	 	0xc0	//            00 to FF
-#define 	COM15_RGB565 	 	 	0x10	// RGB565 output
-#define 	COM15_RGB555 	 	 	0x30	// RGB555 output
+#define		COM16_AWBGAIN				0x08	// AWB gain enable
+
+#define 	COM15_R10F0 	 	 		0x00	// Data range 10 to F0
+#define 	COM15_R01FE 	 	 		0x80	//            01 to FE
+#define 	COM15_R00FF 	 	 		0xc0	//            00 to FF
+#define 	COM15_RGB565 	 	 		0x10	// RGB565 output
+#define 	COM15_RGB555 	 	 		0x30	// RGB555 output
+
+#define		R444_ENABLE					0x02	  /* Turn on RGB444, overrides 5x5 */
+
+#define		CLKRC_EXT					0x40	  /* Use external clock directly */
+#define		CLKRC_SCALE					0x3f	  /* Mask for internal clock scale */
+
+#define		DBLV_BYPASS					0x0a	  /* Bypass PLL */
+#define		DBLV_X4						0x4a	  /* clock x4 */
+#define		DBLV_X6						0x8a	  /* clock x6 */
+#define		DBLV_X8						0xca	  /* clock x8 */
+
+#define		MVFP_MIRROR					0x20	  /* Mirror image */
+#define		MVFP_FLIP					0x10	  /* Vertical flip */
+
+
 
 
 #endif /* SRC_OV7670_H_ */

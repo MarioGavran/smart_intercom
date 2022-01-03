@@ -207,11 +207,48 @@ void uart_rx_callback()
 }
 
 
-
+#include <stdlib.h>
 //~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
 void serial_protocol(uint8_t* buff)
 {
-	LCD_PrintStr(20, 100, 0, 0x841FU, buff, 5);
+	char *token;
+	char temp_buff[3] = {0};
+	unsigned short address, value = 0xFF;
+
+	if (strncmp(buff, "OVW", 3) == 0)
+	{
+		token = strtok(buff, ",");
+
+		token = strtok(NULL, ",");
+		strncpy(temp_buff, token, 2);
+		address = strtoll(temp_buff, NULL, 16);
+
+		token = strtok(NULL, ",");
+		strncpy(temp_buff, token, 2);
+		value = strtoll(temp_buff, NULL, 16);
+
+		ov7670_write_register(address, value);
+		sprintf(temp_buff, "%02X\0", address);
+		LCD_PrintStr(20, 400, 0, 0x841FU, temp_buff, 5);
+		sprintf(temp_buff, "%02X\0", ov7670_read_register(address));
+		LCD_PrintStr(20, 440, 0, 0x841FU, temp_buff, 5);
+	}
+	else if (strncmp(buff, "OVR", 3) == 0)
+	{
+		token = strtok(buff, ",");
+
+		token = strtok(NULL, ",");
+		strncpy(temp_buff, token, 2);
+		address = strtoll(temp_buff, NULL, 16);
+
+		value = ov7670_read_register(address);
+
+		sprintf(temp_buff, "%02X\0", address);
+		LCD_PrintStr(20, 400, 0, 0x841FU, temp_buff, 5);
+		sprintf(temp_buff, "%02X\0", value);
+		LCD_PrintStr(20, 440, 0, 0x841FU, temp_buff, 5);
+	}
+		//LCD_PrintStr(20, 400, 0, 0x841FU, buff, 5);
 }
 
 

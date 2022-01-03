@@ -33,6 +33,7 @@ SUBDIRS := \
 Core/Src \
 Core/Startup \
 Drivers/STM32F4xx_HAL_Driver/Src \
+ov7670_driver/Src \
 tensorflow_lite/tensorflow/lite/c \
 tensorflow_lite/tensorflow/lite/core/api \
 tensorflow_lite/tensorflow/lite/kernels/internal \

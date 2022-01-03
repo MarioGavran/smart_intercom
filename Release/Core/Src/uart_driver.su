@@ -3,5 +3,5 @@ uart_driver.c:34:6:uart_tx_process	24	static
 uart_driver.c:75:6:uart_write	32	static
 uart_driver.c:105:6:HAL_UART_TxCpltCallback	16	static
 uart_driver.c:162:6:uart_rx_callback	12	static
-uart_driver.c:212:6:serial_protocol	16	static
+uart_driver.c:212:6:serial_protocol	48	static
 uart_driver.c:117:6:uart_rx_process	32	static

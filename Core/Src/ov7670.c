@@ -27,23 +27,23 @@ void ov7670_saturation(int8_t s)  //-2 to 2
 
 
 //~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
-void ov7670_frame_control(int16_t hStart,  int16_t vStart)
+void ov7670_frame_control(int16_t hStart,  int16_t vStart) // 154 14
 {
-	int hStop = (hStart + 640) % 784;
-	ov7670_write_register(OV7670_HSTART,	hStart >> 3);
-	ov7670_write_register(OV7670_HSTOP,		hStop >> 3);
-	ov7670_write_register(OV7670_HREF, 		((hStop & 0b111) << 3) | (hStart & 0b111));
+	int hStop = (hStart + 640) % 784; // 10
+	ov7670_write_register(OV7670_HSTART,	0x15);//hStart >> 3);
+	ov7670_write_register(OV7670_HSTOP,		0x03);//hStop >> 3);
+	ov7670_write_register(OV7670_HREF, 		0x80);//((hStop & 0b111) << 3) | (hStart & 0b111));
 
-	int vStop = (vStart + 480);
-	ov7670_write_register(OV7670_VSTRT, 	vStart >> 2);
-	ov7670_write_register(OV7670_VSTOP, 	vStop >> 2);
-	ov7670_write_register(OV7670_VREF, 		((vStop & 0b11) << 2) | (vStart & 0b11));
+	int vStop = (vStart + 480); // 494
+	ov7670_write_register(OV7670_VSTRT, 	0x03);//vStart >> 2);
+	ov7670_write_register(OV7670_VSTOP, 	0x7b);//vStop >> 2);
+	ov7670_write_register(OV7670_VREF, 		0x00);//((vStop & 0b11) << 2) | (vStart & 0b11));
 	ov7670_write_register(OV7670_COM10, 	0x20U);
 }
 
 
 
-//~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
+//~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~= 19 11 f1
 void ov7670_subsampling_control(int8_t com14, int8_t downSample, int8_t pclk_div)
 {
 	ov7670_write_register(OV7670_COM3, 			0x04);		//DCW enable
@@ -93,6 +93,7 @@ void ov7670_set_mode(ov7670_res_fmt_t resolution, uint16_t exposure)
 		resolution = 2;
 
 	ov7670_write_register(OV7670_COM7,	0x80U);			// all registers default
+	HAL_Delay(3);
 	ov7670_write_register(OV7670_CLKRC,	0x80U);
 	ov7670_write_register(OV7670_COM11,	0x08U | 0x02U);	// enable auto 50/60Hz detect + exposure timing can be less
 	ov7670_write_register(OV7670_COM7,	0x04U);			// RGB
@@ -113,7 +114,7 @@ void ov7670_set_mode(ov7670_res_fmt_t resolution, uint16_t exposure)
 		break;
 	}
 
-	ov7670_write_register(0xB0U, 			0xf4U);
+	ov7670_write_register(0xB0U, 			0x84U);
 	ov7670_saturation(0);
 	ov7670_write_register(OV7670_COM8,		0xE7U); // AGC AWB AEC on
 	ov7670_write_register(OV7670_AWBCTR0,	0x9FU); // AWB
@@ -133,14 +134,14 @@ void ov7670_set_mode(ov7670_res_fmt_t resolution, uint16_t exposure)
 
 
 //~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
-void ov7670_init()
+void ov7670_init1()
 {
 	OV7670_RST_LOW;
 	HAL_Delay(300);
 	OV7670_RST_HIGH;
 	HAL_Delay(300);
 
-	ov7670_set_mode(QVGA_RGB565, 1000);
+	ov7670_set_mode(QVGA_RGB565, 300);
 	HAL_Delay(300);
 
 	TIM1->DIER |= TIM_DIER_TDE;

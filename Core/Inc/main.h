@@ -60,6 +60,10 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define OV7670_RST_Pin GPIO_PIN_2
 #define OV7670_RST_GPIO_Port GPIOF
+#define TOUCH_XL_Pin GPIO_PIN_4
+#define TOUCH_XL_GPIO_Port GPIOA
+#define TOUCH_YD_Pin GPIO_PIN_5
+#define TOUCH_YD_GPIO_Port GPIOA
 #define OV7670_D0_Pin GPIO_PIN_0
 #define OV7670_D0_GPIO_Port GPIOB
 #define OV7670_D1_Pin GPIO_PIN_1
