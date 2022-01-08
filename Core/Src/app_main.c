@@ -117,58 +117,8 @@ void app_main_init()
 	HAL_NVIC_SetPriority(OV7670_VSYNC_EXTI_IRQn, 0, 0);
 	HAL_NVIC_EnableIRQ(OV7670_VSYNC_EXTI_IRQn);
 
+	touch_init();
 
-
-}
-
-
-
-//?????????????????????
-void adc_select_x(void);
-void adc_select_y(void);
-int comp (const void * elem1, const void * elem2);
-
-//?????????????????????
-void adc_select_x(void)
-{
-	ADC_ChannelConfTypeDef sConfig = {0};
-
-	sConfig.Channel = ADC_CHANNEL_3;
-	sConfig.Rank = 1;
-	sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
-	if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
-	{
-		Error_Handler();
-	}
-}
-//?????????????????????
-
-
-
-//?????????????????????
-void adc_select_y(void)
-{
-	ADC_ChannelConfTypeDef sConfig = {0};
-
-	sConfig.Channel = ADC_CHANNEL_2;
-	sConfig.Rank = 1;
-	if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
-	{
-		Error_Handler();
-	}
-}
-//?????????????????????
-
-
-
-//?????????????????????
-int comp (const void * elem1, const void * elem2)
-{
-    int f = *((int*)elem1);
-    int s = *((int*)elem2);
-    if (f > s) return  1;
-    if (f < s) return -1;
-    return 0;
 }
 
 
@@ -176,13 +126,14 @@ int comp (const void * elem1, const void * elem2)
 //=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 void app_main_loop()
 {
-	uint8_t buff[10] = {0};
+	uint8_t buff[15] = {0};
 	uint32_t milis = 0;
 	uint32_t milis2 = 0;
-	int j,z = 0;
+	int i,j,z = 0;
 	int k = -2;
-	uint8_t adc_cnt = 0;
-	uint16_t adc_values[5] = {0};
+	touch_coordinates_t touch_coordinates1 = {0};
+
+
 
 	LCD_SetDirection(VERTICAL_UP);
 	LCD_SetWindow(20, 20, 340-1, 260-1); // 320 x 240
@@ -208,6 +159,7 @@ void app_main_loop()
 */
 		uart_tx_process();
 		uart_rx_process();
+		touch_process();
 /*
 		LCD_SetWindow(20 , 280, 20+96-1, 280+96-1); // 320 x 240
 
@@ -267,17 +219,11 @@ void app_main_loop()
 			{
 				milis = 0;
 			}
+
+
 			else
 			{// every second
-//				adc_select_x();
-//				HAL_ADC_Start(&hadc1);
-//				HAL_ADC_PollForConversion(&hadc1, 500);
-//				sprintf(buff, "\r\n%d", HAL_ADC_GetValue(&hadc1));
-//				adc_select_y();
-//				HAL_ADC_Start(&hadc1);
-//				HAL_ADC_PollForConversion(&hadc1, 500);
-//				sprintf(buff + strlen(buff), ", %d", HAL_ADC_GetValue(&hadc1));
-//				uart_write(buff);
+				uart_write("hello");
 			}
 		}
 		if(HAL_GetTick() > milis2 + 100)
@@ -290,53 +236,15 @@ void app_main_loop()
 			else
 			{// every 10 miliseconds
 
-				// Y+ high
-				GPIOA->MODER &= ~GPIO_MODER_MODER2_Msk;
-				GPIOA->MODER |= GPIO_MODER_MODER2_0;
-				GPIOA->ODR |= GPIO_ODR_OD2;
-				HAL_Delay(5);
-				// Y- low
-				GPIOA->MODER &= ~GPIO_MODER_MODER5_Msk;
-				GPIOA->MODER |= GPIO_MODER_MODER5_0;
-				GPIOA->ODR &= ~TOUCH_YD_Pin;
-				// X- open
-				GPIOA->MODER &= ~GPIO_MODER_MODER4_Msk;
-				// X+ adc
-				for(adc_cnt = 0; adc_cnt < 5; adc_cnt++)
+//				touch_coordinates1 = touch_process();
+				if((g_touch_coordinates.x != 0) && (g_touch_coordinates.y != 0))
 				{
-					adc_select_x();
-					HAL_ADC_Start(&hadc1);
-					HAL_ADC_PollForConversion(&hadc1, 500);
-					adc_values[adc_cnt] = HAL_ADC_GetValue(&hadc1);
+					sprintf(buff, "%04d, %04d", g_touch_coordinates.x, g_touch_coordinates.y);
+					LCD_PrintStr(20, 480, 0, 0x841FU, buff, 4);
 				}
-				qsort(adc_values, sizeof(adc_values)/sizeof(*adc_values), sizeof(*adc_values), comp);
-				GPIOA->MODER |= GPIO_MODER_MODER2_Msk;
-				sprintf(buff, "%04d", adc_values[2]);
-
-				// X+ high
-				GPIOA->MODER &= ~GPIO_MODER_MODER3_Msk;
-				GPIOA->MODER |= GPIO_MODER_MODER3_0;
-				GPIOA->ODR |= GPIO_ODR_OD3;
-				HAL_Delay(5);
-				// X- low
-				GPIOA->MODER &= ~GPIO_MODER_MODER4_Msk;
-				GPIOA->MODER |= GPIO_MODER_MODER4_0;
-				GPIOA->ODR &= ~TOUCH_XL_Pin;
-				// Y- open
-				GPIOA->MODER &= ~GPIO_MODER_MODER5_Msk;
-				// Y+ adc
-				for(adc_cnt = 0; adc_cnt < 5; adc_cnt++)
-				{
-					adc_select_y();
-					HAL_ADC_Start(&hadc1);
-					HAL_ADC_PollForConversion(&hadc1, 500);
-					adc_values[adc_cnt] = HAL_ADC_GetValue(&hadc1);
-				}
-				qsort(adc_values, sizeof(adc_values)/sizeof(*adc_values), sizeof(*adc_values), comp);
-				GPIOA->MODER |= GPIO_MODER_MODER3_Msk;
-				sprintf(buff + strlen(buff), ", %04d", adc_values[2]);
-
-				LCD_PrintStr(20, 480, 0, 0x841FU, buff, 3);
+//				uint16_t x = (800.0/4096)*touch_coordinates1.x;
+//				uint16_t y = (480.0/4096)*touch_coordinates1.y;
+//				LCD_DrawPoint(x, 480-y, 0, 4);
 			}
 		}
 	}

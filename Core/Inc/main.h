@@ -60,10 +60,15 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define OV7670_RST_Pin GPIO_PIN_2
 #define OV7670_RST_GPIO_Port GPIOF
-#define TOUCH_XL_Pin GPIO_PIN_4
-#define TOUCH_XL_GPIO_Port GPIOA
-#define TOUCH_YD_Pin GPIO_PIN_5
+#define TOUCH_XR_Pin GPIO_PIN_2
+#define TOUCH_XR_GPIO_Port GPIOA
+#define TOUCH_YU_Pin GPIO_PIN_3
+#define TOUCH_YU_GPIO_Port GPIOA
+#define TOUCH_YU_EXTI_IRQn EXTI3_IRQn
+#define TOUCH_YD_Pin GPIO_PIN_4
 #define TOUCH_YD_GPIO_Port GPIOA
+#define TOUCH_XL_Pin GPIO_PIN_5
+#define TOUCH_XL_GPIO_Port GPIOA
 #define OV7670_D0_Pin GPIO_PIN_0
 #define OV7670_D0_GPIO_Port GPIOB
 #define OV7670_D1_Pin GPIO_PIN_1
@@ -78,6 +83,10 @@ void Error_Handler(void);
 #define OV7670_VSYNC_EXTI_IRQn EXTI1_IRQn
 #define FSMC_RST_Pin GPIO_PIN_6
 #define FSMC_RST_GPIO_Port GPIOC
+#define OV7670_XCLK_Pin GPIO_PIN_9
+#define OV7670_XCLK_GPIO_Port GPIOC
+#define OV7670_PCLK_Pin GPIO_PIN_9
+#define OV7670_PCLK_GPIO_Port GPIOA
 #define OV7670_D3_Pin GPIO_PIN_3
 #define OV7670_D3_GPIO_Port GPIOB
 #define OV7670_D4_Pin GPIO_PIN_4

@@ -1,1 +1,2 @@
-misc.c:9:10:reverse_bits	16	static
+misc.c:14:10:reverse_bits	16	static
+misc.c:28:5:comp	24	static

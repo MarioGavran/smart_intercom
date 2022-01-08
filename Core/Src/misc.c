@@ -6,6 +6,11 @@
  */
 #include "../Inc/misc.h"
 
+
+
+/****************************************************************
+ * reverse bits
+ ****************************************************************/
 uint16_t reverse_bits(uint16_t data)
 {
 	data = ((data & 0xFF00U) >> 8) | ((data & 0x00FFU) << 8);
@@ -15,3 +20,16 @@ uint16_t reverse_bits(uint16_t data)
 	return data;
 }
 
+
+
+/****************************************************************
+ * Compare function used for qsort()
+ ****************************************************************/
+int comp (const void * elem1, const void * elem2)
+{
+    int f = *((int*)elem1);
+    int s = *((int*)elem2);
+    if (f > s) return  1;
+    if (f < s) return -1;
+    return 0;
+}

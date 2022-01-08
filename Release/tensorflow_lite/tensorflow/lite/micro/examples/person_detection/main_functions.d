@@ -43,7 +43,9 @@ tensorflow_lite/tensorflow/lite/micro/examples/person_detection/main_functions.o
  ../Core/Inc/i2c_driver.h ../Core/Inc/ov7670.h \
  /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/../ov7670_driver/Inc/OV7670.h \
  /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/../ov7670_driver/Inc/../../Core/Inc/ov7670.h \
- ../Core/Inc/misc.h \
+ ../Core/Inc/misc.h ../Core/Inc/touch_driver.h \
+ ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f413xx.h \
+ ../Core/Inc/fsmc_driver.h \
  /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata/person_image_data.h \
  /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata/no_person_image_data.h \
  /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata/person_image_data1.h \
@@ -191,6 +193,12 @@ tensorflow_lite/tensorflow/lite/micro/examples/person_detection/main_functions.o
 /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/../ov7670_driver/Inc/../../Core/Inc/ov7670.h:
 
 ../Core/Inc/misc.h:
+
+../Core/Inc/touch_driver.h:
+
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f413xx.h:
+
+../Core/Inc/fsmc_driver.h:
 
 /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata/person_image_data.h:
 

@@ -13,5 +13,7 @@
 
 
 uint16_t reverse_bits(uint16_t data);
+int comp (const void * elem1, const void * elem2);
+
 
 #endif /* INC_MISC_H_ */

@@ -28,6 +28,7 @@ extern "C" {
 #include "ov7670.h"
 #include "../ov7670_driver/Inc/OV7670.h"
 #include "misc.h"
+#include "touch_driver.h"
 #include "tensorflow/lite/micro/examples/person_detection/main_functions.h"
 
 #include "tensorflow/lite/micro/examples/person_detection/testdata/person_image_data.h"
