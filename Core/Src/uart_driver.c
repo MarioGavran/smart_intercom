@@ -212,7 +212,7 @@ void uart_rx_callback()
 void serial_protocol(uint8_t* buff)
 {
 	char *token;
-	char temp_buff[3] = {0};
+	char temp_buff[5] = {0};
 	unsigned short address, value = 0xFF;
 
 	if (strncmp(buff, "OVW", 3) == 0)

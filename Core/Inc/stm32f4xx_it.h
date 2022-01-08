@@ -29,6 +29,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "uart_driver.h"
+#include "ov7670.h"
+#include "touch_driver.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/

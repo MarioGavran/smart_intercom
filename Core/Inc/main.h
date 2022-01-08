@@ -98,7 +98,8 @@ void Error_Handler(void);
 #define OV7670_D7_Pin GPIO_PIN_7
 #define OV7670_D7_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
-
+#define TOUCH_YU_ADC_CHANNEL ADC_CHANNEL_3
+#define TOUCH_XR_ADC_CHANNEL ADC_CHANNEL_2
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

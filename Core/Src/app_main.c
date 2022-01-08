@@ -131,7 +131,6 @@ void app_main_loop()
 	uint32_t milis2 = 0;
 	int i,j,z = 0;
 	int k = -2;
-	touch_coordinates_t touch_coordinates1 = {0};
 
 
 
@@ -160,6 +159,12 @@ void app_main_loop()
 		uart_tx_process();
 		uart_rx_process();
 		touch_process();
+
+		if((g_touch_coordinates.x != 0) && (g_touch_coordinates.y != 0))
+		{
+			sprintf(buff, "%04d, %04d", g_touch_coordinates.x, g_touch_coordinates.y);
+			LCD_PrintStr(20, 480, 0, 0x841FU, buff, 4);
+		}
 /*
 		LCD_SetWindow(20 , 280, 20+96-1, 280+96-1); // 320 x 240
 
@@ -237,11 +242,7 @@ void app_main_loop()
 			{// every 10 miliseconds
 
 //				touch_coordinates1 = touch_process();
-				if((g_touch_coordinates.x != 0) && (g_touch_coordinates.y != 0))
-				{
-					sprintf(buff, "%04d, %04d", g_touch_coordinates.x, g_touch_coordinates.y);
-					LCD_PrintStr(20, 480, 0, 0x841FU, buff, 4);
-				}
+
 //				uint16_t x = (800.0/4096)*touch_coordinates1.x;
 //				uint16_t y = (480.0/4096)*touch_coordinates1.y;
 //				LCD_DrawPoint(x, 480-y, 0, 4);

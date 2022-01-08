@@ -10,7 +10,13 @@
 
 #include <stdint.h>
 #include <string.h>
+#include <stdio.h>
 #include "usart.h"
+
+#include "ov7670.h"
+#include "fsmc_driver.h"
+
+
 
 typedef enum{
 	UART_TX_IDLE,

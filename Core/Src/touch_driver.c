@@ -18,7 +18,7 @@ void adc_select_y(void)
 {
 	ADC_ChannelConfTypeDef sConfig = {0};
 
-	sConfig.Channel = ADC_CHANNEL_3;
+	sConfig.Channel = TOUCH_YU_ADC_CHANNEL;
 	sConfig.Rank = 1;
 	sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
 	if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
@@ -36,7 +36,7 @@ void adc_select_x(void)
 {
 	ADC_ChannelConfTypeDef sConfig = {0};
 
-	sConfig.Channel = ADC_CHANNEL_2;
+	sConfig.Channel = TOUCH_XR_ADC_CHANNEL;
 	sConfig.Rank = 1;
 	if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
 	{
@@ -57,9 +57,6 @@ void adc_select_x(void)
  * ||  read Y  || high | low  | adc  | open |
  * ------------------------------------------
 ******************************************************/
-
-
-
 touch_coordinates_t touch_read_coordinates()
 {
 	touch_coordinates_t ret = {0};
@@ -124,13 +121,13 @@ void init_TOUCH_YU_as_adc(void)
 	GPIO_InitTypeDef GPIO_InitStruct = {0};
 
 	// Disable interrupt on TOUCH_YU pin
-	HAL_NVIC_DisableIRQ(EXTI3_IRQn);
+	HAL_NVIC_DisableIRQ(TOUCH_YU_EXTI_IRQn);
 
 	// Init analog mode on TOUCH_YU pin
     GPIO_InitStruct.Pin = TOUCH_YU_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
-    HAL_GPIO_Init(TOUCH_XR_GPIO_Port, &GPIO_InitStruct);
+    HAL_GPIO_Init(TOUCH_YU_GPIO_Port, &GPIO_InitStruct);
 }
 
 
@@ -153,8 +150,8 @@ void init_TOUCH_YU_as_interrupt(void)
 	GPIO_InitStruct.Pull = GPIO_PULLUP;
 	HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-	HAL_NVIC_SetPriority(EXTI3_IRQn, 0, 0);
-	HAL_NVIC_EnableIRQ(EXTI3_IRQn);
+	HAL_NVIC_SetPriority(TOUCH_YU_EXTI_IRQn, 0, 0);
+	HAL_NVIC_EnableIRQ(TOUCH_YU_EXTI_IRQn);
 }
 
 
@@ -178,8 +175,8 @@ void touch_init()
 	GPIOA->ODR &= ~TOUCH_XL_Pin;
 
 	// Enable interrupt
-	HAL_NVIC_SetPriority(EXTI3_IRQn, 0, 0);
-	HAL_NVIC_EnableIRQ(EXTI3_IRQn);
+	HAL_NVIC_SetPriority(TOUCH_YU_EXTI_IRQn, 0, 0);
+	HAL_NVIC_EnableIRQ(TOUCH_YU_EXTI_IRQn);
 }
 
 

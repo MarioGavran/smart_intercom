@@ -39,13 +39,12 @@ tensorflow_lite/tensorflow/lite/micro/examples/person_detection/main_functions.o
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  ../Core/Inc/../Inc/fsmc_driver.h ../Core/Inc/../Inc/../Inc/main.h \
  ../Core/Inc/i2c.h ../Core/Inc/main.h ../Core/Inc/tim.h \
- ../Core/Inc/usart.h ../Core/Inc/uart_driver.h ../Core/Inc/adc.h \
- ../Core/Inc/i2c_driver.h ../Core/Inc/ov7670.h \
+ ../Core/Inc/usart.h ../Core/Inc/uart_driver.h ../Core/Inc/ov7670.h \
+ ../Core/Inc/i2c_driver.h ../Core/Inc/fsmc_driver.h ../Core/Inc/adc.h \
  /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/../ov7670_driver/Inc/OV7670.h \
  /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/../ov7670_driver/Inc/../../Core/Inc/ov7670.h \
  ../Core/Inc/misc.h ../Core/Inc/touch_driver.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f413xx.h \
- ../Core/Inc/fsmc_driver.h \
  /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata/person_image_data.h \
  /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata/no_person_image_data.h \
  /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata/person_image_data1.h \
@@ -182,11 +181,13 @@ tensorflow_lite/tensorflow/lite/micro/examples/person_detection/main_functions.o
 
 ../Core/Inc/uart_driver.h:
 
-../Core/Inc/adc.h:
+../Core/Inc/ov7670.h:
 
 ../Core/Inc/i2c_driver.h:
 
-../Core/Inc/ov7670.h:
+../Core/Inc/fsmc_driver.h:
+
+../Core/Inc/adc.h:
 
 /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/../ov7670_driver/Inc/OV7670.h:
 
@@ -197,8 +198,6 @@ tensorflow_lite/tensorflow/lite/micro/examples/person_detection/main_functions.o
 ../Core/Inc/touch_driver.h:
 
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f413xx.h:
-
-../Core/Inc/fsmc_driver.h:
 
 /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata/person_image_data.h:
 
