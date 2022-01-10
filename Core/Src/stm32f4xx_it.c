@@ -279,7 +279,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		EXTI1_VSYNC_Callback();
 	else if(GPIO_Pin == OV7670_HREF_Pin)
 		EXTI0_HREF_Callback();
-	else if(GPIO_Pin == TOUCH_XR_Pin)
+	else if(GPIO_Pin == TOUCH_YU_Pin)
 		EXTI3_TOUCH_Callback();
 }
 /* USER CODE END 1 */

@@ -34,11 +34,12 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- ../Core/Inc/dma.h ../Core/Inc/main.h ../Core/Inc/i2c.h ../Core/Inc/tim.h \
- ../Core/Inc/usart.h ../Core/Inc/uart_driver.h ../Core/Inc/usart.h \
- ../Core/Inc/gpio.h ../Core/Inc/fsmc.h ../Core/Inc/adc.h \
- ../Core/Src/../Inc/app_main.h ../Core/Src/../Inc/../Inc/main.h \
- ../Core/Src/../Inc/../Inc/fsmc_driver.h \
+ ../Core/Inc/adc.h ../Core/Inc/main.h ../Core/Inc/dma.h ../Core/Inc/i2c.h \
+ ../Core/Inc/tim.h ../Core/Inc/usart.h ../Core/Inc/uart_driver.h \
+ ../Core/Inc/usart.h ../Core/Inc/ov7670.h ../Core/Inc/i2c_driver.h \
+ ../Core/Inc/i2c.h ../Core/Inc/fsmc_driver.h ../Core/Inc/../Inc/main.h \
+ ../Core/Inc/gpio.h ../Core/Inc/fsmc.h ../Core/Src/../Inc/app_main.h \
+ ../Core/Src/../Inc/../Inc/main.h ../Core/Src/../Inc/../Inc/fsmc_driver.h \
  ../Core/Src/../Inc/../Inc/../Inc/main.h ../Core/Src/../Inc/i2c.h \
  ../Core/Src/../Inc/tim.h ../Core/Src/../Inc/usart.h \
  ../Core/Src/../Inc/adc.h ../Core/Src/../Inc/uart_driver.h \
@@ -127,9 +128,11 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 
-../Core/Inc/dma.h:
+../Core/Inc/adc.h:
 
 ../Core/Inc/main.h:
+
+../Core/Inc/dma.h:
 
 ../Core/Inc/i2c.h:
 
@@ -141,11 +144,19 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
 
 ../Core/Inc/usart.h:
 
+../Core/Inc/ov7670.h:
+
+../Core/Inc/i2c_driver.h:
+
+../Core/Inc/i2c.h:
+
+../Core/Inc/fsmc_driver.h:
+
+../Core/Inc/../Inc/main.h:
+
 ../Core/Inc/gpio.h:
 
 ../Core/Inc/fsmc.h:
-
-../Core/Inc/adc.h:
 
 ../Core/Src/../Inc/app_main.h:
 

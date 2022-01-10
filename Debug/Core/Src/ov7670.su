@@ -6,6 +6,5 @@ ov7670.c:72:6:ov7670_write_register	16	static
 ov7670.c:80:9:ov7670_read_register	16	static
 ov7670.c:88:6:ov7670_set_mode	24	static
 ov7670.c:137:6:ov7670_init1	8	static
-ov7670.c:157:6:HAL_GPIO_EXTI_Callback	16	static
-ov7670.c:170:6:EXTI0_HREF_Callback	8	static
-ov7670.c:184:6:EXTI1_VSYNC_Callback	8	static
+ov7670.c:161:6:EXTI0_HREF_Callback	8	static
+ov7670.c:175:6:EXTI1_VSYNC_Callback	8	static
