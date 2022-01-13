@@ -20,12 +20,12 @@ static uint32_t touch_timer_start = 0;
  * defining TOUCH_YU pin that needs to change from
  * interrupt mode to ADC mode and vice versa.
 ******************************************************/
-static EXTI_HandleTypeDef hexti_touch_YU = {
+EXTI_HandleTypeDef hexti_touch_YU = {
 		.Line = EXTI_LINE_3,
 		.PendingCallback = EXTI3_TOUCH_Callback
 };
 
-static EXTI_ConfigTypeDef extiConfig_touch_YU = {
+EXTI_ConfigTypeDef extiConfig_touch_YU = {
 		.Line = EXTI_LINE_3,
 		.Mode = EXTI_MODE_INTERRUPT,
 		.Trigger = EXTI_TRIGGER_FALLING,
@@ -178,9 +178,10 @@ touch_coordinates_t touch_read_coordinates()
 void init_TOUCH_YU_as_adc(void)
 {
 	// Disable interrupt on TOUCH_YU pin
+	HAL_EXTI_ClearPending(&hexti_touch_YU, EXTI_TRIGGER_RISING_FALLING);
 	HAL_EXTI_ClearConfigLine(&hexti_touch_YU);
+	HAL_NVIC_ClearPendingIRQ(TOUCH_YU_EXTI_IRQn);
 	HAL_NVIC_DisableIRQ(TOUCH_YU_EXTI_IRQn);
-
 	// Init analog mode on TOUCH_YU pin
 	adc_select_y();
 }
@@ -270,7 +271,7 @@ void touch_process()
 		break;
 
 	case TOUCH_TOUCHED:
-		if(HAL_GetTick() - touch_timer_start < TOUCH_TIMEOUT)
+		if((uint32_t) (HAL_GetTick() - touch_timer_start) < TOUCH_TIMEOUT)
 		{
 			g_touch_coordinates = touch_read_coordinates();
 		}

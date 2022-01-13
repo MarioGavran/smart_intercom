@@ -17,7 +17,7 @@
 
 
 
-#define TOUCH_TIMEOUT 200
+#define TOUCH_TIMEOUT 200U
 
 
 
@@ -32,7 +32,12 @@ typedef enum{
 	TOUCH_RELEASED
 }touch_state_t;
 
+
+
 extern touch_coordinates_t g_touch_coordinates;
+extern EXTI_HandleTypeDef hexti_touch_YU;
+
+
 
 void adc_select_x(void);
 void adc_select_y(void);

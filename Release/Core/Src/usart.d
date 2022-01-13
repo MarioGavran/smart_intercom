@@ -37,7 +37,11 @@ Core/Src/usart.o: ../Core/Src/usart.c ../Core/Inc/usart.h \
  ../Core/Inc/uart_driver.h ../Core/Inc/usart.h ../Core/Inc/ov7670.h \
  ../Core/Inc/i2c_driver.h ../Core/Inc/i2c.h ../Core/Inc/fsmc_driver.h \
  ../Core/Inc/../Inc/main.h \
- /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/arm-none-eabi/include/c++/9.3.1/math.h
+ /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/arm-none-eabi/include/c++/9.3.1/math.h \
+ ../Core/Inc/touch_driver.h \
+ ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f413xx.h \
+ ../Core/Inc/adc.h ../Core/Inc/misc.h \
+ /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/arm-none-eabi/include/c++/9.3.1/stdlib.h
 
 ../Core/Inc/usart.h:
 
@@ -128,3 +132,13 @@ Core/Src/usart.o: ../Core/Src/usart.c ../Core/Inc/usart.h \
 ../Core/Inc/../Inc/main.h:
 
 /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/arm-none-eabi/include/c++/9.3.1/math.h:
+
+../Core/Inc/touch_driver.h:
+
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f413xx.h:
+
+../Core/Inc/adc.h:
+
+../Core/Inc/misc.h:
+
+/opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/arm-none-eabi/include/c++/9.3.1/stdlib.h:

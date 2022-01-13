@@ -1,8 +1,8 @@
 touch_driver.c:42:6:adc_select_y	48	static
-touch_driver.c:66:6:adc_select_x	48	static
-touch_driver.c:99:21:touch_read_coordinates	32	static
-touch_driver.c:164:6:init_TOUCH_YU_as_adc	8	static
-touch_driver.c:179:6:init_TOUCH_YU_as_interrupt	32	static
-touch_driver.c:216:6:EXTI3_TOUCH_Callback	8	static
-touch_driver.c:228:6:touch_init	8	static
-touch_driver.c:247:6:touch_process	8	static
+touch_driver.c:68:6:adc_select_x	48	static
+touch_driver.c:103:21:touch_read_coordinates	32	static
+touch_driver.c:178:6:init_TOUCH_YU_as_adc	8	static
+touch_driver.c:194:6:init_TOUCH_YU_as_interrupt	32	static
+touch_driver.c:232:6:EXTI3_TOUCH_Callback	8	static
+touch_driver.c:244:6:touch_init	8	static
+touch_driver.c:264:6:touch_process	8	static

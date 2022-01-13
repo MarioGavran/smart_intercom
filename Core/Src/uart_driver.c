@@ -215,10 +215,10 @@ void serial_protocol(uint8_t* buff)
 	char temp_buff[5] = {0};
 	unsigned short address, value = 0xFF;
 
+	token = strtok(buff, ",");
+
 	if (strncmp(buff, "OVW", 3) == 0)
 	{
-		token = strtok(buff, ",");
-
 		token = strtok(NULL, ",");
 		strncpy(temp_buff, token, 2);
 		address = strtoll(temp_buff, NULL, 16);
@@ -235,8 +235,6 @@ void serial_protocol(uint8_t* buff)
 	}
 	else if (strncmp(buff, "OVR", 3) == 0)
 	{
-		token = strtok(buff, ",");
-
 		token = strtok(NULL, ",");
 		strncpy(temp_buff, token, 2);
 		address = strtoll(temp_buff, NULL, 16);
@@ -248,7 +246,12 @@ void serial_protocol(uint8_t* buff)
 		sprintf(temp_buff, "%02X\0", value);
 		LCD_PrintStr(20, 440, 0, 0x841FU, temp_buff, 5);
 	}
-		//LCD_PrintStr(20, 400, 0, 0x841FU, buff, 5);
+	else if (strncmp(buff, "SWI", 3) == 0)
+	{
+		token = strtok(NULL, ",");
+		if (strncmp(token, "touch", 5) == 00)
+			HAL_EXTI_GenerateSWI(&hexti_touch_YU);
+	}
 }
 
 

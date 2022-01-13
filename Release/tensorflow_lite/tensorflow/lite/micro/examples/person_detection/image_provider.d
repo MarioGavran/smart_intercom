@@ -4,10 +4,14 @@ tensorflow_lite/tensorflow/lite/micro/examples/person_detection/image_provider.o
  /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/c/common.h \
  /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/c/c_api_types.h \
  /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/micro_error_reporter.h \
+ /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/arm-none-eabi/include/c++/9.3.1/cstdarg \
  /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/core/api/error_reporter.h \
  /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/compatibility.h \
  /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/model_settings.h \
- ../Core/Inc/app_main.h ../Core/Inc/../Inc/main.h \
+ ../Core/Inc/app_main.h \
+ /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/arm-none-eabi/include/c++/9.3.1/stdlib.h \
+ /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/arm-none-eabi/include/c++/9.3.1/cstdlib \
+ ../Core/Inc/../Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -44,13 +48,16 @@ tensorflow_lite/tensorflow/lite/micro/examples/person_detection/image_provider.o
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  ../Core/Inc/../Inc/fsmc_driver.h ../Core/Inc/../Inc/../Inc/main.h \
+ /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/arm-none-eabi/include/c++/9.3.1/math.h \
+ /opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/arm-none-eabi/include/c++/9.3.1/cmath \
  ../Core/Inc/i2c.h ../Core/Inc/main.h ../Core/Inc/tim.h \
  ../Core/Inc/usart.h ../Core/Inc/uart_driver.h ../Core/Inc/ov7670.h \
- ../Core/Inc/i2c_driver.h ../Core/Inc/fsmc_driver.h ../Core/Inc/adc.h \
+ ../Core/Inc/i2c_driver.h ../Core/Inc/fsmc_driver.h \
+ ../Core/Inc/touch_driver.h \
+ ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f413xx.h \
+ ../Core/Inc/adc.h ../Core/Inc/misc.h \
  /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/../ov7670_driver/Inc/OV7670.h \
  /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/../ov7670_driver/Inc/../../Core/Inc/ov7670.h \
- ../Core/Inc/misc.h ../Core/Inc/touch_driver.h \
- ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f413xx.h \
  /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/main_functions.h \
  /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata/person_image_data.h \
  /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/testdata/no_person_image_data.h \
@@ -65,6 +72,8 @@ tensorflow_lite/tensorflow/lite/micro/examples/person_detection/image_provider.o
 
 /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/micro_error_reporter.h:
 
+/opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/arm-none-eabi/include/c++/9.3.1/cstdarg:
+
 /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/core/api/error_reporter.h:
 
 /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/compatibility.h:
@@ -72,6 +81,10 @@ tensorflow_lite/tensorflow/lite/micro/examples/person_detection/image_provider.o
 /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/model_settings.h:
 
 ../Core/Inc/app_main.h:
+
+/opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/arm-none-eabi/include/c++/9.3.1/stdlib.h:
+
+/opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/arm-none-eabi/include/c++/9.3.1/cstdlib:
 
 ../Core/Inc/../Inc/main.h:
 
@@ -149,6 +162,10 @@ tensorflow_lite/tensorflow/lite/micro/examples/person_detection/image_provider.o
 
 ../Core/Inc/../Inc/../Inc/main.h:
 
+/opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/arm-none-eabi/include/c++/9.3.1/math.h:
+
+/opt/st/stm32cubeide_1.6.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.linux64_1.5.0.202011040924/tools/arm-none-eabi/include/c++/9.3.1/cmath:
+
 ../Core/Inc/i2c.h:
 
 ../Core/Inc/main.h:
@@ -165,17 +182,17 @@ tensorflow_lite/tensorflow/lite/micro/examples/person_detection/image_provider.o
 
 ../Core/Inc/fsmc_driver.h:
 
+../Core/Inc/touch_driver.h:
+
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f413xx.h:
+
 ../Core/Inc/adc.h:
+
+../Core/Inc/misc.h:
 
 /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/../ov7670_driver/Inc/OV7670.h:
 
 /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/../ov7670_driver/Inc/../../Core/Inc/ov7670.h:
-
-../Core/Inc/misc.h:
-
-../Core/Inc/touch_driver.h:
-
-../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f413xx.h:
 
 /home/enio/STM32CubeIDE/workspace_1.6.1/smart_intercom/tensorflow_lite/tensorflow/lite/micro/examples/person_detection/main_functions.h:
 

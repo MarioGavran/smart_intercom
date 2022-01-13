@@ -280,6 +280,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 	else if(GPIO_Pin == OV7670_HREF_Pin)
 		EXTI0_HREF_Callback();
 	else if(GPIO_Pin == TOUCH_YU_Pin)
+		//HAL_EXTI_IRQHandler(&hexti_touch_YU);
 		EXTI3_TOUCH_Callback();
 }
 /* USER CODE END 1 */

@@ -15,6 +15,7 @@
 
 #include "ov7670.h"
 #include "fsmc_driver.h"
+#include "touch_driver.h"
 
 
 
