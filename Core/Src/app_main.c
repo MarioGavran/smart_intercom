@@ -160,7 +160,8 @@ void app_main_loop()
 		uart_rx_process();
 		touch_process();
 
-		if((g_touch_coordinates.x != 0) && (g_touch_coordinates.y != 0))
+		if((g_touch_coordinates.x != 0) && (g_touch_coordinates.y != 0) &&
+				(g_touch_coordinates.x < 3100) && (g_touch_coordinates.y <= 3100))
 		{
 			sprintf(buff, "%04d, %04d", g_touch_coordinates.x, g_touch_coordinates.y);
 			LCD_PrintStr(20, 480, 0, 0x841FU, buff, 4);
@@ -224,8 +225,6 @@ void app_main_loop()
 			{
 				milis = 0;
 			}
-
-
 			else
 			{// every second
 				uart_write("hello");

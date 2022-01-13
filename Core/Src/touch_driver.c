@@ -11,6 +11,15 @@
 touch_state_t g_touch_state = TOUCH_IDLE;
 touch_coordinates_t g_touch_coordinates = {0};
 
+static uint32_t touch_timer_start = 0;
+
+
+
+/******************************************************
+ * EXTI handler and configuration structures used for
+ * defining TOUCH_YU pin that needs to change from
+ * interrupt mode to ADC mode and vice versa.
+******************************************************/
 static EXTI_HandleTypeDef hexti_touch_YU = {
 		.Line = EXTI_LINE_3,
 		.PendingCallback = EXTI3_TOUCH_Callback
@@ -114,11 +123,13 @@ touch_coordinates_t touch_read_coordinates()
 		HAL_ADC_PollForConversion(&hadc1, 500);
 		adc_values[adc_cnt] = HAL_ADC_GetValue(&hadc1);
 	}
-	qsort(adc_values, sizeof(adc_values)/sizeof(*adc_values), sizeof(*adc_values), comp);
+	qsort(adc_values,
+			sizeof(adc_values)/sizeof(*adc_values),
+			sizeof(*adc_values), comp
+			);
 	ret.x = adc_values[2];
 
 	// TOUCH_YU output-high
-	HAL_GPIO_DeInit(TOUCH_YU_GPIO_Port, TOUCH_YU_Pin);
 	GPIOA->MODER &= ~GPIO_MODER_MODER3_Msk;
 	GPIOA->MODER |= GPIO_MODER_MODER3_0;
 	GPIOA->ODR |= TOUCH_YU_Pin;
@@ -131,6 +142,7 @@ touch_coordinates_t touch_read_coordinates()
 	GPIOA->PUPDR &= ~GPIO_PUPDR_PUPD5_Msk;
 	HAL_Delay(5);
 	// TOUCH_XR as ADC
+	HAL_GPIO_DeInit(TOUCH_XR_GPIO_Port, TOUCH_XR_Pin);
 	adc_select_x();
 	for(adc_cnt = 0; adc_cnt < 5; adc_cnt++)
 	{
@@ -138,7 +150,9 @@ touch_coordinates_t touch_read_coordinates()
 		HAL_ADC_PollForConversion(&hadc1, 500);
 		adc_values[adc_cnt] = HAL_ADC_GetValue(&hadc1);
 	}
-	qsort(adc_values, sizeof(adc_values)/sizeof(*adc_values), sizeof(*adc_values), comp);
+	qsort(adc_values,
+			sizeof(adc_values)/sizeof(*adc_values),
+			sizeof(*adc_values), comp);
 	ret.y = adc_values[2];
 
 	return ret;
@@ -197,6 +211,7 @@ void init_TOUCH_YU_as_interrupt(void)
 
 
 
+
 /******************************************************
  *
 ******************************************************/
@@ -204,6 +219,7 @@ void EXTI3_TOUCH_Callback()
 {
 	init_TOUCH_YU_as_adc();
 	g_touch_state = TOUCH_TOUCHED;
+	touch_timer_start = HAL_GetTick();
 }
 
 
@@ -227,7 +243,6 @@ void touch_init()
 }
 
 
-
 /******************************************************
  *
 ******************************************************/
@@ -238,13 +253,17 @@ void touch_process()
 	case TOUCH_IDLE:
 		g_touch_coordinates.x = 0;
 		g_touch_coordinates.y = 0;
-		//g_touch_state = TOUCH_IDLE;
 		break;
 
 	case TOUCH_TOUCHED:
-		//init_TOUCH_XR_as_adc();
-		g_touch_coordinates = touch_read_coordinates();
-		g_touch_state = TOUCH_RELEASED;
+		if(HAL_GetTick() - touch_timer_start < TOUCH_TIMEOUT)
+		{
+			g_touch_coordinates = touch_read_coordinates();
+		}
+		else
+		{
+			g_touch_state = TOUCH_RELEASED;
+		}
 		break;
 
 	case TOUCH_RELEASED:

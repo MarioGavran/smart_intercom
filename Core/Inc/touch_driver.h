@@ -15,8 +15,10 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-// izbrisi kasnije
-#include "fsmc_driver.h"
+
+
+#define TOUCH_TIMEOUT 200
+
 
 
 typedef struct{
@@ -40,7 +42,6 @@ void init_TOUCH_YU_as_interrupt(void);
 void EXTI3_TOUCH_Callback();
 void touch_init();
 void touch_process();
-
 
 
 
