@@ -120,7 +120,7 @@ touch_coordinates_t touch_read_coordinates()
 	// TOUCH_YD inout-open
 	GPIOA->MODER &= ~GPIO_MODER_MODER4_Msk;
 	GPIOA->PUPDR &= ~GPIO_PUPDR_PUPD4_Msk;
-	HAL_Delay(5);
+	//HAL_Delay(5);
 
 	// TOUCH_YU as ADC
 	//HAL_GPIO_DeInit(TOUCH_YU_GPIO_Port, TOUCH_YU_Pin);
@@ -151,7 +151,7 @@ touch_coordinates_t touch_read_coordinates()
 	// TOUCH_XL input-open
 	GPIOA->MODER &= ~GPIO_MODER_MODER5_Msk;
 	GPIOA->PUPDR &= ~GPIO_PUPDR_PUPD5_Msk;
-	HAL_Delay(5);
+	//HAL_Delay(5);
 
 	// TOUCH_XR as ADC
 	//HAL_GPIO_DeInit(TOUCH_XR_GPIO_Port, TOUCH_XR_Pin);
@@ -218,9 +218,11 @@ void init_TOUCH_YU_as_interrupt(void)
 	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
 	HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
+	HAL_EXTI_ClearPending(&hexti_touch_YU, EXTI_TRIGGER_RISING_FALLING);
 	HAL_EXTI_SetConfigLine(&hexti_touch_YU, &extiConfig_touch_YU);
 	HAL_NVIC_SetPriority(TOUCH_YU_EXTI_IRQn, 0, 0);
 	HAL_NVIC_EnableIRQ(TOUCH_YU_EXTI_IRQn);
+	HAL_EXTI_ClearPending(&hexti_touch_YU, EXTI_TRIGGER_RISING_FALLING);
 }
 
 
@@ -252,6 +254,7 @@ void touch_init()
 	GPIOA->ODR &= ~TOUCH_XL_Pin;
 
 	// Enable interrupt
+	HAL_EXTI_ClearPending(&hexti_touch_YU, EXTI_TRIGGER_RISING_FALLING);
 	HAL_EXTI_SetConfigLine(&hexti_touch_YU, &extiConfig_touch_YU);
 	HAL_NVIC_SetPriority(TOUCH_YU_EXTI_IRQn, 0, 0);
 	HAL_NVIC_EnableIRQ(TOUCH_YU_EXTI_IRQn);
