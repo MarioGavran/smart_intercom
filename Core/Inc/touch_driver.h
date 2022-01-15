@@ -17,7 +17,7 @@
 
 
 
-#define TOUCH_TIMEOUT 200U
+#define TOUCH_TIMEOUT 50U
 
 
 

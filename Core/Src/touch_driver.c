@@ -107,7 +107,6 @@ touch_coordinates_t touch_read_coordinates()
 	uint16_t adc_values[5] = {0};
 
 	// TOUCH_XR output-high
-	//HAL_GPIO_DeInit(TOUCH_XR_GPIO_Port, TOUCH_XR_Pin);
 	GPIOA->MODER &= ~GPIO_MODER_MODER2_Msk;
 	GPIOA->MODER |= GPIO_MODER_MODER2_0;
 	GPIOA->ODR |= TOUCH_XR_Pin;
@@ -123,7 +122,6 @@ touch_coordinates_t touch_read_coordinates()
 	//HAL_Delay(5);
 
 	// TOUCH_YU as ADC
-	//HAL_GPIO_DeInit(TOUCH_YU_GPIO_Port, TOUCH_YU_Pin);
 	adc_select_y();
 	for(adc_cnt = 0; adc_cnt < 5; adc_cnt++)
 	{
@@ -138,7 +136,6 @@ touch_coordinates_t touch_read_coordinates()
 	ret.y = adc_values[2];
 
 	// TOUCH_YU output-high
-	//HAL_GPIO_DeInit(TOUCH_YU_GPIO_Port, TOUCH_YU_Pin);
 	GPIOA->MODER &= ~GPIO_MODER_MODER3_Msk;
 	GPIOA->MODER |= GPIO_MODER_MODER3_0;
 	GPIOA->ODR |= TOUCH_YU_Pin;
@@ -154,7 +151,6 @@ touch_coordinates_t touch_read_coordinates()
 	//HAL_Delay(5);
 
 	// TOUCH_XR as ADC
-	//HAL_GPIO_DeInit(TOUCH_XR_GPIO_Port, TOUCH_XR_Pin);
 	adc_select_x();
 	for(adc_cnt = 0; adc_cnt < 5; adc_cnt++)
 	{
@@ -205,20 +201,21 @@ void init_TOUCH_YU_as_interrupt(void)
 	GPIOA->ODR &= ~TOUCH_XL_Pin;
 
 	// TOUCH_XR output-low
-	//HAL_GPIO_DeInit(TOUCH_XR_GPIO_Port, TOUCH_XR_Pin);
 	GPIOA->MODER &= ~GPIO_MODER_MODER2_Msk;
 	GPIOA->MODER |= GPIO_MODER_MODER2_0;
 	GPIOA->ODR &= ~TOUCH_XR_Pin;
 
 	// TOUCH_YU as interrupt input
-	//HAL_GPIO_DeInit(TOUCH_YU_GPIO_Port, TOUCH_YU_Pin);
 	GPIO_InitStruct.Pin = TOUCH_YU_Pin;
 	GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
 	GPIO_InitStruct.Pull = GPIO_PULLUP;
 	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
 	HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
+	// Clear PR flag occurring during TOUCHED state
 	HAL_EXTI_ClearPending(&hexti_touch_YU, EXTI_TRIGGER_RISING_FALLING);
+
+	// Enable interrupt on YU
 	HAL_EXTI_SetConfigLine(&hexti_touch_YU, &extiConfig_touch_YU);
 	HAL_NVIC_SetPriority(TOUCH_YU_EXTI_IRQn, 0, 0);
 	HAL_NVIC_EnableIRQ(TOUCH_YU_EXTI_IRQn);
@@ -253,8 +250,10 @@ void touch_init()
 	GPIOA->MODER |= GPIO_MODER_MODER5_0;
 	GPIOA->ODR &= ~TOUCH_XL_Pin;
 
-	// Enable interrupt
+	// Clear PR flag occurring during TOUCHED state
 	HAL_EXTI_ClearPending(&hexti_touch_YU, EXTI_TRIGGER_RISING_FALLING);
+
+	// Enable interrupt
 	HAL_EXTI_SetConfigLine(&hexti_touch_YU, &extiConfig_touch_YU);
 	HAL_NVIC_SetPriority(TOUCH_YU_EXTI_IRQn, 0, 0);
 	HAL_NVIC_EnableIRQ(TOUCH_YU_EXTI_IRQn);
@@ -280,7 +279,12 @@ void touch_process()
 		}
 		else
 		{
-			g_touch_state = TOUCH_RELEASED;
+			HAL_ADC_Start(&hadc1);
+			HAL_ADC_PollForConversion(&hadc1, 500);
+			if (HAL_ADC_GetValue(&hadc1) > 300)
+				touch_timer_start = HAL_GetTick();
+			else
+				g_touch_state = TOUCH_RELEASED;
 		}
 		break;
 
