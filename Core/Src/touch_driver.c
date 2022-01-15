@@ -8,7 +8,7 @@
 
 
 
-touch_state_t g_touch_state = TOUCH_IDLE;
+volatile touch_state_t g_touch_state = TOUCH_IDLE;
 touch_coordinates_t g_touch_coordinates = {0};
 
 static uint32_t touch_timer_start = 0;
@@ -37,14 +37,38 @@ EXTI_ConfigTypeDef extiConfig_touch_YU = {
 
 
 /******************************************************
- *
+ * Select TOUCH_XR channel for ADC conversion
+******************************************************/
+void adc_select_x(void)
+{
+	GPIO_InitTypeDef GPIO_InitStruct = {0};
+	ADC_ChannelConfTypeDef sConfig = {0};
+
+	GPIO_InitStruct.Pin = TOUCH_XR_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+	HAL_GPIO_Init(TOUCH_XR_GPIO_Port, &GPIO_InitStruct);
+
+	sConfig.Channel = TOUCH_XR_ADC_CHANNEL;
+	sConfig.Rank = 1;
+	sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
+	if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+	{
+		Error_Handler();
+	}
+}
+
+
+
+/******************************************************
+ * Select TOUCH_YU channel for ADC conversion
 ******************************************************/
 void adc_select_y(void)
 {
 	GPIO_InitTypeDef GPIO_InitStruct = {0};
 	ADC_ChannelConfTypeDef sConfig = {0};
 
-	//HAL_GPIO_DeInit(TOUCH_YU_GPIO_Port, TOUCH_YU_Pin);
 	GPIO_InitStruct.Pin = TOUCH_YU_Pin;
 	GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
 	GPIO_InitStruct.Pull = GPIO_NOPULL;
@@ -65,20 +89,36 @@ void adc_select_y(void)
 /******************************************************
  *
 ******************************************************/
-void adc_select_x(void)
+void adc_select_channel(uint16_t GPIO_Pin)
 {
 	GPIO_InitTypeDef GPIO_InitStruct = {0};
 	ADC_ChannelConfTypeDef sConfig = {0};
+	GPIO_TypeDef *GPIO_Port;
+	uint32_t ADC_Channel;
 
-	//HAL_GPIO_DeInit(TOUCH_XR_GPIO_Port, TOUCH_XR_Pin);
-	GPIO_InitStruct.Pin = TOUCH_XR_Pin;
+	switch(GPIO_Pin)
+	{
+	case TOUCH_XR_Pin:
+		GPIO_Port = TOUCH_XR_GPIO_Port;
+		ADC_Channel = TOUCH_XR_ADC_CHANNEL;
+		break;
+	case TOUCH_YU_Pin:
+		GPIO_Port = TOUCH_YU_GPIO_Port;
+		ADC_Channel = TOUCH_YU_ADC_CHANNEL;
+		break;
+	default:
+		GPIO_Port = TOUCH_YU_GPIO_Port;
+		ADC_Channel = TOUCH_YU_ADC_CHANNEL;
+		break;
+	}
+
+	GPIO_InitStruct.Pin = GPIO_Pin;
 	GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
 	GPIO_InitStruct.Pull = GPIO_NOPULL;
 	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
-	HAL_GPIO_Init(TOUCH_XR_GPIO_Port, &GPIO_InitStruct);
+	HAL_GPIO_Init(GPIO_Port, &GPIO_InitStruct);
 
-
-	sConfig.Channel = TOUCH_XR_ADC_CHANNEL;
+	sConfig.Channel = ADC_Channel;
 	sConfig.Rank = 1;
 	sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
 	if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
@@ -91,6 +131,59 @@ void adc_select_x(void)
 
 /******************************************************
  *
+******************************************************/
+uint16_t adc_median_measurement(void)
+{
+	uint8_t adc_cnt = 0;
+	uint16_t adc_values[11] = {0};
+
+	for(adc_cnt = 0; adc_cnt < 11; adc_cnt++)
+	{
+		HAL_ADC_Start(&hadc1);
+		HAL_ADC_PollForConversion(&hadc1, 500);
+		adc_values[adc_cnt] = HAL_ADC_GetValue(&hadc1);
+	}
+	qsort(adc_values,
+			sizeof(adc_values)/sizeof(*adc_values),
+			sizeof(*adc_values), comp);
+	return adc_values[5];
+}
+
+
+
+/******************************************************
+ *
+******************************************************/
+uint16_t adc_mean_measurement(void)
+{
+	uint8_t adc_cnt = 0;
+	uint16_t adc_value = 0;
+
+	uint8_t val[7] = {0};
+
+	for(adc_cnt = 0; adc_cnt < 11; adc_cnt++)
+	{
+		HAL_ADC_Start(&hadc1);
+		HAL_ADC_PollForConversion(&hadc1, 500);
+		adc_value += HAL_ADC_GetValue(&hadc1);
+	}
+	adc_value /= 11;
+
+	sprintf(val, "%04d\r\n", adc_value);
+	uart_write(val);
+
+	return adc_value;
+}
+
+
+
+/******************************************************
+ * Reconfigures TOUCH pins to measure x and y ADC
+ * channels. The pin configuration for measuring x or y
+ * channel and pin assignment is shown in the table
+ * below.
+ * Returns touch_coordinates_t type parameter with
+ * median value of 5 consecutive measurements.
  * __________________________________________
  * || function || X+   | X-   | Y+   | Y-   |
  * ==========================================
@@ -103,8 +196,6 @@ void adc_select_x(void)
 touch_coordinates_t touch_read_coordinates()
 {
 	touch_coordinates_t ret = {0};
-	uint8_t adc_cnt = 0;
-	uint16_t adc_values[5] = {0};
 
 	// TOUCH_XR output-high
 	GPIOA->MODER &= ~GPIO_MODER_MODER2_Msk;
@@ -123,17 +214,8 @@ touch_coordinates_t touch_read_coordinates()
 
 	// TOUCH_YU as ADC
 	adc_select_y();
-	for(adc_cnt = 0; adc_cnt < 5; adc_cnt++)
-	{
-		HAL_ADC_Start(&hadc1);
-		HAL_ADC_PollForConversion(&hadc1, 500);
-		adc_values[adc_cnt] = HAL_ADC_GetValue(&hadc1);
-	}
-	qsort(adc_values,
-			sizeof(adc_values)/sizeof(*adc_values),
-			sizeof(*adc_values), comp
-			);
-	ret.y = adc_values[2];
+
+	ret.y = adc_median_measurement();
 
 	// TOUCH_YU output-high
 	GPIOA->MODER &= ~GPIO_MODER_MODER3_Msk;
@@ -152,34 +234,10 @@ touch_coordinates_t touch_read_coordinates()
 
 	// TOUCH_XR as ADC
 	adc_select_x();
-	for(adc_cnt = 0; adc_cnt < 5; adc_cnt++)
-	{
-		HAL_ADC_Start(&hadc1);
-		HAL_ADC_PollForConversion(&hadc1, 500);
-		adc_values[adc_cnt] = HAL_ADC_GetValue(&hadc1);
-	}
-	qsort(adc_values,
-			sizeof(adc_values)/sizeof(*adc_values),
-			sizeof(*adc_values), comp);
-	ret.x = adc_values[2];
+
+	ret.x = adc_median_measurement();
 
 	return ret;
-}
-
-
-
-/******************************************************
- *
-******************************************************/
-void init_TOUCH_YU_as_adc(void)
-{
-	// Disable interrupt on TOUCH_YU pin
-	HAL_EXTI_ClearPending(&hexti_touch_YU, EXTI_TRIGGER_RISING_FALLING);
-	HAL_EXTI_ClearConfigLine(&hexti_touch_YU);
-	HAL_NVIC_ClearPendingIRQ(TOUCH_YU_EXTI_IRQn);
-	HAL_NVIC_DisableIRQ(TOUCH_YU_EXTI_IRQn);
-	// Init analog mode on TOUCH_YU pin
-	adc_select_y();
 }
 
 
@@ -226,11 +284,17 @@ void init_TOUCH_YU_as_interrupt(void)
 
 
 /******************************************************
- *
+ * EXTI IRQ callback
 ******************************************************/
 void EXTI3_TOUCH_Callback()
 {
-	init_TOUCH_YU_as_adc();
+	// Disable interrupt on TOUCH_YU pin
+	HAL_EXTI_ClearPending(&hexti_touch_YU, EXTI_TRIGGER_RISING_FALLING);
+	HAL_EXTI_ClearConfigLine(&hexti_touch_YU);
+	HAL_NVIC_ClearPendingIRQ(TOUCH_YU_EXTI_IRQn);
+	HAL_NVIC_DisableIRQ(TOUCH_YU_EXTI_IRQn);
+	// Init analog mode on TOUCH_YU pin
+	adc_select_y();
 	g_touch_state = TOUCH_TOUCHED;
 	touch_timer_start = HAL_GetTick();
 }
@@ -245,12 +309,8 @@ void touch_init()
 	// TOUCH_YD as input-open
 	GPIOA->MODER &= ~GPIO_MODER_MODER4_Msk;
 
-	// TOUCH_XL output-low
-	GPIOA->MODER &= ~GPIO_MODER_MODER5_Msk;
-	GPIOA->MODER |= GPIO_MODER_MODER5_0;
-	GPIOA->ODR &= ~TOUCH_XL_Pin;
-
-	// Clear PR flag occurring during TOUCHED state
+	// Clear PR flag raised by configuring TOUCH_YD pin
+	// to output-low during GPIO initialization at startup
 	HAL_EXTI_ClearPending(&hexti_touch_YU, EXTI_TRIGGER_RISING_FALLING);
 
 	// Enable interrupt
@@ -261,7 +321,14 @@ void touch_init()
 
 
 /******************************************************
+ * Simple state machine with IDLE, TOUCHED and RELEASED
+ * states.
  *
+ * IDLE		-> IDLE		** by default
+ * IDLE		-> TOUCHED	** by interrupt on YU
+ * TOUCHED	-> RELEASED	** after timeout & release
+ * TOUCHED	-> TOUCHED	** if touch not released
+ * RELEASED	-> IDLE		** unconditionally
 ******************************************************/
 void touch_process()
 {
@@ -279,12 +346,15 @@ void touch_process()
 		}
 		else
 		{
-			HAL_ADC_Start(&hadc1);
-			HAL_ADC_PollForConversion(&hadc1, 500);
-			if (HAL_ADC_GetValue(&hadc1) > 300)
-				touch_timer_start = HAL_GetTick();
-			else
+			// TOUCH_XL output-low
+			GPIOA->MODER &= ~GPIO_MODER_MODER5_Msk;
+			GPIOA->MODER |= GPIO_MODER_MODER5_0;
+			GPIOA->ODR &= ~TOUCH_XL_Pin;
+			HAL_Delay(5);
+			if(adc_mean_measurement() < 30)
 				g_touch_state = TOUCH_RELEASED;
+			else
+				touch_timer_start = HAL_GetTick();
 		}
 		break;
 

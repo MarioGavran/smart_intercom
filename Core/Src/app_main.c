@@ -160,13 +160,20 @@ void app_main_loop()
 		uart_rx_process();
 		touch_process();
 
-		if((g_touch_coordinates.x != 0) && (g_touch_coordinates.y != 0) &&
-				(g_touch_coordinates.x < 3100) && (g_touch_coordinates.y <= 3100))
-		{
+		//if((g_touch_coordinates.x != 0) && (g_touch_coordinates.y != 0) &&
+		//		(g_touch_coordinates.x < 3100) && (g_touch_coordinates.y <= 3100))
+		//{
 			sprintf(buff, "%04d, %04d", g_touch_coordinates.x, g_touch_coordinates.y);
 			LCD_PrintStr(20, 480, 0, 0x841FU, buff, 4);
-		}
-/*
+		//}
+			if(g_touch_state == TOUCH_IDLE)
+				LCD_PrintStr(20, 520, 0, 0x841FU, "IDLE    ", 3);
+			else if(g_touch_state == TOUCH_TOUCHED)
+				LCD_PrintStr(20, 520, 0, 0x841FU, "TOUCHED ", 3);
+			else if(g_touch_state == TOUCH_RELEASED)
+				LCD_PrintStr(20, 520, 0, 0x841FU, "RELEASED", 3);
+
+		/*
 		LCD_SetWindow(20 , 280, 20+96-1, 280+96-1); // 320 x 240
 
 		//-********************************************************************************************************************
@@ -227,7 +234,7 @@ void app_main_loop()
 			}
 			else
 			{// every second
-				uart_write("hello");
+				//uart_write("hello");
 			}
 		}
 		if(HAL_GetTick() > milis2 + 100)
