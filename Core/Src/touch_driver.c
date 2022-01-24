@@ -150,6 +150,53 @@ uint16_t adc_median_measurement(void)
 }
 
 
+/////
+uint16_t x_adc_iir_measurement()
+{
+	uint8_t adc_cnt = 0;
+	uint16_t adc_values[11] = {0};
+
+	for(adc_cnt = 0; adc_cnt < 11; adc_cnt++)
+	{
+		HAL_ADC_Start(&hadc1);
+		HAL_ADC_PollForConversion(&hadc1, 500);
+		adc_values[adc_cnt] = x_iir_filter(HAL_ADC_GetValue(&hadc1), false);
+	}
+
+	x_iir_filter(0, true);
+
+	//qsort(adc_values,
+	//		sizeof(adc_values)/sizeof(*adc_values),
+	//		sizeof(*adc_values), comp);
+	return adc_values[7];
+}
+
+
+/////
+uint16_t y_adc_iir_measurement()
+{
+	uint8_t adc_cnt = 0;
+	uint16_t adc_values[11] = {0};
+
+	for(adc_cnt = 0; adc_cnt < 11; adc_cnt++)
+	{
+		HAL_ADC_Start(&hadc1);
+		HAL_ADC_PollForConversion(&hadc1, 500);
+		  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
+		adc_values[adc_cnt] = y_iir_filter(HAL_ADC_GetValue(&hadc1), false);
+		  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);
+
+	}
+
+	y_iir_filter(0, true);
+
+	//qsort(adc_values,
+	//		sizeof(adc_values)/sizeof(*adc_values),
+	//		sizeof(*adc_values), comp);
+	return adc_values[7];
+}
+
+
 
 /******************************************************
  *
@@ -159,18 +206,13 @@ uint16_t adc_mean_measurement(void)
 	uint8_t adc_cnt = 0;
 	uint16_t adc_value = 0;
 
-	uint8_t val[7] = {0};
-
-	for(adc_cnt = 0; adc_cnt < 11; adc_cnt++)
+	for(adc_cnt = 0; adc_cnt < 20; adc_cnt++)
 	{
 		HAL_ADC_Start(&hadc1);
 		HAL_ADC_PollForConversion(&hadc1, 500);
 		adc_value += HAL_ADC_GetValue(&hadc1);
 	}
-	adc_value /= 11;
-
-	sprintf(val, "%04d\r\n", adc_value);
-	uart_write(val);
+	adc_value /= 20;
 
 	return adc_value;
 }
@@ -215,7 +257,7 @@ touch_coordinates_t touch_read_coordinates()
 	// TOUCH_YU as ADC
 	adc_select_y();
 
-	ret.y = adc_median_measurement();
+	ret.y = y_adc_iir_measurement();
 
 	// TOUCH_YU output-high
 	GPIOA->MODER &= ~GPIO_MODER_MODER3_Msk;
@@ -235,7 +277,7 @@ touch_coordinates_t touch_read_coordinates()
 	// TOUCH_XR as ADC
 	adc_select_x();
 
-	ret.x = adc_median_measurement();
+	ret.x = x_adc_iir_measurement();
 
 	return ret;
 }
@@ -319,7 +361,7 @@ void touch_init()
 	HAL_NVIC_EnableIRQ(TOUCH_YU_EXTI_IRQn);
 }
 
-
+char buff_test[17] = {0};
 /******************************************************
  * Simple state machine with IDLE, TOUCHED and RELEASED
  * states.
@@ -332,30 +374,43 @@ void touch_init()
 ******************************************************/
 void touch_process()
 {
+	touch_coordinates_t touch_coordinates = {0};
+
 	switch(g_touch_state)
 	{
 	case TOUCH_IDLE:
-		g_touch_coordinates.x = 0;
-		g_touch_coordinates.y = 0;
+		//g_touch_coordinates.x = 0;
+		//g_touch_coordinates.y = 0;
 		break;
 
 	case TOUCH_TOUCHED:
-		if((uint32_t) (HAL_GetTick() - touch_timer_start) < TOUCH_TIMEOUT)
-		{
-			g_touch_coordinates = touch_read_coordinates();
-		}
-		else
-		{
+		//if((uint32_t) (HAL_GetTick() - touch_timer_start) < TOUCH_TIMEOUT)
+		//{
+			touch_coordinates = touch_read_coordinates();
+			if(touch_coordinates.x < 4390)
+				g_touch_coordinates = touch_coordinates;
+		//}
+		//else
+		//{
 			// TOUCH_XL output-low
-			GPIOA->MODER &= ~GPIO_MODER_MODER5_Msk;
-			GPIOA->MODER |= GPIO_MODER_MODER5_0;
-			GPIOA->ODR &= ~TOUCH_XL_Pin;
-			HAL_Delay(5);
-			if(adc_mean_measurement() < 30)
+	//		GPIOA->MODER &= ~GPIO_MODER_MODER5_Msk;
+	//		GPIOA->MODER |= GPIO_MODER_MODER5_0;
+	//		GPIOA->ODR &= ~TOUCH_XL_Pin;
+	//		HAL_Delay(5);
+
+
+			uint16_t x_val = x_adc_iir_measurement();
+			uint16_t x_val1 = adc_mean_measurement();
+			sprintf(buff_test, "%04d,",x_val);
+			sprintf(buff_test + strlen(buff_test), "%04d\r\n", x_val1);
+			uart_write(buff_test);
+			if(touch_coordinates.x > 4390)
+			{
 				g_touch_state = TOUCH_RELEASED;
-			else
-				touch_timer_start = HAL_GetTick();
-		}
+			}
+		//	else
+		//		touch_timer_start = HAL_GetTick();
+		//}
 		break;
 
 	case TOUCH_RELEASED:
@@ -363,5 +418,112 @@ void touch_process()
 		g_touch_state = TOUCH_IDLE;
 		break;
 	}
+}
+
+
+
+
+static const float a[3] =
+{
+		0.032, 0.063, 0.032
+};
+
+static const float b[3] =
+{
+		0, 1.592, -0.735
+};
+
+
+uint16_t iir_filter(uint16_t x_in, bool reset)
+{
+	static uint16_t x[3] = {0};
+	static uint16_t y[3] = {0};
+
+	uint16_t x_new = x_in;
+	uint16_t y_new = 0;
+
+	if(reset)
+	{
+		x[0] = 0; x[1] = 0; x[2] = 0;
+		y[0] = 0; y[1] = 0; y[2] = 0;
+		return 0;
+	}
+
+	x[2] = x[1];
+	x[1] = x[0];
+	x[0] = x_new;
+
+
+	y[2] = y[1];
+	y[1] = y[0];
+
+	y_new = x[0]*a[0] + x[1]*a[1] + x[2]*a[2] +
+			y[1]*b[1] + y[2]*b[2];
+
+	y[0] = y_new;
+
+	return y_new;
+}
+
+uint16_t x_iir_filter(uint16_t x_in, bool reset)
+{
+	static uint16_t x[3] = {0};
+	static uint16_t y[3] = {0};
+
+	uint16_t x_new = x_in;
+	uint16_t y_new = 0;
+
+	if(reset)
+	{
+		x[0]=0; x[2]=0; x[2]=0;
+		y[0]=0; y[1]=0; y[2]=0;
+		return 0;
+	}
+
+	x[2] = x[1];
+	x[1] = x[0];
+	x[0] = x_new;
+
+
+	y[2] = y[1];
+	y[1] = y[0];
+
+	y_new = x[0]*a[0] + x[1]*a[1] + x[2]*a[2] +
+			y[1]*b[1] + y[2]*b[2];
+
+	y[0] = y_new;
+
+	return y_new;
+}
+
+uint16_t y_iir_filter(uint16_t x_in, bool reset)
+{
+	static uint16_t x[3] = {0};
+	static uint16_t y[3] = {0};
+
+	uint16_t x_new = x_in;
+	uint16_t y_new = 0;
+
+	if(reset)
+	{
+		x[0]=0; x[2]=0; x[2]=0;
+		y[0]=0; y[1]=0; y[2]=0;
+		return 0;
+	}
+
+	x[2] = x[1];
+	x[1] = x[0];
+	x[0] = x_new;
+
+
+	y[2] = y[1];
+	y[1] = y[0];
+
+	y_new = x[0]*a[0] + x[1]*a[1] + x[2]*a[2] +
+			y[1]*b[1] + y[2]*b[2];
+
+	y[0] = y_new;
+
+	return y_new;
 }
 

@@ -14,6 +14,7 @@
 
 #include <stdlib.h>
 #include <stdint.h>
+#include <stdbool.h>
 
 //ovo izbrisi
 #include "fsmc_driver.h"
@@ -51,6 +52,10 @@ void init_TOUCH_YU_as_interrupt(void);
 void EXTI3_TOUCH_Callback();
 void touch_init();
 void touch_process();
+
+uint16_t iir_filter(uint16_t x_in, bool reset);
+uint16_t x_iir_filter(uint16_t x_in, bool reset);
+uint16_t y_iir_filter(uint16_t x_in, bool reset);
 
 
 
