@@ -146,7 +146,7 @@ uint16_t adc_median_measurement(void)
 	qsort(adc_values,
 			sizeof(adc_values)/sizeof(*adc_values),
 			sizeof(*adc_values), comp);
-	return adc_values[5];
+	return adc_values[7];
 }
 
 
@@ -165,9 +165,6 @@ uint16_t x_adc_iir_measurement()
 
 	x_iir_filter(0, true);
 
-	//qsort(adc_values,
-	//		sizeof(adc_values)/sizeof(*adc_values),
-	//		sizeof(*adc_values), comp);
 	return adc_values[7];
 }
 
@@ -182,17 +179,11 @@ uint16_t y_adc_iir_measurement()
 	{
 		HAL_ADC_Start(&hadc1);
 		HAL_ADC_PollForConversion(&hadc1, 500);
-		  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);
 		adc_values[adc_cnt] = y_iir_filter(HAL_ADC_GetValue(&hadc1), false);
-		  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);
-
 	}
 
 	y_iir_filter(0, true);
 
-	//qsort(adc_values,
-	//		sizeof(adc_values)/sizeof(*adc_values),
-	//		sizeof(*adc_values), comp);
 	return adc_values[7];
 }
 
@@ -238,6 +229,8 @@ uint16_t adc_mean_measurement(void)
 touch_coordinates_t touch_read_coordinates()
 {
 	touch_coordinates_t ret = {0};
+	uint32_t ret_x = 0;
+	uint32_t ret_y = 0;
 
 	// TOUCH_XR output-high
 	GPIOA->MODER &= ~GPIO_MODER_MODER2_Msk;
@@ -257,7 +250,9 @@ touch_coordinates_t touch_read_coordinates()
 	// TOUCH_YU as ADC
 	adc_select_y();
 
-	ret.y = y_adc_iir_measurement();
+	for(int i=0; i<20; i++)
+		ret_y += y_adc_iir_measurement();
+	ret.y = ret_y / 20;
 
 	// TOUCH_YU output-high
 	GPIOA->MODER &= ~GPIO_MODER_MODER3_Msk;
@@ -277,7 +272,9 @@ touch_coordinates_t touch_read_coordinates()
 	// TOUCH_XR as ADC
 	adc_select_x();
 
-	ret.x = x_adc_iir_measurement();
+	for(int i=0; i<20; i++)
+		ret_x += x_adc_iir_measurement();
+	ret.x = ret_x / 20;
 
 	return ret;
 }
@@ -384,33 +381,27 @@ void touch_process()
 		break;
 
 	case TOUCH_TOUCHED:
-		//if((uint32_t) (HAL_GetTick() - touch_timer_start) < TOUCH_TIMEOUT)
-		//{
-			touch_coordinates = touch_read_coordinates();
-			if(touch_coordinates.x < 4390)
-				g_touch_coordinates = touch_coordinates;
-		//}
-		//else
-		//{
-			// TOUCH_XL output-low
-	//		GPIOA->MODER &= ~GPIO_MODER_MODER5_Msk;
-	//		GPIOA->MODER |= GPIO_MODER_MODER5_0;
-	//		GPIOA->ODR &= ~TOUCH_XL_Pin;
-	//		HAL_Delay(5);
+		g_touch_coordinates = touch_read_coordinates();
+		//if(touch_coordinates.x < 4390)
+			//g_touch_coordinates = touch_coordinates;
 
+		// TOUCH_XL output-low
+		GPIOA->MODER &= ~GPIO_MODER_MODER5_Msk;
+		GPIOA->MODER |= GPIO_MODER_MODER5_0;
+		GPIOA->ODR &= ~TOUCH_XL_Pin;
 
-			uint16_t x_val = x_adc_iir_measurement();
-			uint16_t x_val1 = adc_mean_measurement();
-			sprintf(buff_test, "%04d,",x_val);
-			sprintf(buff_test + strlen(buff_test), "%04d\r\n", x_val1);
-			uart_write(buff_test);
-			if(touch_coordinates.x > 4390)
-			{
-				g_touch_state = TOUCH_RELEASED;
-			}
-		//	else
-		//		touch_timer_start = HAL_GetTick();
-		//}
+		uint16_t x_val = 0;
+
+		for(int i=0; i<10; i++)
+			x_val += x_adc_iir_measurement();
+
+		x_val  /= 10;
+
+		if(x_val < 10)
+		{
+			g_touch_state = TOUCH_RELEASED;
+		}
+
 		break;
 
 	case TOUCH_RELEASED:
@@ -453,7 +444,6 @@ uint16_t iir_filter(uint16_t x_in, bool reset)
 	x[1] = x[0];
 	x[0] = x_new;
 
-
 	y[2] = y[1];
 	y[1] = y[0];
 
@@ -484,7 +474,6 @@ uint16_t x_iir_filter(uint16_t x_in, bool reset)
 	x[1] = x[0];
 	x[0] = x_new;
 
-
 	y[2] = y[1];
 	y[1] = y[0];
 
@@ -514,7 +503,6 @@ uint16_t y_iir_filter(uint16_t x_in, bool reset)
 	x[2] = x[1];
 	x[1] = x[0];
 	x[0] = x_new;
-
 
 	y[2] = y[1];
 	y[1] = y[0];

@@ -237,7 +237,7 @@ void app_main_loop()
 				//uart_write("hello");
 			}
 		}
-		if(HAL_GetTick() > milis2 + 100)
+		if(HAL_GetTick() > milis2 + 5)
 		{
 			milis2 = HAL_GetTick();
 			if(milis2 >= (0xFFFFFFFFU - 100U)) //?
@@ -247,11 +247,9 @@ void app_main_loop()
 			else
 			{// every 10 miliseconds
 
-//				touch_coordinates1 = touch_process();
-
-//				uint16_t x = (800.0/4096)*touch_coordinates1.x;
-//				uint16_t y = (480.0/4096)*touch_coordinates1.y;
-//				LCD_DrawPoint(x, 480-y, 0, 4);
+				uint16_t x = (800.0 / 3880) * (g_touch_coordinates.x - 350);
+				uint16_t y = (480.0 / 3640) * (g_touch_coordinates.y - 480);
+				LCD_DrawPoint(y, 800 - x, 0, 4);
 			}
 		}
 	}
