@@ -1,7 +1,7 @@
-OV7670.c:597:13:ov7670_get_framerate_legacy	0	static
-OV7670.c:378:12:ov7670_write_i2c.isra.0	16	static
-OV7670.c:431:12:ov7670_write_array.isra.0	8	static
-OV7670.c:698:12:ov7670_try_fmt_internal.constprop	28	static
-OV7670.c:612:12:ov7670_set_framerate_legacy	16	static
-OV7670.c:758:12:ov7670_apply_fmt.constprop	48	static
-OV7670.c:1537:6:ov7670_initialization	48	static
+OV7670.c:601:13:ov7670_get_framerate_legacy	0	static
+OV7670.c:382:12:ov7670_write_i2c.isra.0	16	static
+OV7670.c:435:12:ov7670_write_array.isra.0	8	static
+OV7670.c:702:12:ov7670_try_fmt_internal.constprop	28	static
+OV7670.c:616:12:ov7670_set_framerate_legacy	16	static
+OV7670.c:762:12:ov7670_apply_fmt.constprop	48	static
+OV7670.c:1541:6:ov7670_initialization	48	static

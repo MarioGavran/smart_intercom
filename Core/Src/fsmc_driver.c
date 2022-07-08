@@ -286,9 +286,12 @@ void LCD_PrintStr(uint16_t X, uint16_t Y, uint16_t Color, uint16_t Bcolor, uint8
  *******************************************************************************************************************************/
 void NT35510_Init(void)
 {
-	RST_LOW;													// Reset on.
+	HAL_TIM_Base_Start(&htim3);
+	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
+
+	NRST_LOW;													// Reset on.
 	HAL_Delay(300);											// Short delay needed on power up
-	RST_HIGH;													// Reset off.
+	NRST_HIGH;													// Reset off.
 	HAL_Delay(800);											// Short delay needed on power up
 
 	// Manufacture Command Set selection

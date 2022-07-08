@@ -96,8 +96,9 @@ int main(void)
   MX_DMA_Init();
   MX_TIM1_Init();
   MX_FSMC_Init();
-  MX_I2C2_Init();
-  MX_USART6_UART_Init();
+  MX_I2C1_Init();
+  MX_TIM3_Init();
+  MX_USART3_UART_Init();
   MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
   app_main_init();

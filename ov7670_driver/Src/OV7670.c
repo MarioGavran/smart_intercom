@@ -81,7 +81,7 @@ static struct regval_list ov7670_default_regs[] = {
 	/* Set the hardware window.  These values from OV don't entirely
 	 * make sense - hstop is less than hstart.  But they work...*/
 	{ OV7670_HSTART,		0x13 },				{ OV7670_HSTOP,			0x01 },
-	{ OV7670_HREF, 			0xb6 },				{ OV7670_VSTRT, 		0x02 },
+	{ OV7670_HREF, 			0xb6 },				{ OV7670_VSTART, 		0x02 },
 	{ OV7670_VSTOP, 		0x7a },				{ OV7670_VREF, 			0x0a },
 
 	{ OV7670_COM3, 			0x00 },				{ OV7670_COM14, 		0x00 },
@@ -162,7 +162,7 @@ static struct regval_list ov7670_default_regs[] = {
 	{ OV7670_SATCTR, 		0x60 },				{ OV7670_COM16, 		0x38 },
 	{ OV7670_CONTR, 		0x40 },
 
-	{ OV7670_ARBLM, 		0x11 },				{ OV7670_COM11, 		COM11_EXP|COM11_HZAUTO },
+	{ OV7670_ARBLM, 		0x11 },				{ OV7670_COM11, 		COM11_EXPLES|COM11_AD56HZ },
 	{ OV7670_NT_CTRL, 		0x88 },				{ 0x96, 				0x00 },
 	{ 0x97, 				0x30 },				{ 0x98, 				0x20 },
 	{ 0x99, 				0x30 },				{ 0x9a, 				0x84 },
@@ -194,12 +194,14 @@ static struct regval_list ov7670_fmt_yuv422[] = {
 	{ OV7670_COM1, 		0x00 },			/* CCIR601 */
 	{ OV7670_COM15, 	COM15_R00FF },
 	{ OV7670_COM9, 		0x48 }, 		/* 32x gain ceiling; 0x8 is reserved bit */
-	{ OV7670_MTX1, 		0x80 },			/* "matrix coefficient 1" */
-	{ OV7670_MTX2, 		0x80 },			/* "matrix coefficient 2" */
-	{ OV7670_MTX3, 		0x00 },			/* vb */
-	{ OV7670_MTX4, 		0x22 },			/* "matrix coefficient 4" */
-	{ OV7670_MTX5, 		0x5e },			/* "matrix coefficient 5" */
-	{ OV7670_MTX6, 		0x80 },			/* "matrix coefficient 6" */
+
+	{ OV7670_MTX1, 		0x80 },			/* 4F "matrix coefficient 1" */
+	{ OV7670_MTX2, 		0x80 },			/* 50 "matrix coefficient 2" */
+	{ OV7670_MTX3, 		0x00 },			/* 51 vb */
+	{ OV7670_MTX4, 		0x22 },			/* 52 "matrix coefficient 4" */
+	{ OV7670_MTX5, 		0x5e },			/* 53 "matrix coefficient 5" */
+	{ OV7670_MTX6, 		0x80 },			/* 54 "matrix coefficient 6" */
+
 	{ OV7670_COM13, 	COM13_GAMMA|COM13_UVSAT },
 	{ 0xff, 0xff },
 };
@@ -210,19 +212,21 @@ static struct regval_list ov7670_fmt_rgb565[] = {
 	{ OV7670_COM1, 		0x00 },			/* CCIR601 */
 	{ OV7670_COM15, 	COM15_RGB565 },
 	{ OV7670_COM9, 		0x38 },			/* 16x gain ceiling; 0x8 is reserved bit */
+
 	{ OV7670_MTX1, 		0xb3 },			/* "matrix coefficient 1" */
 	{ OV7670_MTX2, 		0xb3 },			/* "matrix coefficient 2" */
 	{ OV7670_MTX3, 		0x00 },			/* vb */
 	{ OV7670_MTX4, 		0x3d },			/* "matrix coefficient 4" */
 	{ OV7670_MTX5, 		0xa7 },			/* "matrix coefficient 5" */
 	{ OV7670_MTX6, 		0xe4 },			/* "matrix coefficient 6" */
+
 	{ OV7670_COM13, 	COM13_GAMMA|COM13_UVSAT },
 	{ 0xff, 0xff },
 };
 
 static struct regval_list ov7670_fmt_rgb444[] = {
 	{ OV7670_COM7, 		COM7_RGB },		/* Selects RGB mode */
-	{ OV7670_RGB444, 	R444_ENABLE },	/* Enable xxxxrrrr ggggbbbb */
+	{ OV7670_RGB444, 	RGB444_EN },	/* Enable xxxxrrrr ggggbbbb */
 	{ OV7670_COM1, 		0x00 },			/* CCIR601 */
 	{ OV7670_COM15,		COM15_R01FE|COM15_RGB565 }, /* Data range needed? */
 	{ OV7670_COM9, 		0x38 },			/* 16x gain ceiling; 0x8 is reserved bit */
@@ -237,7 +241,7 @@ static struct regval_list ov7670_fmt_rgb444[] = {
 };
 
 static struct regval_list ov7670_fmt_raw[] = {
-	{ OV7670_COM7, 		COM7_BAYER },
+	{ OV7670_COM7, 		COM7_RBAYER },
 	{ OV7670_COM13, 	0x08 }, 		/* No gamma, magic rsvd bit */
 	{ OV7670_COM16, 	0x3d }, 		/* Edge enhancement, denoise */
 	{ OV7670_REG76, 	0xe1 }, 		/* Pix correction, magic rsvd */
@@ -253,21 +257,21 @@ static struct regval_list ov7670_fmt_raw[] = {
  * settings.
 *************************************************************************************/
 static struct regval_list ov7670_qcif_regs[] = {
-	{ OV7670_COM3,			COM3_SCALEEN|COM3_DCWEN },
+	{ OV7670_COM3,			COM3_SCLEN|COM3_DCWEN },
 	{ OV7670_COM3,			COM3_DCWEN },
 	{ OV7670_COM14,			COM14_DCWEN | 0x01},
 	{ OV7670_SCL_PCLK_DIV,	0xf1 },
 	{ OV7670_SCL_PCLK_DLY,	0x52 },
-	{ OV7670_GAM1,			0x1c },
-	{ OV7670_GAM2,			0x28 },
-	{ OV7670_GAM3,			0x3c },
-	{ OV7670_GAM5,			0x69 },
-	{ OV7670_COM9,			0x38 },
-	{ OV7670_DSPC3,			0x0b },
-	{ OV7670_REG74,			0x19 },
-	{ 0x9a,					0x80 },
-	{ OV7670_AWBC1,			0x14 },
-	{ OV7670_COM13,			0xc0 },
+	{ OV7670_GAM1,			0x1c },//7B,
+	{ OV7670_GAM2,			0x28 },//7C
+	{ OV7670_GAM3,			0x3c },//7D
+	{ OV7670_GAM5,			0x69 },//7F
+	{ OV7670_COM9,			0x38 },//14
+	{ OV7670_DSPC3,			0x0b },//A1
+	{ OV7670_REG74,			0x19 },//
+	{ 0x9a,					0x80 },//
+	{ OV7670_AWBC1,			0x14 },//43
+	{ OV7670_COM13,			0xc0 },//3D
 	{ 0xff, 0xff },
 };
 
@@ -662,7 +666,7 @@ static int ov7670_set_hw(struct ov7670_info *info, int hstart, int hstop, int vs
 	if (ret)
 		return ret;
 	/* Vertical: similar arrangement, but only 10 bits. */
-	ret = ov7670_write(info, OV7670_VSTRT, (vstart >> 2) & 0xff);
+	ret = ov7670_write(info, OV7670_VSTART, (vstart >> 2) & 0xff);
 	if (ret)
 		return ret;
 	ret = ov7670_write(info, OV7670_VSTOP, (vstop >> 2) & 0xff);
@@ -1418,9 +1422,9 @@ static void ov7670_power_on(struct ov7670_info *info)
 	if (info->on)
 		return;
 
-	OV7670_RST_LOW;
+	OV7670_NRST_LOW;
 	HAL_Delay(300);
-	OV7670_RST_HIGH;
+	OV7670_NRST_HIGH;
 	HAL_Delay(300);
 
 	if (info->pwdn_gpio || info->resetb_gpio || info->clk)
@@ -1439,7 +1443,7 @@ static void ov7670_power_off(struct ov7670_info *info)
 	if (!info->on)
 		return;
 
-	OV7670_RST_LOW;
+	OV7670_NRST_LOW;
 
 	if (info->pwdn_gpio)
 		//gpiod_set_value(info->pwdn_gpio, 1);

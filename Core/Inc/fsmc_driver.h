@@ -5,6 +5,7 @@
  *      Author: Mario
  */
 #include "../Inc/main.h"
+#include "tim.h"
 #include <math.h>
 
 #ifndef INC_FSMC_DRIVER_H_
@@ -27,8 +28,8 @@ void LCD_PrintCh(uint16_t X, uint16_t Y, uint16_t Color, uint16_t Bcolor, uint8_
 void LCD_PrintStr(uint16_t X, uint16_t Y, uint16_t Color, uint16_t Bcolor, uint8_t* String, uint8_t Size);
 
 
-#define RST_HIGH	HAL_GPIO_WritePin(FSMC_RST_GPIO_Port, FSMC_RST_Pin, 0x1U)
-#define RST_LOW		HAL_GPIO_WritePin(FSMC_RST_GPIO_Port, FSMC_RST_Pin, 0x0U)
+#define NRST_HIGH	HAL_GPIO_WritePin(FSMC_NRST_GPIO_Port, FSMC_NRST_Pin, 0x1U)
+#define NRST_LOW		HAL_GPIO_WritePin(FSMC_NRST_GPIO_Port, FSMC_NRST_Pin, 0x0U)
 
 // Orientation direction macros.
 #define VERTICAL_UP			0

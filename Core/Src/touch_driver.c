@@ -11,15 +11,13 @@
 volatile touch_state_t g_touch_state = TOUCH_IDLE;
 touch_coordinates_t g_touch_coordinates = {0};
 
-static uint32_t touch_timer_start = 0;
 
 
-
-/******************************************************
- * EXTI handler and configuration structures used for
- * defining TOUCH_YU pin that needs to change from
- * interrupt mode to ADC mode and vice versa.
-******************************************************/
+/**********************************************************************
+ * EXTI handler and configuration structures used for defining TOUCH_YU
+ * pin that needs to change from interrupt mode to ADC mode and vice
+ * versa.
+**********************************************************************/
 EXTI_HandleTypeDef hexti_touch_YU = {
 		.Line = EXTI_LINE_3,
 		.PendingCallback = EXTI3_TOUCH_Callback
@@ -34,62 +32,21 @@ EXTI_ConfigTypeDef extiConfig_touch_YU = {
 
 
 
+/**********************************************************************
+ * IIR filer arrays for X and Y channels
+**********************************************************************/
+uint16_t x_iir_in[3] = {0};
+uint16_t x_iir_out[3] = {0};
 
-
-/******************************************************
- * Select TOUCH_XR channel for ADC conversion
-******************************************************/
-void adc_select_x(void)
-{
-	GPIO_InitTypeDef GPIO_InitStruct = {0};
-	ADC_ChannelConfTypeDef sConfig = {0};
-
-	GPIO_InitStruct.Pin = TOUCH_XR_Pin;
-	GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
-	GPIO_InitStruct.Pull = GPIO_NOPULL;
-	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
-	HAL_GPIO_Init(TOUCH_XR_GPIO_Port, &GPIO_InitStruct);
-
-	sConfig.Channel = TOUCH_XR_ADC_CHANNEL;
-	sConfig.Rank = 1;
-	sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
-	if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
-	{
-		Error_Handler();
-	}
-}
+uint16_t y_iir_in[3] = {0};
+uint16_t y_iir_out[3] = {0};
 
 
 
-/******************************************************
- * Select TOUCH_YU channel for ADC conversion
-******************************************************/
-void adc_select_y(void)
-{
-	GPIO_InitTypeDef GPIO_InitStruct = {0};
-	ADC_ChannelConfTypeDef sConfig = {0};
-
-	GPIO_InitStruct.Pin = TOUCH_YU_Pin;
-	GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
-	GPIO_InitStruct.Pull = GPIO_NOPULL;
-	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
-	HAL_GPIO_Init(TOUCH_YU_GPIO_Port, &GPIO_InitStruct);
-
-	sConfig.Channel = TOUCH_YU_ADC_CHANNEL;
-	sConfig.Rank = 1;
-	sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
-	if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
-	{
-		Error_Handler();
-	}
-}
-
-
-
-/******************************************************
+/**********************************************************************
  *
-******************************************************/
-void adc_select_channel(uint16_t GPIO_Pin)
+**********************************************************************/
+void adc_select_channel(touch_pin_t GPIO_Pin)
 {
 	GPIO_InitTypeDef GPIO_InitStruct = {0};
 	ADC_ChannelConfTypeDef sConfig = {0};
@@ -107,9 +64,7 @@ void adc_select_channel(uint16_t GPIO_Pin)
 		ADC_Channel = TOUCH_YU_ADC_CHANNEL;
 		break;
 	default:
-		GPIO_Port = TOUCH_YU_GPIO_Port;
-		ADC_Channel = TOUCH_YU_ADC_CHANNEL;
-		break;
+		return;
 	}
 
 	GPIO_InitStruct.Pin = GPIO_Pin;
@@ -129,94 +84,61 @@ void adc_select_channel(uint16_t GPIO_Pin)
 
 
 
-/******************************************************
+/**********************************************************************
  *
-******************************************************/
-uint16_t adc_median_measurement(void)
+**********************************************************************/
+uint16_t iir_filter(uint16_t in_new, uint16_t* iir_in, uint16_t* iir_out, bool reset)
 {
-	uint8_t adc_cnt = 0;
-	uint16_t adc_values[11] = {0};
-
-	for(adc_cnt = 0; adc_cnt < 11; adc_cnt++)
+	if(reset)
 	{
-		HAL_ADC_Start(&hadc1);
-		HAL_ADC_PollForConversion(&hadc1, 500);
-		adc_values[adc_cnt] = HAL_ADC_GetValue(&hadc1);
-	}
-	qsort(adc_values,
-			sizeof(adc_values)/sizeof(*adc_values),
-			sizeof(*adc_values), comp);
-	return adc_values[7];
-}
-
-
-/////
-uint16_t x_adc_iir_measurement()
-{
-	uint8_t adc_cnt = 0;
-	uint16_t adc_values[11] = {0};
-
-	for(adc_cnt = 0; adc_cnt < 11; adc_cnt++)
-	{
-		HAL_ADC_Start(&hadc1);
-		HAL_ADC_PollForConversion(&hadc1, 500);
-		adc_values[adc_cnt] = x_iir_filter(HAL_ADC_GetValue(&hadc1), false);
+		iir_in[0]=0; iir_in[2]=0; iir_in[2]=0;
+		iir_out[0]=0; iir_out[1]=0; iir_out[2]=0;
+		return 0;
 	}
 
-	x_iir_filter(0, true);
+	iir_in[2] = iir_in[1];
+	iir_in[1] = iir_in[0];
+	iir_in[0] = in_new;
 
-	return adc_values[7];
-}
+	iir_out[2] = iir_out[1];
+	iir_out[1] = iir_out[0];
 
+	iir_out[0] = iir_in[0]*IIR_A0 + iir_in[1]*IIR_A1 + iir_in[2]*IIR_A2 +
+			iir_out[1]*IIR_B1 + iir_out[2]*IIR_B2;
 
-/////
-uint16_t y_adc_iir_measurement()
-{
-	uint8_t adc_cnt = 0;
-	uint16_t adc_values[11] = {0};
-
-	for(adc_cnt = 0; adc_cnt < 11; adc_cnt++)
-	{
-		HAL_ADC_Start(&hadc1);
-		HAL_ADC_PollForConversion(&hadc1, 500);
-		adc_values[adc_cnt] = y_iir_filter(HAL_ADC_GetValue(&hadc1), false);
-	}
-
-	y_iir_filter(0, true);
-
-	return adc_values[7];
+	return iir_out[0];
 }
 
 
 
-/******************************************************
+/**********************************************************************
  *
-******************************************************/
-uint16_t adc_mean_measurement(void)
+**********************************************************************/
+uint16_t adc_iir_measurement(uint16_t* iir_in, uint16_t* iir_out)
 {
 	uint8_t adc_cnt = 0;
-	uint16_t adc_value = 0;
+	uint16_t adc_values[11] = {0};
 
-	for(adc_cnt = 0; adc_cnt < 20; adc_cnt++)
+	for(adc_cnt = 0; adc_cnt < 11; adc_cnt++)
 	{
 		HAL_ADC_Start(&hadc1);
 		HAL_ADC_PollForConversion(&hadc1, 500);
-		adc_value += HAL_ADC_GetValue(&hadc1);
+		adc_values[adc_cnt] = iir_filter(HAL_ADC_GetValue(&hadc1), iir_in, iir_out, false);
 	}
-	adc_value /= 20;
 
-	return adc_value;
+	iir_filter(0, iir_in, iir_out, true);
+
+	return adc_values[7];
 }
 
 
 
-/******************************************************
- * Reconfigures TOUCH pins to measure x and y ADC
- * channels. The pin configuration for measuring x or y
- * channel and pin assignment is shown in the table
- * below.
- * Returns touch_coordinates_t type parameter with
- * median value of 5 consecutive measurements.
+/**********************************************************************
+ * Reconfigures TOUCH pins to measure x and y ADC channels. The pin
+ * configuration for measuring x or y channel and pin assignment is
+ * shown in the table below.
+ * Returns touch_coordinates_t type parameter with median value of 5
+ * consecutive measurements.
  * __________________________________________
  * || function || X+   | X-   | Y+   | Y-   |
  * ==========================================
@@ -224,8 +146,7 @@ uint16_t adc_mean_measurement(void)
  * ------------------------------------------
  * ||  read X  || adc  | open | high | low  |
  * ||  read Y  || high | low  | adc  | open |
- * ------------------------------------------
-******************************************************/
+**********************************************************************/
 touch_coordinates_t touch_read_coordinates()
 {
 	touch_coordinates_t ret = {0};
@@ -245,13 +166,13 @@ touch_coordinates_t touch_read_coordinates()
 	// TOUCH_YD inout-open
 	GPIOA->MODER &= ~GPIO_MODER_MODER4_Msk;
 	GPIOA->PUPDR &= ~GPIO_PUPDR_PUPD4_Msk;
-	//HAL_Delay(5);
 
 	// TOUCH_YU as ADC
-	adc_select_y();
+	adc_select_channel(TOUCH_YU_Pin);
+	HAL_Delay(5);
 
 	for(int i=0; i<20; i++)
-		ret_y += y_adc_iir_measurement();
+		ret_y += adc_iir_measurement(y_iir_in, y_iir_out);
 	ret.y = ret_y / 20;
 
 	// TOUCH_YU output-high
@@ -267,13 +188,13 @@ touch_coordinates_t touch_read_coordinates()
 	// TOUCH_XL input-open
 	GPIOA->MODER &= ~GPIO_MODER_MODER5_Msk;
 	GPIOA->PUPDR &= ~GPIO_PUPDR_PUPD5_Msk;
-	//HAL_Delay(5);
 
 	// TOUCH_XR as ADC
-	adc_select_x();
+	adc_select_channel(TOUCH_XR_Pin);
+	HAL_Delay(5);
 
 	for(int i=0; i<20; i++)
-		ret_x += x_adc_iir_measurement();
+		ret_x += adc_iir_measurement(x_iir_in, x_iir_out);
 	ret.x = ret_x / 20;
 
 	return ret;
@@ -281,9 +202,9 @@ touch_coordinates_t touch_read_coordinates()
 
 
 
-/******************************************************
+/**********************************************************************
  *
-******************************************************/
+**********************************************************************/
 void init_TOUCH_YU_as_interrupt(void)
 {
 	GPIO_InitTypeDef GPIO_InitStruct = {0};
@@ -321,10 +242,9 @@ void init_TOUCH_YU_as_interrupt(void)
 
 
 
-
-/******************************************************
+/**********************************************************************
  * EXTI IRQ callback
-******************************************************/
+**********************************************************************/
 void EXTI3_TOUCH_Callback()
 {
 	// Disable interrupt on TOUCH_YU pin
@@ -333,16 +253,15 @@ void EXTI3_TOUCH_Callback()
 	HAL_NVIC_ClearPendingIRQ(TOUCH_YU_EXTI_IRQn);
 	HAL_NVIC_DisableIRQ(TOUCH_YU_EXTI_IRQn);
 	// Init analog mode on TOUCH_YU pin
-	adc_select_y();
+	adc_select_channel(TOUCH_YU_Pin);
 	g_touch_state = TOUCH_TOUCHED;
-	touch_timer_start = HAL_GetTick();
 }
 
 
 
-/******************************************************
+/**********************************************************************
  *
-******************************************************/
+**********************************************************************/
 void touch_init()
 {
 	// TOUCH_YD as input-open
@@ -358,17 +277,17 @@ void touch_init()
 	HAL_NVIC_EnableIRQ(TOUCH_YU_EXTI_IRQn);
 }
 
-char buff_test[17] = {0};
-/******************************************************
- * Simple state machine with IDLE, TOUCHED and RELEASED
- * states.
+
+
+/**********************************************************************
+ * Simple state machine with IDLE, TOUCHED and RELEASED states.
  *
  * IDLE		-> IDLE		** by default
  * IDLE		-> TOUCHED	** by interrupt on YU
  * TOUCHED	-> RELEASED	** after timeout & release
  * TOUCHED	-> TOUCHED	** if touch not released
  * RELEASED	-> IDLE		** unconditionally
-******************************************************/
+**********************************************************************/
 void touch_process()
 {
 	touch_coordinates_t touch_coordinates = {0};
@@ -392,12 +311,13 @@ void touch_process()
 
 		uint16_t x_val = 0;
 
+		HAL_Delay(5);
 		for(int i=0; i<10; i++)
-			x_val += x_adc_iir_measurement();
+			x_val += adc_iir_measurement(x_iir_in, x_iir_out);
 
 		x_val  /= 10;
 
-		if(x_val < 10)
+		if(x_val < 100)
 		{
 			g_touch_state = TOUCH_RELEASED;
 		}
@@ -412,106 +332,4 @@ void touch_process()
 }
 
 
-
-
-static const float a[3] =
-{
-		0.032, 0.063, 0.032
-};
-
-static const float b[3] =
-{
-		0, 1.592, -0.735
-};
-
-
-uint16_t iir_filter(uint16_t x_in, bool reset)
-{
-	static uint16_t x[3] = {0};
-	static uint16_t y[3] = {0};
-
-	uint16_t x_new = x_in;
-	uint16_t y_new = 0;
-
-	if(reset)
-	{
-		x[0] = 0; x[1] = 0; x[2] = 0;
-		y[0] = 0; y[1] = 0; y[2] = 0;
-		return 0;
-	}
-
-	x[2] = x[1];
-	x[1] = x[0];
-	x[0] = x_new;
-
-	y[2] = y[1];
-	y[1] = y[0];
-
-	y_new = x[0]*a[0] + x[1]*a[1] + x[2]*a[2] +
-			y[1]*b[1] + y[2]*b[2];
-
-	y[0] = y_new;
-
-	return y_new;
-}
-
-uint16_t x_iir_filter(uint16_t x_in, bool reset)
-{
-	static uint16_t x[3] = {0};
-	static uint16_t y[3] = {0};
-
-	uint16_t x_new = x_in;
-	uint16_t y_new = 0;
-
-	if(reset)
-	{
-		x[0]=0; x[2]=0; x[2]=0;
-		y[0]=0; y[1]=0; y[2]=0;
-		return 0;
-	}
-
-	x[2] = x[1];
-	x[1] = x[0];
-	x[0] = x_new;
-
-	y[2] = y[1];
-	y[1] = y[0];
-
-	y_new = x[0]*a[0] + x[1]*a[1] + x[2]*a[2] +
-			y[1]*b[1] + y[2]*b[2];
-
-	y[0] = y_new;
-
-	return y_new;
-}
-
-uint16_t y_iir_filter(uint16_t x_in, bool reset)
-{
-	static uint16_t x[3] = {0};
-	static uint16_t y[3] = {0};
-
-	uint16_t x_new = x_in;
-	uint16_t y_new = 0;
-
-	if(reset)
-	{
-		x[0]=0; x[2]=0; x[2]=0;
-		y[0]=0; y[1]=0; y[2]=0;
-		return 0;
-	}
-
-	x[2] = x[1];
-	x[1] = x[0];
-	x[0] = x_new;
-
-	y[2] = y[1];
-	y[1] = y[0];
-
-	y_new = x[0]*a[0] + x[1]*a[1] + x[2]*a[2] +
-			y[1]*b[1] + y[2]*b[2];
-
-	y[0] = y_new;
-
-	return y_new;
-}
 

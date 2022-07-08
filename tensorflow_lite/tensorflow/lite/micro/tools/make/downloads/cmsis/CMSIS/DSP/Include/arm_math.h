@@ -204,7 +204,7 @@
 #include "dsp/fast_math_functions.h"
 #include "dsp/transform_functions.h"
 #include "dsp/filtering_functions.h"
-#include "dsp/quaternion_math_functions.h"
+//#include "dsp/quaternion_math_functions.h"
 
 
 

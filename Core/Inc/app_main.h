@@ -38,6 +38,8 @@ extern "C" {
 #include <feri_logo_image.h>
 #include <ietk_logo_image.h>
 
+#include "math.h"
+#include "arm_math.h"
 
 void app_main_init();
 void app_main_loop();

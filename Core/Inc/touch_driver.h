@@ -20,7 +20,18 @@
 #include "fsmc_driver.h"
 #include "uart_driver.h"
 
-#define TOUCH_TIMEOUT 50U
+
+
+/**********************************************************************
+ * IIR filer coefficients
+**********************************************************************/
+#define IIR_A0	0.032f
+#define IIR_A1	0.063F
+#define IIR_A2	0.032F
+
+#define	IIR_B0	0F
+#define IIR_B1	1.592F
+#define IIR_B2	-0.735F
 
 
 
@@ -28,6 +39,8 @@ typedef struct{
 	uint16_t x;
 	uint16_t y;
 }touch_coordinates_t;
+
+
 
 typedef enum{
 	TOUCH_IDLE = 0x01U,
@@ -37,27 +50,27 @@ typedef enum{
 
 
 
+typedef enum{
+	TOUCH_XR_PIN = TOUCH_XR_Pin,
+	TOUCH_YU_PIN = TOUCH_YU_Pin
+}touch_pin_t;
+
+
+
 extern touch_coordinates_t g_touch_coordinates;
 extern EXTI_HandleTypeDef hexti_touch_YU;
 extern volatile touch_state_t g_touch_state;
 
 
-void adc_select_x(void);
-void adc_select_y(void);
-void adc_select_channel(uint16_t GPIO_Pin);
-uint16_t adc_median_measurement(void);
-uint16_t adc_mean_measurement(void);
+
+void adc_select_channel(touch_pin_t GPIO_Pin);
+uint16_t iir_filter(uint16_t in_new, uint16_t* iir_in, uint16_t* iir_out, bool reset);
+uint16_t adc_iir_measurement(uint16_t* iir_in, uint16_t* iir_out);
 touch_coordinates_t touch_read_coordinates();
 void init_TOUCH_YU_as_interrupt(void);
 void EXTI3_TOUCH_Callback();
 void touch_init();
 void touch_process();
-
-uint16_t iir_filter(uint16_t x_in, bool reset);
-uint16_t x_iir_filter(uint16_t x_in, bool reset);
-uint16_t y_iir_filter(uint16_t x_in, bool reset);
-
-
 
 
 

@@ -17,20 +17,24 @@
 extern char g_cam_buff[];
 extern char g_cam_gray_frame[];
 
+#define OV7670_DATA_PORT_ADD		((uint32_t) &(GPIOF->IDR))
+
+#define OV7670_PWR_ON				HAL_GPIO_WritePin(MIC5357_2V8_EN_GPIO_Port, MIC5357_2V8_EN_Pin, GPIO_PIN_SET);
+#define OV7670_PWR_OFF				HAL_GPIO_WritePin(MIC5357_2V8_EN_GPIO_Port, MIC5357_2V8_EN_Pin, GPIO_PIN_RESET);
+
+#define OV7670_NRST_HIGH			HAL_GPIO_WritePin(OV7670_NRST_GPIO_Port, OV7670_NRST_Pin, GPIO_PIN_SET)
+#define OV7670_NRST_LOW				HAL_GPIO_WritePin(OV7670_NRST_GPIO_Port, OV7670_NRST_Pin, GPIO_PIN_RESET)
 
 
-#define OV7670_RST_HIGH				HAL_GPIO_WritePin(OV7670_RST_GPIO_Port, OV7670_RST_Pin, GPIO_PIN_SET)
-#define OV7670_RST_LOW				HAL_GPIO_WritePin(OV7670_RST_GPIO_Port, OV7670_RST_Pin, GPIO_PIN_RESET)
 
-#define OV7670_FRAME_SIZE_VGA		640*480*2	// not enough RAM
-#define OV7670_FRAME_SIZE_QVGA		320*240*2	// 153600
-#define OV7670_FRAME_SIZE_QQVGA		160*120*2
 
 #define OV7670_GRAY_SIZE			96*96
 
 
 
-//~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
+/*=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
+*
+=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~*/
 typedef enum {
 	QQQVGA_RGB565,
 	QQVGA_RGB565,
@@ -38,20 +42,139 @@ typedef enum {
 }ov7670_res_fmt_t;
 
 
+/*=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
+*
+=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~*/
+typedef struct ov7670_regval_list{
+	uint8_t address;
+	uint8_t value;
+}ov7670_regval_list_t;
+
+
+
+/*=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
+* Image frame format
+=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~*/
+typedef enum{
+	FFMT_QCIF = 0,		// 176 x 144
+	FFMT_CIF,			// 352 x 288 - 11:9
+	FFMT_QQQVGA,		//  80 x  60
+	FFMT_QQVGA,			// 160 x 120
+	FFMT_QVGA,			// 320 x 240 - 4:3
+	FFMT_VGA			// 640 x 480
+}ov7670_frame_fmt_t;
+
+#define	QQCIF_WIDTH		88 //0x58
+#define	QQCIF_HEIGHT	72 //0x48
+
+#define	QCIF_WIDTH		176 //
+#define	QCIF_HEIGHT		144 //
+
+#define	CIF_WIDTH		352 //
+#define	CIF_HEIGHT		288 //
+
+#define	QQQVGA_WIDTH	80
+#define	QQQVGA_HEIGHT	60
+
+#define	QQVGA_WIDTH		160
+#define	QQVGA_HEIGHT	120
+
+#define	QVGA_WIDTH		320
+#define	QVGA_HEIGHT		240
+
+#define	VGA_WIDTH		640
+#define	VGA_HEIGHT		480
+
+#define OV7670_FRAME_SIZE_QCIF		QCIF_WIDTH * QCIF_HEIGHT * 2
+#define OV7670_FRAME_SIZE_CIF		CIF_WIDTH * CIF_HEIGHT * 2
+#define OV7670_FRAME_SIZE_QQQVGA	QQQVGA_WIDTH * QQQVGA_HEIGHT * 2
+#define OV7670_FRAME_SIZE_QQVGA		QQVGA_WIDTH * QQVGA_HEIGHT * 2
+#define OV7670_FRAME_SIZE_QVGA		QVGA_WIDTH * QVGA_HEIGHT * 2	// 153600
+#define OV7670_FRAME_SIZE_VGA		VGA_WIDTH * VGA_HEIGHT * 2		// not enough RAM
+
+
+
+/*=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
+*
+=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~*/
+typedef struct ov7670_frame_param{
+	ov7670_frame_fmt_t format;
+	uint16_t width;
+	uint16_t height;
+	uint32_t frame_size;
+
+	uint16_t hStart;
+	uint16_t hStop;
+	uint16_t vStart;
+	uint16_t vStop;
+}ov7670_frame_param_t;
+
+
+
+/*=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
+* Data bus color format
+=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~*/
+typedef enum{
+	CFMT_RGB565 = 0,	// 5xR 6xG 5xB
+	CFMT_RGB555,		// 5xR 5xG 5xB
+	CFMT_RGB444,		// 4xX 4xR 4xG 4xB  or  4xR 4xG 4xB 4xX
+	CFMT_GRB422,		// 8xG 8xR 8xG 8xB
+	CFMT_YUYV422,		// 8xY 8xU 8xY 8xV
+	CFMT_RAW_BAYER,		// even rows: 8xR + odd rows: 8xG 8xB
+	CFMT_PRO_BAYER		// even rows: 8xR + odd rows: 8xG 8xB
+}ov7670_color_fmt_t;
+
+
+/*=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
+* Frame rate
+=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~*/
+typedef enum{
+	FRATE_30FPS,
+	FRATE_20FPS,
+	FRATE_15FPS
+}ov7670_frame_rate_t;
+
+
+/*=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
+* OV7670 device info structure
+=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~*/
+typedef struct ov7670_device_info{
+	ov7670_color_fmt_t		color_fmt;		// Data bus color format
+	ov7670_frame_param_t	frame_params;	// Frame parameters
+
+	ov7670_frame_rate_t		frame_rate;		// Frame rate in FPS
+
+	uint32_t				xclk;			// External clock fed to the camera
+	uint32_t				pclk;			// Pixel clock
+}ov7670_device_info_t;
+
+
+
+
+
+
 
 void ov7670_saturation(int8_t s);
-void ov7670_frame_control(int16_t hStart,  int16_t vStart);
+void ov7670_frame_control(int16_t hStart, int16_t hStop, int16_t vStart, int16_t vStop);
+void ov7670_scaling_control(uint16_t width, uint16_t height);
 void ov7670_subsampling_control(int8_t com14, int8_t downSample, int8_t pclk_div);
 void ov7670_test_pattern(uint8_t kind);
 void ov7670_write_register(unsigned char reg, unsigned char val);
 uint8_t ov7670_read_register(unsigned char reg);
-void ov7670_set_mode(ov7670_res_fmt_t resolution, uint16_t exposure);
+void ov7670_set_mode(uint16_t exposure);
 void ov7670_init1();
 
 void EXTI0_HREF_Callback();
 void EXTI1_VSYNC_Callback();
 
-//..........NAME:...................ADDRESS....DEFAULT..R/W/RW......COMMENT.....................................................................................
+extern const ov7670_frame_param_t ov7670_frame_params[6];
+extern const ov7670_regval_list_t ov7670_CFMT_regval_list[7][7];
+extern ov7670_device_info_t g_ov7670_info;
+
+/*=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
+*
+*...........NAME:...................ADDRESS....DEFAULT..R/W/RW......COMMENT.....................................................................................
+=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~*/
 #define		OV7670_GAIN 			0x00	// 00 		RW			AGC – Gain control gain setting
 #define		OV7670_BLUE 			0x01	// 80 		RW			AWB – Blue channel gain setting
 #define		OV7670_RED 				0x02	// 80 		RW			AWB – Red channel gain setting
@@ -76,7 +199,7 @@ void EXTI1_VSYNC_Callback();
 #define		OV7670_COM10 			0x15	// 00 		RW			Common Control 10: HREF/HSYNC, PCLK/VSYNC option, PCLK/HREF reverse, VSYNC/HSYNC neg
 #define		OV7670_HSTART 			0x17	// 11 		RW			HSTRT[10:3]
 #define		OV7670_HSTOP 			0x18	// 61 		RW			HSTOP[10:3]
-#define		OV7670_VSTRT 			0x19	// 03 		RW			VSTRT[9:2]
+#define		OV7670_VSTART 			0x19	// 03 		RW			VSTRT[9:2]
 #define		OV7670_VSTOP 			0x1A	// 7B 		RW			VSTOP[9:2]
 #define		OV7670_PSHFT 			0x1B	// 00 		RW			Pixel Delay Select - delays D[7:0] relative to HREF in pixel units
 #define		OV7670_MIDH 			0x1C	// 7F 		R			Manufacturer ID HIGH Byte
@@ -216,11 +339,11 @@ void EXTI1_VSYNC_Callback();
 
 
 #define		TSLB_NEG				0x20    //< TSLB Negative image enable
-#define		TSLB_YLAST				0x04    //< TSLB UYVY or VYUY, see COM13
+#define		TSLB_UVSWAP				0x04    //< TSLB UYVY or VYUY, see COM13
 #define		TSLB_AOW				0x01    //< TSLB Auto output window
 
 #define  	COM3_SWAP				0x40	// Byte swap
-#define  	COM3_SCALEEN			0x08	// Enable scaling
+#define  	COM3_SCLEN				0x08	// Enable scaling
 #define  	COM3_DCWEN	  			0x04	// Enable downsamp/crop/window
 
 #define		COM7_RESET	  			0x80	// Register reset
@@ -231,7 +354,7 @@ void EXTI1_VSYNC_Callback();
 #define		COM7_FMT_QCIF			0x08	// QCIF format
 #define		COM7_RGB				0x04	// bits 0 and 2 - RGB format
 #define		COM7_YUV				0x00	// YUV
-#define		COM7_BAYER				0x01	// Bayer format
+#define		COM7_RBAYER				0x01	// Bayer format
 #define		COM7_PBAYER				0x05	// "Processed bayer"
 
 #define		COM8_FASTAEC	 		0x80	// Enable fast AGC/AEC
@@ -267,26 +390,35 @@ void EXTI1_VSYNC_Callback();
 #define 	COM11_60HZ                  0x00    // Manual 60Hz select
 #define 	COM11_50HZ                  0x08    // Manual 50Hz select
 #define 	COM11_EXP                   0x02
-#define		COM11_NMFR					0x60	  /* Two bit NM frame rate */
-#define		COM11_HZAUTO				0x10	  /* Auto detect 50/60 Hz */
-#define		COM11_50HZ					0x08	  /* Manual 50Hz select */
-#define		COM11_EXP					0x02
+#define		COM11_NMFR					0x60	// Two bit NM frame rate
+#define		COM11_AD56HZ				0x10	// Auto detect 50/60 Hz
+#define		COM11_50HZ					0x08	// Manual 50Hz select
+#define		COM11_EXPLES				0x02	// Exposure timing can be less than limit of banding filter when light is too strong
 
 #define		COM13_GAMMA					0x80	// Gamma enable
 #define		COM13_UVSAT					0x40	// UV saturation auto adjustment
 #define 	COM13_UVSWAP				0x01	// V before U - w/TSLB
 
 #define		COM14_DCWEN					0x10	// DCW/PCLK-scale enable
-
-#define		COM16_AWBGAIN				0x08	// AWB gain enable
+#define		COM14_MSCLEN				0x08	// Scaling parameter can be adjusted manually
+#define		COM14_PCLKDIV_1				0x00
+#define		COM14_PCLKDIV_2				0x01
+#define		COM14_PCLKDIV_4				0x02
+#define		COM14_PCLKDIV_8				0x03
+#define		COM14_PCLKDIV_16			0x04
 
 #define 	COM15_R10F0 	 	 		0x00	// Data range 10 to F0
 #define 	COM15_R01FE 	 	 		0x80	//            01 to FE
 #define 	COM15_R00FF 	 	 		0xc0	//            00 to FF
+#define		COM15_YUV					0x00	// YUV422 output
+#define		COM15_BAYER					0x00	// Raw and processed Bayer output
 #define 	COM15_RGB565 	 	 		0x10	// RGB565 output
+#define		COM15_GRB422				0x20	// GRB422 output, also can be 0x00 instead of 0x20
 #define 	COM15_RGB555 	 	 		0x30	// RGB555 output
 
-#define		R444_ENABLE					0x02	  /* Turn on RGB444, overrides 5x5 */
+#define		COM16_AWBGAIN				0x08	// AWB gain enable
+
+#define		RGB444_EN					0x02	  /* Turn on RGB444, overrides 5x5 */
 
 #define		CLKRC_EXT					0x40	  /* Use external clock directly */
 #define		CLKRC_SCALE					0x3f	  /* Mask for internal clock scale */
@@ -299,6 +431,23 @@ void EXTI1_VSYNC_Callback();
 #define		MVFP_MIRROR					0x20	  /* Mirror image */
 #define		MVFP_FLIP					0x10	  /* Vertical flip */
 
+#define		DCWCTR_VAVG_T				0x00	// Vertical average truncation
+#define		DCWCTR_VAVG_R				0x80	// Vertical average rounding
+#define		DCWCTR_VDSO_T				0x00	// Vertical down sampling trunc.
+#define		DCWCTR_VDSO_R				0x40	// Vertical down sampling round.
+#define		DCWCTR_VDSR_0				0x00	// Vertical down sampl. rate by 0
+#define		DCWCTR_VDSR_2				0x10	// Vertical down sampl. rate by 2
+#define		DCWCTR_VDSR_4				0x20	// Vertical down sampl. rate by 4
+#define		DCWCTR_VDSR_8				0x30	// Vertical down sampl. rate by 8
+
+#define		DCWCTR_HAVG_T				0x00
+#define		DCWCTR_HAVG_R				0x08
+#define		DCWCTR_HDSO_T				0x00
+#define		DCWCTR_HDSO_R				0x04
+#define		DCWCTR_HDSR_0				0x00
+#define		DCWCTR_HDSR_2				0x01
+#define		DCWCTR_HDSR_4				0x02
+#define		DCWCTR_HDSR_8				0x03
 
 
 
