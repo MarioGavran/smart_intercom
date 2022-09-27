@@ -1,6 +1,8 @@
 ## ARM-Cortex-M4 based Video Intercom System with Human Presence Detection
 ## _Video domofonski sistem na ARM-Cortex-M4 platformi z zaznavanjem prisotnosti ljudi_
 
+![](images/pcb_3D.gif)
+
 Development of the smart video intercom system based on the ARM Cortex-M4 microcontroller. The system uses a CMOS VGA camera to capture and a WVGA LCD screen to display the video. The ARM MCU controls the camera and the screen in addition to executing the AI algorithm. The software implementation of the camera and LCD screen driver are in this repository.
 
 Also, available are various peripheral drivers:
@@ -33,6 +35,5 @@ Also, available are various peripheral drivers:
 <img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/pcb_3D.png"> 
 <img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/pc_3D.gif"> 
 
-![](images/pcb_3D.gif)
 
 _More images in_ [/images](https://github.com/MarioGavran/smart_intercom/tree/master/images) _folder_
