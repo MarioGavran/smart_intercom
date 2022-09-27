@@ -23,7 +23,7 @@ Also, available are various peripheral drivers:
 <img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/img6.jpg">
 
 ## Version 1.0 (JLCPCB)
--First "real" prototype. Features battery connector and charger, pushbutton to turn the device on/off, micro USB to serial transciever, boot-latch circuit for updating, etc. See pdf documents for more info: [PCB\_&\_assembly.pdf]
+-First "real" prototype. Features battery connector and charger, pushbutton to turn the device on/off, micro USB to serial transciever, boot-latch circuit for updating, etc. See pdf documents for more info: [/Doc](smart_intercom/tree/master/Doc)
 
 <img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/img10.jpg">
 <img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/img13.jpg"> 
@@ -35,4 +35,4 @@ Also, available are various peripheral drivers:
 
 ![](images/pcb_3D.gif)
 
-_More images in_ [/images] _folder_
+_More images in_ [/images](smart_intercom/tree/master/images) _folder_
