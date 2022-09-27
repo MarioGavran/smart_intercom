@@ -28,5 +28,6 @@ Also, available are various peripheral drivers:
 <img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/pcb.png"> 
 <img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/pcb_3D.png"> 
 <img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/pc_3D.gif"> 
+
 ![](images/pcb_3D.gif)
 ![](/images/pcb_3D.gif)
