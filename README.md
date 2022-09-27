@@ -5,7 +5,7 @@
 
 Development of the smart video intercom system based on the ARM Cortex-M4 microcontroller. The system uses a CMOS VGA camera to capture and a WVGA LCD screen to display the video. The ARM MCU controls the camera and the screen in addition to executing the AI algorithm. The software implementation of the camera and LCD screen driver are in this repository.
 
-##See more info in [/Doc](https://github.com/MarioGavran/smart_intercom/tree/master/Doc)
+## See more info in [/Doc](https://github.com/MarioGavran/smart_intercom/tree/master/Doc)
 
 Also, available are various peripheral drivers:
 * LCD driver for NT35510 LCD controller chip with various funcions for drawing lines, printing characters, initializing the LCD, etc. :
