@@ -1,5 +1,5 @@
 ## ARM-Cortex-M4 based Video Intercom System with Human Presence Detection
-## Video domofonski sistem na ARM-Cortex-M4 platformi z zaznavanjem prisotnosti ljudi
+## _Video domofonski sistem na ARM-Cortex-M4 platformi z zaznavanjem prisotnosti ljudi_
 
 Development of the smart video intercom system based on the ARM Cortex-M4 microcontroller. The system uses a CMOS VGA camera to capture and a WVGA LCD screen to display the video. The ARM MCU controls the camera and the screen in addition to executing the AI algorithm. The software implementation of the camera and LCD screen driver are in this repository.
 
@@ -13,14 +13,18 @@ Also, available are various peripheral drivers:
 * Serial COM driver with auto-circular buffer:
  [uart_driver.c](Core/Src/uart_driver.c) and [uart_driver.h](Core/Inc/uart_driver.h)
 
-## Version 0 (only LCD)
+## Version 0.0 (only LCD)
+-Working prototype for STM Zio connector used on the STM Nucleo-144 boards. Used to connect the NT35510 LCD display controller over FSMC i80-like parallel interface bus. 
 <img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/img0.jpg">
 
 ## Version 0.1 (with camera)
+-Added a 24pin connector for the OV7670 camera sensor.
 <img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/img2.jpg">
 <img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/img6.jpg">
 
-## Version 1 (JLCPCB)
+## Version 1.0 (JLCPCB)
+-First "real" prototype. Features battery connector and charger, pushbutton to turn the device on/off, micro USB to serial transciever, boot-latch circuit for updating, etc. See pdf documents for more info: [PCB\_&\_assembly.pdf]
+
 <img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/img10.jpg">
 <img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/img13.jpg"> 
 
@@ -30,3 +34,5 @@ Also, available are various peripheral drivers:
 <img src="https://github.com/MarioGavran/smart_intercom/blob/master/images/pc_3D.gif"> 
 
 ![](images/pcb_3D.gif)
+
+_More images in_ [/images] _folder_
